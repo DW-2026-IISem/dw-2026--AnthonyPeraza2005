@@ -56,4 +56,6 @@
 
 ![](images/clipboard-1628961092.png)
 
-![](images/clipboard-3577020004.png)
+#### **4.2 — Interface de entorno**
+
+![](images/clipboard-4240256069.png)
