@@ -46,4 +46,14 @@
 
 ![](images/clipboard-529769721.png)
 
-#### **3.2 — Recordatorio de responsabilidades**
+## **FASE 4 — `03_BASE_ENTORNO_ENV`**
+
+### **Configuración del entorno tipado (multi-base)**
+
+**Objetivo de la fase:** Centralizar variables en `.env`: selector `DB_DIALECT` y un bloque de credenciales por motor (MySQL, PostgreSQL, SQL Server, Oracle). Validar antes del boot.
+
+#### **4.1 — Crear `.env.example` y actualizar `.env` completo**
+
+![](images/clipboard-1628961092.png)
+
+![](images/clipboard-3577020004.png)
