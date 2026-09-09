@@ -118,4 +118,12 @@
 
 ![](images/clipboard-2896360579.png)
 
-![](images/clipboard-1302139106.png)
+## **FASE 6 — `05_BASE_APP_COMMON_SECURITY`**
+
+### **App config + Logger + Common + Security + bootstrap**
+
+**Objetivo de la fase:** Dejar la infraestructura transversal lista antes de la primera entidad de negocio. Aún sin Business/Auth en AppModule y sin guards globales.
+
+#### **6.1 — config/app/app.constants.ts**
+
+![](images/clipboard-80136172.png)
