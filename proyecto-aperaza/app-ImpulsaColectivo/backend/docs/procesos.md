@@ -131,3 +131,7 @@
 #### **6.2 — config/app/app.config.ts**
 
 ![](images/clipboard-1223698598.png)
+
+#### **6.3 — config/logger/logger.config.ts**
+
+![](images/clipboard-568634298.png)
