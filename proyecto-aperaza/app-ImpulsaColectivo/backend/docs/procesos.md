@@ -85,3 +85,7 @@
 #### **5.2 — Tipos auxiliares de database config**
 
 ![](images/clipboard-3758819939.png)
+
+#### **5.3 — database.config.ts**
+
+![](images/clipboard-1888925283.png)
