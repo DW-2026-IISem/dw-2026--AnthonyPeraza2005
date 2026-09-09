@@ -35,3 +35,15 @@
 #### **2.5 — Verificar arranque base**
 
 ![](images/clipboard-1249128542.png)
+
+## **FASE 3 — `02_BASE_ESTRUCTURA_CA`**
+
+### **Estructura de carpetas Clean Architecture**
+
+> **Objetivo de la fase:** Crear el mapa mental: config / common / infrastructure / features (business + auth).
+
+#### **3.1 — Crear árbol base de carpetas**
+
+![](images/clipboard-529769721.png)
+
+#### **3.2 — Recordatorio de responsabilidades**
