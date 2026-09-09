@@ -93,3 +93,7 @@
 #### **5.4 — database.module.ts / providers**
 
 ![](images/clipboard-883030450.png)
+
+#### **5.5 — database.providers.ts**
+
+![](images/clipboard-695604034.png)
