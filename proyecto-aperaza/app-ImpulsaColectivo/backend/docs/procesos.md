@@ -71,3 +71,13 @@
 #### **4.5 — Factory registerAs de entorno**
 
 ![](images/clipboard-1373557495.png)
+
+## **FASE 5 — `04_BASE_DATABASE_SEQUELIZE`**
+
+### **Base de datos multi-dialecto (Sequelize)**
+
+**Objetivo de la fase:** Conectar Sequelize al motor de `DB_DIALECT` usando el bloque `DB_MYSQL_*` / `DB_POSTGRES_*` / `DB_MSSQL_*` / `DB_ORACLE_*`. Aún sin features (ALL_MODELS vacío).
+
+#### **5.1 — Constante SEQUELIZE_TOKEN**
+
+![](images/clipboard-7621658.png)
