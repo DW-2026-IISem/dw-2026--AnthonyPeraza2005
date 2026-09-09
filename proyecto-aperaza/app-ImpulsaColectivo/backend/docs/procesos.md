@@ -23,3 +23,7 @@
 #### **2.2 — Dependencias de desarrollo**
 
 ![](images/clipboard-3175577465.png)
+
+#### **2.3 — Script para liberar puerto (evita EADDRINUSE)**
+
+![](images/clipboard-3038469083.png)
