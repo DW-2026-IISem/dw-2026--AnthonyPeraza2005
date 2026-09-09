@@ -67,3 +67,7 @@
 #### **4.4 — Resolver de credenciales por motor**
 
 ![](images/clipboard-3662126410.png)
+
+#### **4.5 — Factory registerAs de entorno**
+
+![](images/clipboard-1373557495.png)
