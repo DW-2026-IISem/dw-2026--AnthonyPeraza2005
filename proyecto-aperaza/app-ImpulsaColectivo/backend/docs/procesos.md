@@ -105,3 +105,7 @@
 #### **5.7 — Factory Sequelize (sin modelos aún)**
 
 ![](images/clipboard-3980053486.png)
+
+#### **5.8 — DatabaseSeederService (sin seeders aún)**
+
+![](images/clipboard-1079217216.png)
