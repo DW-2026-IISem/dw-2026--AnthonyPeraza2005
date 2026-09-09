@@ -127,3 +127,7 @@
 #### **6.1 — config/app/app.constants.ts**
 
 ![](images/clipboard-80136172.png)
+
+#### **6.2 — config/app/app.config.ts**
+
+![](images/clipboard-1223698598.png)
