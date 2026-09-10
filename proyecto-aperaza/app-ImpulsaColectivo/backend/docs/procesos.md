@@ -167,3 +167,7 @@
 #### **6.11 — common/enums/sort-order.enum.ts**
 
 ![](images/clipboard-3326153095.png)
+
+#### **6.12 — common/constants/app.constants.ts**
+
+![](images/clipboard-84231166.png)
