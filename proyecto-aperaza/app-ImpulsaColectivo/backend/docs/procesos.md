@@ -199,3 +199,7 @@
 #### **6.19 — common/filters/sequelize-exception.filter.ts**
 
 ![](images/clipboard-1777495461.png)
+
+#### **6.20 — common/interceptors/response.interceptor.ts**
+
+![](images/clipboard-1066199738.png)
