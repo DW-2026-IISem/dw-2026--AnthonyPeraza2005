@@ -183,3 +183,7 @@
 #### **6.15 — common/exceptions/domain.exception.ts**
 
 ![](images/clipboard-794842332.png)
+
+#### **6.16 — common/exceptions/entity-not-found.exception.ts**
+
+![](images/clipboard-30458597.png)
