@@ -195,3 +195,7 @@
 #### **6.18 — common/filters/global-exception.filter.ts**
 
 ![](images/clipboard-4272781397.png)
+
+#### **6.19 — common/filters/sequelize-exception.filter.ts**
+
+![](images/clipboard-1777495461.png)
