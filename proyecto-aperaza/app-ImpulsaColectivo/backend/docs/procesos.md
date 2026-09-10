@@ -147,3 +147,11 @@
 #### **6.6 — config/jwt/jwt.config.ts**
 
 ![](images/clipboard-3680077591.png)
+
+#### **6.7 — config/swagger/swagger.constants.ts**
+
+![](images/clipboard-2386288496.png)
+
+#### **6.8 — config/swagger/swagger.config.ts**
+
+![](images/clipboard-1622750291.png)
