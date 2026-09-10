@@ -295,3 +295,7 @@
 #### **6.43 — Actualizar app.module.ts (base sin features ni guards)**
 
 ![](images/clipboard-3550428840.png)
+
+#### **6.44 — Verificar bootstrap transversal**
+
+![![](images/clipboard-4176953910.png)](images/clipboard-4211409156.png)
