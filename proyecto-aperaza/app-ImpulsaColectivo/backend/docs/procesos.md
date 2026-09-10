@@ -211,3 +211,7 @@
 #### 6.22 — common/interceptors/timeout.interceptor.ts
 
 ![](images/clipboard-3656896737.png)
+
+#### 6.23 — common/pipes/validation.pipe.ts
+
+![](images/clipboard-4027692656.png)
