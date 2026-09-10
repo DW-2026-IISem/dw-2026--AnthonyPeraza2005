@@ -271,3 +271,7 @@
 #### **6.37 — infrastructure/security/hashing/password-hasher.interface.ts**
 
 ![](images/clipboard-246770979.png)
+
+#### **6.38 — infrastructure/security/hashing/bcrypt-password-hasher.service.ts**
+
+![](images/clipboard-2281188192.png)
