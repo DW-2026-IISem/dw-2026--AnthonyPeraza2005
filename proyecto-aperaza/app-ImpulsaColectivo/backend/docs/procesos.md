@@ -208,38 +208,54 @@
 
 ![](images/clipboard-2451364036.png)
 
-#### 6.22 — common/interceptors/timeout.interceptor.ts
+#### **6.22 — common/interceptors/timeout.interceptor.ts**
 
 ![](images/clipboard-3656896737.png)
 
-#### 6.23 — common/pipes/validation.pipe.ts
+#### **6.23 — common/pipes/validation.pipe.ts**
 
 ![](images/clipboard-4027692656.png)
 
-#### 6.24 — common/pipes/parse-positive-int.pipe.ts
+#### **6.24 — common/pipes/parse-positive-int.pipe.ts**
 
 ![](images/clipboard-2535195318.png)
 
-#### 6.25 — common/decorators/public.decorator.ts
+#### **6.25 — common/decorators/public.decorator.ts**
 
 ![](images/clipboard-1438646263.png)
 
-#### 6.26 — common/decorators/roles.decorator.ts
+#### **6.26 — common/decorators/roles.decorator.ts**
 
 ![](images/clipboard-3032542032.png)
 
-#### 6.27 — common/decorators/current-user.decorator.ts
+#### **6.27 — common/decorators/current-user.decorator.ts**
 
 ![](images/clipboard-1274869102.png)
 
-#### 6.28 — common/decorators/resource.decorator.ts
+#### **6.28 — common/decorators/resource.decorator.ts**
 
 ![](images/clipboard-3936252324.png)
 
-#### 6.29 — common/interfaces/authenticated-user.interface.ts
+#### **6.29 — common/interfaces/authenticated-user.interface.ts**
 
 ![](images/clipboard-1315738991.png)
 
-#### 6.30 — common/interfaces/pagination.interface.ts
+#### **6.30 — common/interfaces/pagination.interface.ts**
 
 ![](images/clipboard-2724381384.png)
+
+#### **6.31 — common/interfaces/api-response.interface.ts**
+
+![](images/clipboard-1676581495.png)
+
+#### **6.32 — common/types/nullable.type.ts**
+
+![](images/clipboard-505113896.png)
+
+#### **6.33 — common/types/optional.type.ts**
+
+![](images/clipboard-2198320955.png)
+
+#### **6.34 — common/utils/pagination.util.ts**
+
+![](images/clipboard-995979615.png)
