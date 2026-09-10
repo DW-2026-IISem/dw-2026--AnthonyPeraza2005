@@ -215,3 +215,7 @@
 #### 6.23 — common/pipes/validation.pipe.ts
 
 ![](images/clipboard-4027692656.png)
+
+#### 6.24 — common/pipes/parse-positive-int.pipe.ts
+
+![](images/clipboard-2535195318.png)
