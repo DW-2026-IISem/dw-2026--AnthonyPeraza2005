@@ -287,3 +287,7 @@
 #### **6.41 — infrastructure/security/security.module.ts**
 
 ![](images/clipboard-2122438720.png)
+
+#### **6.42 — Actualizar main.ts (bootstrap completo)**
+
+![](images/clipboard-4073901082.png)
