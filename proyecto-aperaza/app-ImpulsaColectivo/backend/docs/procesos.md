@@ -291,3 +291,7 @@
 #### **6.42 — Actualizar main.ts (bootstrap completo)**
 
 ![](images/clipboard-4073901082.png)
+
+#### **6.43 — Actualizar app.module.ts (base sin features ni guards)**
+
+![](images/clipboard-3550428840.png)
