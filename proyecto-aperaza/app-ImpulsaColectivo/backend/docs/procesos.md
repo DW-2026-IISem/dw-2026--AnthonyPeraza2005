@@ -187,3 +187,7 @@
 #### **6.16 — common/exceptions/entity-not-found.exception.ts**
 
 ![](images/clipboard-30458597.png)
+
+#### **6.17 — common/exceptions/validation.exception.ts**
+
+![](images/clipboard-637558669.png)
