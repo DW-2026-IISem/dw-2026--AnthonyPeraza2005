@@ -143,3 +143,7 @@
 #### **6.5 — config/jwt/jwt.constants.ts**
 
 ![](images/clipboard-1053830225.png)
+
+#### **6.6 — config/jwt/jwt.config.ts**
+
+![](images/clipboard-3680077591.png)
