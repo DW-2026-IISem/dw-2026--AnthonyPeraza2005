@@ -207,3 +207,7 @@
 #### **6.21 — common/interceptors/logging.interceptor.ts**
 
 ![](images/clipboard-2451364036.png)
+
+#### 6.22 — common/interceptors/timeout.interceptor.ts
+
+![](images/clipboard-3656896737.png)
