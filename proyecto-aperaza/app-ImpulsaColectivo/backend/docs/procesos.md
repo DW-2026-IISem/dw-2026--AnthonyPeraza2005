@@ -178,4 +178,8 @@
 
 #### **6.14 — common/exceptions/application.exception.ts**
 
-![](images/clipboard-2131530769.png)
+![](images/clipboard-2038352167.png)
+
+#### **6.15 — common/exceptions/domain.exception.ts**
+
+![](images/clipboard-794842332.png)
