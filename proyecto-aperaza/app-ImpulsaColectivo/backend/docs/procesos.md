@@ -351,3 +351,7 @@
 7.12 — `src/features/business/promoters/application/mappers/promoter.mapper.ts`
 
 ![](images/clipboard-3903351769.png)
+
+7.13 — `src/features/business/promoters/application/use-cases/create-promoter.use-case.ts`
+
+![](images/clipboard-1696874253.png)
