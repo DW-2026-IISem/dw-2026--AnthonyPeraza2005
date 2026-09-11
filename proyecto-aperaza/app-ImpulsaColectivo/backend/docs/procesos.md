@@ -309,3 +309,7 @@
 #### 7.1\_`src/features/business/promoters/domain/entities/promoter.entity.ts`
 
 ![](images/clipboard-1678942030.png)
+
+#### 7.2 — `src/features/business/promoters/domain/exceptions/promoter-not-found.exception.ts`
+
+![](images/clipboard-1760238312.png)
