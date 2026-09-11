@@ -339,3 +339,7 @@
 7.9 — `src/features/business/promoters/application/dto/promoter-filter.dto.ts`
 
 ![](images/clipboard-1719997845.png)
+
+7.10 — `src/features/business/promoters/application/dto/promoter-response.dto.ts`
+
+![](images/clipboard-3184120013.png)
