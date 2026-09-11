@@ -325,3 +325,7 @@
 7.5\_`src/features/business/promoters/infrastructure/persistence/repositories/promoter.repository.ts`
 
 ![](images/clipboard-2019723428.png)
+
+7.6 — `src/features/business/promoters/infrastructure/persistence/migrations/create-promoters-table.migration.ts`
+
+![](images/clipboard-1700906474.png)
