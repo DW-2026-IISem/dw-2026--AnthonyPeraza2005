@@ -299,3 +299,13 @@
 #### **6.44 — Verificar bootstrap transversal**
 
 ![![](images/clipboard-4176953910.png)](images/clipboard-4211409156.png)
+
+## **FASE 7 — `06_BUSINESS_PROMOTERS`**
+
+### **Business — Clients (patrón completo CA)**
+
+**Objetivo de la fase:** Primera entidad de negocio. Orden lógico: dominio → infraestructura → aplicación → presentación → módulo → cableado → verificación.
+
+#### 7.1\_`src/features/business/promoters/domain/entities/promoter.entity.ts`
+
+![](images/clipboard-1678942030.png)
