@@ -331,3 +331,7 @@
 ![7.7\_`src/features/business/promoters/infrastructure/persistence/seeders/promoters.seeder.ts`](images/clipboard-1700906474.png)
 
 ![](images/clipboard-3207605306.png)
+
+7.8 — `src/features/business/promoters/application/dto/create-promoter.dto.ts`
+
+![](images/clipboard-141300446.png)
