@@ -313,3 +313,7 @@
 #### 7.2 — `src/features/business/promoters/domain/exceptions/promoter-not-found.exception.ts`
 
 ![](images/clipboard-1760238312.png)
+
+7.3 — `src/features/business/promoters/domain/interfaces/promoter-repository.interface.ts`
+
+![](images/clipboard-1707378739.png)
