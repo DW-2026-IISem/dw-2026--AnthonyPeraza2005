@@ -317,3 +317,7 @@
 7.3 — `src/features/business/promoters/domain/interfaces/promoter-repository.interface.ts`
 
 ![](images/clipboard-1707378739.png)
+
+7.4 — `src/features/business/promoters/infrastructure/persistence/models/promoter.model.ts`
+
+![](images/clipboard-995739627.png)
