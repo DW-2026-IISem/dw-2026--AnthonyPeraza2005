@@ -343,3 +343,11 @@
 7.10 — `src/features/business/promoters/application/dto/promoter-response.dto.ts`
 
 ![](images/clipboard-3184120013.png)
+
+7.11 — `src/features/business/promoters/application/dto/update-promoter.dto.ts`
+
+![](images/clipboard-414748990.png)
+
+7.12 — `src/features/business/promoters/application/mappers/promoter.mapper.ts`
+
+![](images/clipboard-3903351769.png)
