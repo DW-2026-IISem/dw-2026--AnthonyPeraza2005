@@ -429,3 +429,7 @@ Business — Contributors
 8.3 — `src/features/business/contributors/domain/interfaces/contributor-repository.interface.ts`
 
 ![](images/clipboard-2116007091.png)
+
+8.4 — `src/features/business/contributors/infrastructure/persistence/models/contributor.model.ts`
+
+![](images/clipboard-1126559914.png)
