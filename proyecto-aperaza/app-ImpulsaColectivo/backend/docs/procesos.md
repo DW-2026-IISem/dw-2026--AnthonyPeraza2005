@@ -929,3 +929,7 @@ Business — Contributors
 #### 12.20 — `src/features/business/contributions/index.ts`
 
 ![](images/clipboard-4273020963.png)
+
+#### 12.21 — `src/features/business/contributions/contributions.module.ts`
+
+![](images/clipboard-1283399409.png)
