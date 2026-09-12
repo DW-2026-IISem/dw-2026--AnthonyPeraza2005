@@ -1033,3 +1033,9 @@ Business — Contributors
 #### 13.19 — `src/features/business/payment-transactions/presentation/http/serializers/payment-transaction.serializer.ts`
 
 ![](images/clipboard-1410308494.png)
+
+#### 13.20 — `src/features/business/payment-transactions/presentation/http/controllers/payment-transactions.controller.ts`
+
+![](images/clipboard-685150873.png)
+
+![](images/clipboard-2322850369.png)
