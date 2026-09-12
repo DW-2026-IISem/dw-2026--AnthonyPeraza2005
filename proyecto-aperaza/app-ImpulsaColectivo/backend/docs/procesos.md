@@ -809,3 +809,9 @@ Business — Contributors
 #### 11.18 — `src/features/business/rewards/presentation/http/serializers/reward.serializer.ts`
 
 ![](images/clipboard-3701415373.png)
+
+#### 11.19 — `src/features/business/rewards/presentation/http/controllers/rewards.controller.ts`
+
+![](images/clipboard-2361009966.png)
+
+![](images/clipboard-3327977153.png)
