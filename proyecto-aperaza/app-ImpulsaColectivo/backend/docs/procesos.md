@@ -683,3 +683,7 @@ Business — Contributors
 #### 10.13 — `src/features/business/goals/application/use-cases/create-goal.use-case.ts`
 
 ![](images/clipboard-299106657.png)
+
+#### 10.14 — `src/features/business/goals/application/use-cases/update-goal.use-case.ts`
+
+![](images/clipboard-2498676672.png)
