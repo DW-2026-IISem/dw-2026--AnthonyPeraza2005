@@ -559,3 +559,7 @@ Business — Contributors
 9.9 — `src/features/business/projects/application/dto/project-filter.dto.ts`
 
 ![](images/clipboard-2239571891.png)
+
+9.10 — `src/features/business/projects/application/dto/project-response.dto.ts`
+
+![](images/clipboard-242660906.png)
