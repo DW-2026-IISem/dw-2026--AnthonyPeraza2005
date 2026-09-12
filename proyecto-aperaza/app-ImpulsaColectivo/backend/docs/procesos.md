@@ -790,6 +790,6 @@ Business — Contributors
 
 ![](images/clipboard-3556707886.png)
 
-#### 11.14 — `src/features/business/rewards/application/use-cases/update-reward.use-case.ts`
+#### 11.14 — `src/features/business/rewards/application/use-cases/update-reward.use-case.ts .`
 
 ![](images/clipboard-1881721117.png)
