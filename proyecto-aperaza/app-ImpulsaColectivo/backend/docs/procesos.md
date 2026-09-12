@@ -1099,3 +1099,7 @@ Business — Contributors
 #### 14.7 — `src/features/business/commissions/infrastructure/persistence/seeders/commissions.seeder.ts`
 
 ![](images/clipboard-2347100364.png)
+
+#### 14.8 — `src/features/business/commissions/application/dto/create-commission.dto.ts`
+
+![](images/clipboard-1846296801.png)
