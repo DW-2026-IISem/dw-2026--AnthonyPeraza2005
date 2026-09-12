@@ -509,3 +509,7 @@ Business — Contributors
 8.23 — Actualizar `src/features/business/business.module.ts`
 
 ![](images/clipboard-1309402994.png)
+
+8.24 — Actualizar `src/infrastructure/database/seeders/database-seeder.service.ts`
+
+![](images/clipboard-480642377.png)
