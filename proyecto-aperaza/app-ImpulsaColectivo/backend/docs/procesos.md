@@ -715,3 +715,7 @@ Business — Contributors
 #### 10.21 — `src/features/business/goals/goals.module.ts`
 
 ![](images/clipboard-2929349306.png)
+
+#### 10.22 — Actualizar `src/infrastructure/database/sequelize/sequelize.factory.ts`
+
+![](images/clipboard-2781517793.png)

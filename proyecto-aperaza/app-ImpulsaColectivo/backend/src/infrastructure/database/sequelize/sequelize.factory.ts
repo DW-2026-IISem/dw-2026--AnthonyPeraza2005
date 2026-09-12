@@ -5,11 +5,13 @@ import { getSequelizeOptions } from './sequelize.options';
 import { PromoterModel } from '../../../features/business/promoters/infrastructure/persistence/models/promoter.model';
 import { ContributorModel } from '../../../features/business/contributors/infrastructure/persistence/models/contributor.model';
 import { ProjectModel } from '../../../features/business/projects/infrastructure/persistence/models/project.model';
+import { GoalModel } from '../../../features/business/goals/infrastructure/persistence/models/goal.model';
 
 export const ALL_MODELS = [
   PromoterModel,
   ContributorModel,
   ProjectModel,
+  GoalModel,
 ];
 
 export async function createSequelizeInstance(
