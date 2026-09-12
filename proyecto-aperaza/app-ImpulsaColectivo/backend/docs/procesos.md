@@ -1065,3 +1065,13 @@ Business — Contributors
 ![](images/clipboard-924626776.png)
 
 ![](images/clipboard-3418807347.png)
+
+## FASE 14 — `13_BUSINESS_COMMISSIONS`
+
+#### Business — Commissions
+
+> **Objetivo:** Comisión que la plataforma cobra sobre un proyecto (`reference_id` → `projects.id`). Mismo patrón "referencia" que PaymentTransactions, pero apuntando a `Project`.
+
+#### 14.1 — `src/features/business/commissions/domain/entities/commission.entity.ts`
+
+![](images/clipboard-4026959263.png)
