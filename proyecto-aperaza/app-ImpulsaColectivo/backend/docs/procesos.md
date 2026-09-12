@@ -989,3 +989,7 @@ Business — Contributors
 #### 13.8 — `src/features/business/payment-transactions/infrastructure/persistence/seeders/payment-transactions.seeder.ts`
 
 ![](images/clipboard-4263614077.png)
+
+#### 13.9 — `src/features/business/payment-transactions/application/dto/create-payment-transaction.dto.ts`
+
+![](images/clipboard-2191208124.png)
