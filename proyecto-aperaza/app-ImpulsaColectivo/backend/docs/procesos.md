@@ -853,3 +853,9 @@ Business — Contributors
 #### 12.2 — `src/features/business/contributions/domain/exceptions/contribution-not-found.exception.ts`
 
 ![](images/clipboard-1105602812.png)
+
+#### 12.3 — `src/features/business/contributions/domain/interfaces/contribution-repository.interface.ts`
+
+![](images/clipboard-3269459929.png)
+
+#### 
