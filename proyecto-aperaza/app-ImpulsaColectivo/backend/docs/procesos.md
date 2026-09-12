@@ -473,3 +473,7 @@ Business — Contributors
 8.14 — `src/features/business/contributors/application/use-cases/update-contributor.use-case.ts`
 
 ![](images/clipboard-3927361865.png)
+
+8.15 — `src/features/business/contributors/application/use-cases/delete-contributor.use-case.ts`
+
+![](images/clipboard-249737161.png)
