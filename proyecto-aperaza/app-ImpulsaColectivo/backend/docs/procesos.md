@@ -497,3 +497,7 @@ Business — Contributors
 8.20 — `src/features/business/contributors/index.ts`
 
 ![](images/clipboard-1604958023.png)
+
+8.21 — `src/features/business/contributors/contributors.module.ts`
+
+![](images/clipboard-2761942167.png)
