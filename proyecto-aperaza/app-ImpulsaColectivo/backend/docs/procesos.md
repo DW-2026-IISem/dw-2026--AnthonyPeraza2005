@@ -749,3 +749,7 @@ Business — Contributors
 #### 11.3 — `src/features/business/rewards/domain/interfaces/reward-repository.interface.ts`
 
 ![](images/clipboard-3665417030.png)
+
+#### 11.4 — `src/features/business/rewards/infrastructure/persistence/models/reward.model.ts`
+
+![](images/clipboard-2838689540.png)
