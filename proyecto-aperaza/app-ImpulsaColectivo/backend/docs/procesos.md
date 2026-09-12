@@ -457,3 +457,7 @@ Business — Contributors
 8.10 — `src/features/business/contributors/application/dto/contributor-response.dto.ts`
 
 ![](images/clipboard-1695010779.png)
+
+8.11 — `src/features/business/contributors/application/dto/update-contributor.dto.ts`
+
+![](images/clipboard-1145441385.png)
