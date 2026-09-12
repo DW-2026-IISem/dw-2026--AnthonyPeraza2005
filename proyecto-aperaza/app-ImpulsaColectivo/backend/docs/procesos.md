@@ -699,3 +699,7 @@ Business — Contributors
 #### 10.17 — `src/features/business/goals/application/use-cases/list-goals.use-case.ts`
 
 ![](images/clipboard-2305802029.png)
+
+#### 10.18 — `src/features/business/goals/presentation/http/serializers/goal.serializer.ts`
+
+![](images/clipboard-515059783.png)
