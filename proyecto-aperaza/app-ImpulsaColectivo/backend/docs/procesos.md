@@ -422,94 +422,98 @@ Business — Contributors
 
 ![](images/clipboard-3130018716.png)
 
-8.2 — `src/features/business/contributors/domain/exceptions/contributor-not-found.exception.ts`
+#### 8.2 — `src/features/business/contributors/domain/exceptions/contributor-not-found.exception.ts`
 
 ![](images/clipboard-1256117032.png)
 
-8.3 — `src/features/business/contributors/domain/interfaces/contributor-repository.interface.ts`
+#### 8.3 — `src/features/business/contributors/domain/interfaces/contributor-repository.interface.ts`
 
 ![](images/clipboard-2116007091.png)
 
-8.4 — `src/features/business/contributors/infrastructure/persistence/models/contributor.model.ts`
+#### 8.4 — `src/features/business/contributors/infrastructure/persistence/models/contributor.model.ts`
 
 ![](images/clipboard-1126559914.png)
 
-8.5 — `src/features/business/contributors/infrastructure/persistence/repositories/contributor.repository.ts`
+#### 8.5 — `src/features/business/contributors/infrastructure/persistence/repositories/contributor.repository.ts`
 
 ![](images/clipboard-3070736991.png)
 
-8.6 — `src/features/business/contributors/infrastructure/persistence/migrations/create-contributors-table.migration.ts`
+#### 8.6 — `src/features/business/contributors/infrastructure/persistence/migrations/create-contributors-table.migration.ts`
 
 ![](images/clipboard-871922679.png)
 
-8.7 — `src/features/business/contributors/infrastructure/persistence/seeders/contributors.seeder.ts`
+#### 8.7 — `src/features/business/contributors/infrastructure/persistence/seeders/contributors.seeder.ts`
 
 ![](images/clipboard-2424774231.png)
 
-8.8 — `src/features/business/contributors/application/dto/create-contributor.dto.ts`
+#### 8.8 — `src/features/business/contributors/application/dto/create-contributor.dto.ts`
 
 ![](images/clipboard-2410282108.png)
 
-8.9 — `src/features/business/contributors/application/dto/contributor-filter.dto.ts`
+#### 8.9 — `src/features/business/contributors/application/dto/contributor-filter.dto.ts`
 
 ![](images/clipboard-801580086.png)
 
-8.10 — `src/features/business/contributors/application/dto/contributor-response.dto.ts`
+#### 8.10 — `src/features/business/contributors/application/dto/contributor-response.dto.ts`
 
 ![](images/clipboard-1695010779.png)
 
-8.11 — `src/features/business/contributors/application/dto/update-contributor.dto.ts`
+#### 8.11 — `src/features/business/contributors/application/dto/update-contributor.dto.ts`
 
 ![](images/clipboard-1145441385.png)
 
-8.12 — `src/features/business/contributors/application/mappers/contributor.mapper.ts`
+#### 8.12 — `src/features/business/contributors/application/mappers/contributor.mapper.ts`
 
 ![](images/clipboard-2765080833.png)
 
-8.13 — `src/features/business/contributors/application/use-cases/create-contributor.use-case.ts`
+#### 8.13 — `src/features/business/contributors/application/use-cases/create-contributor.use-case.ts`
 
 ![](images/clipboard-3622654723.png)
 
-8.14 — `src/features/business/contributors/application/use-cases/update-contributor.use-case.ts`
+#### 8.14 — `src/features/business/contributors/application/use-cases/update-contributor.use-case.ts`
 
 ![](images/clipboard-3927361865.png)
 
-8.15 — `src/features/business/contributors/application/use-cases/delete-contributor.use-case.ts`
+#### 8.15 — `src/features/business/contributors/application/use-cases/delete-contributor.use-case.ts`
 
 ![](images/clipboard-249737161.png)
 
-8.16 — `src/features/business/contributors/application/use-cases/get-contributor.use-case.ts`
+#### 8.16 — `src/features/business/contributors/application/use-cases/get-contributor.use-case.ts`
 
 ![](images/clipboard-3354145099.png)
 
-8.17 — `src/features/business/contributors/application/use-cases/list-contributors.use-case.ts`
+#### 8.17 — `src/features/business/contributors/application/use-cases/list-contributors.use-case.ts`
 
 ![](images/clipboard-3116100451.png)
 
-##### 8.18 — `src/features/business/contributors/presentation/http/serializers/contributor.serializer.ts`
+#### 8.18 — `src/features/business/contributors/presentation/http/serializers/contributor.serializer.ts`
 
 ![](images/clipboard-4269020732.png)
 
-##### 8.19 — `src/features/business/contributors/presentation/http/controllers/contributors.controller.ts`
+#### 8.19 — `src/features/business/contributors/presentation/http/controllers/contributors.controller.ts`
 
 ![](images/clipboard-15766362.png)
 
-8.20 — `src/features/business/contributors/index.ts`
+#### 8.20 — `src/features/business/contributors/index.ts`
 
 ![](images/clipboard-1604958023.png)
 
-8.21 — `src/features/business/contributors/contributors.module.ts`
+#### 8.21 — `src/features/business/contributors/contributors.module.ts`
 
 ![](images/clipboard-2761942167.png)
 
-8.22 — Actualizar `src/infrastructure/database/sequelize/sequelize.factory.ts`
+#### 8.22 — Actualizar `src/infrastructure/database/sequelize/sequelize.factory.ts`
 
 ![](images/clipboard-2319262057.png)
 
-8.23 — Actualizar `src/features/business/business.module.ts`
+#### 8.23 — Actualizar `src/features/business/business.module.ts`
 
 ![](images/clipboard-1309402994.png)
 
-8.24 — Actualizar `src/infrastructure/database/seeders/database-seeder.service.ts`
+#### 8.24 — Actualizar `src/infrastructure/database/seeders/database-seeder.service.ts`
 
 ![](images/clipboard-480642377.png)
+
+#### 8.25 — Verificar tabla física `contributors` y API
+
+![](images/clipboard-3462555057.png)
