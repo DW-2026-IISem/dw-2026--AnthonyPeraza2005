@@ -655,3 +655,7 @@ Business — Contributors
 #### 10.6 — `src/features/business/goals/infrastructure/persistence/migrations/create-goals-table.migration.ts`
 
 ![](images/clipboard-3314873736.png)
+
+#### 10.7 — `src/features/business/goals/infrastructure/persistence/seeders/goals.seeder.ts`
+
+![](images/clipboard-988176332.png)
