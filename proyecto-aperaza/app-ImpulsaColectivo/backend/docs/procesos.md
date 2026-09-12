@@ -433,3 +433,7 @@ Business — Contributors
 8.4 — `src/features/business/contributors/infrastructure/persistence/models/contributor.model.ts`
 
 ![](images/clipboard-1126559914.png)
+
+8.5 — `src/features/business/contributors/infrastructure/persistence/repositories/contributor.repository.ts`
+
+![](images/clipboard-3070736991.png)
