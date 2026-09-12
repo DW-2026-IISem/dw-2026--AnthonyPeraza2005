@@ -607,3 +607,7 @@ Business — Contributors
 9.21 — `src/features/business/projects/projects.module.ts`
 
 ![](images/clipboard-1862888866.png)
+
+9.22 — Actualizar `src/infrastructure/database/sequelize/sequelize.factory.ts`
+
+![](images/clipboard-2972075948.png)
