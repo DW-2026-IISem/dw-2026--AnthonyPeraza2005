@@ -1107,3 +1107,7 @@ Business — Contributors
 #### 14.9 — `src/features/business/commissions/application/dto/commission-filter.dto.ts`
 
 ![](images/clipboard-140776205.png)
+
+#### 14.10 — `src/features/business/commissions/application/dto/commission-response.dto.ts`
+
+![](images/clipboard-2046893310.png)
