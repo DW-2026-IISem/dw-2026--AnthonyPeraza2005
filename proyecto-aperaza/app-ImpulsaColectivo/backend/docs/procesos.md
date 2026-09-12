@@ -993,3 +993,7 @@ Business — Contributors
 #### 13.9 — `src/features/business/payment-transactions/application/dto/create-payment-transaction.dto.ts`
 
 ![](images/clipboard-2191208124.png)
+
+#### 13.10 — `src/features/business/payment-transactions/application/dto/payment-transaction-filter.dto.ts`
+
+![](images/clipboard-1864293053.png)
