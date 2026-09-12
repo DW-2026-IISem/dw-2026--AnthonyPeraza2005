@@ -399,3 +399,7 @@
 7.24 — Actualizar `src/infrastructure/database/seeders/database-seeder.service.ts`
 
 ![](images/clipboard-3535617829.png)
+
+7.25 — Actualizar `src/app.module.ts`
+
+![](images/clipboard-1692360423.png)
