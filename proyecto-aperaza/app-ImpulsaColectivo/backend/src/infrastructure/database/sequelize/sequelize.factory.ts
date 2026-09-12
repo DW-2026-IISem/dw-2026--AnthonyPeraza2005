@@ -9,6 +9,7 @@ import { GoalModel } from '../../../features/business/goals/infrastructure/persi
 import { RewardModel } from '../../../features/business/rewards/infrastructure/persistence/models/reward.model';
 import { ContributionModel } from '../../../features/business/contributions/infrastructure/persistence/models/contribution.model';
 import { PaymentTransactionModel } from '../../../features/business/payment-transactions/infrastructure/persistence/models/payment-transaction.model';
+import { CommissionModel } from '../../../features/business/commissions/infrastructure/persistence/models/commission.model';
 
 export const ALL_MODELS = [
   PromoterModel,
@@ -18,6 +19,7 @@ export const ALL_MODELS = [
   RewardModel,
   ContributionModel,
   PaymentTransactionModel,
+  CommissionModel,
 ];
 
 export async function createSequelizeInstance(
