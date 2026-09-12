@@ -567,3 +567,7 @@ Business — Contributors
 9.11 — `src/features/business/projects/application/dto/update-project.dto.ts`
 
 ![](images/clipboard-2314940772.png)
+
+9.12 — `src/features/business/projects/application/mappers/project.mapper.ts`
+
+![](images/clipboard-1627992012.png)
