@@ -391,3 +391,7 @@
 7.22 — Actualizar `src/infrastructure/database/sequelize/sequelize.factory.ts`
 
 ![](images/clipboard-111842603.png)
+
+7.23 — Actualizar `src/features/business/business.module.ts`
+
+![](images/clipboard-238755774.png)
