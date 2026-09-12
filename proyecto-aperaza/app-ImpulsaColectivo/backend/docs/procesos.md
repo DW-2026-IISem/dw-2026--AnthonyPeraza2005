@@ -563,3 +563,7 @@ Business — Contributors
 9.10 — `src/features/business/projects/application/dto/project-response.dto.ts`
 
 ![](images/clipboard-242660906.png)
+
+9.11 — `src/features/business/projects/application/dto/update-project.dto.ts`
+
+![](images/clipboard-2314940772.png)
