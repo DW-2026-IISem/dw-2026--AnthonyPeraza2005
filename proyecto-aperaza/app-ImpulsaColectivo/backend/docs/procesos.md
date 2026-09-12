@@ -861,3 +861,9 @@ Business — Contributors
 #### 12.4 — `src/features/business/contributions/infrastructure/persistence/models/contribution.model.ts`
 
 ![](images/clipboard-551029442.png)
+
+#### 12.5 — `src/features/business/contributions/infrastructure/persistence/repositories/contribution.repository.ts`
+
+![](images/clipboard-2937193757.png)
+
+![](images/clipboard-1747903165.png)
