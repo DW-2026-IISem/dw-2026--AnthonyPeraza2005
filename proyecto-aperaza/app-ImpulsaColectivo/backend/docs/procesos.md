@@ -1013,3 +1013,7 @@ Business — Contributors
 #### 13.14 — `src/features/business/payment-transactions/application/use-cases/create-payment-transaction.use-case.ts`
 
 ![](images/clipboard-2758351644.png)
+
+#### 13.15 — `src/features/business/payment-transactions/application/use-cases/update-payment-transaction.use-case.ts`
+
+![](images/clipboard-832688730.png)
