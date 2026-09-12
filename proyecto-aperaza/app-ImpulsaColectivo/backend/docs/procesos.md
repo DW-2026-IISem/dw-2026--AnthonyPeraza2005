@@ -1095,3 +1095,7 @@ Business — Contributors
 #### 14.6 — `src/features/business/commissions/infrastructure/persistence/migrations/create-commissions-table.migration.ts`
 
 ![](images/clipboard-2047576105.png)
+
+#### 14.7 — `src/features/business/commissions/infrastructure/persistence/seeders/commissions.seeder.ts`
+
+![](images/clipboard-2347100364.png)
