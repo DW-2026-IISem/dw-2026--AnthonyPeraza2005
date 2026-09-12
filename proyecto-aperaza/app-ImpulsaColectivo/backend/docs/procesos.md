@@ -977,3 +977,7 @@ Business — Contributors
 #### 13.5 — `src/features/business/payment-transactions/infrastructure/persistence/models/payment-transaction.model.ts`
 
 ![](images/clipboard-1854164058.png)
+
+#### 13.6 — `src/features/business/payment-transactions/infrastructure/persistence/repositories/payment-transaction.repository.ts`
+
+![](images/clipboard-1093233609.png)
