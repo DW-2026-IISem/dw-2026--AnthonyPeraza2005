@@ -395,3 +395,7 @@
 7.23 — Actualizar `src/features/business/business.module.ts`
 
 ![](images/clipboard-238755774.png)
+
+7.24 — Actualizar `src/infrastructure/database/seeders/database-seeder.service.ts`
+
+![](images/clipboard-3535617829.png)
