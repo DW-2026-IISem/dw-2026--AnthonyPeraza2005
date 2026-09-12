@@ -839,3 +839,13 @@ Business — Contributors
 #### 11.25 — Verificar tabla física `rewards` y API
 
 ![![](images/clipboard-4089245959.png)](images/clipboard-251888668.png)
+
+## FASE 12 — `11_BUSINESS_CONTRIBUTIONS`
+
+### Business — Contributions
+
+**Objetivo:** Aportes: tabla con **dos FK** (`project_id`, `contributor_id`). Un aportante financia un proyecto puntual.
+
+#### 12.1 — `src/features/business/contributions/domain/entities/contribution.entity.ts`
+
+![](images/clipboard-3701992178.png)
