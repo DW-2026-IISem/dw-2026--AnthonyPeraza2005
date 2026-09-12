@@ -903,3 +903,7 @@ Business — Contributors
 #### 12.14 — `src/features/business/contributions/application/use-cases/update-contribution.use-case.ts`
 
 ![](images/clipboard-1194189754.png)
+
+#### 12.15 — `src/features/business/contributions/application/use-cases/delete-contribution.use-case.ts`
+
+![](images/clipboard-3714015257.png)
