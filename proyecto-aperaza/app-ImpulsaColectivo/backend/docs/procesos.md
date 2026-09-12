@@ -997,3 +997,7 @@ Business — Contributors
 #### 13.10 — `src/features/business/payment-transactions/application/dto/payment-transaction-filter.dto.ts`
 
 ![](images/clipboard-1864293053.png)
+
+#### 13.11 — `src/features/business/payment-transactions/application/dto/payment-transaction-response.dto.ts`
+
+![](images/clipboard-2869001015.png)
