@@ -707,3 +707,7 @@ Business — Contributors
 #### 10.19 — `src/features/business/goals/presentation/http/controllers/goals.controller.ts`
 
 ![![](images/clipboard-236493167.png)](images/clipboard-1175961114.png)
+
+#### 10.20 — `src/features/business/goals/index.ts`
+
+![](images/clipboard-324146894.png)
