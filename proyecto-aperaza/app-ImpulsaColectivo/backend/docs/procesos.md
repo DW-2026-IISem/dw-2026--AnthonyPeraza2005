@@ -883,3 +883,7 @@ Business — Contributors
 #### 12.9 — `src/features/business/contributions/application/dto/contribution-filter.dto.ts`
 
 ![](images/clipboard-1556160342.png)
+
+#### 12.10 — `src/features/business/contributions/application/dto/contribution-response.dto.ts`
+
+![](images/clipboard-4167374541.png)
