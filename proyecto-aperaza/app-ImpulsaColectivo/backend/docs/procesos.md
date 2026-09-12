@@ -899,3 +899,7 @@ Business — Contributors
 #### 12.13 — `src/features/business/contributions/application/use-cases/create-contribution.use-case.ts`
 
 ![](images/clipboard-1786430477.png)
+
+#### 12.14 — `src/features/business/contributions/application/use-cases/update-contribution.use-case.ts`
+
+![](images/clipboard-1194189754.png)
