@@ -4,6 +4,7 @@ import { seedContributors } from '../../../features/business/contributors/infras
 import { seedProjects } from '../../../features/business/projects/infrastructure/persistence/seeders/projects.seeder';
 import { seedGoals } from '../../../features/business/goals/infrastructure/persistence/seeders/goals.seeder';
 import { seedRewards } from '../../../features/business/rewards/infrastructure/persistence/seeders/rewards.seeder';
+import { seedContributions } from '../../../features/business/contributions/infrastructure/persistence/seeders/contributions.seeder';
 
 @Injectable()
 export class DatabaseSeederService implements OnModuleInit {
@@ -20,6 +21,7 @@ export class DatabaseSeederService implements OnModuleInit {
       await seedProjects();
       await seedGoals();
       await seedRewards();
+      await seedContributions();
       this.logger.log('✅ Seeders ejecutados');
     } catch (error: any) {
       this.logger.error(`❌ Error en seeders: ${error.message}`, error.stack);
