@@ -1043,3 +1043,7 @@ Business — Contributors
 #### 13.21 — `src/features/business/payment-transactions/index.ts`
 
 ![](images/clipboard-2018766772.png)
+
+#### 13.22 — `src/features/business/payment-transactions/payment-transactions.module.ts`
+
+![](images/clipboard-1254371299.png)
