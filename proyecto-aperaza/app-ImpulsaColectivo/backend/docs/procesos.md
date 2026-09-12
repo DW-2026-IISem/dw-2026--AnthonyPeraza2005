@@ -635,3 +635,7 @@ Business — Contributors
 #### 10.1 — `src/features/business/goals/domain/entities/goal.entity.ts`
 
 ![](images/clipboard-2202220099.png)
+
+#### 10.2 — `src/features/business/goals/domain/exceptions/goal-not-found.exception.ts`
+
+![](images/clipboard-156216992.png)
