@@ -951,3 +951,13 @@ Business — Contributors
 ![](images/clipboard-1144117544.png)
 
 ![](images/clipboard-1186050355.png)
+
+## FASE 13 — `12_BUSINESS_PAYMENT_TRANSACTIONS`
+
+### Business — PaymentTransactions
+
+> **Objetivo:** Transacciones de pago asociadas a un aporte (`reference_id` → `contributions.id`). **Primera entidad tipo "referencia"**: sin `is_active` ni timestamps, con el enum compartido `TransactionStatus`, tal como define el diagrama ER.
+
+#### 13.1 — `src/common/enums/transaction-status.enum.ts`
+
+![](images/clipboard-1988340260.png)
