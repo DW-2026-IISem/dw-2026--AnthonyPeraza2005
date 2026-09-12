@@ -625,3 +625,13 @@ Business — Contributors
 ![](images/clipboard-924348428.png)
 
 ![](images/clipboard-3478449420.png)
+
+## FASE 10 — `09_BUSINESS_GOALS`
+
+### Business — Goals
+
+**Objetivo:** Metas de recaudación de un proyecto. Depende de Projects (FK `project_id`). Mismo patrón que Fase 9.
+
+#### 10.1 — `src/features/business/goals/domain/entities/goal.entity.ts`
+
+![](images/clipboard-2202220099.png)
