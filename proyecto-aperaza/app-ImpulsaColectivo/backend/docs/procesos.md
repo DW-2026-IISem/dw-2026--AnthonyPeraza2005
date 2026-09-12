@@ -543,3 +543,7 @@ Business — Contributors
 9.5 — `src/features/business/projects/infrastructure/persistence/repositories/project.repository.ts`
 
 ![](images/clipboard-1547355424.png)
+
+9.6 — `src/features/business/projects/infrastructure/persistence/migrations/create-projects-table.migration.ts`
+
+![](images/clipboard-3030278572.png)
