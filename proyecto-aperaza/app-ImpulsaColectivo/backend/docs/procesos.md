@@ -793,3 +793,7 @@ Business — Contributors
 #### 11.14 — `src/features/business/rewards/application/use-cases/update-reward.use-case.ts .`
 
 ![](images/clipboard-1881721117.png)
+
+#### 11.15 — `src/features/business/rewards/application/use-cases/delete-reward.use-case.ts`
+
+![](images/clipboard-3546520187.png)
