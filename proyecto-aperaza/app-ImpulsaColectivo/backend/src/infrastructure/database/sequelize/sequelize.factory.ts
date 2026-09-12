@@ -7,6 +7,7 @@ import { ContributorModel } from '../../../features/business/contributors/infras
 import { ProjectModel } from '../../../features/business/projects/infrastructure/persistence/models/project.model';
 import { GoalModel } from '../../../features/business/goals/infrastructure/persistence/models/goal.model';
 import { RewardModel } from '../../../features/business/rewards/infrastructure/persistence/models/reward.model';
+import { ContributionModel } from '../../../features/business/contributions/infrastructure/persistence/models/contribution.model';
 
 export const ALL_MODELS = [
   PromoterModel,
@@ -14,6 +15,7 @@ export const ALL_MODELS = [
   ProjectModel,
   GoalModel,
   RewardModel,
+  ContributionModel,
 ];
 
 export async function createSequelizeInstance(
