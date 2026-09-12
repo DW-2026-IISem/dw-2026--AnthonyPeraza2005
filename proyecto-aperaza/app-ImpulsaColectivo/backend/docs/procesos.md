@@ -445,3 +445,7 @@ Business — Contributors
 8.7 — `src/features/business/contributors/infrastructure/persistence/seeders/contributors.seeder.ts`
 
 ![](images/clipboard-2424774231.png)
+
+8.8 — `src/features/business/contributors/application/dto/create-contributor.dto.ts`
+
+![](images/clipboard-2410282108.png)
