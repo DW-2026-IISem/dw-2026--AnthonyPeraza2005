@@ -1131,3 +1131,7 @@ Business — Contributors
 #### 14.15 — `src/features/business/commissions/application/use-cases/delete-commission.use-case.ts`
 
 ![](images/clipboard-3262735928.png)
+
+#### 14.16 — `src/features/business/commissions/application/use-cases/get-commission.use-case.ts`
+
+![](images/clipboard-2111969551.png)
