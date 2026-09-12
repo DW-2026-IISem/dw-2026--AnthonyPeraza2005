@@ -965,3 +965,7 @@ Business — Contributors
 #### 13.2 — `src/features/business/payment-transactions/domain/entities/payment-transaction.entity.ts`
 
 ![](images/clipboard-1398595724.png)
+
+#### 13.3 — `src/features/business/payment-transactions/domain/exceptions/payment-transaction-not-found.exception.ts`
+
+![](images/clipboard-3595085288.png)
