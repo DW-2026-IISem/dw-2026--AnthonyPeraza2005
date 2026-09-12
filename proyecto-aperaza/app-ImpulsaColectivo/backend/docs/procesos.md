@@ -765,3 +765,11 @@ Business — Contributors
 #### 11.7 — `src/features/business/rewards/infrastructure/persistence/seeders/rewards.seeder.ts`
 
 ![](images/clipboard-3315016178.png)
+
+#### 11.8 — `src/features/business/rewards/application/dto/create-reward.dto.ts`
+
+![](images/clipboard-916457580.png)
+
+#### 11.9 — `src/features/business/rewards/application/dto/reward-filter.dto.ts`
+
+![](images/clipboard-2344728370.png)
