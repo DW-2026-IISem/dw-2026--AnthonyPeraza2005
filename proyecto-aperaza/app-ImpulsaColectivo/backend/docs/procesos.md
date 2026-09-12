@@ -643,3 +643,7 @@ Business — Contributors
 #### 10.3 — `src/features/business/goals/domain/interfaces/goal-repository.interface.ts`
 
 ![](images/clipboard-2152778415.png)
+
+#### 10.4 — `src/features/business/goals/infrastructure/persistence/models/goal.model.ts`
+
+![](images/clipboard-975960414.png)
