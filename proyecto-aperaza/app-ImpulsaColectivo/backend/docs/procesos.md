@@ -849,3 +849,7 @@ Business — Contributors
 #### 12.1 — `src/features/business/contributions/domain/entities/contribution.entity.ts`
 
 ![](images/clipboard-3701992178.png)
+
+#### 12.2 — `src/features/business/contributions/domain/exceptions/contribution-not-found.exception.ts`
+
+![](images/clipboard-1105602812.png)
