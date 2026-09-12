@@ -38,11 +38,7 @@ export class Promoter {
     return new Promoter(props);
   }
 
-  update(
-    props: Partial
-      Omit<PromoterProps, 'id' | 'isActive' | 'createdAt' | 'updatedAt'>
-    >,
-  ): void {
+  update(props: Partial<Omit<PromoterProps, 'id' | 'isActive' | 'createdAt' | 'updatedAt'>>): void {
     if (props.name !== undefined) {
       if (!props.name.trim()) {
         throw new Error('El nombre del promotor es requerido');

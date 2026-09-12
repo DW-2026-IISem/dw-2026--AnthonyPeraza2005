@@ -314,92 +314,100 @@
 
 ![](images/clipboard-1760238312.png)
 
-7.3 — `src/features/business/promoters/domain/interfaces/promoter-repository.interface.ts`
+#### 7.3 — `src/features/business/promoters/domain/interfaces/promoter-repository.interface.ts`
 
 ![](images/clipboard-1707378739.png)
 
-7.4 — `src/features/business/promoters/infrastructure/persistence/models/promoter.model.ts`
+#### 7.4 — `src/features/business/promoters/infrastructure/persistence/models/promoter.model.ts`
 
 ![](images/clipboard-995739627.png)
 
-7.5\_`src/features/business/promoters/infrastructure/persistence/repositories/promoter.repository.ts`
+#### 7.5\_`src/features/business/promoters/infrastructure/persistence/repositories/promoter.repository.ts`
 
 ![](images/clipboard-2019723428.png)
 
-7.6 — `src/features/business/promoters/infrastructure/persistence/migrations/create-promoters-table.migration.ts`
+#### 7.6 — `src/features/business/promoters/infrastructure/persistence/migrations/create-promoters-table.migration.ts`
 
-![7.7\_`src/features/business/promoters/infrastructure/persistence/seeders/promoters.seeder.ts`](images/clipboard-1700906474.png)
+![](images/clipboard-1700906474.png)
+
+#### **7.7 — features/business/clients/infrastructure/persistence/models/client.model.ts**
 
 ![](images/clipboard-3207605306.png)
 
-7.8 — `src/features/business/promoters/application/dto/create-promoter.dto.ts`
+#### 7.8 — `src/features/business/promoters/application/dto/create-promoter.dto.ts`
 
 ![](images/clipboard-141300446.png)
 
-7.9 — `src/features/business/promoters/application/dto/promoter-filter.dto.ts`
+#### 7.9 — `src/features/business/promoters/application/dto/promoter-filter.dto.ts`
 
 ![](images/clipboard-1719997845.png)
 
-7.10 — `src/features/business/promoters/application/dto/promoter-response.dto.ts`
+#### 7.10 — `src/features/business/promoters/application/dto/promoter-response.dto.ts`
 
 ![](images/clipboard-3184120013.png)
 
-7.11 — `src/features/business/promoters/application/dto/update-promoter.dto.ts`
+#### 7.11 — `src/features/business/promoters/application/dto/update-promoter.dto.ts`
 
 ![](images/clipboard-414748990.png)
 
-7.12 — `src/features/business/promoters/application/mappers/promoter.mapper.ts`
+#### 7.12 — `src/features/business/promoters/application/mappers/promoter.mapper.ts`
 
 ![](images/clipboard-3903351769.png)
 
-7.13 — `src/features/business/promoters/application/use-cases/create-promoter.use-case.ts`
+#### 7.13 — `src/features/business/promoters/application/use-cases/create-promoter.use-case.ts`
 
 ![](images/clipboard-1696874253.png)
 
-7.14 — `src/features/business/promoters/application/use-cases/update-promoter.use-case.ts`
+#### 7.14 — `src/features/business/promoters/application/use-cases/update-promoter.use-case.ts`
 
 ![](images/clipboard-2089165522.png)
 
-7.15 — `src/features/business/promoters/application/use-cases/delete-promoter.use-case.ts`
+#### 7.15 — `src/features/business/promoters/application/use-cases/delete-promoter.use-case.ts`
 
 ![](images/clipboard-1243332194.png)
 
-7.16 — `src/features/business/promoters/application/use-cases/get-promoter.use-case.ts`
+#### 7.16 — `src/features/business/promoters/application/use-cases/get-promoter.use-case.ts`
 
 ![](images/clipboard-1681272611.png)
 
-7.17 — `src/features/business/promoters/application/use-cases/list-promoters.use-case.ts`
+#### 7.17 — `src/features/business/promoters/application/use-cases/list-promoters.use-case.ts`
 
 ![](images/clipboard-1015954101.png)
 
-7.18 — `src/features/business/promoters/presentation/http/serializers/promoter.serializer.ts`
+#### 7.18 — `src/features/business/promoters/presentation/http/serializers/promoter.serializer.ts`
 
 ![](images/clipboard-3406794814.png)
 
-7.19 — `src/features/business/promoters/presentation/http/controllers/promoters.controller.ts`
+#### 7.19 — `src/features/business/promoters/presentation/http/controllers/promoters.controller.ts`
 
 ![](images/clipboard-3534351724.png)
 
-7.20 — `src/features/business/promoters/index.ts`
+#### 7.20 — `src/features/business/promoters/index.ts`
 
 ![](images/clipboard-1088688832.png)
 
-7.21 — `src/features/business/promoters/promoters.module.ts`
+#### 7.21 — `src/features/business/promoters/promoters.module.ts`
 
 ![](images/clipboard-732453404.png)
 
-7.22 — Actualizar `src/infrastructure/database/sequelize/sequelize.factory.ts`
+#### 7.22 — Actualizar `src/infrastructure/database/sequelize/sequelize.factory.ts`
 
 ![](images/clipboard-111842603.png)
 
-7.23 — Actualizar `src/features/business/business.module.ts`
+#### 7.23 — Actualizar `src/features/business/business.module.ts`
 
 ![](images/clipboard-238755774.png)
 
-7.24 — Actualizar `src/infrastructure/database/seeders/database-seeder.service.ts`
+#### 7.24 — Actualizar `src/infrastructure/database/seeders/database-seeder.service.ts`
 
 ![](images/clipboard-3535617829.png)
 
-7.25 — Actualizar `src/app.module.ts`
+#### 7.25 — Actualizar `src/app.module.ts`
 
 ![](images/clipboard-1692360423.png)
+
+#### 7.26 — Verificar tabla física `promoters` y API
+
+![](images/clipboard-146409942.png)
+
+![](images/clipboard-1928258576.png)
