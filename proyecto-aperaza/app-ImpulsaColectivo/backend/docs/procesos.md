@@ -675,3 +675,7 @@ Business — Contributors
 #### 10.11 — `src/features/business/goals/application/dto/update-goal.dto.ts`
 
 ![](images/clipboard-579208678.png)
+
+#### 10.12 — `src/features/business/goals/application/mappers/goal.mapper.ts`
+
+![](images/clipboard-2886159043.png)
