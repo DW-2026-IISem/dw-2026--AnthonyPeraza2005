@@ -535,3 +535,7 @@ Business — Contributors
 9.3 — `src/features/business/projects/domain/interfaces/project-repository.interface.ts`
 
 ![](images/clipboard-4103686351.png)
+
+9.4 — `src/features/business/projects/infrastructure/persistence/models/project.model.ts`
+
+![](images/clipboard-334027963.png)
