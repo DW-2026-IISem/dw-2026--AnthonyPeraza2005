@@ -731,3 +731,13 @@ Business — Contributors
 #### 10.25 — Verificar tabla física `goals` y API
 
 ![![](images/clipboard-1525523701.png)](images/clipboard-3758205355.png)
+
+## FASE 11 — `10_BUSINESS_REWARDS`
+
+### Business — Rewards
+
+**Objetivo:** Recompensas ofrecidas por un proyecto a quienes aportan. Depende de Projects (FK `project_id`). Mismo patrón que Goals.
+
+#### 11.1 — `src/features/business/rewards/domain/entities/reward.entity.ts`
+
+![](images/clipboard-2761689289.png)
