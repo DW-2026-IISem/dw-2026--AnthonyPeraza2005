@@ -785,3 +785,11 @@ Business — Contributors
 #### 11.12 — `src/features/business/rewards/application/mappers/reward.mapper.ts`
 
 ![](images/clipboard-4084199948.png)
+
+#### 11.13 — `src/features/business/rewards/application/use-cases/create-reward.use-case.ts`
+
+![](images/clipboard-3556707886.png)
+
+#### 11.14 — `src/features/business/rewards/application/use-cases/update-reward.use-case.ts`
+
+![](images/clipboard-1881721117.png)
