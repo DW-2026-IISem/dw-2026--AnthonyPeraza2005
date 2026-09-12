@@ -505,3 +505,7 @@ Business — Contributors
 8.22 — Actualizar `src/infrastructure/database/sequelize/sequelize.factory.ts`
 
 ![](images/clipboard-2319262057.png)
+
+8.23 — Actualizar `src/features/business/business.module.ts`
+
+![](images/clipboard-1309402994.png)
