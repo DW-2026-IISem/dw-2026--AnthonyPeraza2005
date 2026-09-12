@@ -781,3 +781,7 @@ Business — Contributors
 #### 11.11 — `src/features/business/rewards/application/dto/update-reward.dto.ts`
 
 ![](images/clipboard-617158129.png)
+
+#### 11.12 — `src/features/business/rewards/application/mappers/reward.mapper.ts`
+
+![](images/clipboard-4084199948.png)
