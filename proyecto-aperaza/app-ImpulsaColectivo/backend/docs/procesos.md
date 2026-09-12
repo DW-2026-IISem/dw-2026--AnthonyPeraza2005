@@ -528,90 +528,94 @@ Business — Contributors
 
 ![](images/clipboard-1845073353.png)
 
-9.2 — `src/features/business/projects/domain/exceptions/project-not-found.exception.ts`
+#### 9.2 — `src/features/business/projects/domain/exceptions/project-not-found.exception.ts`
 
 ![](images/clipboard-4217577174.png)
 
-9.3 — `src/features/business/projects/domain/interfaces/project-repository.interface.ts`
+#### 9.3 — `src/features/business/projects/domain/interfaces/project-repository.interface.ts`
 
 ![](images/clipboard-4103686351.png)
 
-9.4 — `src/features/business/projects/infrastructure/persistence/models/project.model.ts`
+#### 9.4 — `src/features/business/projects/infrastructure/persistence/models/project.model.ts`
 
 ![](images/clipboard-334027963.png)
 
-9.5 — `src/features/business/projects/infrastructure/persistence/repositories/project.repository.ts`
+#### 9.5 — `src/features/business/projects/infrastructure/persistence/repositories/project.repository.ts`
 
 ![](images/clipboard-1547355424.png)
 
-9.6 — `src/features/business/projects/infrastructure/persistence/migrations/create-projects-table.migration.ts`
+#### 9.6 — `src/features/business/projects/infrastructure/persistence/migrations/create-projects-table.migration.ts`
 
 ![](images/clipboard-3030278572.png)
 
-9.7 — `src/features/business/projects/infrastructure/persistence/seeders/projects.seeder.ts`
+#### 9.7 — `src/features/business/projects/infrastructure/persistence/seeders/projects.seeder.ts`
 
 ![](images/clipboard-996248995.png)
 
-9.8 — `src/features/business/projects/application/dto/create-project.dto.ts`
+#### 9.8 — `src/features/business/projects/application/dto/create-project.dto.ts`
 
 ![](images/clipboard-2492043763.png)
 
-9.9 — `src/features/business/projects/application/dto/project-filter.dto.ts`
+#### 9.9 — `src/features/business/projects/application/dto/project-filter.dto.ts`
 
 ![](images/clipboard-2239571891.png)
 
-9.10 — `src/features/business/projects/application/dto/project-response.dto.ts`
+#### 9.10 — `src/features/business/projects/application/dto/project-response.dto.ts`
 
 ![](images/clipboard-242660906.png)
 
-9.11 — `src/features/business/projects/application/dto/update-project.dto.ts`
+#### 9.11 — `src/features/business/projects/application/dto/update-project.dto.ts`
 
 ![](images/clipboard-2314940772.png)
 
-9.12 — `src/features/business/projects/application/mappers/project.mapper.ts`
+#### 9.12 — `src/features/business/projects/application/mappers/project.mapper.ts`
 
 ![](images/clipboard-1627992012.png)
 
-9.13 — `src/features/business/projects/application/use-cases/create-project.use-case.ts`
+#### 9.13 — `src/features/business/projects/application/use-cases/create-project.use-case.ts`
 
 ![](images/clipboard-2694890894.png)
 
-9.14 — `src/features/business/projects/application/use-cases/update-project.use-case.ts`
+#### 9.14 — `src/features/business/projects/application/use-cases/update-project.use-case.ts`
 
 ![](images/clipboard-4084697323.png)
 
-9.15 — `src/features/business/projects/application/use-cases/delete-project.use-case.ts`
+#### 9.15 — `src/features/business/projects/application/use-cases/delete-project.use-case.ts`
 
 ![](images/clipboard-1737392189.png)
 
-9.16 — `src/features/business/projects/application/use-cases/get-project.use-case.ts`
+#### 9.16 — `src/features/business/projects/application/use-cases/get-project.use-case.ts`
 
 ![](images/clipboard-1465179784.png)
 
-9.17 — `src/features/business/projects/application/use-cases/list-projects.use-case.ts`
+#### 9.17 — `src/features/business/projects/application/use-cases/list-projects.use-case.ts`
 
 ![](images/clipboard-1373214586.png)
 
-9.18 — `src/features/business/projects/presentation/http/serializers/project.serializer.ts`
+#### 9.18 — `src/features/business/projects/presentation/http/serializers/project.serializer.ts`
 
 ![](images/clipboard-462442617.png)
 
-9.19 — `src/features/business/projects/presentation/http/controllers/projects.controller.ts`
+#### 9.19 — `src/features/business/projects/presentation/http/controllers/projects.controller.ts`
 
 ![](images/clipboard-1068175742.png)
 
-9.20 — `src/features/business/projects/index.ts`
+#### 9.20 — `src/features/business/projects/index.ts`
 
 ![](images/clipboard-753565198.png)
 
-9.21 — `src/features/business/projects/projects.module.ts`
+#### 9.21 — `src/features/business/projects/projects.module.ts`
 
 ![](images/clipboard-1862888866.png)
 
-9.22 — Actualizar `src/infrastructure/database/sequelize/sequelize.factory.ts`
+#### 9.22 — Actualizar `src/infrastructure/database/sequelize/sequelize.factory.ts`
 
 ![](images/clipboard-2972075948.png)
 
-9.23 — Actualizar `src/features/business/business.module.ts`
+#### 9.23 — Actualizar `src/features/business/business.module.ts`
 
 ![](images/clipboard-4201042367.png)
+
+#### 9.24 — Actualizar `src/infrastructure/database/seeders/database-seeder.service.ts`
+
+![](images/clipboard-921114024.png)
