@@ -1087,3 +1087,7 @@ Business — Contributors
 #### 14.4 — `src/features/business/commissions/infrastructure/persistence/models/commission.model.ts`
 
 ![](images/clipboard-3239872964.png)
+
+#### 14.5 — `src/features/business/commissions/infrastructure/persistence/repositories/commission.repository.ts`
+
+![](images/clipboard-1156151946.png)
