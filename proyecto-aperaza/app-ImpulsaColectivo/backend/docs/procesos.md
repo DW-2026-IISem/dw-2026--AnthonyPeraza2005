@@ -761,3 +761,7 @@ Business — Contributors
 #### 11.6 — `src/features/business/rewards/infrastructure/persistence/migrations/create-rewards-table.migration.ts`
 
 ![](images/clipboard-1771806234.png)
+
+#### 11.7 — `src/features/business/rewards/infrastructure/persistence/seeders/rewards.seeder.ts`
+
+![](images/clipboard-3315016178.png)
