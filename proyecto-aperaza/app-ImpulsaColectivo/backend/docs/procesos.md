@@ -919,3 +919,9 @@ Business — Contributors
 #### 12.18 — `src/features/business/contributions/presentation/http/serializers/contribution.serializer.ts`
 
 ![](images/clipboard-3746959925.png)
+
+#### 12.19 — `src/features/business/contributions/presentation/http/controllers/contributions.controller.ts`
+
+![](images/clipboard-1547042736.png)
+
+![](images/clipboard-67358380.png)
