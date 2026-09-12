@@ -711,3 +711,7 @@ Business — Contributors
 #### 10.20 — `src/features/business/goals/index.ts`
 
 ![](images/clipboard-324146894.png)
+
+#### 10.21 — `src/features/business/goals/goals.module.ts`
+
+![](images/clipboard-2929349306.png)
