@@ -481,3 +481,7 @@ Business — Contributors
 8.16 — `src/features/business/contributors/application/use-cases/get-contributor.use-case.ts`
 
 ![](images/clipboard-3354145099.png)
+
+8.17 — `src/features/business/contributors/application/use-cases/list-contributors.use-case.ts`
+
+![](images/clipboard-3116100451.png)
