@@ -1009,3 +1009,7 @@ Business — Contributors
 #### 13.13 — `src/features/business/payment-transactions/application/mappers/payment-transaction.mapper.ts`
 
 ![](images/clipboard-4124060194.png)
+
+#### 13.14 — `src/features/business/payment-transactions/application/use-cases/create-payment-transaction.use-case.ts`
+
+![](images/clipboard-2758351644.png)
