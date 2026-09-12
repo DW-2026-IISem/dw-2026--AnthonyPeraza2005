@@ -383,3 +383,11 @@
 7.20 — `src/features/business/promoters/index.ts`
 
 ![](images/clipboard-1088688832.png)
+
+7.21 — `src/features/business/promoters/promoters.module.ts`
+
+![](images/clipboard-732453404.png)
+
+7.22 — Actualizar `src/infrastructure/database/sequelize/sequelize.factory.ts`
+
+![](images/clipboard-111842603.png)
