@@ -871,3 +871,7 @@ Business — Contributors
 #### 12.6 — `src/features/business/contributions/infrastructure/persistence/migrations/create-contributions-table.migration.ts`
 
 ![](images/clipboard-1314161769.png)
+
+#### 12.7 — `src/features/business/contributions/infrastructure/persistence/seeders/contributions.seeder.ts`
+
+![](images/clipboard-3755122297.png)
