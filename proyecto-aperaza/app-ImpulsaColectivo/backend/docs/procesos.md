@@ -461,3 +461,11 @@ Business — Contributors
 8.11 — `src/features/business/contributors/application/dto/update-contributor.dto.ts`
 
 ![](images/clipboard-1145441385.png)
+
+8.12 — `src/features/business/contributors/application/mappers/contributor.mapper.ts`
+
+![](images/clipboard-2765080833.png)
+
+8.13 — `src/features/business/contributors/application/use-cases/create-contributor.use-case.ts`
+
+![](images/clipboard-3622654723.png)
