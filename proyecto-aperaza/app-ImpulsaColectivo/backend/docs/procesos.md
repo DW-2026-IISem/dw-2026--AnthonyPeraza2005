@@ -1001,3 +1001,7 @@ Business — Contributors
 #### 13.11 — `src/features/business/payment-transactions/application/dto/payment-transaction-response.dto.ts`
 
 ![](images/clipboard-2869001015.png)
+
+#### 13.12 — `src/features/business/payment-transactions/application/dto/update-payment-transaction.dto.ts`
+
+![](images/clipboard-2415076707.png)
