@@ -805,3 +805,7 @@ Business — Contributors
 #### 11.17 — `src/features/business/rewards/application/use-cases/list-rewards.use-case.ts`
 
 ![](images/clipboard-2371161457.png)
+
+#### 11.18 — `src/features/business/rewards/presentation/http/serializers/reward.serializer.ts`
+
+![](images/clipboard-3701415373.png)
