@@ -599,3 +599,7 @@ Business — Contributors
 9.19 — `src/features/business/projects/presentation/http/controllers/projects.controller.ts`
 
 ![](images/clipboard-1068175742.png)
+
+9.20 — `src/features/business/projects/index.ts`
+
+![](images/clipboard-753565198.png)
