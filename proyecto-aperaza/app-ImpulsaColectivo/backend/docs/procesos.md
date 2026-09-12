@@ -485,3 +485,11 @@ Business — Contributors
 8.17 — `src/features/business/contributors/application/use-cases/list-contributors.use-case.ts`
 
 ![](images/clipboard-3116100451.png)
+
+##### 8.18 — `src/features/business/contributors/presentation/http/serializers/contributor.serializer.ts`
+
+![](images/clipboard-4269020732.png)
+
+##### 8.19 — `src/features/business/contributors/presentation/http/controllers/contributors.controller.ts`
+
+![](images/clipboard-15766362.png)
