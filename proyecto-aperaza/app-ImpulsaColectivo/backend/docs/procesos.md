@@ -961,3 +961,7 @@ Business — Contributors
 #### 13.1 — `src/common/enums/transaction-status.enum.ts`
 
 ![](images/clipboard-1988340260.png)
+
+#### 13.2 — `src/features/business/payment-transactions/domain/entities/payment-transaction.entity.ts`
+
+![](images/clipboard-1398595724.png)
