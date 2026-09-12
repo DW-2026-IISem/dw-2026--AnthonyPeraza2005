@@ -639,3 +639,7 @@ Business — Contributors
 #### 10.2 — `src/features/business/goals/domain/exceptions/goal-not-found.exception.ts`
 
 ![](images/clipboard-156216992.png)
+
+#### 10.3 — `src/features/business/goals/domain/interfaces/goal-repository.interface.ts`
+
+![](images/clipboard-2152778415.png)
