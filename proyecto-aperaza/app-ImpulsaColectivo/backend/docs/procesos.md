@@ -651,3 +651,7 @@ Business — Contributors
 #### 10.5 — `src/features/business/goals/infrastructure/persistence/repositories/goal.repository.ts`
 
 ![](images/clipboard-2888835040.png)
+
+#### 10.6 — `src/features/business/goals/infrastructure/persistence/migrations/create-goals-table.migration.ts`
+
+![](images/clipboard-3314873736.png)
