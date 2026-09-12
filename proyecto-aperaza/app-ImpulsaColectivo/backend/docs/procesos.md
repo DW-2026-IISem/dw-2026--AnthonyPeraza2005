@@ -887,3 +887,7 @@ Business — Contributors
 #### 12.10 — `src/features/business/contributions/application/dto/contribution-response.dto.ts`
 
 ![](images/clipboard-4167374541.png)
+
+#### 12.11 — `src/features/business/contributions/application/dto/update-contribution.dto.ts`
+
+![](images/clipboard-3591040088.png)
