@@ -1021,3 +1021,7 @@ Business — Contributors
 #### 13.16 — `src/features/business/payment-transactions/application/use-cases/delete-payment-transaction.use-case.ts`
 
 ![](images/clipboard-1654797964.png)
+
+#### 13.17 — `src/features/business/payment-transactions/application/use-cases/get-payment-transaction.use-case.ts`
+
+![](images/clipboard-4118804474.png)
