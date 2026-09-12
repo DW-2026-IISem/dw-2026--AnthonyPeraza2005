@@ -1115,3 +1115,7 @@ Business — Contributors
 #### 14.11 — `src/features/business/commissions/application/dto/update-commission.dto.ts`
 
 ![](images/clipboard-2158564339.png)
+
+#### 14.12 — `src/features/business/commissions/application/mappers/commission.mapper.ts`
+
+![](images/clipboard-2136738685.png)
