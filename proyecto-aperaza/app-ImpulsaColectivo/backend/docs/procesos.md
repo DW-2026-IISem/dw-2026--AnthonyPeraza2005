@@ -819,3 +819,7 @@ Business — Contributors
 #### 11.20 — `src/features/business/rewards/index.ts`
 
 ![](images/clipboard-3851248569.png)
+
+#### 11.21 — `src/features/business/rewards/rewards.module.ts`
+
+![](images/clipboard-3059594683.png)
