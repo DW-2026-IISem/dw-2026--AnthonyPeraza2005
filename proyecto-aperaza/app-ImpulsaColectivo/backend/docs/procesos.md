@@ -493,3 +493,7 @@ Business — Contributors
 ##### 8.19 — `src/features/business/contributors/presentation/http/controllers/contributors.controller.ts`
 
 ![](images/clipboard-15766362.png)
+
+8.20 — `src/features/business/contributors/index.ts`
+
+![](images/clipboard-1604958023.png)
