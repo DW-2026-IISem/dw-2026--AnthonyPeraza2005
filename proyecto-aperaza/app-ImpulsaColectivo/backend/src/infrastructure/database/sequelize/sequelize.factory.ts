@@ -1,11 +1,11 @@
-import { createRequire } from 'node:module';
 import { Sequelize } from 'sequelize-typescript';
-import { DatabaseDialect } from '../../../config/environment/env.interface.js';
-import { getSequelizeOptions } from './sequelize.options.js';
+import { DatabaseDialect } from '../../../config/environment/env.interface';
+import { getSequelizeOptions } from './sequelize.options';
 
-const require = createRequire(import.meta.url);
+import { PromoterModel } from '../../../features/business/promoters/infrastructure/persistence/models/promoter.model';
+
 export const ALL_MODELS = [
-  // (aún sin modelos — se agregan por feature)
+  PromoterModel,
 ];
 
 export async function createSequelizeInstance(
