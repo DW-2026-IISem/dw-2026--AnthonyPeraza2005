@@ -359,3 +359,7 @@
 7.14 — `src/features/business/promoters/application/use-cases/update-promoter.use-case.ts`
 
 ![](images/clipboard-2089165522.png)
+
+7.15 — `src/features/business/promoters/application/use-cases/delete-promoter.use-case.ts`
+
+![](images/clipboard-1243332194.png)
