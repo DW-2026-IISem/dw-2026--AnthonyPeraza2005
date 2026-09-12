@@ -355,3 +355,7 @@
 7.13 — `src/features/business/promoters/application/use-cases/create-promoter.use-case.ts`
 
 ![](images/clipboard-1696874253.png)
+
+7.14 — `src/features/business/promoters/application/use-cases/update-promoter.use-case.ts`
+
+![](images/clipboard-2089165522.png)
