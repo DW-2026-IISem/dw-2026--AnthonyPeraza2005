@@ -969,3 +969,7 @@ Business — Contributors
 #### 13.3 — `src/features/business/payment-transactions/domain/exceptions/payment-transaction-not-found.exception.ts`
 
 ![](images/clipboard-3595085288.png)
+
+#### 13.4 — `src/features/business/payment-transactions/domain/interfaces/payment-transaction-repository.interface.ts`
+
+![](images/clipboard-2925478641.png)
