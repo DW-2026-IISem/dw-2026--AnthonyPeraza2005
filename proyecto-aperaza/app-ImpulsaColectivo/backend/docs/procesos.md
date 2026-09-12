@@ -679,3 +679,7 @@ Business — Contributors
 #### 10.12 — `src/features/business/goals/application/mappers/goal.mapper.ts`
 
 ![](images/clipboard-2886159043.png)
+
+#### 10.13 — `src/features/business/goals/application/use-cases/create-goal.use-case.ts`
+
+![](images/clipboard-299106657.png)
