@@ -879,3 +879,7 @@ Business — Contributors
 #### 12.8 — `src/features/business/contributions/application/dto/create-contribution.dto.ts`
 
 ![](images/clipboard-2836586480.png)
+
+#### 12.9 — `src/features/business/contributions/application/dto/contribution-filter.dto.ts`
+
+![](images/clipboard-1556160342.png)
