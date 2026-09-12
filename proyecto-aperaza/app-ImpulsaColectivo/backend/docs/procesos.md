@@ -1161,3 +1161,7 @@ Business — Contributors
 #### 14.22 — Actualizar `src/infrastructure/database/sequelize/sequelize.factory.ts`
 
 ![](images/clipboard-2543532784.png)
+
+#### 14.23 — Actualizar `src/features/business/business.module.ts`
+
+![](images/clipboard-1280742634.png)
