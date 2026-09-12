@@ -591,3 +591,7 @@ Business — Contributors
 9.17 — `src/features/business/projects/application/use-cases/list-projects.use-case.ts`
 
 ![](images/clipboard-1373214586.png)
+
+9.18 — `src/features/business/projects/presentation/http/serializers/project.serializer.ts`
+
+![](images/clipboard-462442617.png)
