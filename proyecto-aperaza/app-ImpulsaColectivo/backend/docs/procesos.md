@@ -659,3 +659,7 @@ Business — Contributors
 #### 10.7 — `src/features/business/goals/infrastructure/persistence/seeders/goals.seeder.ts`
 
 ![](images/clipboard-988176332.png)
+
+#### 10.8 — `src/features/business/goals/application/dto/create-goal.dto.ts`
+
+![](images/clipboard-2049794771.png)
