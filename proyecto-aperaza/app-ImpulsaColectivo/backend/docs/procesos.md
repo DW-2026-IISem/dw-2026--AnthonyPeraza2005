@@ -603,3 +603,7 @@ Business — Contributors
 9.20 — `src/features/business/projects/index.ts`
 
 ![](images/clipboard-753565198.png)
+
+9.21 — `src/features/business/projects/projects.module.ts`
+
+![](images/clipboard-1862888866.png)
