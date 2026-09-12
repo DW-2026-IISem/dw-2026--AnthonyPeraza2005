@@ -595,3 +595,7 @@ Business — Contributors
 9.18 — `src/features/business/projects/presentation/http/serializers/project.serializer.ts`
 
 ![](images/clipboard-462442617.png)
+
+9.19 — `src/features/business/projects/presentation/http/controllers/projects.controller.ts`
+
+![](images/clipboard-1068175742.png)
