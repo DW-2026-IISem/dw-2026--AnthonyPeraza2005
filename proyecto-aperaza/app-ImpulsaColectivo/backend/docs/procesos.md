@@ -551,3 +551,7 @@ Business — Contributors
 9.7 — `src/features/business/projects/infrastructure/persistence/seeders/projects.seeder.ts`
 
 ![](images/clipboard-996248995.png)
+
+9.8 — `src/features/business/projects/application/dto/create-project.dto.ts`
+
+![](images/clipboard-2492043763.png)
