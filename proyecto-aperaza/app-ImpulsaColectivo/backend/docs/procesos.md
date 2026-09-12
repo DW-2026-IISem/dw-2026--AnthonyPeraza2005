@@ -875,3 +875,7 @@ Business — Contributors
 #### 12.7 — `src/features/business/contributions/infrastructure/persistence/seeders/contributions.seeder.ts`
 
 ![](images/clipboard-3755122297.png)
+
+#### 12.8 — `src/features/business/contributions/application/dto/create-contribution.dto.ts`
+
+![](images/clipboard-2836586480.png)
