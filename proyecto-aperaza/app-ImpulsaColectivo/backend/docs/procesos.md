@@ -895,3 +895,7 @@ Business — Contributors
 #### 12.12 — `src/features/business/contributions/application/mappers/contribution.mapper.ts`
 
 ![](images/clipboard-785874811.png)
+
+#### 12.13 — `src/features/business/contributions/application/use-cases/create-contribution.use-case.ts`
+
+![](images/clipboard-1786430477.png)
