@@ -579,3 +579,7 @@ Business — Contributors
 9.14 — `src/features/business/projects/application/use-cases/update-project.use-case.ts`
 
 ![](images/clipboard-4084697323.png)
+
+9.15 — `src/features/business/projects/application/use-cases/delete-project.use-case.ts`
+
+![](images/clipboard-1737392189.png)
