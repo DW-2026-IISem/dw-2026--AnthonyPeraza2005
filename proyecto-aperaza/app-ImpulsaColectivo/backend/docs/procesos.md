@@ -571,3 +571,7 @@ Business — Contributors
 9.12 — `src/features/business/projects/application/mappers/project.mapper.ts`
 
 ![](images/clipboard-1627992012.png)
+
+9.13 — `src/features/business/projects/application/use-cases/create-project.use-case.ts`
+
+![](images/clipboard-2694890894.png)
