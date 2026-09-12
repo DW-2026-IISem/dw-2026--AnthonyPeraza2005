@@ -1119,3 +1119,7 @@ Business — Contributors
 #### 14.12 — `src/features/business/commissions/application/mappers/commission.mapper.ts`
 
 ![](images/clipboard-2136738685.png)
+
+#### 14.13 — `src/features/business/commissions/application/use-cases/create-commission.use-case.ts`
+
+![](images/clipboard-1444699653.png)
