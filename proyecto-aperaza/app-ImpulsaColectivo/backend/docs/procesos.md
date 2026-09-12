@@ -823,3 +823,7 @@ Business — Contributors
 #### 11.21 — `src/features/business/rewards/rewards.module.ts`
 
 ![](images/clipboard-3059594683.png)
+
+#### 11.22 — Actualizar `src/infrastructure/database/sequelize/sequelize.factory.ts`
+
+![](images/clipboard-4225111310.png)
