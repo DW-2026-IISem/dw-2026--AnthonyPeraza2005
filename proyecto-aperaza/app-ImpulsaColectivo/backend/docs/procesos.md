@@ -421,3 +421,11 @@ Business — Contributors
 #### 8.1 — `src/features/business/contributors/domain/entities/contributor.entity.ts`
 
 ![](images/clipboard-3130018716.png)
+
+8.2 — `src/features/business/contributors/domain/exceptions/contributor-not-found.exception.ts`
+
+![](images/clipboard-1256117032.png)
+
+8.3 — `src/features/business/contributors/domain/interfaces/contributor-repository.interface.ts`
+
+![](images/clipboard-2116007091.png)
