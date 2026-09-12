@@ -411,3 +411,13 @@
 ![](images/clipboard-146409942.png)
 
 ![](images/clipboard-1928258576.png)
+
+## FASE 8 — `07_BUSINESS_CONTRIBUTORS`
+
+Business — Contributors
+
+**Objetivo:** Catálogo de aportantes (personas que financian proyectos). Misma plantilla que Promoters, sin FK.
+
+#### 8.1 — `src/features/business/contributors/domain/entities/contributor.entity.ts`
+
+![](images/clipboard-3130018716.png)
