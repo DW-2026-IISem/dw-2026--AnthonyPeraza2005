@@ -1005,3 +1005,7 @@ Business — Contributors
 #### 13.12 — `src/features/business/payment-transactions/application/dto/update-payment-transaction.dto.ts`
 
 ![](images/clipboard-2415076707.png)
+
+#### 13.13 — `src/features/business/payment-transactions/application/mappers/payment-transaction.mapper.ts`
+
+![](images/clipboard-4124060194.png)
