@@ -911,3 +911,7 @@ Business — Contributors
 #### 12.16 — `src/features/business/contributions/application/use-cases/get-contribution.use-case.ts`
 
 ![](images/clipboard-2966073735.png)
+
+#### 12.17 — `src/features/business/contributions/application/use-cases/list-contributions.use-case.ts`
+
+![](images/clipboard-2066559063.png)
