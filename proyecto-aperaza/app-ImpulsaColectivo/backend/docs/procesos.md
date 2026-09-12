@@ -619,3 +619,9 @@ Business — Contributors
 #### 9.24 — Actualizar `src/infrastructure/database/seeders/database-seeder.service.ts`
 
 ![](images/clipboard-921114024.png)
+
+#### 9.25 — Verificar tabla física `projects` y API
+
+![](images/clipboard-924348428.png)
+
+![](images/clipboard-3478449420.png)
