@@ -517,3 +517,13 @@ Business — Contributors
 #### 8.25 — Verificar tabla física `contributors` y API
 
 ![](images/clipboard-3462555057.png)
+
+## FASE 9 — `08_BUSINESS_PROJECTS`
+
+### Business — Projects
+
+**Objetivo:** Proyectos (campañas) dependen de Promoters (FK `promoter_id`). El modelo usa `require()` lazy para evitar ciclos.
+
+#### 9.1 — `src/features/business/projects/domain/entities/project.entity.ts`
+
+![](images/clipboard-1845073353.png)
