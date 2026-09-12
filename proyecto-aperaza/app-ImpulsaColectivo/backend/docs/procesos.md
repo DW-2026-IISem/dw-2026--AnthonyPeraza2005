@@ -667,3 +667,7 @@ Business — Contributors
 #### 10.9 — `src/features/business/goals/application/dto/goal-filter.dto.ts`
 
 ![](images/clipboard-2119452099.png)
+
+#### 10.10 — `src/features/business/goals/application/dto/goal-response.dto.ts`
+
+![](images/clipboard-4146201709.png)
