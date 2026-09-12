@@ -1075,3 +1075,7 @@ Business — Contributors
 #### 14.1 — `src/features/business/commissions/domain/entities/commission.entity.ts`
 
 ![](images/clipboard-4026959263.png)
+
+#### 14.2 — `src/features/business/commissions/domain/exceptions/commission-not-found.exception.ts`
+
+![](images/clipboard-424405349.png)
