@@ -773,3 +773,7 @@ Business — Contributors
 #### 11.9 — `src/features/business/rewards/application/dto/reward-filter.dto.ts`
 
 ![](images/clipboard-2344728370.png)
+
+#### 11.10 — `src/features/business/rewards/application/dto/reward-response.dto.ts`
+
+![](images/clipboard-2916945207.png)
