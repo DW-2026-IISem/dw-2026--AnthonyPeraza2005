@@ -527,3 +527,7 @@ Business — Contributors
 #### 9.1 — `src/features/business/projects/domain/entities/project.entity.ts`
 
 ![](images/clipboard-1845073353.png)
+
+9.2 — `src/features/business/projects/domain/exceptions/project-not-found.exception.ts`
+
+![](images/clipboard-4217577174.png)
