@@ -379,3 +379,7 @@
 7.19 — `src/features/business/promoters/presentation/http/controllers/promoters.controller.ts`
 
 ![](images/clipboard-3534351724.png)
+
+7.20 — `src/features/business/promoters/index.ts`
+
+![](images/clipboard-1088688832.png)
