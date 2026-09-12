@@ -1175,3 +1175,13 @@ Business — Contributors
 ![](images/clipboard-1551662354.png)
 
 ![](images/clipboard-3968945473.png)
+
+## FASE 15 — `14_BUSINESS_DISBURSEMENTS`
+
+#### Business — Disbursements
+
+> **Objetivo:** Desembolsos de fondos hacia el promotor de un proyecto. Depende de Projects (FK `project_id`). Mismo patrón que Goals/Rewards.
+
+#### 15.1 — `src/features/business/disbursements/domain/entities/disbursement.entity.ts`
+
+![](images/clipboard-2405479900.png)
