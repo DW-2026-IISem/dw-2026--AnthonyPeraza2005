@@ -891,3 +891,7 @@ Business — Contributors
 #### 12.11 — `src/features/business/contributions/application/dto/update-contribution.dto.ts`
 
 ![](images/clipboard-3591040088.png)
+
+#### 12.12 — `src/features/business/contributions/application/mappers/contribution.mapper.ts`
+
+![](images/clipboard-785874811.png)
