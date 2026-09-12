@@ -539,3 +539,7 @@ Business — Contributors
 9.4 — `src/features/business/projects/infrastructure/persistence/models/project.model.ts`
 
 ![](images/clipboard-334027963.png)
+
+9.5 — `src/features/business/projects/infrastructure/persistence/repositories/project.repository.ts`
+
+![](images/clipboard-1547355424.png)
