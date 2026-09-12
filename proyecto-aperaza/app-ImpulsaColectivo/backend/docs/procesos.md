@@ -375,3 +375,7 @@
 7.18 — `src/features/business/promoters/presentation/http/serializers/promoter.serializer.ts`
 
 ![](images/clipboard-3406794814.png)
+
+7.19 — `src/features/business/promoters/presentation/http/controllers/promoters.controller.ts`
+
+![](images/clipboard-3534351724.png)
