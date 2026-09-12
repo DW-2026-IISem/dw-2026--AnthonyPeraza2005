@@ -745,3 +745,7 @@ Business — Contributors
 #### 11.2 — `src/features/business/rewards/domain/exceptions/reward-not-found.exception.ts`
 
 ![](images/clipboard-2279710769.png)
+
+#### 11.3 — `src/features/business/rewards/domain/interfaces/reward-repository.interface.ts`
+
+![](images/clipboard-3665417030.png)
