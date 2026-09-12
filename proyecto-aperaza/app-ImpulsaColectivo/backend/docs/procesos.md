@@ -753,3 +753,7 @@ Business — Contributors
 #### 11.4 — `src/features/business/rewards/infrastructure/persistence/models/reward.model.ts`
 
 ![](images/clipboard-2838689540.png)
+
+#### 11.5 — `src/features/business/rewards/infrastructure/persistence/repositories/reward.repository.ts`
+
+![](images/clipboard-3271495738.png)
