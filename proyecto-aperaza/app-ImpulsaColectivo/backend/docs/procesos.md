@@ -371,3 +371,7 @@
 7.17 — `src/features/business/promoters/application/use-cases/list-promoters.use-case.ts`
 
 ![](images/clipboard-1015954101.png)
+
+7.18 — `src/features/business/promoters/presentation/http/serializers/promoter.serializer.ts`
+
+![](images/clipboard-3406794814.png)
