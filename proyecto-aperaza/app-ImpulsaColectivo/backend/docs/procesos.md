@@ -1029,3 +1029,7 @@ Business — Contributors
 #### 13.18 — `src/features/business/payment-transactions/application/use-cases/list-payment-transactions.use-case.ts`
 
 ![](images/clipboard-3838093495.png)
+
+#### 13.19 — `src/features/business/payment-transactions/presentation/http/serializers/payment-transaction.serializer.ts`
+
+![](images/clipboard-1410308494.png)
