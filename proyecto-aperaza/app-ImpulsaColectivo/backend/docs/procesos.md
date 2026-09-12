@@ -858,4 +858,6 @@ Business — Contributors
 
 ![](images/clipboard-3269459929.png)
 
-#### 
+#### 12.4 — `src/features/business/contributions/infrastructure/persistence/models/contribution.model.ts`
+
+![](images/clipboard-551029442.png)
