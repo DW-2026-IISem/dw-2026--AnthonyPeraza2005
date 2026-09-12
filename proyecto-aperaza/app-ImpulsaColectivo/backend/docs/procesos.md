@@ -449,3 +449,7 @@ Business — Contributors
 8.8 — `src/features/business/contributors/application/dto/create-contributor.dto.ts`
 
 ![](images/clipboard-2410282108.png)
+
+8.9 — `src/features/business/contributors/application/dto/contributor-filter.dto.ts`
+
+![](images/clipboard-801580086.png)
