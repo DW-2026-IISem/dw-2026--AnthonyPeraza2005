@@ -1111,3 +1111,7 @@ Business — Contributors
 #### 14.10 — `src/features/business/commissions/application/dto/commission-response.dto.ts`
 
 ![](images/clipboard-2046893310.png)
+
+#### 14.11 — `src/features/business/commissions/application/dto/update-commission.dto.ts`
+
+![](images/clipboard-2158564339.png)
