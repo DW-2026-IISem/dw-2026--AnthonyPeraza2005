@@ -1047,3 +1047,7 @@ Business — Contributors
 #### 13.22 — `src/features/business/payment-transactions/payment-transactions.module.ts`
 
 ![](images/clipboard-1254371299.png)
+
+#### 13.23 — Actualizar `src/infrastructure/database/sequelize/sequelize.factory.ts`
+
+![](images/clipboard-791540556.png)
