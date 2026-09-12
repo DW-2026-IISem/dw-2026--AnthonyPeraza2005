@@ -3,9 +3,11 @@ import { DatabaseDialect } from '../../../config/environment/env.interface';
 import { getSequelizeOptions } from './sequelize.options';
 
 import { PromoterModel } from '../../../features/business/promoters/infrastructure/persistence/models/promoter.model';
+import { ContributorModel } from '../../../features/business/contributors/infrastructure/persistence/models/contributor.model';
 
 export const ALL_MODELS = [
   PromoterModel,
+  ContributorModel,
 ];
 
 export async function createSequelizeInstance(
