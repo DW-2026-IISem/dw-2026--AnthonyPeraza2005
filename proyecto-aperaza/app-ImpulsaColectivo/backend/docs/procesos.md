@@ -925,3 +925,7 @@ Business — Contributors
 ![](images/clipboard-1547042736.png)
 
 ![](images/clipboard-67358380.png)
+
+#### 12.20 — `src/features/business/contributions/index.ts`
+
+![](images/clipboard-4273020963.png)
