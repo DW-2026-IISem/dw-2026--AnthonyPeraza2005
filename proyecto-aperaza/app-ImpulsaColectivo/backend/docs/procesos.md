@@ -469,3 +469,7 @@ Business — Contributors
 8.13 — `src/features/business/contributors/application/use-cases/create-contributor.use-case.ts`
 
 ![](images/clipboard-3622654723.png)
+
+8.14 — `src/features/business/contributors/application/use-cases/update-contributor.use-case.ts`
+
+![](images/clipboard-3927361865.png)
