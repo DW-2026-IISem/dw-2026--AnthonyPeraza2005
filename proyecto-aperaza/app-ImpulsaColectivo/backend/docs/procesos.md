@@ -1221,3 +1221,7 @@ Business — Contributors
 #### 15.10 — `src/features/business/disbursements/application/dto/disbursement-response.dto.ts`
 
 ![](images/clipboard-1563918016.png)
+
+#### 15.11 — `src/features/business/disbursements/application/dto/update-disbursement.dto.ts`
+
+![](images/clipboard-2287128217.png)
