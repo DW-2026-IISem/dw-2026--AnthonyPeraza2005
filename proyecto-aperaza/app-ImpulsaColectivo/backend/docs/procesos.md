@@ -1319,3 +1319,7 @@ Business — Contributors
 #### 16.7 — `src/features/business/refunds/infrastructure/persistence/seeders/refunds.seeder.ts`
 
 ![](images/clipboard-341478626.png)
+
+#### 16.8 — `src/features/business/refunds/application/dto/create-refund.dto.ts`
+
+![](images/clipboard-3161428840.png)
