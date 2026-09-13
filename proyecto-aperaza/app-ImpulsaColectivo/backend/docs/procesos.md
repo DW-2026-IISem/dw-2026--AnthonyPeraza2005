@@ -1471,3 +1471,7 @@ Business — Contributors
 #### 17.17 — `src/features/business/project-audits/application/use-cases/list-project-audits.use-case.ts`
 
 ![](images/clipboard-3727226588.png)
+
+#### 17.18 — `src/features/business/project-audits/presentation/http/serializers/project-audit.serializer.ts`
+
+![](images/clipboard-254114786.png)
