@@ -1359,3 +1359,7 @@ Business — Contributors
 #### 16.17 — `src/features/business/refunds/application/use-cases/list-refunds.use-case.ts`
 
 ![](images/clipboard-4175816392.png)
+
+#### 16.18 — `src/features/business/refunds/presentation/http/serializers/refund.serializer.ts`
+
+![](images/clipboard-2241488611.png)
