@@ -1385,3 +1385,7 @@ Business — Contributors
 #### 16.23 — Actualizar `src/features/business/business.module.ts`
 
 ![](images/clipboard-2849798466.png)
+
+#### 16.24 — Actualizar `src/infrastructure/database/seeders/database-seeder.service.ts`
+
+![](images/clipboard-3723375629.png)
