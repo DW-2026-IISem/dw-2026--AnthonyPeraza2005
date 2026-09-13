@@ -1217,3 +1217,7 @@ Business — Contributors
 #### 15.9 — `src/features/business/disbursements/application/dto/disbursement-filter.dto.ts`
 
 ![](images/clipboard-423596407.png)
+
+#### 15.10 — `src/features/business/disbursements/application/dto/disbursement-response.dto.ts`
+
+![](images/clipboard-1563918016.png)
