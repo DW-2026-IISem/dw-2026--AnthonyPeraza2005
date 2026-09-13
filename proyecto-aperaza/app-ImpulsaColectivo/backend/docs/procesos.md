@@ -1435,3 +1435,7 @@ Business — Contributors
 #### 17.8 — `src/features/business/project-audits/application/dto/create-project-audit.dto.ts`
 
 ![](images/clipboard-3273908603.png)
+
+#### 17.9 — `src/features/business/project-audits/application/dto/project-audit-filter.dto.ts`
+
+![](images/clipboard-1815732020.png)
