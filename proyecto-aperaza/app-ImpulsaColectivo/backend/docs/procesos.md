@@ -1331,3 +1331,7 @@ Business — Contributors
 #### 16.10 — `src/features/business/refunds/application/dto/refund-response.dto.ts`
 
 ![](images/clipboard-2395438376.png)
+
+#### 16.11 — `src/features/business/refunds/application/dto/update-refund.dto.ts`
+
+![](images/clipboard-3453278155.png)
