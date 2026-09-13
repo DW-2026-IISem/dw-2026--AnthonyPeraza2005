@@ -1427,3 +1427,7 @@ Business — Contributors
 #### 17.6 — `src/features/business/project-audits/infrastructure/persistence/migrations/create-project-audits-table.migration.ts`
 
 ![](images/clipboard-3567338356.png)
+
+#### 17.7 — `src/features/business/project-audits/infrastructure/persistence/seeders/project-audits.seeder.ts`
+
+![](images/clipboard-1548517373.png)
