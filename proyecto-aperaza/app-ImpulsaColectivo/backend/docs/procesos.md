@@ -1197,3 +1197,7 @@ Business — Contributors
 #### 15.4 — `src/features/business/disbursements/infrastructure/persistence/models/disbursement.model.ts`
 
 ![](images/clipboard-1631730736.png)
+
+#### 15.5 — `src/features/business/disbursements/infrastructure/persistence/repositories/disbursement.repository.ts`
+
+![](images/clipboard-3691332543.png)
