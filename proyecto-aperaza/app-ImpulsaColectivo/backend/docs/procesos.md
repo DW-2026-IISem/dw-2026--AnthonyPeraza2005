@@ -1431,3 +1431,7 @@ Business — Contributors
 #### 17.7 — `src/features/business/project-audits/infrastructure/persistence/seeders/project-audits.seeder.ts`
 
 ![](images/clipboard-1548517373.png)
+
+#### 17.8 — `src/features/business/project-audits/application/dto/create-project-audit.dto.ts`
+
+![](images/clipboard-3273908603.png)
