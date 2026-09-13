@@ -1479,3 +1479,7 @@ Business — Contributors
 #### 17.19 — `src/features/business/project-audits/presentation/http/controllers/project-audits.controller.ts`
 
 ![![](images/clipboard-1939560973.png)](images/clipboard-1262671097.png)
+
+#### 17.20 — `src/features/business/project-audits/index.ts`
+
+![](images/clipboard-1190905882.png)
