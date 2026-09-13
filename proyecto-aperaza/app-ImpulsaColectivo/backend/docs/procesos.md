@@ -1493,3 +1493,7 @@ Business — Contributors
 ![](images/clipboard-2003677663.png)
 
 ![](images/clipboard-3835354953.png)
+
+#### 17.23 — Actualizar `src/features/business/business.module.ts`
+
+![](images/clipboard-2345794454.png)
