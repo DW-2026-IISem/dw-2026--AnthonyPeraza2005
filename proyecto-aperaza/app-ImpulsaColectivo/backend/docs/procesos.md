@@ -1295,3 +1295,7 @@ Business — Contributors
 #### 16.1 — `src/features/business/refunds/domain/entities/refund.entity.ts`
 
 ![](images/clipboard-3608930378.png)
+
+#### 16.2 — `src/features/business/refunds/domain/exceptions/refund-not-found.exception.ts`
+
+![](images/clipboard-2473151798.png)
