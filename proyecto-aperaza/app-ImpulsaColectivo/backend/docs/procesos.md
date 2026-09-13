@@ -1351,3 +1351,7 @@ Business — Contributors
 #### 16.15 — `src/features/business/refunds/application/use-cases/delete-refund.use-case.ts`
 
 ![](images/clipboard-2427866585.png)
+
+#### 16.16 — `src/features/business/refunds/application/use-cases/get-refund.use-case.ts`
+
+![](images/clipboard-681699943.png)
