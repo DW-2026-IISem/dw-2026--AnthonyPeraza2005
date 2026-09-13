@@ -1315,3 +1315,7 @@ Business — Contributors
 #### 16.6 — `src/features/business/refunds/infrastructure/persistence/migrations/create-refunds-table.migration.ts`
 
 ![](images/clipboard-1757314707.png)
+
+#### 16.7 — `src/features/business/refunds/infrastructure/persistence/seeders/refunds.seeder.ts`
+
+![](images/clipboard-341478626.png)
