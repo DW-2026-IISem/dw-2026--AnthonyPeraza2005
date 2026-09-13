@@ -1285,3 +1285,13 @@ Business — Contributors
 ![](images/clipboard-463013654.png)
 
 ![](images/clipboard-2177778505.png)
+
+## FASE 16 — `15_BUSINESS_REFUNDS`
+
+#### Business — Refunds
+
+> **Objetivo:** Devoluciones asociadas a un aporte (`reference_id` → `contributions.id`). Segunda entidad "referencia" (patrón igual a PaymentTransactions), pero con campos `reason`/`total` en vez de `amount`/`notes`.
+
+#### 16.1 — `src/features/business/refunds/domain/entities/refund.entity.ts`
+
+![](images/clipboard-3608930378.png)
