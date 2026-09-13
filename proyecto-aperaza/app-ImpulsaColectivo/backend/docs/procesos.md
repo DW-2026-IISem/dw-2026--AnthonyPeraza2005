@@ -1303,3 +1303,7 @@ Business — Contributors
 #### 16.3 — `src/features/business/refunds/domain/interfaces/refund-repository.interface.ts`
 
 ![](images/clipboard-2794351888.png)
+
+#### 16.4 — `src/features/business/refunds/infrastructure/persistence/models/refund.model.ts`
+
+![](images/clipboard-1877582109.png)
