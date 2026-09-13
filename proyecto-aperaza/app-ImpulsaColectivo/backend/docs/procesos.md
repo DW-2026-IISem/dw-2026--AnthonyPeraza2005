@@ -1409,3 +1409,7 @@ Business — Contributors
 #### 17.2 — `src/features/business/project-audits/domain/exceptions/project-audit-not-found.exception.ts`
 
 ![](images/clipboard-1471253942.png)
+
+#### 17.3 — `src/features/business/project-audits/domain/interfaces/project-audit-repository.interface.ts`
+
+![](images/clipboard-831393077.png)
