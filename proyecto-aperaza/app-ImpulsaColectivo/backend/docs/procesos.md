@@ -1299,3 +1299,7 @@ Business — Contributors
 #### 16.2 — `src/features/business/refunds/domain/exceptions/refund-not-found.exception.ts`
 
 ![](images/clipboard-2473151798.png)
+
+#### 16.3 — `src/features/business/refunds/domain/interfaces/refund-repository.interface.ts`
+
+![](images/clipboard-2794351888.png)
