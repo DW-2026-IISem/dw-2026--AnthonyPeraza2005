@@ -1205,3 +1205,7 @@ Business — Contributors
 #### 15.6 — `src/features/business/disbursements/infrastructure/persistence/migrations/create-disbursements-table.migration.ts`
 
 ![](images/clipboard-3057723536.png)
+
+#### 15.7 — `src/features/business/disbursements/infrastructure/persistence/seeders/disbursements.seeder.ts`
+
+![](images/clipboard-2469552077.png)
