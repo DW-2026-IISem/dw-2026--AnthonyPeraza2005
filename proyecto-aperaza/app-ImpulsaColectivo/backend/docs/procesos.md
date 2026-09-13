@@ -1229,3 +1229,7 @@ Business — Contributors
 #### 15.12 — `src/features/business/disbursements/application/mappers/disbursement.mapper.ts`
 
 ![](images/clipboard-1177241473.png)
+
+#### 15.13 — `src/features/business/disbursements/application/use-cases/create-disbursement.use-case.ts`
+
+![](images/clipboard-3166606015.png)
