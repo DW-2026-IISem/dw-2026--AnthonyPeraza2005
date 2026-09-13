@@ -1459,3 +1459,7 @@ Business — Contributors
 #### 17.14 — `src/features/business/project-audits/application/use-cases/update-project-audit.use-case.ts`
 
 ![](images/clipboard-3160257882.png)
+
+#### 17.15 — `src/features/business/project-audits/application/use-cases/delete-project-audit.use-case.ts`
+
+![](images/clipboard-3853816672.png)
