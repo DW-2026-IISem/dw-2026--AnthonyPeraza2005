@@ -7,6 +7,7 @@ import { seedRewards } from '../../../features/business/rewards/infrastructure/p
 import { seedContributions } from '../../../features/business/contributions/infrastructure/persistence/seeders/contributions.seeder';
 import { seedPaymentTransactions } from '../../../features/business/payment-transactions/infrastructure/persistence/seeders/payment-transactions.seeder';
 import { seedCommissions } from '../../../features/business/commissions/infrastructure/persistence/seeders/commissions.seeder';
+import { seedDisbursements } from '../../../features/business/disbursements/infrastructure/persistence/seeders/disbursements.seeder';
 
 @Injectable()
 export class DatabaseSeederService implements OnModuleInit {
@@ -26,6 +27,7 @@ export class DatabaseSeederService implements OnModuleInit {
       await seedContributions();
       await seedPaymentTransactions();
       await seedCommissions();
+      await seedDisbursements();
       this.logger.log('✅ Seeders ejecutados');
     } catch (error: any) {
       this.logger.error(`❌ Error en seeders: ${error.message}`, error.stack);
