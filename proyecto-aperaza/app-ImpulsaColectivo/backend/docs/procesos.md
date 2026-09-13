@@ -1447,3 +1447,11 @@ Business — Contributors
 #### 17.11 — `src/features/business/project-audits/application/dto/update-project-audit.dto.ts`
 
 ![](images/clipboard-2538368029.png)
+
+#### 17.12 — `src/features/business/project-audits/application/mappers/project-audit.mapper.ts`
+
+![](images/clipboard-3198021415.png)
+
+#### 17.13 — `src/features/business/project-audits/application/use-cases/create-project-audit.use-case.ts`
+
+![](images/clipboard-2223784115.png)
