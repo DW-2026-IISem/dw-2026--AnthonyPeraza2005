@@ -1225,3 +1225,7 @@ Business — Contributors
 #### 15.11 — `src/features/business/disbursements/application/dto/update-disbursement.dto.ts`
 
 ![](images/clipboard-2287128217.png)
+
+#### 15.12 — `src/features/business/disbursements/application/mappers/disbursement.mapper.ts`
+
+![](images/clipboard-1177241473.png)
