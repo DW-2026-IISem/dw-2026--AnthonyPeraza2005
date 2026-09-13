@@ -1189,3 +1189,7 @@ Business — Contributors
 #### 15.2 — `src/features/business/disbursements/domain/exceptions/disbursement-not-found.exception.ts`
 
 ![](images/clipboard-3935788974.png)
+
+#### 15.3 — `src/features/business/disbursements/domain/interfaces/disbursement-repository.interface.ts`
+
+![](images/clipboard-1839848867.png)
