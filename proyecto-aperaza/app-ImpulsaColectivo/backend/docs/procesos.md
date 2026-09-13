@@ -1323,3 +1323,7 @@ Business — Contributors
 #### 16.8 — `src/features/business/refunds/application/dto/create-refund.dto.ts`
 
 ![](images/clipboard-3161428840.png)
+
+#### 16.9 — `src/features/business/refunds/application/dto/refund-filter.dto.ts`
+
+![](images/clipboard-1822592143.png)
