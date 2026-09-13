@@ -1455,3 +1455,7 @@ Business — Contributors
 #### 17.13 — `src/features/business/project-audits/application/use-cases/create-project-audit.use-case.ts`
 
 ![](images/clipboard-2223784115.png)
+
+#### 17.14 — `src/features/business/project-audits/application/use-cases/update-project-audit.use-case.ts`
+
+![](images/clipboard-3160257882.png)
