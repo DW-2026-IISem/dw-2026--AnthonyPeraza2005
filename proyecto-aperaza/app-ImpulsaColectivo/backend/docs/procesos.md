@@ -1209,3 +1209,7 @@ Business — Contributors
 #### 15.7 — `src/features/business/disbursements/infrastructure/persistence/seeders/disbursements.seeder.ts`
 
 ![](images/clipboard-2469552077.png)
+
+#### 15.8 — `src/features/business/disbursements/application/dto/create-disbursement.dto.ts`
+
+![](images/clipboard-1633398581.png)
