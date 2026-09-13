@@ -1377,3 +1377,7 @@ Business — Contributors
 #### 16.21 — `src/features/business/refunds/refunds.module.ts`
 
 ![](images/clipboard-1789037603.png)
+
+#### 16.22 — Actualizar `src/infrastructure/database/sequelize/sequelize.factory.ts`
+
+![](images/clipboard-3833514305.png)
