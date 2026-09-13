@@ -1279,3 +1279,9 @@ Business — Contributors
 #### 15.24 — Actualizar `src/infrastructure/database/seeders/database-seeder.service.ts`
 
 ![](images/clipboard-1482331041.png)
+
+#### 15.25 — Verificar tabla física `disbursements` y API
+
+![](images/clipboard-463013654.png)
+
+![](images/clipboard-2177778505.png)
