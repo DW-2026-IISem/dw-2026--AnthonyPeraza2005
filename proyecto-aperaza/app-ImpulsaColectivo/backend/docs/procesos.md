@@ -1249,3 +1249,7 @@ Business — Contributors
 #### 15.17 — `src/features/business/disbursements/application/use-cases/list-disbursements.use-case.ts`
 
 ![](images/clipboard-1479261954.png)
+
+#### 15.18 — `src/features/business/disbursements/presentation/http/serializers/disbursement.serializer.ts`
+
+![](images/clipboard-3483846385.png)
