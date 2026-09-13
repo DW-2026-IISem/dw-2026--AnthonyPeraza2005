@@ -1501,3 +1501,9 @@ Business — Contributors
 #### 17.24 — Actualizar `src/infrastructure/database/seeders/database-seeder.service.ts`
 
 ![](images/clipboard-3945094473.png)
+
+#### 17.25 — Verificar tabla física `project_audits` y API
+
+![](images/clipboard-3324420994.png)
+
+![](images/clipboard-1878961999.png)
