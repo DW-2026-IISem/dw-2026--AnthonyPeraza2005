@@ -8,9 +8,10 @@ import { ContributionsModule } from './contributions/contributions.module';
 import { PaymentTransactionsModule } from './payment-transactions/payment-transactions.module';
 import { CommissionsModule } from './commissions/commissions.module';
 import { DisbursementsModule } from './disbursements/disbursements.module';
+import { RefundsModule } from './refunds/refunds.module';
 
 @Module({
-  imports: [PromotersModule, ContributorsModule, ProjectsModule, GoalsModule, RewardsModule, ContributionsModule, PaymentTransactionsModule, CommissionsModule, DisbursementsModule],
-  exports: [PromotersModule, ContributorsModule, ProjectsModule, GoalsModule, RewardsModule, ContributionsModule, PaymentTransactionsModule, CommissionsModule, DisbursementsModule],
+  imports: [PromotersModule, ContributorsModule, ProjectsModule, GoalsModule, RewardsModule, ContributionsModule, PaymentTransactionsModule, CommissionsModule, DisbursementsModule, RefundsModule],
+  exports: [PromotersModule, ContributorsModule, ProjectsModule, GoalsModule, RewardsModule, ContributionsModule, PaymentTransactionsModule, CommissionsModule, DisbursementsModule, RefundsModule],
 })
 export class BusinessModule {}
