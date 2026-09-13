@@ -1245,3 +1245,7 @@ Business — Contributors
 #### 15.16 — `src/features/business/disbursements/application/use-cases/get-disbursement.use-case.ts`
 
 ![](images/clipboard-1037424851.png)
+
+#### 15.17 — `src/features/business/disbursements/application/use-cases/list-disbursements.use-case.ts`
+
+![](images/clipboard-1479261954.png)
