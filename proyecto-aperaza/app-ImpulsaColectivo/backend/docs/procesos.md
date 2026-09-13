@@ -1423,3 +1423,7 @@ Business — Contributors
 ![](images/clipboard-2589208838.png)
 
 ![](images/clipboard-1117082816.png)
+
+#### 17.6 — `src/features/business/project-audits/infrastructure/persistence/migrations/create-project-audits-table.migration.ts`
+
+![](images/clipboard-3567338356.png)
