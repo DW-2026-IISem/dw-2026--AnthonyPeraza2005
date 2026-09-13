@@ -1267,3 +1267,7 @@ Business — Contributors
 #### 15.21 — `src/features/business/disbursements/disbursements.module.ts`
 
 ![](images/clipboard-2044012944.png)
+
+#### 15.22 — Actualizar `src/infrastructure/database/sequelize/sequelize.factory.ts`
+
+![](images/clipboard-4199711627.png)
