@@ -1343,3 +1343,7 @@ Business — Contributors
 #### 16.13 — `src/features/business/refunds/application/use-cases/create-refund.use-case.ts`
 
 ![](images/clipboard-4075830622.png)
+
+#### 16.14 — `src/features/business/refunds/application/use-cases/update-refund.use-case.ts`
+
+![](images/clipboard-1617996693.png)
