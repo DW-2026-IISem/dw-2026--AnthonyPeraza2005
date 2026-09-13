@@ -1475,3 +1475,7 @@ Business — Contributors
 #### 17.18 — `src/features/business/project-audits/presentation/http/serializers/project-audit.serializer.ts`
 
 ![](images/clipboard-254114786.png)
+
+#### 17.19 — `src/features/business/project-audits/presentation/http/controllers/project-audits.controller.ts`
+
+![![](images/clipboard-1939560973.png)](images/clipboard-1262671097.png)
