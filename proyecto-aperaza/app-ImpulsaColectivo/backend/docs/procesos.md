@@ -1417,3 +1417,9 @@ Business — Contributors
 #### 17.4 — `src/features/business/project-audits/infrastructure/persistence/models/project-audit.model.ts`
 
 ![](images/clipboard-105013964.png)
+
+#### 17.5 — `src/features/business/project-audits/infrastructure/persistence/repositories/project-audit.repository.ts`
+
+![](images/clipboard-2589208838.png)
+
+![](images/clipboard-1117082816.png)
