@@ -1405,3 +1405,7 @@ Business — Contributors
 #### 17.1 — `src/features/business/project-audits/domain/entities/project-audit.entity.ts`
 
 ![](images/clipboard-2316981843.png)
+
+#### 17.2 — `src/features/business/project-audits/domain/exceptions/project-audit-not-found.exception.ts`
+
+![](images/clipboard-1471253942.png)
