@@ -7,9 +7,10 @@ import { RewardsModule } from './rewards/rewards.module';
 import { ContributionsModule } from './contributions/contributions.module';
 import { PaymentTransactionsModule } from './payment-transactions/payment-transactions.module';
 import { CommissionsModule } from './commissions/commissions.module';
+import { DisbursementsModule } from './disbursements/disbursements.module';
 
 @Module({
-  imports: [PromotersModule, ContributorsModule, ProjectsModule, GoalsModule, RewardsModule, ContributionsModule, PaymentTransactionsModule, CommissionsModule],
-  exports: [PromotersModule, ContributorsModule, ProjectsModule, GoalsModule, RewardsModule, ContributionsModule, PaymentTransactionsModule, CommissionsModule],
+  imports: [PromotersModule, ContributorsModule, ProjectsModule, GoalsModule, RewardsModule, ContributionsModule, PaymentTransactionsModule, CommissionsModule, DisbursementsModule],
+  exports: [PromotersModule, ContributorsModule, ProjectsModule, GoalsModule, RewardsModule, ContributionsModule, PaymentTransactionsModule, CommissionsModule, DisbursementsModule],
 })
 export class BusinessModule {}
