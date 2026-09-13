@@ -1307,3 +1307,7 @@ Business — Contributors
 #### 16.4 — `src/features/business/refunds/infrastructure/persistence/models/refund.model.ts`
 
 ![](images/clipboard-1877582109.png)
+
+#### 16.5 — `src/features/business/refunds/infrastructure/persistence/repositories/refund.repository.ts`
+
+![](images/clipboard-3511985708.png)
