@@ -1395,3 +1395,13 @@ Business — Contributors
 ![](images/clipboard-4056009926.png)
 
 ![](images/clipboard-3394485394.png)
+
+## FASE 17 — `16_BUSINESS_PROJECT_AUDITS`
+
+### Business — ProjectAudits
+
+> **Objetivo:** Auditoría de cambios de un proyecto (los cambios posteriores a recibir aportes quedan restringidos y auditados). Depende de Projects (FK `project_id`). **Última de las 11 tablas.**
+
+#### 17.1 — `src/features/business/project-audits/domain/entities/project-audit.entity.ts`
+
+![](images/clipboard-2316981843.png)
