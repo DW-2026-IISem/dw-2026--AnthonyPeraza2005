@@ -12,6 +12,7 @@ import { PaymentTransactionModel } from '../../../features/business/payment-tran
 import { CommissionModel } from '../../../features/business/commissions/infrastructure/persistence/models/commission.model';
 import { DisbursementModel } from '../../../features/business/disbursements/infrastructure/persistence/models/disbursement.model';
 import { RefundModel } from '../../../features/business/refunds/infrastructure/persistence/models/refund.model';
+import { ProjectAuditModel } from '../../../features/business/project-audits/infrastructure/persistence/models/project-audit.model';
 
 export const ALL_MODELS = [
   PromoterModel,
@@ -24,6 +25,7 @@ export const ALL_MODELS = [
   CommissionModel,
   DisbursementModel,
   RefundModel,
+  ProjectAuditModel,
 ];
 
 export async function createSequelizeInstance(

@@ -1487,3 +1487,9 @@ Business — Contributors
 #### 17.21 — `src/features/business/project-audits/project-audits.module.ts`
 
 ![](images/clipboard-3117778779.png)
+
+#### 17.22 — Actualizar `src/infrastructure/database/sequelize/sequelize.factory.ts`
+
+![](images/clipboard-2003677663.png)
+
+![](images/clipboard-3835354953.png)
