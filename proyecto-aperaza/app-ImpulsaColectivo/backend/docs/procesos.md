@@ -1608,7 +1608,7 @@ Swagger → **Goals → POST /goals**:
 
 ![](images/clipboard-3927332480.png)
 
-#### 18.7 — Crear una Reward
+#### 18.6 — Crear una Reward
 
 Swagger → **Rewards → POST /rewards**:
 
@@ -1620,7 +1620,7 @@ Swagger → **Rewards → POST /rewards**:
 
 ![](images/clipboard-2005173595.png)
 
-#### 18.8 — Crear una Contribution (usa `projectId` y el `contributorId` del paso 18.4)
+#### 18.7 — Crear una Contribution (usa `projectId` y el `contributorId` del paso 18.4)
 
 Swagger → **Contributions → POST /contributions**:
 
@@ -1630,7 +1630,7 @@ Swagger → **Contributions → POST /contributions**:
 
 ![](images/clipboard-696212830.png)
 
-#### 18.9 — Crear una PaymentTransaction (usa el `id` de la Contribution del paso 18.8 como `referenceId`)
+#### 18.8 — Crear una PaymentTransaction (usa el `id` de la Contribution del paso 18.8 como `referenceId`)
 
 Swagger → **Payment Transactions → POST /payment-transactions**:
 
@@ -1640,7 +1640,7 @@ Swagger → **Payment Transactions → POST /payment-transactions**:
 
 ![](images/clipboard-180133613.png)
 
-#### 18.10 — Crear una Commission (usa el `id` del Project como `referenceId`)
+#### 18.9 — Crear una Commission (usa el `id` del Project como `referenceId`)
 
 Swagger → **Commissions → POST /commissions**:
 
@@ -1652,7 +1652,7 @@ Swagger → **Commissions → POST /commissions**:
 
 ![](images/clipboard-3405434537.png)
 
-#### 18.11 — Crear un Disbursement
+#### 18.10 — Crear un Disbursement
 
 Swagger → **Disbursements → POST /disbursements**:
 
@@ -1664,7 +1664,7 @@ Swagger → **Disbursements → POST /disbursements**:
 
 ![](images/clipboard-2508036703.png)
 
-#### 18.12 — Crear un Refund (usa el `id` de la Contribution como `referenceId`)
+#### 18.11 — Crear un Refund (usa el `id` de la Contribution como `referenceId`)
 
 Swagger → **Refunds → POST /refunds**:
 
@@ -1674,7 +1674,7 @@ Swagger → **Refunds → POST /refunds**:
 
 ![](images/clipboard-3661736892.png)
 
-#### 18.13 — Crear un ProjectAudit
+#### 18.12 — Crear un ProjectAudit
 
 Swagger → **Project Audits → POST /project-audits**:
 
@@ -1684,11 +1684,11 @@ Swagger → **Project Audits → POST /project-audits**:
 
 ![](images/clipboard-1273971270.png)
 
-#### 18.14 — Consulta relacional completa (el "árbol" del proyecto en una sola vista)
+#### 18.13 — Consulta relacional completa (el "árbol" del proyecto en una sola vista)
 
 ![](images/clipboard-426896509.png)
 
-#### 18.15 — Probar una actualización (PATCH) y ver el `updated_at` cambiar
+#### 18.14 — Probar una actualización (PATCH) y ver el `updated_at` cambiar
 
 Swagger → **Projects → PATCH /projects/{id}** con `id = 3`:
 
@@ -1698,7 +1698,7 @@ Swagger → **Projects → PATCH /projects/{id}** con `id = 3`:
 
 ![](images/clipboard-1863136953.png)
 
-#### 18.16 — Probar una eliminación (DELETE)
+#### 18.15 — Probar una eliminación (DELETE)
 
 Swagger → **Rewards → DELETE /rewards/{id}** con el id de la recompensa creada en 18.7. Debe responder `204 No Content`.
 
