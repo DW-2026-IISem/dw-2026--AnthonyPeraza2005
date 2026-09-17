@@ -1,9 +1,34 @@
 # Proceso manual de backend
 
+## Índice
+
+- [1.1 Crear carpeta](#fase1)
+- [1.2 — Instalar Nest CLI (si no existe) 1.3 — Crear proyecto NestJS](#fase2)
+- [FASE 2 — 01_BASE_DEPS_Y_PUERTO](#fase3)
+- [FASE 3 — 02_BASE_ESTRUCTURA_CA](#fase4)
+- [FASE 4 — 03_BASE_ENTORNO_ENV](#fase5)
+- [FASE 5 — 04_BASE_DATABASE_SEQUELIZE](#fase6)
+- [FASE 6 — 05_BASE_APP_COMMON_SECURITY](#fase7)
+- [FASE 7 — 06_BUSINESS_PROMOTERS](#fase8)
+- [FASE 8 — 07_BUSINESS_CONTRIBUTORS](#fase9)
+- [FASE 9 — 08_BUSINESS_PROJECTS](#fase10)
+- [FASE 10 — 09_BUSINESS_GOALS](#fase11)
+- [FASE 11 — 10_BUSINESS_REWARDS](#fase12)
+- [FASE 12 — 11_BUSINESS_CONTRIBUTIONS](#fase13)
+- [FASE 13 — 12_BUSINESS_PAYMENT_TRANSACTIONS](#fase14)
+- [FASE 14 — 13_BUSINESS_COMMISSIONS](#fase15)
+- [FASE 15 — 14_BUSINESS_DISBURSEMENTS](#fase16)
+- [FASE 16 — 15_BUSINESS_REFUNDS](#fase17)
+- [FASE 17 — 16_BUSINESS_PROJECT_AUDITS](#fase18)
+- [FASE 18 — 18_FUNCIONAMIENTO_BASE_DE_DATOS](#fase19)
+
+
 **Objetivo de la fase:** Dejar el esqueleto oficial Nest corriendo en un puerto libre, con Git inicial.
 
+<a id="fase1"></a>
 ## 1.1 Crear carpeta ![](images/clipboard-2577174203.png)
 
+<a id="fase2"></a>
 ## **1.2 — Instalar Nest CLI (si no existe)** ![](images/clipboard-2256785914.png) **1.3 — Crear proyecto NestJS**
 
 ![](images/clipboard-3660125353.png)
@@ -12,6 +37,7 @@
 
 ![](images/clipboard-3065097918.png)
 
+<a id="fase3"></a>
 ## **FASE 2 — `01_BASE_DEPS_Y_PUERTO`**
 
 **Objetivo de la fase:** Instalar el stack profesional y evitar que un `start:dev` colgado bloquee el puerto.
@@ -36,6 +62,7 @@
 
 ![](images/clipboard-1249128542.png)
 
+<a id="fase4"></a>
 ## **FASE 3 — `02_BASE_ESTRUCTURA_CA`**
 
 ### **Estructura de carpetas Clean Architecture**
@@ -46,6 +73,7 @@
 
 ![](images/clipboard-529769721.png)
 
+<a id="fase5"></a>
 ## **FASE 4 — `03_BASE_ENTORNO_ENV`**
 
 ### **Configuración del entorno tipado (multi-base)**
@@ -72,6 +100,7 @@
 
 ![](images/clipboard-1373557495.png)
 
+<a id="fase6"></a>
 ## **FASE 5 — `04_BASE_DATABASE_SEQUELIZE`**
 
 ### **Base de datos multi-dialecto (Sequelize)**
@@ -118,6 +147,7 @@
 
 ![](images/clipboard-2896360579.png)
 
+<a id="fase7"></a>
 ## **FASE 6 — `05_BASE_APP_COMMON_SECURITY`**
 
 ### **App config + Logger + Common + Security + bootstrap**
@@ -300,6 +330,7 @@
 
 ![![](images/clipboard-4176953910.png)](images/clipboard-4211409156.png)
 
+<a id="fase8"></a>
 ## **FASE 7 — `06_BUSINESS_PROMOTERS`**
 
 ### **Business — Clients (patrón completo CA)**
@@ -412,6 +443,7 @@
 
 ![](images/clipboard-1928258576.png)
 
+<a id="fase9"></a>
 ## FASE 8 — `07_BUSINESS_CONTRIBUTORS`
 
 Business — Contributors
@@ -518,6 +550,7 @@ Business — Contributors
 
 ![](images/clipboard-3462555057.png)
 
+<a id="fase10"></a>
 ## FASE 9 — `08_BUSINESS_PROJECTS`
 
 ### Business — Projects
@@ -626,6 +659,7 @@ Business — Contributors
 
 ![](images/clipboard-3478449420.png)
 
+<a id="fase11"></a>
 ## FASE 10 — `09_BUSINESS_GOALS`
 
 ### Business — Goals
@@ -732,6 +766,7 @@ Business — Contributors
 
 ![![](images/clipboard-1525523701.png)](images/clipboard-3758205355.png)
 
+<a id="fase12"></a>
 ## FASE 11 — `10_BUSINESS_REWARDS`
 
 ### Business — Rewards
@@ -840,6 +875,7 @@ Business — Contributors
 
 ![![](images/clipboard-4089245959.png)](images/clipboard-251888668.png)
 
+<a id="fase13"></a>
 ## FASE 12 — `11_BUSINESS_CONTRIBUTIONS`
 
 ### Business — Contributions
@@ -952,6 +988,7 @@ Business — Contributors
 
 ![](images/clipboard-1186050355.png)
 
+<a id="fase14"></a>
 ## FASE 13 — `12_BUSINESS_PAYMENT_TRANSACTIONS`
 
 ### Business — PaymentTransactions
@@ -1066,9 +1103,10 @@ Business — Contributors
 
 ![](images/clipboard-3418807347.png)
 
+<a id="fase15"></a>
 ## FASE 14 — `13_BUSINESS_COMMISSIONS`
 
-#### Business — Commissions
+### Business — Commissions
 
 > **Objetivo:** Comisión que la plataforma cobra sobre un proyecto (`reference_id` → `projects.id`). Mismo patrón "referencia" que PaymentTransactions, pero apuntando a `Project`.
 
@@ -1176,9 +1214,10 @@ Business — Contributors
 
 ![](images/clipboard-3968945473.png)
 
+<a id="fase16"></a>
 ## FASE 15 — `14_BUSINESS_DISBURSEMENTS`
 
-#### Business — Disbursements
+### Business — Disbursements
 
 > **Objetivo:** Desembolsos de fondos hacia el promotor de un proyecto. Depende de Projects (FK `project_id`). Mismo patrón que Goals/Rewards.
 
@@ -1286,9 +1325,10 @@ Business — Contributors
 
 ![](images/clipboard-2177778505.png)
 
+<a id="fase17"></a>
 ## FASE 16 — `15_BUSINESS_REFUNDS`
 
-#### Business — Refunds
+### Business — Refunds
 
 > **Objetivo:** Devoluciones asociadas a un aporte (`reference_id` → `contributions.id`). Segunda entidad "referencia" (patrón igual a PaymentTransactions), pero con campos `reason`/`total` en vez de `amount`/`notes`.
 
@@ -1396,6 +1436,7 @@ Business — Contributors
 
 ![](images/clipboard-3394485394.png)
 
+<a id="fase18"></a>
 ## FASE 17 — `16_BUSINESS_PROJECT_AUDITS`
 
 ### Business — ProjectAudits
@@ -1507,3 +1548,162 @@ Business — Contributors
 ![](images/clipboard-3324420994.png)
 
 ![](images/clipboard-1878961999.png)
+
+<a id="fase19"></a>
+## FASE 18 — `18_FUNCIONAMIENTO_BASE_DE_DATOS`
+
+### Funcionamiento de la base de datos y verificación en DBeaver
+
+**Objetivo de la fase:** Mostrar de forma didáctica cómo viven los datos en el motor elegido (`DB_DIALECT`): cómo se conectan las tablas creadas por las migraciones, cómo un registro creado/actualizado/eliminado desde la API se refleja en tiempo real en DBeaver, y cómo se validan las relaciones (FKs) entre entidades mediante consultas SQL directas.
+
+#### 18.1 — Conectar DBeaver al motor configurado
+
+![](images/clipboard-3328376954.png)
+
+![](images/clipboard-1693765723.png)
+
+#### 18.2 — Crear un Promoter (Swagger) y verlo en DBeaver
+
+En Swagger, expande **Promoters → POST /promoters → Try it out**, pega este body:
+
+![![](images/clipboard-65073292.png)](images/clipboard-719278223.png)
+
+#### Verificar en DBeaver:
+
+![](images/clipboard-3751680248.png)
+
+#### 18.3 — Crear un Contributor
+
+Swagger → **Contributors → POST /contributors**:
+
+![](images/clipboard-645204361.png)
+
+![](images/clipboard-4154855173.png)
+
+#### Verificar en DBeaver:
+
+![](images/clipboard-1455765505.png)
+
+#### 18.4 — Crear un Project (usa el `promoterId` del paso 18.3)
+
+Swagger → **Projects → POST /projects** (reemplaza `"promoterId": 3` por el id real que te devolvió el paso 18.3):
+
+![](images/clipboard-3738255988.png)
+
+![](images/clipboard-4096760106.png)
+
+#### Verificar en DBeaver:
+
+![](images/clipboard-1573772626.png)
+
+#### 18.5 — Crear una Goal (usa el `projectId` del paso 18.5)
+
+Swagger → **Goals → POST /goals**:
+
+![](images/clipboard-2318044617.png)
+
+![](images/clipboard-3824457079.png)
+
+**DBeaver:**
+
+![](images/clipboard-3927332480.png)
+
+#### 18.7 — Crear una Reward
+
+Swagger → **Rewards → POST /rewards**:
+
+![](images/clipboard-3846382379.png)
+
+![](images/clipboard-3336505540.png)
+
+#### DBeaver:
+
+![](images/clipboard-2005173595.png)
+
+#### 18.8 — Crear una Contribution (usa `projectId` y el `contributorId` del paso 18.4)
+
+Swagger → **Contributions → POST /contributions**:
+
+![![](images/clipboard-911607647.png)](images/clipboard-596880699.png)
+
+**DBeaver** — esta consulta ya muestra la relación completa aportante↔proyecto:
+
+![](images/clipboard-696212830.png)
+
+#### 18.9 — Crear una PaymentTransaction (usa el `id` de la Contribution del paso 18.8 como `referenceId`)
+
+Swagger → **Payment Transactions → POST /payment-transactions**:
+
+![![](images/clipboard-2307563812.png)](images/clipboard-1492086100.png)
+
+#### DBeaver:
+
+![](images/clipboard-180133613.png)
+
+#### 18.10 — Crear una Commission (usa el `id` del Project como `referenceId`)
+
+Swagger → **Commissions → POST /commissions**:
+
+![](images/clipboard-1690398139.png)
+
+![](images/clipboard-2372327338.png)
+
+**DBeaver:**
+
+![](images/clipboard-3405434537.png)
+
+#### 18.11 — Crear un Disbursement
+
+Swagger → **Disbursements → POST /disbursements**:
+
+![](images/clipboard-1127507420.png)
+
+![](images/clipboard-790959417.png)
+
+#### DBeaver:
+
+![](images/clipboard-2508036703.png)
+
+#### 18.12 — Crear un Refund (usa el `id` de la Contribution como `referenceId`)
+
+Swagger → **Refunds → POST /refunds**:
+
+![![](images/clipboard-1302044149.png)](images/clipboard-3914527211.png)
+
+**DBeaver:**
+
+![](images/clipboard-3661736892.png)
+
+#### 18.13 — Crear un ProjectAudit
+
+Swagger → **Project Audits → POST /project-audits**:
+
+![![](images/clipboard-902797715.png)](images/clipboard-962502164.png)
+
+#### DBeaver:
+
+![](images/clipboard-1273971270.png)
+
+#### 18.14 — Consulta relacional completa (el "árbol" del proyecto en una sola vista)
+
+![](images/clipboard-426896509.png)
+
+#### 18.15 — Probar una actualización (PATCH) y ver el `updated_at` cambiar
+
+Swagger → **Projects → PATCH /projects/{id}** con `id = 3`:
+
+![](images/clipboard-335484121.png)
+
+![**DBeaver (antes y después):**](images/clipboard-3866365904.png)
+
+![](images/clipboard-1863136953.png)
+
+#### 18.16 — Probar una eliminación (DELETE)
+
+Swagger → **Rewards → DELETE /rewards/{id}** con el id de la recompensa creada en 18.7. Debe responder `204 No Content`.
+
+![](images/clipboard-3867863472.png)
+
+#### Dbeaver
+
+![](images/clipboard-2978619025.png)
