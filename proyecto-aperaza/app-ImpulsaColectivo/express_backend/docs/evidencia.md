@@ -264,3 +264,35 @@
 ### **Cierre del ISS-04:**
 
 ![](images/clipboard-3026413795.png)
+
+### ISS-05 — Swagger/OpenAPI (feature Promoter + registry externo)
+
+#### **10.1 — OpenAPI dentro del feature Promoter**
+
+![](images/clipboard-3083118898.png)
+
+![](images/clipboard-2391055989.png)
+
+#### **10.2 — Registry externo + montaje en Config**
+
+![](images/clipboard-2354806169.png)
+
+![](images/clipboard-2286119972.png)
+
+**PARCHE** sobre `src/config/index.ts` (ya existe): ábrelo con `nano src/config/index.ts` y haz estos 3 cambios:
+
+**1)** Debajo de `import { Routes } from "../routes/index";`, agrega:
+
+![](images/clipboard-1530406464.png)
+
+**2)** Dentro del `constructor`, debajo de `this.routes();` y encima de `this.dbConnection();`, agrega:
+
+![**3)** Dentro de la clase `App`, debajo del método `routes()` y encima de `dbConnection()`, agrega:](images/clipboard-2394612159.png)
+
+![](images/clipboard-1285478637.png)
+
+**Verificación:**
+
+![**Cierre del ISS-05:**](images/clipboard-1450899533.png)
+
+![](images/clipboard-2114847537.png)
