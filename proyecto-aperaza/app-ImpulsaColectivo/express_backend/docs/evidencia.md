@@ -236,3 +236,31 @@
 #### **Cierre de ISS-03 completo (A→E):**
 
 ![](images/clipboard-378491852.png)
+
+### ISS-04 — Seeders con Faker (feature Promoter + runner externo)
+
+**9.1 — Seeder dentro del feature Promoter**
+
+![](images/clipboard-2675491480.png)
+
+![](images/clipboard-1879300546.png)
+
+#### **9.2.1 — Conteos**
+
+![](images/clipboard-2022053327.png)
+
+**9.2.2 — Runner**
+
+![](images/clipboard-3052178796.png)
+
+**PARCHE** — `package.json` (ya existe): dentro de `"scripts"`, debajo de `"dev": "..."`, agrega (recuerda poner coma al final de la línea de `dev` si no la tiene):
+
+![](images/clipboard-4008600627.png)
+
+**Verificación:**
+
+![](images/clipboard-2767456900.png)
+
+### **Cierre del ISS-04:**
+
+![](images/clipboard-3026413795.png)
