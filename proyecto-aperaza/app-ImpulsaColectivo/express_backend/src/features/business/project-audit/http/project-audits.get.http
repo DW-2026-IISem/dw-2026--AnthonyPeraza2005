@@ -1,0 +1,9 @@
+### Feature ProjectAudit — GET
+
+GET http://localhost:4000/api/auditorias-proyecto
+# @name getProjectAudits
+
+###
+
+GET http://localhost:4000/api/auditorias-proyecto/1
+# @name getProjectAudit

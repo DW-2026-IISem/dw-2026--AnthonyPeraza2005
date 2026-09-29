@@ -1,0 +1,23 @@
+### Feature ProjectAudit — UPDATE
+
+PUT http://localhost:4000/api/auditorias-proyecto/1
+Content-Type: application/json
+# @name updateProjectAuditPut
+
+{
+  "action": "edicion_meta",
+  "detail": "Se actualizó la meta de financiación",
+  "audit_date": "2026-09-29",
+  "project_id": 1,
+  "status": "active"
+}
+
+###
+
+PATCH http://localhost:4000/api/auditorias-proyecto/1
+Content-Type: application/json
+# @name updateProjectAuditPatch
+
+{
+  "detail": "Se corrigió la descripción del proyecto"
+}

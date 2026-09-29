@@ -19,6 +19,8 @@ import "../features/business/disbursement/disbursement.model";
 import "../features/business/disbursement/disbursement.associations";
 import "../features/business/refund/refund.model";
 import "../features/business/refund/refund.associations";
+import "../features/business/project-audit/project-audit.model";
+import "../features/business/project-audit/project-audit.associations";
 import "../features/business/goal/goal.associations";
 import "../features/business/project/project.associations";
 import { Routes } from "../routes/index";
@@ -61,6 +63,7 @@ export class App {
     this.routePrv.commissionRoutes.routes(this.app);
     this.routePrv.disbursementRoutes.routes(this.app);
     this.routePrv.refundRoutes.routes(this.app);
+    this.routePrv.projectAuditRoutes.routes(this.app);
     
   }
   private docs(): void {

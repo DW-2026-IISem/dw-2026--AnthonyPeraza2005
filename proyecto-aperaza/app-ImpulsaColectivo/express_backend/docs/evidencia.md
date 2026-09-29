@@ -297,6 +297,8 @@
 
 ![](images/clipboard-2114847537.png)
 
+![](images/clipboard-755770142.png)
+
 ### ISS-06 — Feature Contributor (aportantes)
 
 **Objetivo:** CRUD + seeder + swagger de Contributor (sin FK).\
@@ -394,6 +396,8 @@
 ### **Cierre del ISS-06:**
 
 ![](images/clipboard-3514103314.png)
+
+![](images/clipboard-1415483056.png)
 
 ### ISS-07 — Feature Project (proyectos) — con FK a Promoter
 
@@ -500,6 +504,8 @@
 
 ![](images/clipboard-3768853097.png)
 
+![](images/clipboard-808569769.png)
+
 ### ISS-08 — Feature Goal (metas de financiamiento) — con FK a Project
 
 **Objetivo:** CRUD de Goal con FK `project_id`.\
@@ -600,6 +606,8 @@
 #### **Cierre del ISS-08:**
 
 ![](images/clipboard-2394669828.png)
+
+![](images/clipboard-4209299692.png)
 
 ### ISS-09 — Feature Reward (recompensas) — con FK a Project
 
@@ -702,6 +710,8 @@
 
 ![](images/clipboard-2656868851.png)
 
+![](images/clipboard-2702375838.png)
+
 ## ISS-10 — Feature Contribution (doble FK: Project + Contributor)
 
 #### 10.1 Crear carpeta y modelo
@@ -785,6 +795,8 @@ Y agrega `contributionSwagger` al arreglo `featureSwaggerModules` (donde ya est�
 #### Cierre del ISS-10:
 
 ![](images/clipboard-4088200091.png)
+
+![](images/clipboard-1114393661.png)
 
 ## ISS-11 — Feature PaymentTransaction (FK a Contribution)
 
@@ -875,6 +887,8 @@ Y agrégalo al arreglo `featureSwaggerModules`, debajo de `contributionSwagger`:
 #### 11.14 Cierre del ISS-11
 
 ![](images/clipboard-2695583361.png)
+
+![](images/clipboard-1635584529.png)
 
 ## ISS-12 — Feature Commission (FK a PaymentTransaction)
 
@@ -968,6 +982,8 @@ Y agrégalo al arreglo `featureSwaggerModules`, debajo de `paymentTransactionSwa
 
 ![](images/clipboard-1503931311.png)
 
+![](images/clipboard-3428930512.png)
+
 ## ISS-13 — Feature Disbursement (FK a Project)
 
 #### 13.1 Crear carpeta y modelo
@@ -1060,6 +1076,8 @@ Y agrégalo al arreglo `featureSwaggerModules`, debajo de `commissionSwagger`:
 
 ![](images/clipboard-2568776388.png)
 
+![](images/clipboard-1869589501.png)
+
 ## ISS-14 — Feature Refund (FK a Contribution)
 
 #### 14.1 Crear carpeta y modelo
@@ -1151,3 +1169,99 @@ Y agrégalo al arreglo `featureSwaggerModules`, debajo de `disbursementSwagger`:
 #### 14.14 Cierre del ISS-14
 
 ![](images/clipboard-1777634146.png)
+
+![](images/clipboard-1026280654.png)
+
+## ISS-15 — Feature ProjectAudit (FK a Project) — última entidad
+
+#### 15.1 Crear carpeta y modelo
+
+![](images/clipboard-3398054591.png)
+
+![](images/clipboard-2217222447.png)
+
+#### 15.2 Associations (ProjectAudit ↔ Project)
+
+![](images/clipboard-4141849798.png)
+
+#### 15.3 Controller (CRUD + validación de Project activo)
+
+![](images/clipboard-108282297.png)
+
+#### 15.4 Routes (`/api/auditorias-proyecto`)
+
+![](images/clipboard-18548106.png)
+
+#### 15.5 Archivos `.http` 
+
+![](images/clipboard-4119776072.png)
+
+#### 15.6 Cableado — `src/routes/index.ts`
+
+**PARCHE:** `nano src/routes/index.ts`. Agrega el import junto a los demás:
+
+![](images/clipboard-136611934.png)
+
+Y la propiedad dentro de la clase `Routes`, debajo de `refundRoutes`:
+
+![](images/clipboard-986128564.png)
+
+#### 15.7 Cableado — `src/config/index.ts`
+
+**PARCHE 1** (imports, debajo de `import "../features/business/refund/refund.associations";`):
+
+![](images/clipboard-2031483593.png)
+
+**PARCHE 2** (dentro del método `routes()`, debajo de `this.routePrv.refundRoutes.routes(this.app);`):
+
+![](images/clipboard-440417812.png)
+
+#### 15.8 Cableado — `src/database/seeders/counts.ts`
+
+**PARCHE 1** — en el `type SeedCounts { ... }` (con coma):
+
+**PARCHE 2** — en `DEFAULT_SEED_COUNTS = { ... }`:
+
+![](images/clipboard-2750604470.png)
+
+**PARCHE 3** — en `resolveSeedCounts()`, justo después del bloque `envRefunds`:
+
+![](images/clipboard-552651887.png)
+
+#### 15.9 Seeder — `project-audit.seeder.ts`
+
+![](images/clipboard-3713827708.png)
+
+#### 15.10 Cableado — `src/database/seeders/index.ts`
+
+**PARCHE:** agrega el import junto a los demás:
+
+![](images/clipboard-2355266694.png)
+
+Y la llamada, **después** de `seedRefunds` (última del archivo):
+
+![](images/clipboard-3558251222.png)
+
+#### 15.11 Swagger — `project-audit.swagger.ts`
+
+![](images/clipboard-915966420.png)
+
+#### 15.12 Cableado — `src/swagger/index.ts`
+
+**PARCHE:** agrega el import junto a los demás:
+
+![](images/clipboard-1549810219.png)
+
+Y agrégalo al arreglo `featureSwaggerModules` (última entrada):
+
+![](images/clipboard-3476445341.png)
+
+#### 15.13 Verificación final
+
+![](images/clipboard-2324158031.png)
+
+#### 15.14 Cierre del ISS-15 
+
+![](images/clipboard-4054827805.png)
+
+![](images/clipboard-1272116268.png)

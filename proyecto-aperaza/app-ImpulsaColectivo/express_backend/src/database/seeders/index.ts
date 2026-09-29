@@ -11,6 +11,7 @@ import { seedPaymentTransactions } from "../../features/business/payment-transac
 import { seedCommissions } from "../../features/business/commission/commission.seeder";
 import { seedDisbursements } from "../../features/business/disbursement/disbursement.seeder";
 import { seedRefunds } from "../../features/business/refund/refund.seeder";
+import { seedProjectAudits } from "../../features/business/project-audit/project-audit.seeder";
 import { resolveSeedCounts } from "./counts";
 
 dotenv.config();
@@ -49,6 +50,7 @@ export async function runAllSeeders(): Promise<void> {
               await seedCommissions(counts.commissions);
                 await seedDisbursements(counts.disbursements);
                   await seedRefunds(counts.refunds);
+                    await seedProjectAudits(counts.project_audits);
         
 
   console.log("🌱 SeedersRunner finalizado");
