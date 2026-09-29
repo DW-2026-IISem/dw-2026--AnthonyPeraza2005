@@ -253,7 +253,7 @@
 
 ![](images/clipboard-3052178796.png)
 
-**PARCHE** — `package.json` (ya existe): dentro de `"scripts"`, debajo de `"dev": "..."`, agrega (recuerda poner coma al final de la línea de `dev` si no la tiene):
+**PARCHE** — `package.json`: dentro de `"scripts"`, debajo de `"dev": "..."`, agrega (recuerda poner coma al final de la línea de `dev` si no la tiene):
 
 ![](images/clipboard-4008600627.png)
 
@@ -279,7 +279,7 @@
 
 ![](images/clipboard-2286119972.png)
 
-**PARCHE** sobre `src/config/index.ts` (ya existe): ábrelo con `nano src/config/index.ts` y haz estos 3 cambios:
+**PARCHE** sobre `src/config/index.ts`: ábrelo con `nano src/config/index.ts` y haz estos 3 cambios:
 
 **1)** Debajo de `import { Routes } from "../routes/index";`, agrega:
 
@@ -315,7 +315,7 @@
 
 ![](images/clipboard-1108419677.png)
 
-#### **11.3 — HTTP (REST Client)**
+#### **11.3 — HTTP** 
 
 ![](images/clipboard-598900311.png)
 
@@ -323,7 +323,7 @@
 
 **11.4 — Cableado Routes + Config**
 
-**PARCHE** sobre `src/routes/index.ts` (ya existe):
+**PARCHE** sobre `src/routes/index.ts`:
 
 1.   Debajo de `import { PromoterRoutes } ...`, agrega:
 
@@ -333,7 +333,7 @@
 
     ![](images/clipboard-3561700604.png)
 
-    **PARCHE** sobre `src/config/index.ts` (ya existe):
+    **PARCHE** sobre `src/config/index.ts`:
 
     1.   Debajo de `import "../features/business/promoter/promoter.model";`, agrega:
 
@@ -363,7 +363,7 @@
 
 ![](images/clipboard-3536409696.png)
 
-**PARCHE** sobre `src/database/seeders/index.ts` (ya existe):
+**PARCHE** sobre `src/database/seeders/index.ts`:
 
 1.   Debajo del import de `seedPromoters`, agrega:
 
@@ -377,7 +377,7 @@
 
 ![](images/clipboard-3603474485.png)
 
-**PARCHE** sobre `src/swagger/index.ts` (ya existe):
+**PARCHE** sobre `src/swagger/index.ts`:
 
 1.   Debajo de `import { promoterSwagger } ...`, agrega:
 
@@ -420,7 +420,7 @@
 
 **12.4 — Cableado**
 
-**PARCHE** sobre `src/routes/index.ts` (ya existe):
+**PARCHE** sobre `src/routes/index.ts`:
 
 1.   Debajo de `import { ContributorRoutes } ...`, agrega:
 
@@ -430,7 +430,7 @@
 
 ![](images/clipboard-3508066304.png)
 
-**PARCHE** sobre `src/config/index.ts` (ya existe):
+**PARCHE** sobre `src/config/index.ts`:
 
 1.   Debajo de `import "../features/business/contributor/contributor.model";`, agrega:
 
@@ -448,7 +448,7 @@
 
 ![](images/clipboard-730902901.png)
 
-#### **PARCHE** sobre `src/config/index.ts` (ya existe): debajo de `import "../features/business/project/project.model";` (y encima de `import { Routes }`), agrega:
+#### **PARCHE** sobre `src/config/index.ts`: debajo de `import "../features/business/project/project.model";` (y encima de `import { Routes }`), agrega:
 
 ![](images/clipboard-1266893622.png)
 
@@ -462,7 +462,7 @@
 
 ![](images/clipboard-2617025119.png)
 
-**PARCHE** sobre `src/database/seeders/counts.ts` (ya existe):
+**PARCHE** sobre `src/database/seeders/counts.ts`:
 
 - Dentro de `SeedCounts`, agrega `projects: number;`
 
@@ -472,7 +472,7 @@
 
 ![](images/clipboard-3106888607.png)
 
-**PARCHE** sobre `src/database/seeders/index.ts` (ya existe):
+**PARCHE** sobre `src/database/seeders/index.ts`:
 
 1.   Debajo del import de `seedContributors`, agrega:
 
@@ -482,7 +482,7 @@
 
 ![](images/clipboard-1983183984.png)
 
-**PARCHE** sobre `src/swagger/index.ts` (ya existe):
+**PARCHE** sobre `src/swagger/index.ts`:
 
 1.   Debajo de `import { contributorSwagger } ...`, agrega:
 
@@ -499,3 +499,104 @@
 #### **Cierre del ISS-07:**
 
 ![](images/clipboard-3768853097.png)
+
+### ISS-08 — Feature Goal (metas de financiamiento) — con FK a Project
+
+**Objetivo:** CRUD de Goal con FK `project_id`.\
+**API:** `/api/metas` — SIN AUTH.
+
+![](images/clipboard-3289494788.png)
+
+**Modelo Goal**
+
+![](images/clipboard-1453151528.png)
+
+**Controller + routes**
+
+![](images/clipboard-2476000917.png)
+
+![](images/clipboard-2465055567.png)
+
+### **HTTP**
+
+![](images/clipboard-1890984905.png)
+
+![](images/clipboard-3279543017.png)
+
+**Cableado**
+
+**PARCHE** sobre `src/routes/index.ts`:
+
+1.  Debajo de `import { ProjectRoutes } ...`, agrega:
+
+![](images/clipboard-3731394614.png)
+
+2.  Dentro de `export class Routes`, debajo de `projectRoutes`, agrega:
+
+![](images/clipboard-1222438304.png)
+
+**PARCHE** sobre `src/config/index.ts`:
+
+1.   Debajo de `import "../features/business/project/project.model";`, agrega:
+
+![](images/clipboard-2196542337.png)
+
+2.  Dentro de `routes()`, debajo de `this.routePrv.projectRoutes.routes(this.app);`, agrega:
+
+![](images/clipboard-1370101527.png)
+
+#### **Relación Project ↔ Goal (obligatorio al cerrar la tabla)**
+
+![](images/clipboard-1576015695.png)
+
+**PARCHE** sobre `src/config/index.ts`: debajo de `import "../features/business/goal/goal.model";` (y encima de `import { Routes }`), agrega:
+
+![](images/clipboard-2079159714.png)
+
+#### **Verificación relación:**
+
+![](images/clipboard-1867678370.png)
+
+#### **Seeder + Swagger Goal**
+
+![](images/clipboard-965531536.png)
+
+![](images/clipboard-1350318576.png)
+
+**PARCHE** sobre `src/database/seeders/counts.ts`:
+
+- Dentro de `SeedCounts`, agrega `goals: number;`
+
+- Dentro de `DEFAULT_SEED_COUNTS`, agrega `goals: 15,`
+
+- Dentro de la lectura por env, agrega:
+
+![](images/clipboard-3296448898.png)
+
+**PARCHE** sobre `src/database/seeders/index.ts`:
+
+1.   Debajo del import de `seedProjects`, agrega:
+
+![](images/clipboard-1473578327.png)
+
+2.  Debajo de `await seedProjects(counts.projects);`, agrega:
+
+    ![](images/clipboard-98405172.png)
+
+**PARCHE** sobre `src/swagger/index.ts`:
+
+1.   Debajo de `import { projectSwagger } ...`, agrega:
+
+![](images/clipboard-4116023968.png)
+
+2.  Dentro de `featureSwaggerModules`, debajo de `projectSwagger,`, agrega:
+
+![](images/clipboard-3908034623.png)
+
+#### **Verificación final:**
+
+![](images/clipboard-2770121548.png)
+
+#### **Cierre del ISS-08:**
+
+![](images/clipboard-2394669828.png)

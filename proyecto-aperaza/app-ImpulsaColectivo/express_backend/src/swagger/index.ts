@@ -3,6 +3,7 @@ import swaggerUi from "swagger-ui-express";
 import { promoterSwagger } from "../features/business/promoter/promoter.swagger";
 import { contributorSwagger } from "../features/business/contributor/contributor.swagger";
 import { projectSwagger } from "../features/business/project/project.swagger";
+import { goalSwagger } from "../features/business/goal/goal.swagger";
 
 export type FeatureSwaggerModule = {
   tags: unknown[];
@@ -18,6 +19,7 @@ const featureSwaggerModules: FeatureSwaggerModule[] = [
   promoterSwagger,
   contributorSwagger,
   projectSwagger,
+  goalSwagger,
   // contributorSwagger,
   // projectSwagger,
 ];

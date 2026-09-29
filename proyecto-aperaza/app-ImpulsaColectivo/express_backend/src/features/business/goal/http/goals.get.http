@@ -1,0 +1,12 @@
+### Feature Goal — GET ALL / GET ONE
+### Leyenda: SIN AUTH (sin middleware JWT / sin autenticación)
+@baseUrl = http://localhost:4000
+@id = 1
+
+# @name getAllGoals
+GET {{baseUrl}}/api/metas
+
+###
+
+# @name getOneGoal
+GET {{baseUrl}}/api/metas/{{id}}

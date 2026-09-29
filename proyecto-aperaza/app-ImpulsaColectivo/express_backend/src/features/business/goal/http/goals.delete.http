@@ -1,0 +1,12 @@
+### Feature Goal — DELETE físico / DELETE lógico (status = inactive)
+### Leyenda: SIN AUTH (sin middleware JWT / sin autenticación)
+@baseUrl = http://localhost:4000
+@id = 1
+
+# @name deleteGoalPhysical
+DELETE {{baseUrl}}/api/metas/{{id}}
+
+###
+
+# @name deleteGoalLogical
+PATCH {{baseUrl}}/api/metas/{{id}}/deactivate

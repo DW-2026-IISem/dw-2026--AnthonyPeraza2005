@@ -1,0 +1,14 @@
+### Feature Goal — CREATE
+### Leyenda: SIN AUTH (sin middleware JWT / sin autenticación)
+@baseUrl = http://localhost:4000
+
+# @name createGoal
+POST {{baseUrl}}/api/metas
+Content-Type: application/json
+
+{
+  "description": "Recaudar $8.000.000 para insumos de siembra",
+  "target_amount": 8000000,
+  "project_id": 1,
+  "status": "active"
+}
