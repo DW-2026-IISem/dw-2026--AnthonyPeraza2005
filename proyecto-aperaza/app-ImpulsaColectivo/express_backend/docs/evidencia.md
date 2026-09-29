@@ -296,3 +296,101 @@
 ![**Cierre del ISS-05:**](images/clipboard-1450899533.png)
 
 ![](images/clipboard-2114847537.png)
+
+### ISS-06 — Feature Contributor (aportantes)
+
+**Objetivo:** CRUD + seeder + swagger de Contributor (sin FK).\
+**API:** `/api/contribuyentes` — SIN AUTH.\
+**Patrón:** igual que ProductType (catálogo simple).
+
+![](images/clipboard-1915917346.png)
+
+#### **11.1 — Modelo Contributor**
+
+![](images/clipboard-1385126126.png)
+
+#### **11.2 — Controller + routes (CRUD completo)**
+
+![](images/clipboard-520033376.png)
+
+![](images/clipboard-1108419677.png)
+
+#### **11.3 — HTTP (REST Client)**
+
+![](images/clipboard-598900311.png)
+
+![![](images/clipboard-1625070615.png)](images/clipboard-4281810694.png)
+
+**11.4 — Cableado Routes + Config**
+
+**PARCHE** sobre `src/routes/index.ts` (ya existe):
+
+1.   Debajo de `import { PromoterRoutes } ...`, agrega:
+
+![](images/clipboard-500447000.png)
+
+2.  Dentro de `export class Routes`, debajo de `promoterRoutes`, agrega:
+
+    ![](images/clipboard-3561700604.png)
+
+    **PARCHE** sobre `src/config/index.ts` (ya existe):
+
+    1.   Debajo de `import "../features/business/promoter/promoter.model";`, agrega:
+
+    ![](images/clipboard-167420139.png)
+
+<!-- -->
+
+2.  Dentro de `routes()`, debajo de `this.routePrv.promoterRoutes.routes(this.app);`, agrega:
+
+    ![](images/clipboard-917604580.png)
+
+#### **Verificación:**
+
+![](images/clipboard-768797171.png)
+
+#### **11.5 — Seeder Contributor**
+
+![](images/clipboard-2052112024.png)
+
+**PARCHE** sobre `src/database/seeders/counts.ts` :
+
+- Dentro de `SeedCounts`, agrega `contributors: number;`
+
+- Dentro de `DEFAULT_SEED_COUNTS`, agrega `contributors: 15,`
+
+- Dentro de la lectura por env, agrega (debajo de `envPromoters`):
+
+![](images/clipboard-3536409696.png)
+
+**PARCHE** sobre `src/database/seeders/index.ts` (ya existe):
+
+1.   Debajo del import de `seedPromoters`, agrega:
+
+![](images/clipboard-2169969776.png)
+
+2.  Debajo de `await seedPromoters(counts.promoters);`, agrega:
+
+![](images/clipboard-2787351296.png)
+
+#### **11.6 — Swagger Contributor**
+
+![](images/clipboard-3603474485.png)
+
+**PARCHE** sobre `src/swagger/index.ts` (ya existe):
+
+1.   Debajo de `import { promoterSwagger } ...`, agrega:
+
+![](images/clipboard-1442299572.png)
+
+2.  Dentro de `featureSwaggerModules`, debajo de `promoterSwagger,`, agrega:
+
+![](images/clipboard-2002984752.png)
+
+#### **Verificación final:**
+
+![](images/clipboard-3476640638.png)
+
+### **Cierre del ISS-06:**
+
+![](images/clipboard-3514103314.png)

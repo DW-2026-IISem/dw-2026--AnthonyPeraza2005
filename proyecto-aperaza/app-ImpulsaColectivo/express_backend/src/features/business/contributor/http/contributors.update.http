@@ -1,0 +1,25 @@
+### Feature Contributor — UPDATE (PUT) / UPDATE (PATCH)
+### Leyenda: SIN AUTH (sin middleware JWT / sin autenticación)
+@baseUrl = http://localhost:4000
+@id = 1
+
+# @name updateContributorPut
+PUT {{baseUrl}}/api/contribuyentes/{{id}}
+Content-Type: application/json
+
+{
+  "name": "Mariana Torres Actualizada",
+  "email": "mariana.torres@example.com",
+  "phone": "3001112233",
+  "status": "active"
+}
+
+###
+
+# @name updateContributorPatch
+PATCH {{baseUrl}}/api/contribuyentes/{{id}}
+Content-Type: application/json
+
+{
+  "phone": "3004445566"
+}

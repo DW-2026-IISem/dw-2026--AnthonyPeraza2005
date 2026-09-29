@@ -1,0 +1,14 @@
+### Feature Contributor — CREATE
+### Leyenda: SIN AUTH (sin middleware JWT / sin autenticación)
+@baseUrl = http://localhost:4000
+
+# @name createContributor
+POST {{baseUrl}}/api/contribuyentes
+Content-Type: application/json
+
+{
+  "name": "Mariana Torres",
+  "email": "mariana.torres@example.com",
+  "phone": "3007654321",
+  "status": "active"
+}
