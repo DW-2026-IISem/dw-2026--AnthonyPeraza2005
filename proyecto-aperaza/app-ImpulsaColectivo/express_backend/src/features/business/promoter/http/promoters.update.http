@@ -1,0 +1,26 @@
+### Feature Promoter — UPDATE (PUT) / UPDATE (PATCH)
+### Leyenda: SIN AUTH (sin middleware JWT / sin autenticación)
+@baseUrl = http://localhost:4000
+@id = 1
+
+# @name updatePromoterPut
+PUT {{baseUrl}}/api/promotores/{{id}}
+Content-Type: application/json
+
+{
+  "name": "Fundación ImpulsaColectivo Actualizada",
+  "description": "Organización actualizada que impulsa proyectos comunitarios",
+  "contact_email": "contacto@impulsacolectivo.org",
+  "contact_phone": "3009876543",
+  "status": "active"
+}
+
+###
+
+# @name updatePromoterPatch
+PATCH {{baseUrl}}/api/promotores/{{id}}
+Content-Type: application/json
+
+{
+  "contact_phone": "3011112233"
+}

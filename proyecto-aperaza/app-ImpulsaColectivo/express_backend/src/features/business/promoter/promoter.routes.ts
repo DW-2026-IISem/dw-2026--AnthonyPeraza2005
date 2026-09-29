@@ -20,5 +20,10 @@ export class PromoterRoutes {
     app
       .route("/api/promotores")
       .post(this.promoterController.create.bind(this.promoterController));
+        // update (PUT / PATCH)
+    app
+      .route("/api/promotores/:id")
+      .put(this.promoterController.updatePut.bind(this.promoterController))
+      .patch(this.promoterController.updatePatch.bind(this.promoterController));
   }
 }

@@ -177,7 +177,7 @@
 
 **PARCHE** sobre `src/features/business/promoter/promoter.routes.ts` (ya existe): **debajo de** el bloque `// getOne`, agrega:
 
-![](images/clipboard-1916711932.png)
+![](images/clipboard-2848179397.png)
 
 #### Archivo nuevo — `.http`
 
@@ -190,3 +190,23 @@
 #### **Cierre del ISS-03-C:**
 
 ![](images/clipboard-2022209909.png)
+
+### ISS-03-D — Feature Promoter — Update (PUT) y Update (PATCH)
+
+**PARCHE** sobre `src/features/business/promoter/promoter.controller.ts` (ya existe): **debajo de** el comentario `// ================== UPDATE ==================` (y **encima de** `// ================== DELETE ==================`), agrega:
+
+![](images/clipboard-2520990230.png)
+
+**PARCHE** sobre `src/features/business/promoter/promoter.routes.ts` (ya existe): **debajo de** el bloque `// create`, agrega:
+
+![](images/clipboard-960060521.png)
+
+#### Archivo nuevo — `.http`
+
+![](images/clipboard-446429490.png)
+
+**Verificación:**
+
+![**Cierre del ISS-03-D:**](images/clipboard-2188981627.png)
+
+![](images/clipboard-3796577259.png)
