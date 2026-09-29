@@ -3,6 +3,7 @@ import { sequelize, testConnection } from "../db";
 import "../../features/business/promoter/promoter.model";
 import { seedPromoters } from "../../features/business/promoter/promoter.seeder";
 import { seedContributors } from "../../features/business/contributor/contributor.seeder";
+import { seedProjects } from "../../features/business/project/project.seeder";
 import { resolveSeedCounts } from "./counts";
 
 dotenv.config();
@@ -33,6 +34,7 @@ export async function runAllSeeders(): Promise<void> {
   // Orden: business (padres → hijos)
   await seedPromoters(counts.promoters);
     await seedContributors(counts.contributors);
+      await seedProjects(counts.projects);
 
   console.log("🌱 SeedersRunner finalizado");
 }

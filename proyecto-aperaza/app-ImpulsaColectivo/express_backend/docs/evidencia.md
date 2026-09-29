@@ -394,3 +394,108 @@
 ### **Cierre del ISS-06:**
 
 ![](images/clipboard-3514103314.png)
+
+### ISS-07 — Feature Project (proyectos) — con FK a Promoter
+
+**Objetivo:** CRUD de Project con FK `promoter_id`.\
+**API:** `/api/proyectos` — SIN AUTH.
+
+![](images/clipboard-4068161805.png)
+
+#### **12.1 — Modelo Project**
+
+![](images/clipboard-1582757540.png)
+
+#### **12.2 — Controller + routes**
+
+![](images/clipboard-3809936832.png)
+
+![](images/clipboard-4034797462.png)
+
+#### **12.3 — HTTP**
+
+![](images/clipboard-1846952603.png)
+
+![](images/clipboard-3164907424.png)
+
+**12.4 — Cableado**
+
+**PARCHE** sobre `src/routes/index.ts` (ya existe):
+
+1.   Debajo de `import { ContributorRoutes } ...`, agrega:
+
+![](images/clipboard-3197628230.png)
+
+2.  Dentro de `export class Routes`, debajo de `contributorRoutes`, agregar
+
+![](images/clipboard-3508066304.png)
+
+**PARCHE** sobre `src/config/index.ts` (ya existe):
+
+1.   Debajo de `import "../features/business/contributor/contributor.model";`, agrega:
+
+![](images/clipboard-4260411019.png)
+
+2.  Dentro de `routes()`, debajo de `this.routePrv.contributorRoutes.routes(this.app);`, agrega:
+
+    ![](images/clipboard-1061110720.png)
+
+#### **12.5 — Relación Promoter ↔ Project (obligatorio al cerrar la tabla)**
+
+> ####  
+>
+> #### Norma FK: `promoter_id` (tabla `promoters` → singular `promoter` + `_id`).
+
+![](images/clipboard-730902901.png)
+
+#### **PARCHE** sobre `src/config/index.ts` (ya existe): debajo de `import "../features/business/project/project.model";` (y encima de `import { Routes }`), agrega:
+
+![](images/clipboard-1266893622.png)
+
+#### **Verificación relación:**
+
+![](images/clipboard-626266531.png)
+
+#### **12.6 — Seeder + Swagger Project**
+
+![](images/clipboard-3969071135.png)
+
+![](images/clipboard-2617025119.png)
+
+**PARCHE** sobre `src/database/seeders/counts.ts` (ya existe):
+
+- Dentro de `SeedCounts`, agrega `projects: number;`
+
+- Dentro de `DEFAULT_SEED_COUNTS`, agrega `projects: 12,`
+
+- Dentro de la lectura por env, agrega:
+
+![](images/clipboard-3106888607.png)
+
+**PARCHE** sobre `src/database/seeders/index.ts` (ya existe):
+
+1.   Debajo del import de `seedContributors`, agrega:
+
+![](images/clipboard-1141113902.png)
+
+2.  Debajo de `await seedContributors(counts.contributors);`, agrega:
+
+![](images/clipboard-1983183984.png)
+
+**PARCHE** sobre `src/swagger/index.ts` (ya existe):
+
+1.   Debajo de `import { contributorSwagger } ...`, agrega:
+
+![](images/clipboard-2358487211.png)
+
+2.  Dentro de `featureSwaggerModules`, debajo de `contributorSwagger,`, agrega:
+
+![](images/clipboard-2189368400.png)
+
+#### **Verificación final:**
+
+![](images/clipboard-2344600265.png)
+
+#### **Cierre del ISS-07:**
+
+![](images/clipboard-3768853097.png)

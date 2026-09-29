@@ -5,6 +5,8 @@ var cors = require("cors");
 import { sequelize, getDatabaseInfo, testConnection } from "../database/db";
 import "../features/business/promoter/promoter.model";
 import "../features/business/contributor/contributor.model";
+import "../features/business/project/project.model";
+import "../features/business/project/project.associations";
 import { Routes } from "../routes/index";
 import { setupSwagger } from "../swagger/index";
 
@@ -37,6 +39,7 @@ export class App {
   private routes(): void {
     this.routePrv.promoterRoutes.routes(this.app);
     this.routePrv.contributorRoutes.routes(this.app);
+    this.routePrv.projectRoutes.routes(this.app);
     
   }
   private docs(): void {

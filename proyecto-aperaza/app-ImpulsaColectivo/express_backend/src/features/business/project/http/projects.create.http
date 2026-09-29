@@ -1,0 +1,16 @@
+### Feature Project — CREATE
+### Leyenda: SIN AUTH (sin middleware JWT / sin autenticación)
+@baseUrl = http://localhost:4000
+
+# @name createProject
+POST {{baseUrl}}/api/proyectos
+Content-Type: application/json
+
+{
+  "title": "Reforestación del río Rancheria",
+  "description": "Proyecto comunitario de siembra de árboles nativos",
+  "start_date": "2026-10-01",
+  "end_date": "2026-12-31",
+  "promoter_id": 1,
+  "status": "active"
+}

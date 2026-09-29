@@ -1,0 +1,27 @@
+### Feature Project — UPDATE (PUT) / UPDATE (PATCH)
+### Leyenda: SIN AUTH (sin middleware JWT / sin autenticación)
+@baseUrl = http://localhost:4000
+@id = 1
+
+# @name updateProjectPut
+PUT {{baseUrl}}/api/proyectos/{{id}}
+Content-Type: application/json
+
+{
+  "title": "Reforestación del río Rancheria - Fase 2",
+  "description": "Ampliación del proyecto de siembra",
+  "start_date": "2026-10-01",
+  "end_date": "2027-02-28",
+  "promoter_id": 1,
+  "status": "active"
+}
+
+###
+
+# @name updateProjectPatch
+PATCH {{baseUrl}}/api/proyectos/{{id}}
+Content-Type: application/json
+
+{
+  "end_date": "2027-03-31"
+}
