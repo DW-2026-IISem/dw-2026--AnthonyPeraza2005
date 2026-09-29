@@ -1,0 +1,9 @@
+### Feature PaymentTransaction — GET
+
+GET http://localhost:4000/api/transacciones-pago
+# @name getPaymentTransactions
+
+###
+
+GET http://localhost:4000/api/transacciones-pago/1
+# @name getPaymentTransaction

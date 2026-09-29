@@ -1,0 +1,24 @@
+### Feature PaymentTransaction — UPDATE
+
+PUT http://localhost:4000/api/transacciones-pago/1
+Content-Type: application/json
+# @name updatePaymentTransactionPut
+
+{
+  "reference": "TRX-0001",
+  "payment_method": "pse",
+  "amount": 60000,
+  "transaction_date": "2026-09-29",
+  "contribution_id": 1,
+  "status": "active"
+}
+
+###
+
+PATCH http://localhost:4000/api/transacciones-pago/1
+Content-Type: application/json
+# @name updatePaymentTransactionPatch
+
+{
+  "amount": 70000
+}

@@ -628,7 +628,7 @@
 
 **PARCHE** sobre `src/routes/index.ts` (ya existe):
 
-1.   Debajo de `import { GoalRoutes } ...`, agrega:
+1.  Debajo de `import { GoalRoutes } ...`, agrega:
 
 ![](images/clipboard-3493424504.png)
 
@@ -638,7 +638,7 @@
 
 **PARCHE** sobre `src/config/index.ts` (ya existe):
 
-1.   Debajo de `import "../features/business/goal/goal.model";`, agrega:
+1.  Debajo de `import "../features/business/goal/goal.model";`, agrega:
 
 ![](images/clipboard-4137872283.png)
 
@@ -676,7 +676,7 @@
 
 **PARCHE** sobre `src/database/seeders/index.ts` (ya existe):
 
-1.   Debajo del import de `seedGoals`, agrega:
+1.  Debajo del import de `seedGoals`, agrega:
 
 ![](images/clipboard-239898656.png)
 
@@ -686,7 +686,7 @@
 
 **PARCHE** sobre `src/swagger/index.ts` (ya existe):
 
-1.   Debajo de `import { goalSwagger } ...`, agrega:
+1.  Debajo de `import { goalSwagger } ...`, agrega:
 
 ![](images/clipboard-1183065193.png)
 
@@ -785,3 +785,93 @@ Y agrega `contributionSwagger` al arreglo `featureSwaggerModules` (donde ya est�
 #### Cierre del ISS-10:
 
 ![](images/clipboard-4088200091.png)
+
+## ISS-11 — Feature PaymentTransaction (FK a Contribution)
+
+#### 11.1 Crear carpeta y modelo
+
+![](images/clipboard-1693273442.png)
+
+![](images/clipboard-1486479421.png)
+
+#### 11.2 Associations (PaymentTransaction ↔ Contribution)
+
+![](images/clipboard-1236715041.png)
+
+#### 11.3 Controller (CRUD + validación de Contribution activa)
+
+![](images/clipboard-1812196045.png)
+
+#### 11.4 Routes (`/api/transacciones-pago`)
+
+![](images/clipboard-1021146689.png)
+
+#### 11.5 Archivos `.http` 
+
+![](images/clipboard-1201864721.png)
+
+#### 11.6 Cableado — `src/routes/index.ts`
+
+**PARCHE:** `nano src/routes/index.ts`. Agrega el import junto a los demás:
+
+![](images/clipboard-3753809824.png)
+
+Y la propiedad dentro de la clase `Routes`, debajo de `contributionRoutes`:
+
+![](images/clipboard-1441973746.png)
+
+#### 11.7 Cableado — `src/config/index.ts`
+
+**PARCHE 1** (imports, debajo de `import "../features/business/contribution/contribution.associations";`):
+
+![](images/clipboard-3602248190.png)
+
+**PARCHE 2** (dentro del método `routes()`, debajo de `this.routePrv.contributionRoutes.routes(this.app);`):
+
+![](images/clipboard-1399508795.png)
+
+#### 11.8 Cableado — `src/database/seeders/counts.ts`
+
+Con tu estructura real (bloques `if` por variable de entorno), son **tres** ediciones:
+
+**PARCHE 1** — en el `type SeedCounts { ... }`:
+
+![](images/clipboard-314987657.png)
+
+![](images/clipboard-959372981.png)
+
+#### 11.9 Seeder — `payment-transaction.seeder.ts`
+
+![](images/clipboard-1745059739.png)
+
+#### 11.10 Cableado — `src/database/seeders/index.ts`
+
+**PARCHE:** agrega el import junto a los demás:
+
+![](images/clipboard-533405561.png)
+
+Y la llamada, **después** de `seedContributions` (la contribución padre debe existir antes):
+
+![](images/clipboard-3918553250.png)
+
+#### 11.11 Swagger — `payment-transaction.swagger.ts`
+
+![](images/clipboard-740380277.png)
+
+#### 11.12 Cableado — `src/swagger/index.ts`
+
+**PARCHE:** agrega el import junto a los demás:
+
+![](images/clipboard-1269907346.png)
+
+Y agrégalo al arreglo `featureSwaggerModules`, debajo de `contributionSwagger`:
+
+![](images/clipboard-3281799917.png)
+
+#### 11.13 Verificación final
+
+![](images/clipboard-3380980758.png)
+
+#### 11.14 Cierre del ISS-11
+
+![](images/clipboard-2695583361.png)

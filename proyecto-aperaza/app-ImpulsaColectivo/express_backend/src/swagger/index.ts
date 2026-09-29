@@ -6,6 +6,7 @@ import { projectSwagger } from "../features/business/project/project.swagger";
 import { goalSwagger } from "../features/business/goal/goal.swagger";
 import { rewardSwagger } from "../features/business/reward/reward.swagger";
 import { contributionSwagger } from "../features/business/contribution/contribution.swagger";
+import { paymentTransactionSwagger } from "../features/business/payment-transaction/payment-transaction.swagger";
 
 export type FeatureSwaggerModule = {
   tags: unknown[];
@@ -24,6 +25,7 @@ const featureSwaggerModules: FeatureSwaggerModule[] = [
   goalSwagger,
   rewardSwagger,
   contributionSwagger,
+  paymentTransactionSwagger,
   // contributorSwagger,
   // projectSwagger,
 ];
