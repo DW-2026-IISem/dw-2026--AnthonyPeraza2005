@@ -701,3 +701,87 @@
 #### **Cierre del ISS-09:**
 
 ![](images/clipboard-2656868851.png)
+
+## ISS-10 — Feature Contribution (doble FK: Project + Contributor)
+
+#### 10.1 Crear carpeta y modelo
+
+![](images/clipboard-3176635127.png)
+
+![](images/clipboard-2319301352.png)
+
+#### 10.1b Associations
+
+![](images/clipboard-2403102750.png)
+
+#### 10.2 Controller (doble validación FK: Project y Contributor activos)
+
+![](images/clipboard-3485322081.png)
+
+#### 10.3 Routes (`/api/contribuciones`)
+
+![](images/clipboard-404421456.png)
+
+#### 10.3b Archivos `.http` de prueba
+
+![](images/clipboard-14809525.png)
+
+#### 10.4 Cableado — `src/routes/index.ts`
+
+**PARCHE:** abre con `nano src/routes/index.ts`, agrega el import junto a los demás:
+
+![](images/clipboard-2590147757.png)
+
+Y dentro de la clase `Routes`, agrega la propiedad junto a las demás (debajo de `rewardRoutes`):
+
+![](images/clipboard-1953124998.png)
+
+#### 10.4b Cableado — `src/config/index.ts`
+
+**PARCHE 1** (imports, debajo de la línea `import "../features/business/reward/reward.associations";`):
+
+![](images/clipboard-285347175.png)
+
+**PARCHE 2** (dentro del método `routes()`, debajo de `this.routePrv.rewardRoutes.routes(this.app);`):
+
+![](images/clipboard-3161287926.png)
+
+#### 10.5 Seeder — `src/database/seeders/counts.ts`
+
+**PARCHE:** agrega la clave `contributions` en el type `SeedCounts`, en `DEFAULT_SEED_COUNTS` y en la resolución de overrides, siguiendo exactamente el mismo patrón que ya tienes para `rewards`.
+
+![](images/clipboard-821273619.png)
+
+#### 10.9 Seeder — `contribution.seeder.ts`
+
+![](images/clipboard-1329395236.png)
+
+#### 10.10 Cableado — `src/database/seeders/index.ts`
+
+**PARCHE:** agrega el import junto a los demás:
+
+![](images/clipboard-4073358345.png)
+
+![](images/clipboard-3244045470.png)
+
+#### 10.11 Swagger — `contribution.swagger.ts`
+
+![](images/clipboard-222564414.png)
+
+#### 10.12 Cableado — `src/swagger/index.ts`
+
+**PARCHE:** agrega el import junto a los demás:
+
+![](images/clipboard-2909485593.png)
+
+Y agrega `contributionSwagger` al arreglo `featureSwaggerModules` (donde ya están `promoterSwagger`, `contributorSwagger`, `projectSwagger`, `goalSwagger`, `rewardSwagger`):
+
+![](images/clipboard-1534033590.png)
+
+### 10.13 Verificación final
+
+![](images/clipboard-2912813307.png)
+
+#### Cierre del ISS-10:
+
+![](images/clipboard-4088200091.png)

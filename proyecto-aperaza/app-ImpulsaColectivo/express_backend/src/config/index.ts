@@ -9,6 +9,8 @@ import "../features/business/project/project.model";
 import "../features/business/goal/goal.model";
 import "../features/business/reward/reward.model";
 import "../features/business/reward/reward.associations";
+import "../features/business/contribution/contribution.model";
+import "../features/business/contribution/contribution.associations";
 import "../features/business/goal/goal.associations";
 import "../features/business/project/project.associations";
 import { Routes } from "../routes/index";
@@ -46,6 +48,7 @@ export class App {
     this.routePrv.projectRoutes.routes(this.app);
     this.routePrv.goalRoutes.routes(this.app);
     this.routePrv.rewardRoutes.routes(this.app);
+    this.routePrv.contributionRoutes.routes(this.app);
     
   }
   private docs(): void {

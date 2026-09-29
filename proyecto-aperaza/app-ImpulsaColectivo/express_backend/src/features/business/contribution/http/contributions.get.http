@@ -1,0 +1,9 @@
+### Feature Contribution — GET
+
+GET http://localhost:4000/api/contribuciones
+# @name getContributions
+
+###
+
+GET http://localhost:4000/api/contribuciones/1
+# @name getContribution

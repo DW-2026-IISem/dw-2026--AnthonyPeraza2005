@@ -3,6 +3,7 @@ import { ContributorRoutes } from "../features/business/contributor/contributor.
 import { ProjectRoutes } from "../features/business/project/project.routes";
 import { GoalRoutes } from "../features/business/goal/goal.routes"; 
 import { RewardRoutes } from "../features/business/reward/reward.routes";  
+import { ContributionRoutes } from "../features/business/contribution/contribution.routes";
 
 export class Routes {
   public promoterRoutes: PromoterRoutes = new PromoterRoutes();
@@ -10,4 +11,5 @@ export class Routes {
       public projectRoutes: ProjectRoutes = new ProjectRoutes();
         public goalRoutes: GoalRoutes = new GoalRoutes();
           public rewardRoutes: RewardRoutes = new RewardRoutes();
+            public contributionRoutes: ContributionRoutes = new ContributionRoutes();
 }

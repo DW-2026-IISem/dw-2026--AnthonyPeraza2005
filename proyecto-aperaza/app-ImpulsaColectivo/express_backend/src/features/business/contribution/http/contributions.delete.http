@@ -1,0 +1,9 @@
+### Feature Contribution — DELETE
+
+DELETE http://localhost:4000/api/contribuciones/1/fisico
+# @name deleteContributionPhysical
+
+###
+
+PATCH http://localhost:4000/api/contribuciones/1/logico
+# @name deleteContributionLogical

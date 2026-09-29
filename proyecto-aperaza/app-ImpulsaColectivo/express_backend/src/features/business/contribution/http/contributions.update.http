@@ -1,0 +1,23 @@
+### Feature Contribution — UPDATE
+
+PUT http://localhost:4000/api/contribuciones/1
+Content-Type: application/json
+# @name updateContributionPut
+
+{
+  "amount": 75000,
+  "contribution_date": "2026-09-29",
+  "project_id": 1,
+  "contributor_id": 1,
+  "status": "active"
+}
+
+###
+
+PATCH http://localhost:4000/api/contribuciones/1
+Content-Type: application/json
+# @name updateContributionPatch
+
+{
+  "amount": 90000
+}

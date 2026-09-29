@@ -1,0 +1,13 @@
+### Feature Contribution — CREATE
+
+POST http://localhost:4000/api/contribuciones
+Content-Type: application/json
+# @name createContribution
+
+{
+  "amount": 50000,
+  "contribution_date": "2026-09-29",
+  "project_id": 1,
+  "contributor_id": 1,
+  "status": "active"
+}
