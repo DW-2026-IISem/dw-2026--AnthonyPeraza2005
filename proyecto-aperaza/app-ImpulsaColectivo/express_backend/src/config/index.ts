@@ -7,6 +7,8 @@ import "../features/business/promoter/promoter.model";
 import "../features/business/contributor/contributor.model";
 import "../features/business/project/project.model";
 import "../features/business/goal/goal.model";
+import "../features/business/reward/reward.model";
+import "../features/business/reward/reward.associations";
 import "../features/business/goal/goal.associations";
 import "../features/business/project/project.associations";
 import { Routes } from "../routes/index";
@@ -43,6 +45,7 @@ export class App {
     this.routePrv.contributorRoutes.routes(this.app);
     this.routePrv.projectRoutes.routes(this.app);
     this.routePrv.goalRoutes.routes(this.app);
+    this.routePrv.rewardRoutes.routes(this.app);
     
   }
   private docs(): void {

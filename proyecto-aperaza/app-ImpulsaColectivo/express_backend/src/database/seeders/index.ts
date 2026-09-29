@@ -4,6 +4,8 @@ import "../../features/business/promoter/promoter.model";
 import { seedPromoters } from "../../features/business/promoter/promoter.seeder";
 import { seedContributors } from "../../features/business/contributor/contributor.seeder";
 import { seedProjects } from "../../features/business/project/project.seeder";
+import { seedGoals } from "../../features/business/goal/goal.seeder";
+import { seedRewards } from "../../features/business/reward/reward.seeder";
 import { resolveSeedCounts } from "./counts";
 
 dotenv.config();
@@ -35,6 +37,9 @@ export async function runAllSeeders(): Promise<void> {
   await seedPromoters(counts.promoters);
     await seedContributors(counts.contributors);
       await seedProjects(counts.projects);
+        await seedGoals(counts.goals);
+          await seedRewards(counts.rewards);
+        
 
   console.log("🌱 SeedersRunner finalizado");
 }

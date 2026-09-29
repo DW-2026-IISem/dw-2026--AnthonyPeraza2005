@@ -1,0 +1,15 @@
+### Feature Reward — CREATE
+### Leyenda: SIN AUTH (sin middleware JWT / sin autenticación)
+@baseUrl = http://localhost:4000
+
+# @name createReward
+POST {{baseUrl}}/api/recompensas
+Content-Type: application/json
+
+{
+  "title": "Camiseta conmemorativa",
+  "description": "Camiseta del proyecto para aportes desde $50.000",
+  "min_amount": 50000,
+  "project_id": 1,
+  "status": "active"
+}

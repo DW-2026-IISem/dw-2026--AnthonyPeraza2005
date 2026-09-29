@@ -1,0 +1,26 @@
+### Feature Reward — UPDATE (PUT) / UPDATE (PATCH)
+### Leyenda: SIN AUTH (sin middleware JWT / sin autenticación)
+@baseUrl = http://localhost:4000
+@id = 1
+
+# @name updateRewardPut
+PUT {{baseUrl}}/api/recompensas/{{id}}
+Content-Type: application/json
+
+{
+  "title": "Camiseta conmemorativa edición especial",
+  "description": "Camiseta actualizada con nuevo diseño",
+  "min_amount": 60000,
+  "project_id": 1,
+  "status": "active"
+}
+
+###
+
+# @name updateRewardPatch
+PATCH {{baseUrl}}/api/recompensas/{{id}}
+Content-Type: application/json
+
+{
+  "min_amount": 55000
+}
