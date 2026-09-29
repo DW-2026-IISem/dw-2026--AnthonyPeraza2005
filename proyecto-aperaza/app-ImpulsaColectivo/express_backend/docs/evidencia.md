@@ -875,3 +875,95 @@ Y agrégalo al arreglo `featureSwaggerModules`, debajo de `contributionSwagger`:
 #### 11.14 Cierre del ISS-11
 
 ![](images/clipboard-2695583361.png)
+
+## ISS-12 — Feature Commission (FK a PaymentTransaction)
+
+#### 12.1 Crear carpeta y modelo
+
+![](images/clipboard-332992576.png)
+
+![](images/clipboard-2523014285.png)
+
+#### 12.2 Associations (Commission ↔ PaymentTransaction)
+
+![](images/clipboard-3066197522.png)
+
+#### 12.3 Controller (CRUD + validación de PaymentTransaction activa)
+
+![](images/clipboard-3899808150.png)
+
+#### 12.4 Routes (`/api/comisiones`)
+
+![](images/clipboard-941960793.png)
+
+#### 12.5 Archivos `.http` 
+
+![](images/clipboard-2598335720.png)
+
+#### 12.6 Cableado — `src/routes/index.ts`
+
+**PARCHE:** `nano src/routes/index.ts`. Agrega el import junto a los demás:
+
+![](images/clipboard-1850234746.png)
+
+Y la propiedad dentro de la clase `Routes`, debajo de `paymentTransactionRoutes`:
+
+![](images/clipboard-4203889214.png)
+
+#### 12.7 Cableado — `src/config/index.ts`
+
+**PARCHE 1** (imports, debajo de `import "../features/business/payment-transaction/payment-transaction.associations";`):
+
+![](images/clipboard-2473986293.png)
+
+**PARCHE 2** (dentro del método `routes()`, debajo de `this.routePrv.paymentTransactionRoutes.routes(this.app);`):
+
+![](images/clipboard-3431177010.png)
+
+#### 12.8 Cableado — `src/database/seeders/counts.ts`
+
+**PARCHE 1** — en el `type SeedCounts { ... }`:
+
+**PARCHE 2** — en `DEFAULT_SEED_COUNTS = { ... }`:
+
+![](images/clipboard-2680889246.png)
+
+**PARCHE 3** — en `resolveSeedCounts()`, justo después del bloque `envPaymentTransactions`:
+
+![](images/clipboard-3450874520.png)
+
+#### 12.9 Seeder — `commission.seeder.ts`
+
+![](images/clipboard-3885396296.png)
+
+#### 12.10 Cableado — `src/database/seeders/index.ts`
+
+**PARCHE:** agrega el import junto a los demás:
+
+![](images/clipboard-973839361.png)
+
+Y la llamada, **después** de `seedPaymentTransactions`:
+
+![](images/clipboard-350726229.png)
+
+#### 12.11 Swagger — `commission.swagger.ts`
+
+![](images/clipboard-629005239.png)
+
+#### 12.12 Cableado — `src/swagger/index.ts`
+
+**PARCHE:** agrega el import junto a los demás:
+
+![](images/clipboard-1289917899.png)
+
+Y agrégalo al arreglo `featureSwaggerModules`, debajo de `paymentTransactionSwagger`:
+
+![](images/clipboard-809172387.png)
+
+#### 12.13 Verificación final
+
+![](images/clipboard-3077155742.png)
+
+#### 12.14 Cierre del ISS-12
+
+![](images/clipboard-1503931311.png)

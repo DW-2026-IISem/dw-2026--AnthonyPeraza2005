@@ -1,0 +1,9 @@
+### Feature Commission — GET
+
+GET http://localhost:4000/api/comisiones
+# @name getCommissions
+
+###
+
+GET http://localhost:4000/api/comisiones/1
+# @name getCommission

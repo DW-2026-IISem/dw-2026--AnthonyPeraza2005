@@ -8,6 +8,7 @@ import { seedGoals } from "../../features/business/goal/goal.seeder";
 import { seedRewards } from "../../features/business/reward/reward.seeder";
 import { seedContributions } from "../../features/business/contribution/contribution.seeder";
 import { seedPaymentTransactions } from "../../features/business/payment-transaction/payment-transaction.seeder";
+import { seedCommissions } from "../../features/business/commission/commission.seeder";
 import { resolveSeedCounts } from "./counts";
 
 dotenv.config();
@@ -43,6 +44,7 @@ export async function runAllSeeders(): Promise<void> {
           await seedRewards(counts.rewards);
           await seedContributions(counts.contributions);
             await seedPaymentTransactions(counts.payment_transactions);
+              await seedCommissions(counts.commissions);
         
 
   console.log("🌱 SeedersRunner finalizado");

@@ -13,6 +13,8 @@ import "../features/business/contribution/contribution.model";
 import "../features/business/contribution/contribution.associations";
 import "../features/business/payment-transaction/payment-transaction.model";
 import "../features/business/payment-transaction/payment-transaction.associations";
+import "../features/business/commission/commission.model";
+import "../features/business/commission/commission.associations";
 import "../features/business/goal/goal.associations";
 import "../features/business/project/project.associations";
 import { Routes } from "../routes/index";
@@ -52,6 +54,7 @@ export class App {
     this.routePrv.rewardRoutes.routes(this.app);
     this.routePrv.contributionRoutes.routes(this.app);
     this.routePrv.paymentTransactionRoutes.routes(this.app);
+    this.routePrv.commissionRoutes.routes(this.app);
     
   }
   private docs(): void {

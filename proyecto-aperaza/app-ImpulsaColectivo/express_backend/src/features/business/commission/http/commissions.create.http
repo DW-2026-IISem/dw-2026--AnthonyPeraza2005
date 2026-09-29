@@ -1,0 +1,13 @@
+### Feature Commission — CREATE
+
+POST http://localhost:4000/api/comisiones
+Content-Type: application/json
+# @name createCommission
+
+{
+  "percentage": 5.5,
+  "amount": 2750,
+  "calculation_date": "2026-09-29",
+  "payment_transaction_id": 1,
+  "status": "active"
+}

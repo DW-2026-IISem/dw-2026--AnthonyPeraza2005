@@ -1,0 +1,23 @@
+### Feature Commission — UPDATE
+
+PUT http://localhost:4000/api/comisiones/1
+Content-Type: application/json
+# @name updateCommissionPut
+
+{
+  "percentage": 6,
+  "amount": 3000,
+  "calculation_date": "2026-09-29",
+  "payment_transaction_id": 1,
+  "status": "active"
+}
+
+###
+
+PATCH http://localhost:4000/api/comisiones/1
+Content-Type: application/json
+# @name updateCommissionPatch
+
+{
+  "amount": 3200
+}
