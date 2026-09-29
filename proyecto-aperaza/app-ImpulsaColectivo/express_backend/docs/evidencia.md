@@ -98,3 +98,51 @@
 ### **Cierre del ISS**
 
 ![](images/clipboard-2601699514.png)
+
+### ISS-03-A — Feature Promoter — fundación
+
+### 4.1 — Modelo Promoter
+
+![](images/clipboard-1390301091.png)
+
+### **4.2 — Esqueleto controller/routes + carpeta `http/`**
+
+![](images/clipboard-3151657891.png)
+
+### Crear el controller (esqueleto):
+
+![](images/clipboard-3580017838.png)
+
+### Crear las rutas (esqueleto):
+
+![](images/clipboard-3951296814.png)
+
+### **4.3 — Agregador de rutas + PARCHE a `config/index.ts`**
+
+**PARCHE** sobre `src/config/index.ts` (ya existe desde ISS-01):
+
+#### **1)** Debajo de `var cors = require("cors");`, añade:
+
+![](images/clipboard-165591944.png)
+
+#### **2)** Dentro de `export class App`, debajo de `public app: Application;`, añade:
+
+![](images/clipboard-2090795408.png)
+
+#### **3)** Dentro de `routes()`, reemplaza `// ISS-03 §4.3` por:
+
+![](images/clipboard-3089428004.png)
+
+#### **4)** Dentro de `dbConnection()`, reemplaza `// ISS-02 / ISS-03` por:
+
+![](images/clipboard-1940768148.png)
+
+### **Verificación ISS-03-A**
+
+![](images/clipboard-1858432371.png)
+
+### **Cierre del ISS**
+
+![](images/clipboard-2601372.png)
+
+![](images/clipboard-3152164095.png)
