@@ -37,6 +37,21 @@ export class PromoterController {
 
   // ================== CREATE ==================
   // (rellenar en ISS-03-C)
+    public async create(req: Request, res: Response) {
+    try {
+      const body = req.body as PromoterI;
+      const promoter = await Promoter.create({
+        name: body.name,
+        description: body.description,
+        contact_email: body.contact_email,
+        contact_phone: body.contact_phone,
+        status: body.status ?? "active",
+      });
+      res.status(201).json({ promoter });
+    } catch (error) {
+      res.status(500).json({ error: "Error creating promoter", detail: String(error) });
+    }
+  }
 
   // ================== UPDATE ==================
   // (rellenar en ISS-03-D)

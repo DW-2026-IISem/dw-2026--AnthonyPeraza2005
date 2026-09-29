@@ -168,3 +168,25 @@
 ### **Cierre del ISS**
 
 ![](images/clipboard-3030102832.png)
+
+### ISS-03-C — Feature Promoter — Crear promotor
+
+**PARCHE** sobre `src/features/business/promoter/promoter.controller.ts`: **debajo de** `// ================== CREATE ==================` (y **encima de** `// ================== UPDATE ==================`), agrega el método `create`:
+
+![](images/clipboard-1880155054.png)
+
+**PARCHE** sobre `src/features/business/promoter/promoter.routes.ts` (ya existe): **debajo de** el bloque `// getOne`, agrega:
+
+![](images/clipboard-1916711932.png)
+
+#### Archivo nuevo — `.http`
+
+![](images/clipboard-2366189685.png)
+
+### **Verificación**
+
+![](images/clipboard-2433263452.png)
+
+#### **Cierre del ISS-03-C:**
+
+![](images/clipboard-2022209909.png)

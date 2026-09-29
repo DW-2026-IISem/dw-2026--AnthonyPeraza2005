@@ -1,0 +1,15 @@
+### Feature Promoter — CREATE
+### Leyenda: SIN AUTH (sin middleware JWT / sin autenticación)
+@baseUrl = http://localhost:4000
+
+# @name createPromoter
+POST {{baseUrl}}/api/promotores
+Content-Type: application/json
+
+{
+  "name": "Fundación ImpulsaColectivo",
+  "description": "Organización que impulsa proyectos comunitarios y ambientales",
+  "contact_email": "contacto@impulsacolectivo.org",
+  "contact_phone": "3001234567",
+  "status": "active"
+}
