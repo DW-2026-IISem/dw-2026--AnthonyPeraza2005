@@ -9,6 +9,7 @@ import { contributionSwagger } from "../features/business/contribution/contribut
 import { paymentTransactionSwagger } from "../features/business/payment-transaction/payment-transaction.swagger";
 import { commissionSwagger } from "../features/business/commission/commission.swagger";
 import { disbursementSwagger } from "../features/business/disbursement/disbursement.swagger";
+import { refundSwagger } from "../features/business/refund/refund.swagger";
 
 export type FeatureSwaggerModule = {
   tags: unknown[];
@@ -30,6 +31,7 @@ const featureSwaggerModules: FeatureSwaggerModule[] = [
   paymentTransactionSwagger,
   commissionSwagger,
   disbursementSwagger,
+  refundSwagger,
   // contributorSwagger,
   // projectSwagger,
 ];

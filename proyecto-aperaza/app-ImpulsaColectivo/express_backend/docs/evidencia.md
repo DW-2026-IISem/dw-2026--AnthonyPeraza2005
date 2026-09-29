@@ -1059,3 +1059,95 @@ Y agrégalo al arreglo `featureSwaggerModules`, debajo de `commissionSwagger`:
 #### 13.14 Cierre del ISS-13
 
 ![](images/clipboard-2568776388.png)
+
+## ISS-14 — Feature Refund (FK a Contribution)
+
+#### 14.1 Crear carpeta y modelo
+
+![](images/clipboard-3472158477.png)
+
+![](images/clipboard-755988351.png)
+
+#### 14.2 Associations (Refund ↔ Contribution)
+
+![](images/clipboard-2265336371.png)
+
+#### 14.3 Controller (CRUD + validación de Contribution activa)
+
+![](images/clipboard-555592646.png)
+
+#### 14.4 Routes (`/api/reembolsos`)
+
+![](images/clipboard-848638487.png)
+
+#### 14.5 Archivos `.http` 
+
+![](images/clipboard-3500160556.png)
+
+#### 14.6 Cableado — `src/routes/index.ts`
+
+**PARCHE:** `nano src/routes/index.ts`. Agrega el import junto a los demás:
+
+![](images/clipboard-329056087.png)
+
+Y la propiedad dentro de la clase `Routes`, debajo de `disbursementRoutes`:
+
+![](images/clipboard-1013150746.png)
+
+#### 14.7 Cableado — `src/config/index.ts`
+
+**PARCHE 1** (imports, debajo de `import "../features/business/disbursement/disbursement.associations";`):
+
+![](images/clipboard-1018553616.png)
+
+**PARCHE 2** (dentro del método `routes()`, debajo de `this.routePrv.disbursementRoutes.routes(this.app);`):
+
+![](images/clipboard-638017617.png)
+
+#### 14.8 Cableado — `src/database/seeders/counts.ts`
+
+**PARCHE 1** — en el `type SeedCounts { ... }` (recuerda usar coma):
+
+**PARCHE 2** — en `DEFAULT_SEED_COUNTS = { ... }`:
+
+![](images/clipboard-700504067.png)
+
+**PARCHE 3** — en `resolveSeedCounts()`, justo después del bloque `envDisbursements`:
+
+![](images/clipboard-1305529103.png)
+
+#### 14.9 Seeder — `refund.seeder.ts`
+
+![](images/clipboard-3211385251.png)
+
+#### 14.10 Cableado — `src/database/seeders/index.ts`
+
+**PARCHE:** agrega el import junto a los demás:
+
+![](images/clipboard-2322272674.png)
+
+Y la llamada, **después** de `seedDisbursements`:
+
+![](images/clipboard-2090399585.png)
+
+#### 14.11 Swagger — `refund.swagger.ts`
+
+![](images/clipboard-290720122.png)
+
+#### 14.12 Cableado — `src/swagger/index.ts`
+
+**PARCHE:** agrega el import junto a los demás:
+
+![](images/clipboard-1201313329.png)
+
+Y agrégalo al arreglo `featureSwaggerModules`, debajo de `disbursementSwagger`:
+
+![](images/clipboard-2626154018.png)
+
+#### 14.13 Verificación final
+
+![](images/clipboard-1313415710.png)
+
+#### 14.14 Cierre del ISS-14
+
+![](images/clipboard-1777634146.png)

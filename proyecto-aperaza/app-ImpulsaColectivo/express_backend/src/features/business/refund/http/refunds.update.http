@@ -1,0 +1,23 @@
+### Feature Refund — UPDATE
+
+PUT http://localhost:4000/api/reembolsos/1
+Content-Type: application/json
+# @name updateRefundPut
+
+{
+  "amount": 55000,
+  "reason": "Solicitud del contribuyente",
+  "refund_date": "2026-09-29",
+  "contribution_id": 1,
+  "status": "active"
+}
+
+###
+
+PATCH http://localhost:4000/api/reembolsos/1
+Content-Type: application/json
+# @name updateRefundPatch
+
+{
+  "amount": 60000
+}
