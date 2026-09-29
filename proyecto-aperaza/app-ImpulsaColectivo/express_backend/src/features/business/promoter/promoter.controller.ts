@@ -98,4 +98,35 @@ export class PromoterController {
 
   // ================== DELETE ==================
   // (rellenar en ISS-03-E)
+    /** Eliminación física */
+  public async deletePhysical(req: Request, res: Response) {
+    try {
+      const id = paramId(req);
+      const promoter = await Promoter.findByPk(id);
+      if (!promoter) {
+        res.status(404).json({ error: "Promoter not found" });
+        return;
+      }
+      await promoter.destroy();
+      res.status(200).json({ message: "Promoter permanently deleted", id });
+    } catch (error) {
+      res.status(500).json({ error: "Error deleting promoter", detail: String(error) });
+    }
+  }
+
+  /** Eliminación lógica → status = inactive */
+  public async deleteLogical(req: Request, res: Response) {
+    try {
+      const id = paramId(req);
+      const promoter = await Promoter.findByPk(id);
+      if (!promoter) {
+        res.status(404).json({ error: "Promoter not found" });
+        return;
+      }
+      await promoter.update({ status: "inactive" });
+      res.status(200).json({ message: "Promoter deactivated (logical delete)", promoter });
+    } catch (error) {
+      res.status(500).json({ error: "Error deactivating promoter", detail: String(error) });
+    }
+  }
 }

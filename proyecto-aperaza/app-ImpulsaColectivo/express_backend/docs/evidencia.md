@@ -149,7 +149,7 @@
 
 ## ISS-03-B — Feature Promoter — GetAll y GetOne
 
-**PARCHE** sobre `src/features/business/promoter/promoter.controller.ts` (ya existe): abre el archivo y, **debajo de** `// ================== READ ==================` (y **encima de** `// ================== CREATE ==================`), agrega:
+**PARCHE** sobre `src/features/business/promoter/promoter.controller.ts`: abre el archivo y, **debajo de** `// ================== READ ==================` (y **encima de** `// ================== CREATE ==================`), agrega:
 
 ![](images/clipboard-2266266592.png)
 
@@ -175,7 +175,7 @@
 
 ![](images/clipboard-1880155054.png)
 
-**PARCHE** sobre `src/features/business/promoter/promoter.routes.ts` (ya existe): **debajo de** el bloque `// getOne`, agrega:
+**PARCHE** sobre `src/features/business/promoter/promoter.routes.ts`: **debajo de** el bloque `// getOne`, agrega:
 
 ![](images/clipboard-2848179397.png)
 
@@ -193,11 +193,11 @@
 
 ### ISS-03-D — Feature Promoter — Update (PUT) y Update (PATCH)
 
-**PARCHE** sobre `src/features/business/promoter/promoter.controller.ts` (ya existe): **debajo de** el comentario `// ================== UPDATE ==================` (y **encima de** `// ================== DELETE ==================`), agrega:
+**PARCHE** sobre `src/features/business/promoter/promoter.controller.ts`: **debajo de** el comentario `// ================== UPDATE ==================` (y **encima de** `// ================== DELETE ==================`), agrega:
 
 ![](images/clipboard-2520990230.png)
 
-**PARCHE** sobre `src/features/business/promoter/promoter.routes.ts` (ya existe): **debajo de** el bloque `// create`, agrega:
+**PARCHE** sobre `src/features/business/promoter/promoter.routes.ts`: **debajo de** el bloque `// create`, agrega:
 
 ![](images/clipboard-960060521.png)
 
@@ -210,3 +210,29 @@
 ![**Cierre del ISS-03-D:**](images/clipboard-2188981627.png)
 
 ![](images/clipboard-3796577259.png)
+
+### ISS-03-E — Feature Promoter — Eliminar (físico y lógico)
+
+**PARCHE** sobre `src/features/business/promoter/promoter.controller.ts`: **debajo de** el comentario `// ================== DELETE ==================`, agrega primero el borrado físico y después el lógico:
+
+![](images/clipboard-2100100603.png)
+
+**PARCHE** sobre `src/features/business/promoter/promoter.routes.ts`:
+
+**1)** Debajo del bloque `// update (PUT / PATCH)`, agrega el borrado físico:
+
+![](images/clipboard-2504392159.png)
+
+![](images/clipboard-2059682464.png)
+
+### **HTTP — archivo nuevo**
+
+![](images/clipboard-1494803203.png)
+
+#### **Verificación:**
+
+![](images/clipboard-3133061278.png)
+
+#### **Cierre de ISS-03 completo (A→E):**
+
+![](images/clipboard-378491852.png)

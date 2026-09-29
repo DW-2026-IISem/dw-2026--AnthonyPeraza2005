@@ -25,5 +25,13 @@ export class PromoterRoutes {
       .route("/api/promotores/:id")
       .put(this.promoterController.updatePut.bind(this.promoterController))
       .patch(this.promoterController.updatePatch.bind(this.promoterController));
+        // delete físico
+    app
+      .route("/api/promotores/:id")
+      .delete(this.promoterController.deletePhysical.bind(this.promoterController));
+        // delete lógico
+    app
+      .route("/api/promotores/:id/deactivate")
+      .patch(this.promoterController.deleteLogical.bind(this.promoterController));
   }
 }
