@@ -1,0 +1,13 @@
+### Feature Disbursement — CREATE
+
+POST http://localhost:4000/api/desembolsos
+Content-Type: application/json
+# @name createDisbursement
+
+{
+  "amount": 200000,
+  "disbursement_date": "2026-09-29",
+  "method": "transferencia_bancaria",
+  "project_id": 1,
+  "status": "active"
+}

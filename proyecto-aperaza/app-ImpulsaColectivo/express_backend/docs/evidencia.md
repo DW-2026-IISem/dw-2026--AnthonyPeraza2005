@@ -967,3 +967,95 @@ Y agrégalo al arreglo `featureSwaggerModules`, debajo de `paymentTransactionSwa
 #### 12.14 Cierre del ISS-12
 
 ![](images/clipboard-1503931311.png)
+
+## ISS-13 — Feature Disbursement (FK a Project)
+
+#### 13.1 Crear carpeta y modelo
+
+![](images/clipboard-572690739.png)
+
+![](images/clipboard-2205955091.png)
+
+#### 13.2 Associations (Disbursement ↔ Project)
+
+![](images/clipboard-600261490.png)
+
+#### 13.3 Controller (CRUD + validación de Project activo)
+
+![](images/clipboard-4074947899.png)
+
+#### 13.4 Routes (`/api/desembolsos`)
+
+![](images/clipboard-2816419076.png)
+
+#### 13.5 Archivos `.http` 
+
+![](images/clipboard-749887714.png)
+
+#### 13.6 Cableado — `src/routes/index.ts`
+
+**PARCHE:** `nano src/routes/index.ts`. Agrega el import junto a los demás:
+
+![](images/clipboard-3686873248.png)
+
+Y la propiedad dentro de la clase `Routes`, debajo de `commissionRoutes`:
+
+![](images/clipboard-1238017697.png)
+
+#### 13.7 Cableado — `src/config/index.ts`
+
+**PARCHE 1** (imports, debajo de `import "../features/business/commission/commission.associations";`):
+
+![](images/clipboard-2108433805.png)
+
+**PARCHE 2** (dentro del método `routes()`, debajo de `this.routePrv.commissionRoutes.routes(this.app);`):
+
+![](images/clipboard-3549299781.png)
+
+#### 13.8 Cableado — `src/database/seeders/counts.ts`
+
+**PARCHE 1** — en el `type SeedCounts { ... }`:
+
+**PARCHE 2** — en `DEFAULT_SEED_COUNTS = { ... }`:
+
+![](images/clipboard-1349702985.png)
+
+**PARCHE 3** — en `resolveSeedCounts()`, justo después del bloque `envCommissions`:
+
+![](images/clipboard-889773553.png)
+
+#### 13.9 Seeder — `disbursement.seeder.ts`
+
+![](images/clipboard-1379730588.png)
+
+#### 13.10 Cableado — `src/database/seeders/index.ts`
+
+**PARCHE:** agrega el import junto a los demás:
+
+![](images/clipboard-395270474.png)
+
+Y la llamada, **después** de `seedCommissions`:
+
+![](images/clipboard-598461560.png)
+
+#### 13.11 Swagger — `disbursement.swagger.ts`
+
+![](images/clipboard-1772007191.png)
+
+#### 13.12 Cableado — `src/swagger/index.ts`
+
+**PARCHE:** agrega el import junto a los demás:
+
+![](images/clipboard-1281416998.png)
+
+Y agrégalo al arreglo `featureSwaggerModules`, debajo de `commissionSwagger`:
+
+![](images/clipboard-314918870.png)
+
+#### 13.13 Verificación final
+
+![](images/clipboard-417572788.png)
+
+#### 13.14 Cierre del ISS-13
+
+![](images/clipboard-2568776388.png)

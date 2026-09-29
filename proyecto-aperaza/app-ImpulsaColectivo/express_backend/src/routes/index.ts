@@ -6,6 +6,7 @@ import { RewardRoutes } from "../features/business/reward/reward.routes";
 import { ContributionRoutes } from "../features/business/contribution/contribution.routes";
 import { PaymentTransactionRoutes } from "../features/business/payment-transaction/payment-transaction.routes";
 import { CommissionRoutes } from "../features/business/commission/commission.routes";
+import { DisbursementRoutes } from "../features/business/disbursement/disbursement.routes";
 
 export class Routes {
   public promoterRoutes: PromoterRoutes = new PromoterRoutes();
@@ -16,4 +17,5 @@ export class Routes {
             public contributionRoutes: ContributionRoutes = new ContributionRoutes();
               public paymentTransactionRoutes: PaymentTransactionRoutes = new PaymentTransactionRoutes();
                 public commissionRoutes: CommissionRoutes = new CommissionRoutes();
+                  public disbursementRoutes: DisbursementRoutes = new DisbursementRoutes();
 }

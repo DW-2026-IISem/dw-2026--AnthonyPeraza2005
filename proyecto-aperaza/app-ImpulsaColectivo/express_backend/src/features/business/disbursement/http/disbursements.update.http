@@ -1,0 +1,23 @@
+### Feature Disbursement — UPDATE
+
+PUT http://localhost:4000/api/desembolsos/1
+Content-Type: application/json
+# @name updateDisbursementPut
+
+{
+  "amount": 250000,
+  "disbursement_date": "2026-09-29",
+  "method": "transferencia_bancaria",
+  "project_id": 1,
+  "status": "active"
+}
+
+###
+
+PATCH http://localhost:4000/api/desembolsos/1
+Content-Type: application/json
+# @name updateDisbursementPatch
+
+{
+  "amount": 260000
+}

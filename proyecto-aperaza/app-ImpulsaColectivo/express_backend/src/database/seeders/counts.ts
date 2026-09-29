@@ -13,6 +13,7 @@ export type SeedCounts = {
   contributions: number;
   payment_transactions: number,
   commissions: number,
+  disbursements: number,
 };
 
 export const DEFAULT_SEED_COUNTS: SeedCounts = {
@@ -23,7 +24,8 @@ export const DEFAULT_SEED_COUNTS: SeedCounts = {
   rewards: 15,
   contributions: 20,
   payment_transactions: 20,
-   commissions: 20,
+  commissions: 20,
+  disbursements: 15,
 };
 
 export function resolveSeedCounts(argv: string[] = process.argv.slice(2)): SeedCounts {
@@ -60,6 +62,10 @@ export function resolveSeedCounts(argv: string[] = process.argv.slice(2)): SeedC
     const envCommissions = process.env.SEED_COMMISSIONS;
   if (envCommissions !== undefined && envCommissions !== "") {
     counts.commissions = Number(envCommissions);
+  }
+    const envDisbursements = process.env.SEED_DISBURSEMENTS;
+  if (envDisbursements !== undefined && envDisbursements !== "") {
+    counts.disbursements = Number(envDisbursements);
   }
   for (const arg of argv) {
     const m = arg.match(/^--([a-zA-Z_]+)=(\d+)$/);

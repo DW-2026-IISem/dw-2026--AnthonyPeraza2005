@@ -1,0 +1,9 @@
+### Feature Disbursement — GET
+
+GET http://localhost:4000/api/desembolsos
+# @name getDisbursements
+
+###
+
+GET http://localhost:4000/api/desembolsos/1
+# @name getDisbursement
