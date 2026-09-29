@@ -146,3 +146,25 @@
 ![](images/clipboard-2601372.png)
 
 ![](images/clipboard-3152164095.png)
+
+## ISS-03-B — Feature Promoter — GetAll y GetOne
+
+**PARCHE** sobre `src/features/business/promoter/promoter.controller.ts` (ya existe): abre el archivo y, **debajo de** `// ================== READ ==================` (y **encima de** `// ================== CREATE ==================`), agrega:
+
+![](images/clipboard-2266266592.png)
+
+#### **PARCHE** sobre `src/features/business/promoter/promoter.routes.ts`: **debajo de** `// ================== RUTAS SIN AUTENTICACIÓN / SIN MIDDLEWARE JWT ==================`, agrega:
+
+![](images/clipboard-2153241801.png)
+
+#### Archivo nuevo — `.http`
+
+![](images/clipboard-1156497546.png)
+
+#### **Verificación:**
+
+![](images/clipboard-841046219.png)
+
+### **Cierre del ISS**
+
+![](images/clipboard-3030102832.png)
