@@ -1977,3 +1977,55 @@ Y agrégalo al arreglo `featureSwaggerModules` (última entrada):
 ### 21.10 Verificación de 401 y 403
 
 ![](images/clipboard-45137373.png)
+
+### ISS-22 · Feature RefreshTokens (sesiones renovables y revocables)
+
+#### 22.1 Carpetas
+
+![](images/clipboard-2875907725.png)
+
+### 22.2 DTO de respuesta
+
+![](images/clipboard-1289270271.png)
+
+### 22.3 Repository
+
+![](images/clipboard-2979190020.png)
+
+### 22.4 Service
+
+![](images/clipboard-3400787491.png)
+
+### 22.5 Controller
+
+![](images/clipboard-4104727120.png)
+
+### 22.6 Rutas
+
+![](images/clipboard-1530119838.png)
+
+### 22.7 Swagger
+
+![](images/clipboard-660803772.png)
+
+### 22.8 Pruebas HTTP
+
+![](images/clipboard-3588303233.png)
+
+### 22.9 Cableado
+
+### 22.9.1 `src/routes/index.ts`
+
+![](images/clipboard-2699483415.png)
+
+### 22.9.2 `src/config/index.ts`
+
+![](images/clipboard-629560734.png)
+
+### 22.9.3 `src/swagger/index.ts`
+
+![![](images/clipboard-1930718052.png)](images/clipboard-3754772781.png)
+
+### 22.10 Verificación final
+
+![](images/clipboard-919657718.png)
