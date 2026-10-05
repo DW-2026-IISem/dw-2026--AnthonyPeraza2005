@@ -12,6 +12,7 @@ import { seedCommissions } from "../../features/business/commission/commission.s
 import { seedDisbursements } from "../../features/business/disbursement/disbursement.seeder";
 import { seedRefunds } from "../../features/business/refund/refund.seeder";
 import { seedProjectAudits } from "../../features/business/project-audit/project-audit.seeder";
+import { seedUsers } from "../../features/auth/users/users.seeder";
 // Fase II — Auth con RBAC: primero los seis modelos, después las asociaciones.
 // Los seeders de Auth se añaden en ISS posteriores.
 import "../../features/auth/users/user.model";
@@ -60,6 +61,7 @@ export async function runAllSeeders(): Promise<void> {
                 await seedDisbursements(counts.disbursements);
                   await seedRefunds(counts.refunds);
                     await seedProjectAudits(counts.project_audits);
+                      await seedUsers(counts.users);
         
 
   console.log("🌱 SeedersRunner finalizado");

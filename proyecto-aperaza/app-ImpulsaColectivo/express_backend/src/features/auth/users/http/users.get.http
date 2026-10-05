@@ -1,0 +1,22 @@
+### Feature Users — GET ALL / GET ONE
+### Leyenda: SIN AUTH (temporal hasta ISS-21). Nunca devuelve `password`.
+@baseUrl = http://localhost:4000
+@id = 1
+
+# @name getAllUsers
+GET {{baseUrl}}/api/usuarios
+
+###
+
+# @name getOneUser
+GET {{baseUrl}}/api/usuarios/{{id}}
+
+###
+
+### 400 — id no es entero positivo
+GET {{baseUrl}}/api/usuarios/abc
+
+###
+
+### 404 — no existe
+GET {{baseUrl}}/api/usuarios/99999

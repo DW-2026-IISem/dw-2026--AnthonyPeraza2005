@@ -1691,3 +1691,71 @@ Y agrégalo al arreglo `featureSwaggerModules` (última entrada):
 ### 17.17 Verificación final
 
 ![](images/clipboard-953971990.png)
+
+### ISS-18 · Feature Users (identidad y contraseña)
+
+### 18.1 DTOs
+
+![](images/clipboard-3406305459.png)
+
+### 18.2 Repository
+
+![](images/clipboard-177890348.png)
+
+### 18.3 Service
+
+![](images/clipboard-297716066.png)
+
+### 18.4 Controller
+
+![](images/clipboard-2972221261.png)
+
+### 18.5 Rutas
+
+![](images/clipboard-4217073264.png)
+
+### 18.6 Seeder de usuarios
+
+![](images/clipboard-3792890257.png)
+
+### 18.7 Swagger
+
+![](images/clipboard-553864951.png)
+
+### 18.8 Pruebas HTTP
+
+![](images/clipboard-1156164045.png)
+
+![](images/clipboard-1544255751.png)
+
+### 18.9 Cableado
+
+### **18.9.1 `src/routes/index.ts`**
+
+![](images/clipboard-3549219765.png)
+
+### 18.9.2 `src/config/index.ts`
+
+![](images/clipboard-517218888.png)
+
+### **18.9.3 `src/database/seeders/counts.ts`** 
+
+![](images/clipboard-624248743.png)
+
+![](images/clipboard-2382069734.png)
+
+### **18.9.4 `src/database/seeders/index.ts`**: agrega el import junto a los demás de seeders (debajo del de `seedProjectAudits`):
+
+![](images/clipboard-787326976.png)
+
+![](images/clipboard-3127159103.png)
+
+### **18.9.5 `src/swagger/index.ts`**: agrega el import junto a los demás:
+
+![](images/clipboard-2526277562.png)
+
+![](images/clipboard-584629463.png)
+
+### 18.10 Verificación final
+
+![](images/clipboard-1993768010.png)

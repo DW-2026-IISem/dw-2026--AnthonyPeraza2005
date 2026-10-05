@@ -1,0 +1,94 @@
+### Feature Users — CREATE / UPDATE / PASSWORD / DELETE
+### Leyenda: SIN AUTH (temporal hasta ISS-21).
+@baseUrl = http://localhost:4000
+@id = 4
+
+# @name createUser
+POST {{baseUrl}}/api/usuarios
+Content-Type: application/json
+
+{
+  "username": "nuevo.usuario",
+  "email": "nuevo.usuario@impulsacolectivo.local",
+  "password": "Password123!",
+  "avatar": null
+}
+
+###
+
+### 409 — username ya en uso
+POST {{baseUrl}}/api/usuarios
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "email": "otro@impulsacolectivo.local",
+  "password": "Password123!"
+}
+
+###
+
+### 400 — contraseña de menos de 8 caracteres
+POST {{baseUrl}}/api/usuarios
+Content-Type: application/json
+
+{
+  "username": "clave.corta",
+  "email": "clave.corta@impulsacolectivo.local",
+  "password": "123"
+}
+
+###
+
+# @name updateUserPut
+PUT {{baseUrl}}/api/usuarios/{{id}}
+Content-Type: application/json
+
+{
+  "username": "nuevo.usuario",
+  "email": "nuevo.usuario@impulsacolectivo.local",
+  "avatar": "https://example.com/avatar.png"
+}
+
+###
+
+# @name updateUserPatch
+PATCH {{baseUrl}}/api/usuarios/{{id}}
+Content-Type: application/json
+
+{
+  "avatar": null
+}
+
+###
+
+### Cambio de contraseña (exige la actual)
+# @name changeUserPassword
+PATCH {{baseUrl}}/api/usuarios/{{id}}/password
+Content-Type: application/json
+
+{
+  "current_password": "Password123!",
+  "new_password": "Password456!"
+}
+
+###
+
+### 400 — contraseña actual incorrecta
+PATCH {{baseUrl}}/api/usuarios/{{id}}/password
+Content-Type: application/json
+
+{
+  "current_password": "incorrecta",
+  "new_password": "Password789!"
+}
+
+###
+
+# @name deactivateUser
+PATCH {{baseUrl}}/api/usuarios/{{id}}/deactivate
+
+###
+
+# @name deleteUserPhysical
+DELETE {{baseUrl}}/api/usuarios/{{id}}
