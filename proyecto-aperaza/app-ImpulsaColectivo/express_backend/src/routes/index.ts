@@ -10,6 +10,8 @@ import { DisbursementRoutes } from "../features/business/disbursement/disburseme
 import { RefundRoutes } from "../features/business/refund/refund.routes";
 import { ProjectAuditRoutes } from "../features/business/project-audit/project-audit.routes";
 import { UsersRoutes } from "../features/auth/users/users.routes";
+import { RolesRoutes } from "../features/auth/roles/roles.routes";
+import { ResourcesRoutes } from "../features/auth/resources/resources.routes";
 
 export class Routes {
   public promoterRoutes: PromoterRoutes = new PromoterRoutes();
@@ -24,4 +26,6 @@ export class Routes {
                     public refundRoutes: RefundRoutes = new RefundRoutes();
                       public projectAuditRoutes: ProjectAuditRoutes = new ProjectAuditRoutes();
                         public usersRoutes: UsersRoutes = new UsersRoutes();
+                          public rolesRoutes: RolesRoutes = new RolesRoutes();
+                          public resourcesRoutes: ResourcesRoutes = new ResourcesRoutes();
 }

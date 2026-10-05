@@ -1,0 +1,69 @@
+### Feature Roles — CRUD
+### Leyenda: SIN AUTH (temporal hasta ISS-21).
+### El NOMBRE del rol no autoriza nada: la autorización son las filas de `resource_roles`.
+@baseUrl = http://localhost:4000
+### Roles sembrados: 1 = ADMIN, 2 = PROMOTER, 3 = CONTRIBUTOR. El rol nuevo será el 4.
+@id = 4
+
+# @name getAllRoles
+GET {{baseUrl}}/api/roles
+
+###
+
+# @name getOneRole
+GET {{baseUrl}}/api/roles/2
+
+###
+
+### CREATE — nace SIN permisos
+# @name createRole
+POST {{baseUrl}}/api/roles
+Content-Type: application/json
+
+{
+  "name": "AUDITOR",
+  "description": "Solo lectura de proyectos y auditorías"
+}
+
+###
+
+### 409 — el nombre ya existe
+POST {{baseUrl}}/api/roles
+Content-Type: application/json
+
+{
+  "name": "promoter",
+  "description": "Duplicado"
+}
+
+###
+
+# @name updateRolePut
+PUT {{baseUrl}}/api/roles/{{id}}
+Content-Type: application/json
+
+{
+  "name": "AUDITOR",
+  "description": "Solo lectura de proyectos, aportes y auditorías"
+}
+
+###
+
+# @name updateRolePatch
+PATCH {{baseUrl}}/api/roles/{{id}}
+Content-Type: application/json
+
+{
+  "description": "Auditoría operativa de la plataforma"
+}
+
+###
+
+### DELETE lógico — todos sus usuarios pierden ese rol
+# @name deactivateRole
+PATCH {{baseUrl}}/api/roles/{{id}}/deactivate
+
+###
+
+# @name deleteRolePhysical
+DELETE {{baseUrl}}/api/roles/{{id}}

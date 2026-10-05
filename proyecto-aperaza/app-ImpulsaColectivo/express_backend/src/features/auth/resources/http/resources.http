@@ -1,0 +1,64 @@
+### Feature Resources — catálogo de puntos de acceso
+### Leyenda: SIN AUTH (temporal hasta ISS-21).
+### Un recurso es el par (method, path) con la ruta EN PATRÓN: /api/proyectos/:id
+### GET y POST sobre la misma ruta son DOS recursos distintos.
+@baseUrl = http://localhost:4000
+### El catálogo siembra 110 recursos (ids 1 a 110). El recurso nuevo será el 111.
+### Si tu tabla ya tenía filas, ajusta @id con el id real que devuelva el POST.
+@id = 111
+
+# @name getAllResources
+GET {{baseUrl}}/api/recursos
+
+###
+
+# @name getOneResource
+GET {{baseUrl}}/api/recursos/1
+
+###
+
+### CREATE — alta de un punto de acceso nuevo
+# @name createResource
+POST {{baseUrl}}/api/recursos
+Content-Type: application/json
+
+{
+  "method": "GET",
+  "path": "/api/reportes/proyectos/:id",
+  "description": "Consultar reporte de un proyecto"
+}
+
+###
+
+### 409 — la tupla (method, path) ya existe
+POST {{baseUrl}}/api/recursos
+Content-Type: application/json
+
+{
+  "method": "GET",
+  "path": "/api/proyectos",
+  "description": "Duplicado"
+}
+
+###
+
+# @name updateResourcePut
+PUT {{baseUrl}}/api/recursos/{{id}}
+Content-Type: application/json
+
+{
+  "method": "GET",
+  "path": "/api/reportes/proyectos/:id",
+  "description": "Reporte de avance de un proyecto"
+}
+
+###
+
+### DELETE lógico — ningún rol puede ya autorizar ese endpoint
+# @name deactivateResource
+PATCH {{baseUrl}}/api/recursos/{{id}}/deactivate
+
+###
+
+# @name deleteResourcePhysical
+DELETE {{baseUrl}}/api/recursos/{{id}}

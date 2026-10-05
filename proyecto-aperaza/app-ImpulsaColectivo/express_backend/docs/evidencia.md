@@ -1744,13 +1744,13 @@ Y agrégalo al arreglo `featureSwaggerModules` (última entrada):
 
 ![](images/clipboard-2382069734.png)
 
-### **18.9.4 `src/database/seeders/index.ts`**: agrega el import junto a los demás de seeders (debajo del de `seedProjectAudits`):
+### **18.9.4 `src/database/seeders/index.ts`**
 
 ![](images/clipboard-787326976.png)
 
 ![](images/clipboard-3127159103.png)
 
-### **18.9.5 `src/swagger/index.ts`**: agrega el import junto a los demás:
+### **18.9.5 `src/swagger/index.ts`**
 
 ![](images/clipboard-2526277562.png)
 
@@ -1759,3 +1759,73 @@ Y agrégalo al arreglo `featureSwaggerModules` (última entrada):
 ### 18.10 Verificación final
 
 ![](images/clipboard-1993768010.png)
+
+### ISS-19 · Features Roles y Resources (catálogo de autorización)
+
+### 19.1 Carpetas
+
+![](images/clipboard-1830366959.png)
+
+### 19.2 Roles: DTOs
+
+![](images/clipboard-442175283.png)
+
+### 19.3 Roles: repository
+
+![](images/clipboard-850387381.png)
+
+### 19.4 Roles: service
+
+![](images/clipboard-1397563425.png)
+
+### 19.5 Roles: controller y rutas
+
+![](images/clipboard-2444956233.png)
+
+### 19.6 Roles: seeder y swagger
+
+![](images/clipboard-3192304312.png)
+
+### 19.7 Resources: DTOs
+
+![](images/clipboard-1796894820.png)
+
+### 19.8 Resources: catálogo semilla 
+
+![](images/clipboard-2215792795.png)
+
+### 19.9 Resources: repository, service, controller y rutas
+
+![](images/clipboard-2391543993.png)
+
+### 19.10 Resources: seeder y swagger
+
+![](images/clipboard-4154745433.png)
+
+### 19.11 Pruebas HTTP
+
+![](images/clipboard-1092041852.png)
+
+### 19.12 Cableado
+
+#### Cuatro PARCHES.
+
+### 19.12.1 `src/routes/index.t`
+
+![](images/clipboard-1227483250.png)
+
+### **19.12.2 `src/config/index.ts`**
+
+![](images/clipboard-1046670886.png)
+
+### 19.12.3 `src/database/seeders/index.ts`
+
+![](images/clipboard-4111112883.png)
+
+### **19.12.4 `src/swagger/index.ts`**
+
+![](images/clipboard-3248242068.png)
+
+### 19.13 Verificación final
+
+![](images/clipboard-2889490611.png)
