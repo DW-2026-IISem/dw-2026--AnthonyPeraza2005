@@ -1,151 +1,59 @@
 import { Request, Response } from "express";
-import { Refund, RefundI } from "./refund.model";
-import { Contribution } from "../contribution/contribution.model";
+import { BaseController } from "../../../shared/http/base-controller";
+import { RefundService } from "./refund.service";
+import { toRefundResponse } from "./dto";
 
-async function assertActiveContribution(
-  contribution_id: number
-): Promise<{ ok: true } | { ok: false; status: number; error: string }> {
-  const contribution = await Contribution.findByPk(contribution_id);
-  if (!contribution) {
-    return { ok: false, status: 404, error: "El contribution_id indicado no existe" };
-  }
-  if (contribution.get("status") !== "active") {
-    return { ok: false, status: 400, error: "La contribución indicada no está activa" };
-  }
-  return { ok: true };
-}
-
-export class RefundController {
-  public async getAll(req: Request, res: Response) {
-    try {
-      const refunds = await Refund.findAll();
-      return res.status(200).json({ refunds });
-    } catch (error) {
-      return res.status(500).json({ error: "Error al obtener los reembolsos" });
-    }
+export class RefundController extends BaseController {
+  constructor(private readonly service: RefundService = new RefundService()) {
+    super();
   }
 
-  public async getOne(req: Request, res: Response) {
-    try {
-      const { id } = req.params;
-      const refund = await Refund.findByPk(id as string);
-      if (!refund) {
-        return res.status(404).json({ error: "Reembolso no encontrado" });
-      }
-      return res.status(200).json({ refund });
-    } catch (error) {
-      return res.status(500).json({ error: "Error al obtener el reembolso" });
-    }
+  async getAll(_req: Request, res: Response): Promise<void> {
+    await this.run(res, async () => {
+      const refunds = await this.service.getAll();
+      res.status(200).json({ refunds: refunds.map(toRefundResponse) });
+    });
   }
 
-  public async create(req: Request, res: Response) {
-    try {
-      const body = req.body as Pick<
-        RefundI,
-        "amount" | "reason" | "refund_date" | "contribution_id" | "status"
-      >;
-
-      const contributionCheck = await assertActiveContribution(body.contribution_id);
-      if (!contributionCheck.ok) {
-        return res.status(contributionCheck.status).json({ error: contributionCheck.error });
-      }
-
-      const refund = await Refund.create({
-        amount: body.amount,
-        reason: body.reason,
-        refund_date: body.refund_date,
-        contribution_id: body.contribution_id,
-        status: body.status ?? "inactive",
-      });
-
-      return res.status(201).json({ refund });
-    } catch (error) {
-      return res.status(500).json({ error: "Error al crear el reembolso" });
-    }
+  async getOne(req: Request, res: Response): Promise<void> {
+    await this.run(res, async () => {
+      const refund = await this.service.getOne(this.paramId(req));
+      res.status(200).json({ refund: toRefundResponse(refund) });
+    });
   }
 
-  public async updatePut(req: Request, res: Response) {
-    try {
-      const { id } = req.params;
-      const body = req.body as Pick<
-        RefundI,
-        "amount" | "reason" | "refund_date" | "contribution_id" | "status"
-      >;
-
-      const refund = await Refund.findByPk(id as string);
-      if (!refund) {
-        return res.status(404).json({ error: "Reembolso no encontrado" });
-      }
-
-      const contributionCheck = await assertActiveContribution(body.contribution_id);
-      if (!contributionCheck.ok) {
-        return res.status(contributionCheck.status).json({ error: contributionCheck.error });
-      }
-
-      await refund.update({
-        amount: body.amount,
-        reason: body.reason,
-        refund_date: body.refund_date,
-        contribution_id: body.contribution_id,
-        status: body.status,
-      });
-
-      return res.status(200).json({ refund });
-    } catch (error) {
-      return res.status(500).json({ error: "Error al actualizar el reembolso" });
-    }
+  async create(req: Request, res: Response): Promise<void> {
+    await this.run(res, async () => {
+      const refund = await this.service.create(req.body);
+      res.status(201).json({ refund: toRefundResponse(refund) });
+    });
   }
 
-  public async updatePatch(req: Request, res: Response) {
-    try {
-      const { id } = req.params;
-      const body = req.body as Partial<RefundI>;
-
-      const refund = await Refund.findByPk(id as string);
-      if (!refund) {
-        return res.status(404).json({ error: "Reembolso no encontrado" });
-      }
-
-      if (body.contribution_id !== undefined) {
-        const contributionCheck = await assertActiveContribution(body.contribution_id);
-        if (!contributionCheck.ok) {
-          return res.status(contributionCheck.status).json({ error: contributionCheck.error });
-        }
-      }
-
-      await refund.update(body);
-
-      return res.status(200).json({ refund });
-    } catch (error) {
-      return res.status(500).json({ error: "Error al actualizar parcialmente el reembolso" });
-    }
+  async updatePut(req: Request, res: Response): Promise<void> {
+    await this.run(res, async () => {
+      const refund = await this.service.updatePut(this.paramId(req), req.body);
+      res.status(200).json({ refund: toRefundResponse(refund) });
+    });
   }
 
-  public async deletePhysical(req: Request, res: Response) {
-    try {
-      const { id } = req.params;
-      const refund = await Refund.findByPk(id as string);
-      if (!refund) {
-        return res.status(404).json({ error: "Reembolso no encontrado" });
-      }
-      await refund.destroy();
-      return res.status(200).json({ message: "Reembolso eliminado físicamente" });
-    } catch (error) {
-      return res.status(500).json({ error: "Error al eliminar el reembolso" });
-    }
+  async updatePatch(req: Request, res: Response): Promise<void> {
+    await this.run(res, async () => {
+      const refund = await this.service.updatePatch(this.paramId(req), req.body);
+      res.status(200).json({ refund: toRefundResponse(refund) });
+    });
   }
 
-  public async deleteLogical(req: Request, res: Response) {
-    try {
-      const { id } = req.params;
-      const refund = await Refund.findByPk(id as string);
-      if (!refund) {
-        return res.status(404).json({ error: "Reembolso no encontrado" });
-      }
-      await refund.update({ status: "inactive" });
-      return res.status(200).json({ message: "Reembolso desactivado (borrado lógico)" });
-    } catch (error) {
-      return res.status(500).json({ error: "Error al desactivar el reembolso" });
-    }
+  async deletePhysical(req: Request, res: Response): Promise<void> {
+    await this.run(res, async () => {
+      await this.service.deletePhysical(this.paramId(req));
+      res.status(200).json({ message: "Refund eliminado físicamente" });
+    });
+  }
+
+  async deleteLogical(req: Request, res: Response): Promise<void> {
+    await this.run(res, async () => {
+      await this.service.deleteLogical(this.paramId(req));
+      res.status(200).json({ message: "Refund desactivado (borrado lógico)" });
+    });
   }
 }

@@ -2,15 +2,17 @@ import { Application } from "express";
 import { CommissionController } from "./commission.controller";
 
 export class CommissionRoutes {
-  public commissionController: CommissionController = new CommissionController();
+  private readonly controller = new CommissionController();
 
   public routes(app: Application): void {
-    app.get("/api/comisiones", this.commissionController.getAll);
-    app.get("/api/comisiones/:id", this.commissionController.getOne);
-    app.post("/api/comisiones", this.commissionController.create);
-    app.put("/api/comisiones/:id", this.commissionController.updatePut);
-    app.patch("/api/comisiones/:id", this.commissionController.updatePatch);
-    app.delete("/api/comisiones/:id/fisico", this.commissionController.deletePhysical);
-    app.patch("/api/comisiones/:id/logico", this.commissionController.deleteLogical);
+    app.route("/api/comisiones").get(this.controller.getAll.bind(this.controller));
+    app.route("/api/comisiones/:id/deactivate").patch(this.controller.deleteLogical.bind(this.controller));
+    app
+      .route("/api/comisiones/:id")
+      .get(this.controller.getOne.bind(this.controller))
+      .put(this.controller.updatePut.bind(this.controller))
+      .patch(this.controller.updatePatch.bind(this.controller))
+      .delete(this.controller.deletePhysical.bind(this.controller));
+    app.route("/api/comisiones").post(this.controller.create.bind(this.controller));
   }
 }

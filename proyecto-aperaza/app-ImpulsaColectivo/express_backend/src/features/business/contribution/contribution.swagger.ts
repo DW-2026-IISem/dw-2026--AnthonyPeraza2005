@@ -88,8 +88,6 @@ export const contributionSwagger = {
         },
         responses: { "200": { description: "Contribución actualizada parcialmente" } },
       },
-    },
-    "/api/contribuciones/{id}/fisico": {
       delete: {
         tags: ["Contributions"],
         summary: "Eliminar contribución físicamente",
@@ -97,7 +95,7 @@ export const contributionSwagger = {
         responses: { "200": { description: "Eliminada" } },
       },
     },
-    "/api/contribuciones/{id}/logico": {
+    "/api/contribuciones/{id}/deactivate": {
       patch: {
         tags: ["Contributions"],
         summary: "Desactivar contribución (borrado lógico)",

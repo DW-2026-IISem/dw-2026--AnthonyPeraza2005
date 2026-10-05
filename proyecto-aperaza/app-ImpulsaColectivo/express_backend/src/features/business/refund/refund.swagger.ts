@@ -88,8 +88,6 @@ export const refundSwagger = {
         },
         responses: { "200": { description: "Reembolso actualizado parcialmente" } },
       },
-    },
-    "/api/reembolsos/{id}/fisico": {
       delete: {
         tags: ["Refunds"],
         summary: "Eliminar reembolso físicamente",
@@ -97,7 +95,7 @@ export const refundSwagger = {
         responses: { "200": { description: "Eliminado" } },
       },
     },
-    "/api/reembolsos/{id}/logico": {
+    "/api/reembolsos/{id}/deactivate": {
       patch: {
         tags: ["Refunds"],
         summary: "Desactivar reembolso (borrado lógico)",

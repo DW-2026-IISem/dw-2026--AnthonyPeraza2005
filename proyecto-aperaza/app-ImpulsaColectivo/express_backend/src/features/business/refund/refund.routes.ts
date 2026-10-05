@@ -2,15 +2,17 @@ import { Application } from "express";
 import { RefundController } from "./refund.controller";
 
 export class RefundRoutes {
-  public refundController: RefundController = new RefundController();
+  private readonly controller = new RefundController();
 
   public routes(app: Application): void {
-    app.get("/api/reembolsos", this.refundController.getAll);
-    app.get("/api/reembolsos/:id", this.refundController.getOne);
-    app.post("/api/reembolsos", this.refundController.create);
-    app.put("/api/reembolsos/:id", this.refundController.updatePut);
-    app.patch("/api/reembolsos/:id", this.refundController.updatePatch);
-    app.delete("/api/reembolsos/:id/fisico", this.refundController.deletePhysical);
-    app.patch("/api/reembolsos/:id/logico", this.refundController.deleteLogical);
+    app.route("/api/reembolsos").get(this.controller.getAll.bind(this.controller));
+    app.route("/api/reembolsos/:id/deactivate").patch(this.controller.deleteLogical.bind(this.controller));
+    app
+      .route("/api/reembolsos/:id")
+      .get(this.controller.getOne.bind(this.controller))
+      .put(this.controller.updatePut.bind(this.controller))
+      .patch(this.controller.updatePatch.bind(this.controller))
+      .delete(this.controller.deletePhysical.bind(this.controller));
+    app.route("/api/reembolsos").post(this.controller.create.bind(this.controller));
   }
 }

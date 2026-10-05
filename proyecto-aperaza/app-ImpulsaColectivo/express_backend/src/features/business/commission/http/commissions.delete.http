@@ -1,9 +1,9 @@
 ### Feature Commission — DELETE
 
-DELETE http://localhost:4000/api/comisiones/1/fisico
+DELETE http://localhost:4000/api/comisiones/1
 # @name deleteCommissionPhysical
 
 ###
 
-PATCH http://localhost:4000/api/comisiones/1/logico
+PATCH http://localhost:4000/api/comisiones/1/deactivate
 # @name deleteCommissionLogical

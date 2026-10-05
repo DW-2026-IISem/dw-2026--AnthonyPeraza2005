@@ -818,7 +818,7 @@ Y agrega `contributionSwagger` al arreglo `featureSwaggerModules` (donde ya est�
 
 ![](images/clipboard-1021146689.png)
 
-#### 11.5 Archivos `.http` 
+#### 11.5 Archivos `.http`
 
 ![](images/clipboard-1201864721.png)
 
@@ -910,7 +910,7 @@ Y agrégalo al arreglo `featureSwaggerModules`, debajo de `contributionSwagger`:
 
 ![](images/clipboard-941960793.png)
 
-#### 12.5 Archivos `.http` 
+#### 12.5 Archivos `.http`
 
 ![](images/clipboard-2598335720.png)
 
@@ -1004,7 +1004,7 @@ Y agrégalo al arreglo `featureSwaggerModules`, debajo de `paymentTransactionSwa
 
 ![](images/clipboard-2816419076.png)
 
-#### 13.5 Archivos `.http` 
+#### 13.5 Archivos `.http`
 
 ![](images/clipboard-749887714.png)
 
@@ -1098,7 +1098,7 @@ Y agrégalo al arreglo `featureSwaggerModules`, debajo de `commissionSwagger`:
 
 ![](images/clipboard-848638487.png)
 
-#### 14.5 Archivos `.http` 
+#### 14.5 Archivos `.http`
 
 ![](images/clipboard-3500160556.png)
 
@@ -1192,7 +1192,7 @@ Y agrégalo al arreglo `featureSwaggerModules`, debajo de `disbursementSwagger`:
 
 ![](images/clipboard-18548106.png)
 
-#### 15.5 Archivos `.http` 
+#### 15.5 Archivos `.http`
 
 ![](images/clipboard-4119776072.png)
 
@@ -1260,8 +1260,364 @@ Y agrégalo al arreglo `featureSwaggerModules` (última entrada):
 
 ![](images/clipboard-2324158031.png)
 
-#### 15.14 Cierre del ISS-15 
+#### 15.14 Cierre del ISS-15
 
 ![](images/clipboard-4054827805.png)
 
 ![](images/clipboard-1272116268.png)
+
+### ISS-16 — Migración a arquitectura en capas (Repository/Service/Controller + AppError)
+
+#### 16.1 Infraestructura compartida: `AppError`
+
+![](images/clipboard-1452042856.png)
+
+### 16.2 Infraestructura compartida: `error-response.ts` y `BaseController`
+
+![](images/clipboard-2393095605.png)
+
+![](images/clipboard-1138853464.png)
+
+### Verificacion
+
+![](images/clipboard-1464130393.png)
+
+### 16.3 Migración de Promoter
+
+#### 16.3.1 Carpeta de DTOs
+
+![](images/clipboard-2420026519.png)
+
+### 16.3.3 Repository
+
+![](images/clipboard-1060552740.png)
+
+### 16.3.4 Service
+
+![](images/clipboard-1157703565.png)
+
+### 16.3.5 Controller
+
+![](images/clipboard-3988286362.png)
+
+### 16.3.6 Routes
+
+![](images/clipboard-1403058713.png)
+
+### 16.3.7 Verificación
+
+![](images/clipboard-627356245.png)
+
+![](images/clipboard-3588474263.png)
+
+### 16.4 Migración de Contributor
+
+#### 16.4.1 Carpeta de DTOs
+
+![](images/clipboard-2109710423.png)
+
+### 16.4.3 Repository
+
+![](images/clipboard-3549574352.png)
+
+### 16.4.4 Service
+
+![](images/clipboard-3456088591.png)
+
+### 16.4.5 Controller
+
+![](images/clipboard-2678636323.png)
+
+### 16.4.6 Routes
+
+![](images/clipboard-2172011098.png)
+
+### 16.4.7 Verificación
+
+![](images/clipboard-327355024.png)
+
+![](images/clipboard-1103408957.png)
+
+### 16.5 Migración de Project 
+
+### 16.5.1 Carpeta de DTOs
+
+![](images/clipboard-3814833844.png)
+
+### 16.5.2 DTOs
+
+![](images/clipboard-528557221.png)
+
+### 16.5.3 Repository
+
+![](images/clipboard-2345237726.png)
+
+### 16.5.4 Service
+
+![](images/clipboard-1044632404.png)
+
+### 16.5.5 Controller
+
+![](images/clipboard-1283156594.png)
+
+### 16.5.6 Routes
+
+![](images/clipboard-2143406183.png)
+
+### 16.5.7 Verificación
+
+![](images/clipboard-1179733372.png)
+
+### 16.6 Migración de Goal
+
+### 16.6.1 Carpeta de DTOs
+
+![](images/clipboard-2830058383.png)
+
+### 16.6.2 DTOs
+
+![](images/clipboard-3249074526.png)
+
+### 16.6.3 Repository
+
+![](images/clipboard-2415748962.png)
+
+### 16.6.4 Service 
+
+![](images/clipboard-2976970426.png)
+
+### 16.6.5 Controller
+
+![](images/clipboard-233409174.png)
+
+### 16.6.6 Routes
+
+![](images/clipboard-3979151340.png)
+
+### 16.6.7 Verificación
+
+![](images/clipboard-2647869553.png)
+
+### 16.7 Migración de Reward
+
+### 16.7.1 Carpeta de DTOs
+
+![](images/clipboard-3851264427.png)
+
+### 16.7.2 DTOs
+
+![](images/clipboard-1018534099.png)
+
+### 16.7.3 Repository
+
+![](images/clipboard-480837803.png)
+
+### 16.7.4 Service 
+
+![](images/clipboard-3061075740.png)
+
+### 16.7.5 Controller
+
+![](images/clipboard-3217225786.png)
+
+### 16.7.6 Routes
+
+![](images/clipboard-4118115960.png)
+
+### 16.7.7 Verificación
+
+![](images/clipboard-2436049652.png)
+
+### 16.8 Migración de Contribution
+
+### 16.8.1 Carpeta de DTOs
+
+![](images/clipboard-536589697.png)
+
+### 16.8.2 DTOs
+
+![](images/clipboard-1069298225.png)
+
+### 16.8.3 Repository
+
+![](images/clipboard-1133786742.png)
+
+### 16.8.4 Service
+
+![](images/clipboard-862253182.png)
+
+### 16.8.5 Controller
+
+![](images/clipboard-326391305.png)
+
+### 16.8.6 Routes
+
+![](images/clipboard-1274240546.png)
+
+### 16.8.7 Verificación
+
+![](images/clipboard-3412596871.png)
+
+### 16.9 Migración de PaymentTransaction
+
+### 16.9.1 Carpeta de DTOs
+
+![](images/clipboard-3919653055.png)
+
+### 16.9.2 DTOs
+
+![](images/clipboard-934980965.png)
+
+### 16.9.3 Repository
+
+![](images/clipboard-2568562241.png)
+
+### 16.9.4 Service
+
+![](images/clipboard-4025076719.png)
+
+### 16.9.5 Controller 
+
+![](images/clipboard-716644008.png)
+
+### 16.9.6 Routes
+
+![](images/clipboard-564410401.png)
+
+### 16.9.7 Verificación
+
+![](images/clipboard-3372121110.png)
+
+### 16.10 Migración de Commission
+
+### 16.10.1 Crear la carpeta dto
+
+![](images/clipboard-3026882804.png)
+
+### 16.10.2 DTOs
+
+![](images/clipboard-2059776205.png)
+
+### 16.10.3 Repository
+
+![](images/clipboard-2950871459.png)
+
+### 16.10.4 Service
+
+![](images/clipboard-1181604131.png)
+
+### 16.10.5 Controller
+
+![](images/clipboard-2968483346.png)
+
+### 16.10.6 Routes
+
+![](images/clipboard-621078634.png)
+
+### 16.10.7 Verificación
+
+![](images/clipboard-1398676998.png)
+
+### 16.11 Migración de Disbursement
+
+### 16.11.1 Crear la carpeta dto
+
+![](images/clipboard-3478451656.png)
+
+### 16.11.2 DTOs
+
+![](images/clipboard-1651797616.png)
+
+### 16.11.3 Repository
+
+![](images/clipboard-2019120852.png)
+
+### 16.11.4 Service
+
+![](images/clipboard-508246587.png)
+
+### 16.11.5 Controller
+
+![](images/clipboard-765101107.png)
+
+### 16.11.6 Routes
+
+![](images/clipboard-4127204517.png)
+
+### 16.11.7 Verificación
+
+![](images/clipboard-810515935.png)
+
+### 16.12 Migración de Refund
+
+### 16.12.1 Crear la carpeta dto
+
+![](images/clipboard-1344956787.png)
+
+### 16.12.2 DTOs
+
+![](images/clipboard-1195459302.png)
+
+### 16.12.3 Repository
+
+![](images/clipboard-3651295983.png)
+
+### 16.12.4 Service
+
+![](images/clipboard-3627673386.png)
+
+### 16.12.5 Controller
+
+![](images/clipboard-558835155.png)
+
+### 16.12.6 Routes
+
+![](images/clipboard-3297190167.png)
+
+### 16.12.7 Verificación
+
+![](images/clipboard-234619683.png)
+
+### 16.13 Migración de ProjectAudit
+
+### 16.13.1 Crear la carpeta dto
+
+![](images/clipboard-3469399989.png)
+
+### 16.13.2 DTOs
+
+![](images/clipboard-2236691816.png)
+
+### 16.13.3 Repository
+
+![](images/clipboard-1207421934.png)
+
+### 16.13.4 Service
+
+![](images/clipboard-2397897407.png)
+
+### 16.13.5 Controller
+
+![](images/clipboard-4170712575.png)
+
+### 16.13.6 Routes
+
+![](images/clipboard-3263026056.png)
+
+### 16.13.7 Verificación
+
+![](images/clipboard-306460658.png)
+
+### 16.14 Actualizar swagger y archivos `.http`
+
+### 16.14.2 PARCHE de los swagger
+
+![](images/clipboard-2388364289.png)
+
+### 16.14.3 PARCHE de los archivos `.http`
+
+![](images/clipboard-846967548.png)
+
+### 16.14.4 Verificación final de ISS-16
+
+![](images/clipboard-1105644309.png)

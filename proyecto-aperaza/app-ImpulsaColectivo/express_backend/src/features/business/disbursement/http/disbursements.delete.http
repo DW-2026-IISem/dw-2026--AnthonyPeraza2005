@@ -1,9 +1,9 @@
 ### Feature Disbursement — DELETE
 
-DELETE http://localhost:4000/api/desembolsos/1/fisico
+DELETE http://localhost:4000/api/desembolsos/1
 # @name deleteDisbursementPhysical
 
 ###
 
-PATCH http://localhost:4000/api/desembolsos/1/logico
+PATCH http://localhost:4000/api/desembolsos/1/deactivate
 # @name deleteDisbursementLogical

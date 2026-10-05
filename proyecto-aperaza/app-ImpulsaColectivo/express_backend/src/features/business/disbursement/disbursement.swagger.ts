@@ -88,8 +88,6 @@ export const disbursementSwagger = {
         },
         responses: { "200": { description: "Desembolso actualizado parcialmente" } },
       },
-    },
-    "/api/desembolsos/{id}/fisico": {
       delete: {
         tags: ["Disbursements"],
         summary: "Eliminar desembolso físicamente",
@@ -97,7 +95,7 @@ export const disbursementSwagger = {
         responses: { "200": { description: "Eliminado" } },
       },
     },
-    "/api/desembolsos/{id}/logico": {
+    "/api/desembolsos/{id}/deactivate": {
       patch: {
         tags: ["Disbursements"],
         summary: "Desactivar desembolso (borrado lógico)",

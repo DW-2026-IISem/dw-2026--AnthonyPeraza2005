@@ -1,9 +1,9 @@
 ### Feature ProjectAudit — DELETE
 
-DELETE http://localhost:4000/api/auditorias-proyecto/1/fisico
+DELETE http://localhost:4000/api/auditorias-proyecto/1
 # @name deleteProjectAuditPhysical
 
 ###
 
-PATCH http://localhost:4000/api/auditorias-proyecto/1/logico
+PATCH http://localhost:4000/api/auditorias-proyecto/1/deactivate
 # @name deleteProjectAuditLogical

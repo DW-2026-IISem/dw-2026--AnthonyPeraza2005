@@ -88,8 +88,6 @@ export const commissionSwagger = {
         },
         responses: { "200": { description: "Comisión actualizada parcialmente" } },
       },
-    },
-    "/api/comisiones/{id}/fisico": {
       delete: {
         tags: ["Commissions"],
         summary: "Eliminar comisión físicamente",
@@ -97,7 +95,7 @@ export const commissionSwagger = {
         responses: { "200": { description: "Eliminada" } },
       },
     },
-    "/api/comisiones/{id}/logico": {
+    "/api/comisiones/{id}/deactivate": {
       patch: {
         tags: ["Commissions"],
         summary: "Desactivar comisión (borrado lógico)",

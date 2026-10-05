@@ -5,37 +5,15 @@ export class RewardRoutes {
   public rewardController: RewardController = new RewardController();
 
   public routes(app: Application): void {
-    // ================== RUTAS SIN AUTENTICACIÓN / SIN MIDDLEWARE JWT ==================
-
-    // getAll
-    app
-      .route("/api/recompensas")
-      .get(this.rewardController.getAll.bind(this.rewardController));
-
-    // getOne
-    app
-      .route("/api/recompensas/:id")
-      .get(this.rewardController.getOne.bind(this.rewardController));
-
-    // create
-    app
-      .route("/api/recompensas")
-      .post(this.rewardController.create.bind(this.rewardController));
-
-    // update (PUT / PATCH)
-    app
-      .route("/api/recompensas/:id")
-      .put(this.rewardController.updatePut.bind(this.rewardController))
-      .patch(this.rewardController.updatePatch.bind(this.rewardController));
-
-    // delete físico
-    app
-      .route("/api/recompensas/:id")
-      .delete(this.rewardController.deletePhysical.bind(this.rewardController));
-
-    // delete lógico
-    app
-      .route("/api/recompensas/:id/deactivate")
-      .patch(this.rewardController.deleteLogical.bind(this.rewardController));
+    app.get("/api/recompensas", this.rewardController.getAll.bind(this.rewardController));
+    app.get("/api/recompensas/:id", this.rewardController.getOne.bind(this.rewardController));
+    app.post("/api/recompensas", this.rewardController.create.bind(this.rewardController));
+    app.put("/api/recompensas/:id", this.rewardController.updatePut.bind(this.rewardController));
+    app.patch("/api/recompensas/:id", this.rewardController.updatePatch.bind(this.rewardController));
+    app.delete("/api/recompensas/:id", this.rewardController.deletePhysical.bind(this.rewardController));
+    app.patch(
+      "/api/recompensas/:id/deactivate",
+      this.rewardController.deleteLogical.bind(this.rewardController)
+    );
   }
 }

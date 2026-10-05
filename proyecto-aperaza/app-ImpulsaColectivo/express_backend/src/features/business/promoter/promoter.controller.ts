@@ -1,132 +1,61 @@
 import { Request, Response } from "express";
-import { Promoter, PromoterI } from "./promoter.model";
+import { BaseController } from "../../../shared/http/base-controller";
+import { PromoterService } from "./promoter.service";
 
-function paramId(req: Request): number {
-  const raw = req.params.id;
-  const value = Array.isArray(raw) ? raw[0] : raw;
-  return Number(value);
-}
+export class PromoterController extends BaseController {
+  public constructor(
+    private readonly service: PromoterService = new PromoterService()
+  ) {
+    super();
+  }
 
-export class PromoterController {
-  // ================== READ ==================
-  // (rellenar en ISS-03-B) getAll, luego getOne
-    public async getAll(req: Request, res: Response) {
-    try {
-      const promoters = await Promoter.findAll({
-        where: { status: "active" },
-      });
+  public async getAll(req: Request, res: Response): Promise<void> {
+    await this.run(res, async () => {
+      const promoters = await this.service.getAll();
       res.status(200).json({ promoters });
-    } catch (error) {
-      res.status(500).json({ error: "Error fetching promoters", detail: String(error) });
-    }
+    });
   }
 
-  public async getOne(req: Request, res: Response) {
-    try {
-      const id = paramId(req);
-      const promoter = await Promoter.findByPk(id);
-      if (!promoter) {
-        res.status(404).json({ error: "Promoter not found" });
-        return;
-      }
+  public async getOne(req: Request, res: Response): Promise<void> {
+    await this.run(res, async () => {
+      const promoter = await this.service.getOne(this.paramId(req));
       res.status(200).json({ promoter });
-    } catch (error) {
-      res.status(500).json({ error: "Error fetching promoter", detail: String(error) });
-    }
+    });
   }
 
-  // ================== CREATE ==================
-  // (rellenar en ISS-03-C)
-    public async create(req: Request, res: Response) {
-    try {
-      const body = req.body as PromoterI;
-      const promoter = await Promoter.create({
-        name: body.name,
-        description: body.description,
-        contact_email: body.contact_email,
-        contact_phone: body.contact_phone,
-        status: body.status ?? "active",
-      });
+  public async create(req: Request, res: Response): Promise<void> {
+    await this.run(res, async () => {
+      const promoter = await this.service.create(req.body);
       res.status(201).json({ promoter });
-    } catch (error) {
-      res.status(500).json({ error: "Error creating promoter", detail: String(error) });
-    }
+    });
   }
 
-  // ================== UPDATE ==================
-  // (rellenar en ISS-03-D)
-    public async updatePut(req: Request, res: Response) {
-    try {
-      const id = paramId(req);
-      const body = req.body as PromoterI;
-      const promoter = await Promoter.findByPk(id);
-      if (!promoter) {
-        res.status(404).json({ error: "Promoter not found" });
-        return;
-      }
-
-      await promoter.update({
-        name: body.name,
-        description: body.description,
-        contact_email: body.contact_email,
-        contact_phone: body.contact_phone,
-        status: body.status ?? promoter.status,
-      });
-
+  public async updatePut(req: Request, res: Response): Promise<void> {
+    await this.run(res, async () => {
+      const promoter = await this.service.updatePut(this.paramId(req), req.body);
       res.status(200).json({ promoter });
-    } catch (error) {
-      res.status(500).json({ error: "Error updating promoter (PUT)", detail: String(error) });
-    }
+    });
   }
 
-  public async updatePatch(req: Request, res: Response) {
-    try {
-      const id = paramId(req);
-      const body = req.body as Partial<PromoterI>;
-      const promoter = await Promoter.findByPk(id);
-      if (!promoter) {
-        res.status(404).json({ error: "Promoter not found" });
-        return;
-      }
-
-      await promoter.update(body);
+  public async updatePatch(req: Request, res: Response): Promise<void> {
+    await this.run(res, async () => {
+      const promoter = await this.service.updatePatch(this.paramId(req), req.body);
       res.status(200).json({ promoter });
-    } catch (error) {
-      res.status(500).json({ error: "Error updating promoter (PATCH)", detail: String(error) });
-    }
+    });
   }
 
-  // ================== DELETE ==================
-  // (rellenar en ISS-03-E)
-    /** Eliminación física */
-  public async deletePhysical(req: Request, res: Response) {
-    try {
-      const id = paramId(req);
-      const promoter = await Promoter.findByPk(id);
-      if (!promoter) {
-        res.status(404).json({ error: "Promoter not found" });
-        return;
-      }
-      await promoter.destroy();
-      res.status(200).json({ message: "Promoter permanently deleted", id });
-    } catch (error) {
-      res.status(500).json({ error: "Error deleting promoter", detail: String(error) });
-    }
+  public async deletePhysical(req: Request, res: Response): Promise<void> {
+    await this.run(res, async () => {
+      const id = this.paramId(req);
+      await this.service.deletePhysical(id);
+      res.status(200).json({ message: "Promoter eliminado físicamente", id });
+    });
   }
 
-  /** Eliminación lógica → status = inactive */
-  public async deleteLogical(req: Request, res: Response) {
-    try {
-      const id = paramId(req);
-      const promoter = await Promoter.findByPk(id);
-      if (!promoter) {
-        res.status(404).json({ error: "Promoter not found" });
-        return;
-      }
-      await promoter.update({ status: "inactive" });
-      res.status(200).json({ message: "Promoter deactivated (logical delete)", promoter });
-    } catch (error) {
-      res.status(500).json({ error: "Error deactivating promoter", detail: String(error) });
-    }
+  public async deleteLogical(req: Request, res: Response): Promise<void> {
+    await this.run(res, async () => {
+      const promoter = await this.service.deleteLogical(this.paramId(req));
+      res.status(200).json({ message: "Promoter desactivado (borrado lógico)", promoter });
+    });
   }
 }

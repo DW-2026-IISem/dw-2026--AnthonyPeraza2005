@@ -88,8 +88,6 @@ export const projectAuditSwagger = {
         },
         responses: { "200": { description: "Auditoría actualizada parcialmente" } },
       },
-    },
-    "/api/auditorias-proyecto/{id}/fisico": {
       delete: {
         tags: ["ProjectAudits"],
         summary: "Eliminar auditoría físicamente",
@@ -97,7 +95,7 @@ export const projectAuditSwagger = {
         responses: { "200": { description: "Eliminada" } },
       },
     },
-    "/api/auditorias-proyecto/{id}/logico": {
+    "/api/auditorias-proyecto/{id}/deactivate": {
       patch: {
         tags: ["ProjectAudits"],
         summary: "Desactivar auditoría (borrado lógico)",

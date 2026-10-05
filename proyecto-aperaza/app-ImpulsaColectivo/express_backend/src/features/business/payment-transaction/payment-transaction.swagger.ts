@@ -88,8 +88,6 @@ export const paymentTransactionSwagger = {
         },
         responses: { "200": { description: "Transacción actualizada parcialmente" } },
       },
-    },
-    "/api/transacciones-pago/{id}/fisico": {
       delete: {
         tags: ["PaymentTransactions"],
         summary: "Eliminar transacción de pago físicamente",
@@ -97,7 +95,7 @@ export const paymentTransactionSwagger = {
         responses: { "200": { description: "Eliminada" } },
       },
     },
-    "/api/transacciones-pago/{id}/logico": {
+    "/api/transacciones-pago/{id}/deactivate": {
       patch: {
         tags: ["PaymentTransactions"],
         summary: "Desactivar transacción de pago (borrado lógico)",
