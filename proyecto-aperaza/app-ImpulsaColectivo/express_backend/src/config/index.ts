@@ -23,6 +23,15 @@ import "../features/business/project-audit/project-audit.model";
 import "../features/business/project-audit/project-audit.associations";
 import "../features/business/goal/goal.associations";
 import "../features/business/project/project.associations";
+// Fase II — Auth con RBAC: primero los seis modelos, después las asociaciones
+// (las asociaciones referencian los modelos, no al revés).
+import "../features/auth/users/user.model";
+import "../features/auth/roles/role.model";
+import "../features/auth/resources/resource.model";
+import "../features/auth/role-users/role-user.model";
+import "../features/auth/resource-roles/resource-role.model";
+import "../features/auth/refresh-tokens/refresh-token.model";
+import "../features/auth/rbac.associations";
 import { Routes } from "../routes/index";
 import { setupSwagger } from "../swagger/index";
 

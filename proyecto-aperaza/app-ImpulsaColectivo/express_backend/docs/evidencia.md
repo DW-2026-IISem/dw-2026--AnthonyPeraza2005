@@ -1621,3 +1621,73 @@ Y agrégalo al arreglo `featureSwaggerModules` (última entrada):
 ### 16.14.4 Verificación final de ISS-16
 
 ![](images/clipboard-1105644309.png)
+
+### ISS-17 · Base de seguridad y modelos de Auth
+
+### 17.1 Dependencias y variables de entorno
+
+![](images/clipboard-1686311744.png)
+
+### 17.2 Crear las carpetas
+
+![](images/clipboard-726900707.png)
+
+### 17.3 `password.ts`: hash de contraseña y hash de tokens
+
+![](images/clipboard-3063693395.png)
+
+### 17.4 `jwt.ts`: firma y verificación del access token
+
+![](images/clipboard-2810553878.png)
+
+### 17.5 `resource-match.ts`: casar la petición con el recurso
+
+![](images/clipboard-2294663364.png)
+
+### 17.6 `auth-user.ts`: la identidad dentro de `Request`
+
+![](images/clipboard-1613248159.png)
+
+### 17.7 `swagger-security.ts`: piezas reutilizables de OpenAPI
+
+![](images/clipboard-2404545071.png)
+
+### 17.8 Modelo `User`
+
+![](images/clipboard-58150511.png)
+
+### 17.9 Modelo `Role`
+
+![](images/clipboard-3674099028.png)
+
+### 17.10 Modelo `Resource`
+
+![](images/clipboard-1909430502.png)
+
+### 17.11 Modelo `RoleUser`
+
+![](images/clipboard-2154327608.png)
+
+### 17.12 Modelo `ResourceRole`
+
+![](images/clipboard-2522166346.png)
+
+### 17.13 Modelo `RefreshToken`
+
+![](images/clipboard-832922406.png)
+
+### 17.14 `rbac.associations.ts`
+
+![](images/clipboard-821115744.png)
+
+### 17.15 PARCHE en `src/config/index.ts`
+
+![](images/clipboard-3629942907.png)
+
+### 17.16 PARCHE en `src/database/seeders/index.ts`
+
+![](images/clipboard-2183435302.png)
+
+### 17.17 Verificación final
+
+![](images/clipboard-953971990.png)

@@ -12,6 +12,15 @@ import { seedCommissions } from "../../features/business/commission/commission.s
 import { seedDisbursements } from "../../features/business/disbursement/disbursement.seeder";
 import { seedRefunds } from "../../features/business/refund/refund.seeder";
 import { seedProjectAudits } from "../../features/business/project-audit/project-audit.seeder";
+// Fase II — Auth con RBAC: primero los seis modelos, después las asociaciones.
+// Los seeders de Auth se añaden en ISS posteriores.
+import "../../features/auth/users/user.model";
+import "../../features/auth/roles/role.model";
+import "../../features/auth/resources/resource.model";
+import "../../features/auth/role-users/role-user.model";
+import "../../features/auth/resource-roles/resource-role.model";
+import "../../features/auth/refresh-tokens/refresh-token.model";
+import "../../features/auth/rbac.associations";
 import { resolveSeedCounts } from "./counts";
 
 dotenv.config();
