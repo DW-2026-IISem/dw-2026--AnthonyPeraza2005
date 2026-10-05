@@ -4,7 +4,7 @@ const idParam = [{ name: "id", in: "path", required: true, schema: { type: "inte
 
 /**
  * Documentación OpenAPI del feature Roles.
- * TEMPORAL: SIN AUTH hasta ISS-21 (entonces pasa a JWT + RBAC).
+ * Modalidad: JWT + RBAC (authenticate + authorize).
  *
  * El NOMBRE del rol no autoriza nada: la autorización se decide por las filas
  * de `resource_roles`.
@@ -16,13 +16,13 @@ export const rolesSwagger = {
       get: {
         tags: ["Roles"],
         summary: "Listar roles activos",
-        description: "SIN AUTH (temporal)",
+        description: "JWT + RBAC",
         responses: { "200": { description: "Lista de roles (`{ roles: [...] }`)" } },
       },
       post: {
         tags: ["Roles"],
         summary: "Crear rol",
-        description: "SIN AUTH (temporal) — el rol nace sin permisos",
+        description: "JWT + RBAC — el rol nace sin permisos",
         requestBody: {
           required: true,
           content: { "application/json": { schema: { $ref: "#/components/schemas/RoleCreate" } } },

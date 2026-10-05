@@ -4,7 +4,7 @@ const idParam = [{ name: "id", in: "path", required: true, schema: { type: "inte
 
 /**
  * Documentación OpenAPI del feature ResourceRoles: la gestión de permisos.
- * TEMPORAL: SIN AUTH hasta ISS-21 (entonces pasa a JWT + RBAC).
+ * Modalidad: JWT + RBAC (authenticate + authorize).
  *
  * No existe una entidad `Permission`: conceder un permiso es crear (o
  * reactivar) una fila en `resource_roles`; el permiso es la tupla (rol, recurso).
@@ -22,7 +22,7 @@ export const resourceRolesSwagger = {
         tags: ["Concesiones rol-recurso"],
         summary: "Listar concesiones activas",
         description:
-          "SIN AUTH (temporal) — filtros opcionales: `?role_id=` (permisos de un rol) y " +
+          "JWT + RBAC — filtros opcionales: `?role_id=` (permisos de un rol) y " +
           "`?resource_id=` (roles que conceden un recurso).",
         parameters: [
           { name: "role_id", in: "query", required: false, schema: { type: "integer" } },
@@ -34,7 +34,7 @@ export const resourceRolesSwagger = {
         tags: ["Concesiones rol-recurso"],
         summary: "Conceder recurso a rol (crear permiso)",
         description:
-          "SIN AUTH (temporal) — cuerpo `{ role_id, resource_id }`. Idempotente: si la concesión " +
+          "JWT + RBAC — cuerpo `{ role_id, resource_id }`. Idempotente: si la concesión " +
           "existía retirada, se reactiva. Efecto inmediato y sin despliegue.",
         requestBody: {
           required: true,

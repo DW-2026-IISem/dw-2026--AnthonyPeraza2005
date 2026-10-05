@@ -51,7 +51,7 @@ export async function runAllSeeders(): Promise<void> {
     throw new Error("No hay conexión a la base de datos");
   }
 
-  await sequelize.sync({ force: false, alter: true });
+  await sequelize.sync({ force: false, alter: process.env.DB_SYNC_ALTER === "true" });
 
   // Orden: business (padres → hijos)
   await seedPromoters(counts.promoters);

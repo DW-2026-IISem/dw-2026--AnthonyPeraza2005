@@ -1,3 +1,18 @@
+@baseUrl = http://localhost:4000
+
+### Login (token de este archivo; admin tiene los 110 permisos)
+# @name login
+POST {{baseUrl}}/api/sesion/login
+Content-Type: application/json
+
+{
+  "identifier": "admin",
+  "password": "Admin123!"
+}
+
+###
+@token = {{login.response.body.$.access_token}}
+
 ### Feature Resources — catálogo de puntos de acceso
 ### Leyenda: SIN AUTH (temporal hasta ISS-21).
 ### Un recurso es el par (method, path) con la ruta EN PATRÓN: /api/proyectos/:id
@@ -9,17 +24,20 @@
 
 # @name getAllResources
 GET {{baseUrl}}/api/recursos
+Authorization: Bearer {{token}}
 
 ###
 
 # @name getOneResource
 GET {{baseUrl}}/api/recursos/1
+Authorization: Bearer {{token}}
 
 ###
 
 ### CREATE — alta de un punto de acceso nuevo
 # @name createResource
 POST {{baseUrl}}/api/recursos
+Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
@@ -32,6 +50,7 @@ Content-Type: application/json
 
 ### 409 — la tupla (method, path) ya existe
 POST {{baseUrl}}/api/recursos
+Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
@@ -44,6 +63,7 @@ Content-Type: application/json
 
 # @name updateResourcePut
 PUT {{baseUrl}}/api/recursos/{{id}}
+Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
@@ -57,8 +77,10 @@ Content-Type: application/json
 ### DELETE lógico — ningún rol puede ya autorizar ese endpoint
 # @name deactivateResource
 PATCH {{baseUrl}}/api/recursos/{{id}}/deactivate
+Authorization: Bearer {{token}}
 
 ###
 
 # @name deleteResourcePhysical
 DELETE {{baseUrl}}/api/recursos/{{id}}
+Authorization: Bearer {{token}}

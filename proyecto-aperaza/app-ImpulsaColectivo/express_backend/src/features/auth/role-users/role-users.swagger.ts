@@ -4,7 +4,7 @@ const idParam = [{ name: "id", in: "path", required: true, schema: { type: "inte
 
 /**
  * Documentación OpenAPI del feature RoleUsers: asignaciones usuario ↔ rol.
- * TEMPORAL: SIN AUTH hasta ISS-21 (entonces pasa a JWT + RBAC).
+ * Modalidad: JWT + RBAC (authenticate + authorize).
  *
  * `POST /api/asignaciones-rol` asigna un rol a un usuario, primer eslabón de la
  * cadena. Sin asignación activa no hay permisos, por muchos roles que existan.
@@ -21,14 +21,14 @@ export const roleUsersSwagger = {
       get: {
         tags: ["Asignaciones usuario-rol"],
         summary: "Listar asignaciones activas",
-        description: "SIN AUTH (temporal) — incluye un resumen del usuario (sin `password`) y del rol",
+        description: "JWT + RBAC — incluye un resumen del usuario (sin `password`) y del rol",
         responses: { "200": { description: "Lista de asignaciones (`{ assignments: [...] }`)" } },
       },
       post: {
         tags: ["Asignaciones usuario-rol"],
         summary: "Asignar rol a usuario",
         description:
-          "SIN AUTH (temporal) — cuerpo `{ user_id, role_id }`. Idempotente: si la pareja existía " +
+          "JWT + RBAC — cuerpo `{ user_id, role_id }`. Idempotente: si la pareja existía " +
           "desactivada, se reactiva. El usuario y el rol deben estar activos.",
         requestBody: {
           required: true,

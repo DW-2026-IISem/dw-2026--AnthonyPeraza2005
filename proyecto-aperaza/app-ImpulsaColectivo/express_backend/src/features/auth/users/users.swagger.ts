@@ -2,7 +2,7 @@ import { invalidIdResponse, notFoundResponse } from "../../../shared/http/swagge
 
 /**
  * Documentación OpenAPI del feature Users.
- * TEMPORAL: SIN AUTH hasta ISS-21 (entonces pasa a JWT + RBAC).
+ * Modalidad: JWT + RBAC (authenticate + authorize).
  */
 export const usersSwagger = {
   tags: [

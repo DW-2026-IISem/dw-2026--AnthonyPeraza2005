@@ -4,7 +4,7 @@ const idParam = [{ name: "id", in: "path", required: true, schema: { type: "inte
 
 /**
  * Documentación OpenAPI del feature Resources.
- * TEMPORAL: SIN AUTH hasta ISS-21 (entonces pasa a JWT + RBAC).
+ * Modalidad: JWT + RBAC (authenticate + authorize).
  *
  * Un recurso es un par `(method, path)` con la ruta EN PATRÓN
  * (`/api/proyectos/:id`). `GET` y `POST` sobre la misma ruta son dos recursos
@@ -22,14 +22,14 @@ export const resourcesSwagger = {
       get: {
         tags: ["Recursos"],
         summary: "Listar recursos activos",
-        description: "SIN AUTH (temporal)",
+        description: "JWT + RBAC",
         responses: { "200": { description: "Lista de recursos (`{ resources: [...] }`)" } },
       },
       post: {
         tags: ["Recursos"],
         summary: "Crear recurso",
         description:
-          "SIN AUTH (temporal) — alta de un nuevo punto de acceso; concederlo a un rol no requiere desplegar código.",
+          "JWT + RBAC — alta de un nuevo punto de acceso; concederlo a un rol no requiere desplegar código.",
         requestBody: {
           required: true,
           content: { "application/json": { schema: { $ref: "#/components/schemas/ResourceCreate" } } },

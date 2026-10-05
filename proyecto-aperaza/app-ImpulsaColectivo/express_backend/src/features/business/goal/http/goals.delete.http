@@ -1,3 +1,18 @@
+@baseUrl = http://localhost:4000
+
+### Login (token de este archivo; admin tiene los 110 permisos)
+# @name login
+POST {{baseUrl}}/api/sesion/login
+Content-Type: application/json
+
+{
+  "identifier": "admin",
+  "password": "Admin123!"
+}
+
+###
+@token = {{login.response.body.$.access_token}}
+
 ### Feature Goal — DELETE físico / DELETE lógico (status = inactive)
 ### Leyenda: SIN AUTH (sin middleware JWT / sin autenticación)
 @baseUrl = http://localhost:4000
@@ -5,8 +20,10 @@
 
 # @name deleteGoalPhysical
 DELETE {{baseUrl}}/api/metas/{{id}}
+Authorization: Bearer {{token}}
 
 ###
 
 # @name deleteGoalLogical
 PATCH {{baseUrl}}/api/metas/{{id}}/deactivate
+Authorization: Bearer {{token}}

@@ -1,9 +1,25 @@
+@baseUrl = http://localhost:4000
+
+### Login (token de este archivo; admin tiene los 110 permisos)
+# @name login
+POST {{baseUrl}}/api/sesion/login
+Content-Type: application/json
+
+{
+  "identifier": "admin",
+  "password": "Admin123!"
+}
+
+###
+@token = {{login.response.body.$.access_token}}
+
 ### Feature Promoter — CREATE
 ### Leyenda: SIN AUTH (sin middleware JWT / sin autenticación)
 @baseUrl = http://localhost:4000
 
 # @name createPromoter
 POST {{baseUrl}}/api/promotores
+Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {

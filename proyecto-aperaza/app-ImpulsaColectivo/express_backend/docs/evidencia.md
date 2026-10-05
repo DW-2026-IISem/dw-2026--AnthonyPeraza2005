@@ -2077,3 +2077,29 @@ Y agrégalo al arreglo `featureSwaggerModules` (última entrada):
 ### 23.9 Verificación final
 
 ![](images/clipboard-3229261216.png)
+
+### ISS-24 · Cierre Fase II: Auth con RBAC
+
+#### 24.1 Modelo de acceso para Swagger
+
+![](images/clipboard-3014393247.png)
+
+### 24.2 PARCHE en `src/swagger/index.ts`
+
+![](images/clipboard-1705784062.png)
+
+### 24.3 Limpiar los textos "SIN AUTH (temporal)" del código fuente
+
+![](images/clipboard-3919850817.png)
+
+### 24.4 Los `.http` pasan a autenticarse
+
+![](images/clipboard-1993207208.png)
+
+### 24.5 Smoke test E2E de las tres modalidades
+
+![](images/clipboard-3240646174.png)
+
+### 24.6 Verificación final del laboratorio
+
+![](images/clipboard-2347569741.png)

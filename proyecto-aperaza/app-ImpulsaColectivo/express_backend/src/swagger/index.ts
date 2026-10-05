@@ -1,4 +1,5 @@
 import { Application } from "express";
+import { applyAccessModel } from "./access";
 import swaggerUi from "swagger-ui-express";
 import { promoterSwagger } from "../features/business/promoter/promoter.swagger";
 import { contributorSwagger } from "../features/business/contributor/contributor.swagger";
@@ -87,7 +88,7 @@ export function buildOpenApiDocument() {
 
 /** Monta Swagger UI y el JSON OpenAPI */
 export function setupSwagger(app: Application): void {
-  const document = buildOpenApiDocument();
+  const document = applyAccessModel(buildOpenApiDocument());
   app.use("/api/docs", swaggerUi.serve, swaggerUi.setup(document));
   app.get("/api/docs.json", (_req, res) => {
     res.json(document);

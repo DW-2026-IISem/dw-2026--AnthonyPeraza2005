@@ -1,3 +1,18 @@
+@baseUrl = http://localhost:4000
+
+### Login (token de este archivo; admin tiene los 110 permisos)
+# @name login
+POST {{baseUrl}}/api/sesion/login
+Content-Type: application/json
+
+{
+  "identifier": "admin",
+  "password": "Admin123!"
+}
+
+###
+@token = {{login.response.body.$.access_token}}
+
 ### Feature Roles — CRUD
 ### Leyenda: SIN AUTH (temporal hasta ISS-21).
 ### El NOMBRE del rol no autoriza nada: la autorización son las filas de `resource_roles`.
@@ -7,17 +22,20 @@
 
 # @name getAllRoles
 GET {{baseUrl}}/api/roles
+Authorization: Bearer {{token}}
 
 ###
 
 # @name getOneRole
 GET {{baseUrl}}/api/roles/2
+Authorization: Bearer {{token}}
 
 ###
 
 ### CREATE — nace SIN permisos
 # @name createRole
 POST {{baseUrl}}/api/roles
+Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
@@ -29,6 +47,7 @@ Content-Type: application/json
 
 ### 409 — el nombre ya existe
 POST {{baseUrl}}/api/roles
+Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
@@ -40,6 +59,7 @@ Content-Type: application/json
 
 # @name updateRolePut
 PUT {{baseUrl}}/api/roles/{{id}}
+Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
@@ -51,6 +71,7 @@ Content-Type: application/json
 
 # @name updateRolePatch
 PATCH {{baseUrl}}/api/roles/{{id}}
+Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
@@ -62,8 +83,10 @@ Content-Type: application/json
 ### DELETE lógico — todos sus usuarios pierden ese rol
 # @name deactivateRole
 PATCH {{baseUrl}}/api/roles/{{id}}/deactivate
+Authorization: Bearer {{token}}
 
 ###
 
 # @name deleteRolePhysical
 DELETE {{baseUrl}}/api/roles/{{id}}
+Authorization: Bearer {{token}}

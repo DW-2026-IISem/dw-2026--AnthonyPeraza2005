@@ -97,7 +97,7 @@ export class App {
         throw new Error(`No se pudo conectar a la base de datos ${dbInfo.engine.toUpperCase()}`);
       }
 
-      await sequelize.sync({ force: false, alter: true });
+      await sequelize.sync({ force: false, alter: process.env.DB_SYNC_ALTER === "true" });
       console.log(`📦 Base de datos sincronizada exitosamente`);
     } catch (error) {
       console.error("❌ Error al conectar con la base de datos:", error);
