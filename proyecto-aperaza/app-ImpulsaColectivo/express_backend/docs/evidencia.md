@@ -1829,3 +1829,101 @@ Y agrégalo al arreglo `featureSwaggerModules` (última entrada):
 ### 19.13 Verificación final
 
 ![](images/clipboard-2889490611.png)
+
+### ISS-20 · RoleUsers y ResourceRoles (asignar roles y conceder permisos)
+
+### 20.1 Carpetas y helper de transacciones
+
+![](images/clipboard-3221780023.png)
+
+![](images/clipboard-907750061.png)
+
+### 20.2 RoleUsers: DTOs
+
+![](images/clipboard-1842466095.png)
+
+### 20.3 RoleUsers: repository
+
+![](images/clipboard-1746733274.png)
+
+### 20.4 RoleUsers: service
+
+![](images/clipboard-1145355829.png)
+
+### 20.5 RoleUsers: controller y rutas
+
+![](images/clipboard-2658786072.png)
+
+### 20.6 RoleUsers: seeder y swagger
+
+![](images/clipboard-2733944245.png)
+
+### 20.7 ResourceRoles: DTOs
+
+![](images/clipboard-1484079719.png)
+
+### 20.8 ResourceRoles: repository
+
+![](images/clipboard-844596090.png)
+
+### 20.9 ResourceRoles: service
+
+![](images/clipboard-2942047278.png)
+
+### 20.10 ResourceRoles: controller y rutas
+
+![](images/clipboard-2229146732.png)
+
+### 20.11 ResourceRoles: seeder y swagger
+
+![](images/clipboard-4236795763.png)
+
+### 20.12 PARCHES a Users: permisos efectivos
+
+### 20.12.1 `src/features/auth/users/users.service.ts`
+
+![](images/clipboard-1408061717.png)
+
+![![](images/clipboard-4277777881.png)](images/clipboard-1477859683.png)
+
+### **20.12.2 `src/features/auth/users/users.controller.ts`**
+
+![](images/clipboard-1666518007.png)
+
+### **20.12.3 `src/features/auth/users/users.routes.ts`**
+
+![](images/clipboard-4128798269.png)
+
+### **20.12.4 `src/features/auth/users/users.swagger.ts`**
+
+![](images/clipboard-3420717375.png)
+
+### 20.13 Pruebas HTTP
+
+![](images/clipboard-11140846.png)
+
+### 20.14 Cableado
+
+### **20.14.1 `src/routes/index.ts`**
+
+![](images/clipboard-4140658189.png)
+
+### **20.14.2 `src/config/index.ts`**
+
+![](images/clipboard-3798134058.png)
+
+### **20.14.3 `src/database/seeders/index.ts`**
+
+![](images/clipboard-3303445973.png)
+
+![](images/clipboard-773953002.png)
+
+### **20.14.4 `src/swagger/index.ts`**
+
+![](images/clipboard-149500062.png)
+
+![](images/clipboard-477283981.png)
+
+### 20.15 Verificación final
+
+![](images/clipboard-1485244621.png)

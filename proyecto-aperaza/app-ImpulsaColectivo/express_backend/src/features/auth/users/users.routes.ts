@@ -14,6 +14,7 @@ export class UsersRoutes {
     app.route("/api/usuarios").get(this.controller.getAll.bind(this.controller));
     app.route("/api/usuarios/:id/deactivate").patch(this.controller.deleteLogical.bind(this.controller));
     app.route("/api/usuarios/:id/password").patch(this.controller.changePassword.bind(this.controller));
+    app.route("/api/usuarios/:id/permisos").get(this.controller.getEffectivePermissions.bind(this.controller));
     app
       .route("/api/usuarios/:id")
       .get(this.controller.getOne.bind(this.controller))

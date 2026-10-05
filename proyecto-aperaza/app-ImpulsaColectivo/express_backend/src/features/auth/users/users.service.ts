@@ -9,6 +9,8 @@ import {
 import { UsersRepository } from "./users.repository";
 import { AppError } from "../../../shared/errors/app-error";
 import { comparePassword } from "../../../shared/auth/password";
+import { ResourceRolesService } from "../resource-roles/resource-roles.service";
+import { EffectivePermissionDto } from "../resource-roles/dto";
 
 const MIN_PASSWORD_LENGTH = 8;
 
@@ -21,7 +23,8 @@ const MIN_PASSWORD_LENGTH = 8;
  */
 export class UsersService {
   public constructor(
-    private readonly repository: UsersRepository = new UsersRepository()
+    private readonly repository: UsersRepository = new UsersRepository(),
+    private readonly resourceRolesService: ResourceRolesService = new ResourceRolesService()
   ) {}
 
   // ================== READ ==================
@@ -33,7 +36,11 @@ export class UsersService {
   public async getOne(id: number): Promise<UserResponseDto> {
     return toUserResponse(await this.findOrFail(id));
   }
-
+  /** Permisos efectivos del usuario (cadena RBAC completa). 404 si no existe. */
+  public async getEffectivePermissions(id: number): Promise<EffectivePermissionDto[]> {
+    await this.findOrFail(id);
+    return this.resourceRolesService.findEffectiveForUser(id);
+  }
   // ================== CREATE ==================
   public async create(body: CreateUserDto): Promise<UserResponseDto> {
     if (!body.username || !body.email || !body.password) {

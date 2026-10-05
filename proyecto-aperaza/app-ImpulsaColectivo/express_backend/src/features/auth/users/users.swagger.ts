@@ -120,6 +120,21 @@ export const usersSwagger = {
             "application/json": { schema: { $ref: "#/components/schemas/ChangePassword" } },
           },
         },
+            "/api/usuarios/{id}/permisos": {
+      get: {
+        tags: ["Usuarios"],
+        summary: "Permisos efectivos del usuario",
+        description:
+          "Ejecuta la consulta de autorización (`resource_roles → roles → role_users → resources`, " +
+          "todos los eslabones activos) y devuelve el par `(method, path)` de cada permiso.",
+        parameters: [{ name: "id", in: "path", required: true, schema: { type: "integer" } }],
+        responses: {
+          "200": { description: "Permisos efectivos (`{ permissions: [...] }`)" },
+          "400": invalidIdResponse,
+          "404": notFoundResponse,
+        },
+      },
+    },
         responses: {
           "200": { description: "Contraseña actualizada (`{ message, id }`)" },
           "400": { description: "Faltan campos, contraseña nueva corta o `current_password` incorrecta" },

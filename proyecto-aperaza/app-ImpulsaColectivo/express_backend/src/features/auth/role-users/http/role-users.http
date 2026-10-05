@@ -1,0 +1,61 @@
+### Feature RoleUsers — asignar y retirar roles a usuarios
+### Leyenda: SIN AUTH (temporal hasta ISS-21).
+### Usuarios: 1 admin, 2 promoter, 3 contributor, 4 usuario1, 5 usuario2.
+### Roles: 1 ADMIN, 2 PROMOTER, 3 CONTRIBUTOR.
+### La siembra crea 3 asignaciones (ids 1 a 3): la nueva será la 4.
+@baseUrl = http://localhost:4000
+@id = 4
+
+# @name getAllAssignments
+GET {{baseUrl}}/api/asignaciones-rol
+
+###
+
+# @name getOneAssignment
+GET {{baseUrl}}/api/asignaciones-rol/1
+
+###
+
+### Asignar el rol CONTRIBUTOR a usuario1
+# @name assignRole
+POST {{baseUrl}}/api/asignaciones-rol
+Content-Type: application/json
+
+{
+  "user_id": 4,
+  "role_id": 3
+}
+
+###
+
+### 409 — el rol ya está asignado
+POST {{baseUrl}}/api/asignaciones-rol
+Content-Type: application/json
+
+{
+  "user_id": 4,
+  "role_id": 3
+}
+
+###
+
+### 404 — el usuario no existe
+POST {{baseUrl}}/api/asignaciones-rol
+Content-Type: application/json
+
+{
+  "user_id": 99999,
+  "role_id": 3
+}
+
+###
+
+### Retirar el rol (borrado lógico): usuario1 pierde los permisos de CONTRIBUTOR
+# @name deactivateAssignment
+PATCH {{baseUrl}}/api/asignaciones-rol/{{id}}/deactivate
+
+###
+
+### Reactivar la asignación
+# @name reactivateAssignment
+PATCH {{baseUrl}}/api/asignaciones-rol/{{id}}/reactivate
