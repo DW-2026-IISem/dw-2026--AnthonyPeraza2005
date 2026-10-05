@@ -1927,3 +1927,53 @@ Y agrégalo al arreglo `featureSwaggerModules` (última entrada):
 ### 20.15 Verificación final
 
 ![](images/clipboard-1485244621.png)
+
+### ISS-21 · Middlewares de acceso y las tres modalidades
+
+#### 21.1 Carpeta del feature `access`
+
+![](images/clipboard-152530116.png)
+
+### 21.2 `authenticate`
+
+![](images/clipboard-584018482.png)
+
+### 21.3 `authorize` (modalidad JWT + RBAC)
+
+![](images/clipboard-1518297379.png)
+
+### 21.4 Barrel
+
+![](images/clipboard-179681564.png)
+
+### 21.5 Comprobación de compilación
+
+![](images/clipboard-1749400261.png)
+
+### 21.5.1 PARCHE en `authenticate.middleware.ts`
+
+![](images/clipboard-2319029879.png)
+
+### 21.6 PARCHE: las 11 rutas de negocio pasan a JWT + RBAC
+
+![](images/clipboard-3609551932.png)
+
+### 21.7 PARCHE: las 5 rutas de Auth pasan a JWT + RBAC
+
+![](images/clipboard-999832166.png)
+
+### 21.8 Verificar el parche
+
+![](images/clipboard-4096288104.png)
+
+### 21.9 Las tres modalidades
+
+| Modalidad | Middleware en la ruta | Qué exige | Si no se cumple |
+|:---|:---|:---|:---|
+| OPEN | ninguno | nada | — |
+| JWT | `authenticate` | access token válido y usuario activo | 401 |
+| JWT + RBAC | `authenticate, authorize` | token válido y concesión activa de `(método, ruta)` | 401 sin token, 403 sin permiso |
+
+### 21.10 Verificación de 401 y 403
+
+![](images/clipboard-45137373.png)

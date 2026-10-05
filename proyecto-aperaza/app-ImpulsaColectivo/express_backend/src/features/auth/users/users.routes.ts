@@ -1,26 +1,26 @@
 import { Application } from "express";
+import { authenticate, authorize } from "../access";
 import { UsersController } from "./users.controller";
 
 /**
  * Rutas del feature Users.
  *
- * TEMPORAL: sin middlewares de acceso (SIN AUTH). En ISS-21 se protegen con
- * `authenticate` + `authorize` (modalidad JWT + RBAC) junto con el resto.
+ * Modalidad 3 — JWT + RBAC: cada ruta pasa por `authenticate` y luego `authorize`.
  */
 export class UsersRoutes {
   private readonly controller = new UsersController();
 
   public routes(app: Application): void {
-    app.route("/api/usuarios").get(this.controller.getAll.bind(this.controller));
-    app.route("/api/usuarios/:id/deactivate").patch(this.controller.deleteLogical.bind(this.controller));
-    app.route("/api/usuarios/:id/password").patch(this.controller.changePassword.bind(this.controller));
-    app.route("/api/usuarios/:id/permisos").get(this.controller.getEffectivePermissions.bind(this.controller));
+    app.route("/api/usuarios").get(authenticate, authorize, this.controller.getAll.bind(this.controller));
+    app.route("/api/usuarios/:id/deactivate").patch(authenticate, authorize, this.controller.deleteLogical.bind(this.controller));
+    app.route("/api/usuarios/:id/password").patch(authenticate, authorize, this.controller.changePassword.bind(this.controller));
+    app.route("/api/usuarios/:id/permisos").get(authenticate, authorize, this.controller.getEffectivePermissions.bind(this.controller));
     app
       .route("/api/usuarios/:id")
-      .get(this.controller.getOne.bind(this.controller))
-      .put(this.controller.updatePut.bind(this.controller))
-      .patch(this.controller.updatePatch.bind(this.controller))
-      .delete(this.controller.deletePhysical.bind(this.controller));
-    app.route("/api/usuarios").post(this.controller.create.bind(this.controller));
+      .get(authenticate, authorize, this.controller.getOne.bind(this.controller))
+      .put(authenticate, authorize, this.controller.updatePut.bind(this.controller))
+      .patch(authenticate, authorize, this.controller.updatePatch.bind(this.controller))
+      .delete(authenticate, authorize, this.controller.deletePhysical.bind(this.controller));
+    app.route("/api/usuarios").post(authenticate, authorize, this.controller.create.bind(this.controller));
   }
 }

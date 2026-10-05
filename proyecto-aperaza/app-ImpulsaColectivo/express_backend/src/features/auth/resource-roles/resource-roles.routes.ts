@@ -1,4 +1,5 @@
 import { Application } from "express";
+import { authenticate, authorize } from "../access";
 import { ResourceRolesController } from "./resource-roles.controller";
 
 /**
@@ -9,20 +10,20 @@ import { ResourceRolesController } from "./resource-roles.controller";
  * El efecto es inmediato y por datos: la siguiente petición del usuario afectado
  * ya consulta la nueva matriz, sin reiniciar ni desplegar.
  *
- * TEMPORAL: SIN AUTH. En ISS-21 pasan a JWT + RBAC.
+ * Modalidad 3 — JWT + RBAC: cada ruta pasa por `authenticate` y luego `authorize`.
  */
 export class ResourceRolesRoutes {
   private readonly controller = new ResourceRolesController();
 
   public routes(app: Application): void {
-    app.route("/api/concesiones-rol").get(this.controller.getAll.bind(this.controller));
-    app.route("/api/concesiones-rol/:id").get(this.controller.getOne.bind(this.controller));
-    app.route("/api/concesiones-rol").post(this.controller.grant.bind(this.controller));
+    app.route("/api/concesiones-rol").get(authenticate, authorize, this.controller.getAll.bind(this.controller));
+    app.route("/api/concesiones-rol/:id").get(authenticate, authorize, this.controller.getOne.bind(this.controller));
+    app.route("/api/concesiones-rol").post(authenticate, authorize, this.controller.grant.bind(this.controller));
     app
       .route("/api/concesiones-rol/:id/deactivate")
-      .patch(this.controller.deactivate.bind(this.controller));
+      .patch(authenticate, authorize, this.controller.deactivate.bind(this.controller));
     app
       .route("/api/concesiones-rol/:id/reactivate")
-      .patch(this.controller.reactivate.bind(this.controller));
+      .patch(authenticate, authorize, this.controller.reactivate.bind(this.controller));
   }
 }
