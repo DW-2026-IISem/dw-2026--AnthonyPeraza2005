@@ -1,0 +1,40 @@
+### Feature Session — LOGIN (modalidad OPEN)
+### OPEN = sin identidad previa. Aquí SÍ se consulta `users` (hash) y se escribe `refresh_tokens`.
+@baseUrl = http://localhost:4000
+
+# @name loginAdmin
+POST {{baseUrl}}/api/sesion/login
+Content-Type: application/json
+
+{
+  "identifier": "admin",
+  "password": "Admin123!"
+}
+
+### Credenciales del seeder
+# admin       / Admin123!        -> rol ADMIN       (110 permisos)
+# promoter    / Promoter123!     -> rol PROMOTER    (23 permisos)
+# contributor / Contributor123!  -> rol CONTRIBUTOR (15 permisos)
+
+### Login por correo (mismo endpoint, `identifier` acepta username o email)
+POST {{baseUrl}}/api/sesion/login
+Content-Type: application/json
+
+{
+  "identifier": "promoter@impulsacolectivo.local",
+  "password": "Promoter123!"
+}
+
+### 401 - credenciales inválidas (mismo mensaje que "usuario inexistente")
+POST {{baseUrl}}/api/sesion/login
+Content-Type: application/json
+
+{
+  "identifier": "admin",
+  "password": "password-incorrecta"
+}
+
+### Guarda los tokens para otros archivos .http
+@adminAccessToken = {{loginAdmin.response.body.$.access_token}}
+@adminRefreshToken = {{loginAdmin.response.body.$.refresh_token}}
+@expiresIn = {{loginAdmin.response.body.$.expires_in}}

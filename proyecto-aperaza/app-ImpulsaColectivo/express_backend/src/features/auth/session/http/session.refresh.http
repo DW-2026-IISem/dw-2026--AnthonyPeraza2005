@@ -1,0 +1,44 @@
+### Feature Session — REFRESH (modalidad OPEN con credencial de sesión)
+### Renovación automática: el cliente llama aquí cuando el access token está por expirar.
+### ROTACIÓN: el refresh token enviado queda inválido y se emite uno nuevo (misma familia).
+### REUSE DETECTION: si se reenvía un token ya rotado -> 401 y se revoca toda la familia.
+@baseUrl = http://localhost:4000
+
+### 1) Login para obtener el par inicial
+# @name loginPromoter
+POST {{baseUrl}}/api/sesion/login
+Content-Type: application/json
+
+{
+  "identifier": "promoter",
+  "password": "Promoter123!"
+}
+
+### 2) Refresh: devuelve access_token nuevo + refresh_token ROTADO
+# @name refresh
+POST {{baseUrl}}/api/sesion/refresh
+Content-Type: application/json
+
+{
+  "refresh_token": "{{loginPromoter.response.body.$.refresh_token}}"
+}
+
+### 3) El access token nuevo sirve en una ruta JWT
+GET {{baseUrl}}/api/sesion/perfil
+Authorization: Bearer {{refresh.response.body.$.access_token}}
+
+### 4) REUSE: reenviar el token viejo -> 401 y la familia queda revocada
+POST {{baseUrl}}/api/sesion/refresh
+Content-Type: application/json
+
+{
+  "refresh_token": "{{loginPromoter.response.body.$.refresh_token}}"
+}
+
+### 5) Consecuencia: el token rotado (paso 2) tampoco sirve ya -> 401
+POST {{baseUrl}}/api/sesion/refresh
+Content-Type: application/json
+
+{
+  "refresh_token": "{{refresh.response.body.$.refresh_token}}"
+}

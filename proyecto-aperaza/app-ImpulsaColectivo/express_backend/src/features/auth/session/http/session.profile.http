@@ -1,0 +1,40 @@
+### Feature Session — LOGOUT y PERFIL (OPEN con credencial de sesión + JWT)
+@baseUrl = http://localhost:4000
+
+# @name loginContributor
+POST {{baseUrl}}/api/sesion/login
+Content-Type: application/json
+
+{
+  "identifier": "contributor",
+  "password": "Contributor123!"
+}
+
+### PERFIL — modalidad JWT: `authenticate` valida el token y REVALIDA en la BD
+### que el usuario sigue activo (desactivarlo invalida sus tokens al instante).
+GET {{baseUrl}}/api/sesion/perfil
+Authorization: Bearer {{loginContributor.response.body.$.access_token}}
+
+### MIS PERMISOS — modalidad JWT: misma consulta RBAC que usa `authorize`
+### (contributor -> 15 permisos; promoter -> 23; admin -> 110). Sirve para depurar el RBAC.
+GET {{baseUrl}}/api/permisos
+Authorization: Bearer {{loginContributor.response.body.$.access_token}}
+
+### Sin token -> 401 (no autenticado)
+GET {{baseUrl}}/api/sesion/perfil
+
+### LOGOUT — modalidad OPEN con credencial de sesión. Idempotente.
+POST {{baseUrl}}/api/sesion/logout
+Content-Type: application/json
+
+{
+  "refresh_token": "{{loginContributor.response.body.$.refresh_token}}"
+}
+
+### Ya no se puede renovar -> 401
+POST {{baseUrl}}/api/sesion/refresh
+Content-Type: application/json
+
+{
+  "refresh_token": "{{loginContributor.response.body.$.refresh_token}}"
+}

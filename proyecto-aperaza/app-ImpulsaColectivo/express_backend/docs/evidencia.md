@@ -2029,3 +2029,51 @@ Y agrégalo al arreglo `featureSwaggerModules` (última entrada):
 ### 22.10 Verificación final
 
 ![](images/clipboard-919657718.png)
+
+### ISS-23 · Feature Session (login, refresh, logout, perfil y permisos)
+
+#### 23.1 Carpetas
+
+![](images/clipboard-2162582804.png)
+
+### 23.2 DTOs
+
+![](images/clipboard-3358696466.png)
+
+### 23.3 Service
+
+![](images/clipboard-3986031016.png)
+
+### 23.4 Controller
+
+![](images/clipboard-2948931584.png)
+
+### 23.5 Rutas
+
+![](images/clipboard-999683397.png)
+
+### 23.6 Swagger
+
+![](images/clipboard-3574034691.png)
+
+### 23.7 Pruebas HTTP
+
+![](images/clipboard-3206639448.png)
+
+#### 23.8 Cableado
+
+**23.8.1 `src/routes/index.ts`**
+
+![](images/clipboard-4023862018.png)
+
+### 23.8.2 `src/config/index.ts`
+
+![](images/clipboard-1436618716.png)
+
+### 23.8.3 `src/swagger/index.ts`
+
+![](images/clipboard-2434598677.png)
+
+### 23.9 Verificación final
+
+![](images/clipboard-3229261216.png)
