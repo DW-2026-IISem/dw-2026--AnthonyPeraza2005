@@ -2134,4 +2134,42 @@ Y agrégalo al arreglo `featureSwaggerModules` (última entrada):
 
 ![](images/clipboard-2493325405.png)
 
-### 
+### Solo autenticacion
+
+### **Tablas seleccionadas:**
+
+- project
+
+- rewards
+
+![](images/clipboard-4204452951.png)
+
+![](images/clipboard-1929498411.png)
+
+### **1. HTTP**
+
+**Sin token**
+
+![](images/clipboard-231690499.png)
+
+### con token valido get all
+
+![](images/clipboard-1762452831.png)
+
+### con token invalido
+
+![](images/clipboard-3317566120.png)
+
+### **2. Swagger**
+
+**Sin token**
+
+![](images/clipboard-3282517492.png)
+
+### con token valido
+
+![](images/clipboard-1454771201.png)
+
+### con token invalido
+
+![](images/clipboard-395318329.png)
