@@ -16,7 +16,7 @@ Content-Type: application/json
 ### Feature Reward — GET ALL / GET ONE
 ### Leyenda: SIN AUTH (sin middleware JWT / sin autenticación)
 @baseUrl = http://localhost:4000
-@id = 1
+@id = 4
 
 # @name getAllRewards
 GET {{baseUrl}}/api/recompensas

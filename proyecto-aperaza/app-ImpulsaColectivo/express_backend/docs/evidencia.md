@@ -1338,7 +1338,7 @@ Y agrégalo al arreglo `featureSwaggerModules` (última entrada):
 
 ![](images/clipboard-1103408957.png)
 
-### 16.5 Migración de Project 
+### 16.5 Migración de Project
 
 ### 16.5.1 Carpeta de DTOs
 
@@ -1382,7 +1382,7 @@ Y agrégalo al arreglo `featureSwaggerModules` (última entrada):
 
 ![](images/clipboard-2415748962.png)
 
-### 16.6.4 Service 
+### 16.6.4 Service
 
 ![](images/clipboard-2976970426.png)
 
@@ -1412,7 +1412,7 @@ Y agrégalo al arreglo `featureSwaggerModules` (última entrada):
 
 ![](images/clipboard-480837803.png)
 
-### 16.7.4 Service 
+### 16.7.4 Service
 
 ![](images/clipboard-3061075740.png)
 
@@ -1476,7 +1476,7 @@ Y agrégalo al arreglo `featureSwaggerModules` (última entrada):
 
 ![](images/clipboard-4025076719.png)
 
-### 16.9.5 Controller 
+### 16.9.5 Controller
 
 ![](images/clipboard-716644008.png)
 
@@ -1738,7 +1738,7 @@ Y agrégalo al arreglo `featureSwaggerModules` (última entrada):
 
 ![](images/clipboard-517218888.png)
 
-### **18.9.3 `src/database/seeders/counts.ts`** 
+### **18.9.3 `src/database/seeders/counts.ts`**
 
 ![](images/clipboard-624248743.png)
 
@@ -1790,7 +1790,7 @@ Y agrégalo al arreglo `featureSwaggerModules` (última entrada):
 
 ![](images/clipboard-1796894820.png)
 
-### 19.8 Resources: catálogo semilla 
+### 19.8 Resources: catálogo semilla
 
 ![](images/clipboard-2215792795.png)
 
@@ -1969,7 +1969,7 @@ Y agrégalo al arreglo `featureSwaggerModules` (última entrada):
 ### 21.9 Las tres modalidades
 
 | Modalidad | Middleware en la ruta | Qué exige | Si no se cumple |
-|:---|:---|:---|:---|
+|:-----------------|:-----------------|:-----------------|:-----------------|
 | OPEN | ninguno | nada | — |
 | JWT | `authenticate` | access token válido y usuario activo | 401 |
 | JWT + RBAC | `authenticate, authorize` | token válido y concesión activa de `(método, ruta)` | 401 sin token, 403 sin permiso |
@@ -2103,3 +2103,35 @@ Y agrégalo al arreglo `featureSwaggerModules` (última entrada):
 ### 24.6 Verificación final del laboratorio
 
 ![](images/clipboard-2347569741.png)
+
+## ISS-25 · Pruebas de los cuatro tipos de acceso (Project y Reward)
+
+### **Tablas seleccionadas:**
+
+- project
+
+- rewards
+
+## **Sin autenticación**
+
+![](images/clipboard-1509811253.png)
+
+![](images/clipboard-3523430734.png)
+
+#### Project - get all sin auth
+
+![](images/clipboard-2848855573.png)
+
+#### Rewards - get all sin auth
+
+![](images/clipboard-1337107963.png)
+
+#### Projets desde el swagger sin auth 
+
+![](images/clipboard-1148654016.png)
+
+#### Rewards desde el swagger sin auth
+
+![](images/clipboard-2493325405.png)
+
+### 

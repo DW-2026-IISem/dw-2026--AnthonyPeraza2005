@@ -17,23 +17,24 @@ import { ResourceRolesRoutes } from "../features/auth/resource-roles/resource-ro
 import { RefreshTokensRoutes } from "../features/auth/refresh-tokens/refresh-tokens.routes";
 import { SessionRoutes } from "../features/auth/session/session.routes";
 
+
 export class Routes {
   public promoterRoutes: PromoterRoutes = new PromoterRoutes();
-    public contributorRoutes: ContributorRoutes = new ContributorRoutes();
-      public projectRoutes: ProjectRoutes = new ProjectRoutes();
-        public goalRoutes: GoalRoutes = new GoalRoutes();
-          public rewardRoutes: RewardRoutes = new RewardRoutes();
-            public contributionRoutes: ContributionRoutes = new ContributionRoutes();
-              public paymentTransactionRoutes: PaymentTransactionRoutes = new PaymentTransactionRoutes();
-                public commissionRoutes: CommissionRoutes = new CommissionRoutes();
-                  public disbursementRoutes: DisbursementRoutes = new DisbursementRoutes();
-                    public refundRoutes: RefundRoutes = new RefundRoutes();
-                      public projectAuditRoutes: ProjectAuditRoutes = new ProjectAuditRoutes();
-                        public usersRoutes: UsersRoutes = new UsersRoutes();
-                          public rolesRoutes: RolesRoutes = new RolesRoutes();
-                          public resourcesRoutes: ResourcesRoutes = new ResourcesRoutes();
-                            public roleUsersRoutes: RoleUsersRoutes = new RoleUsersRoutes();
-                             public resourceRolesRoutes: ResourceRolesRoutes = new ResourceRolesRoutes();
-                               public refreshTokensRoutes: RefreshTokensRoutes = new RefreshTokensRoutes();
-                                 public sessionRoutes: SessionRoutes = new SessionRoutes();
-}
+  public contributorRoutes: ContributorRoutes = new ContributorRoutes();
+  public projectRoutes: ProjectRoutes = new ProjectRoutes();
+  public goalRoutes: GoalRoutes = new GoalRoutes();
+  public rewardRoutes: RewardRoutes = new RewardRoutes();
+  public contributionRoutes: ContributionRoutes = new ContributionRoutes();
+  public paymentTransactionRoutes: PaymentTransactionRoutes = new PaymentTransactionRoutes();
+  public commissionRoutes: CommissionRoutes = new CommissionRoutes();
+  public disbursementRoutes: DisbursementRoutes = new DisbursementRoutes();
+  public refundRoutes: RefundRoutes = new RefundRoutes();
+  public projectAuditRoutes: ProjectAuditRoutes = new ProjectAuditRoutes();
+  public usersRoutes: UsersRoutes = new UsersRoutes();
+  public rolesRoutes: RolesRoutes = new RolesRoutes();
+  public resourcesRoutes: ResourcesRoutes = new ResourcesRoutes();
+  public roleUsersRoutes: RoleUsersRoutes = new RoleUsersRoutes();
+  public resourceRolesRoutes: ResourceRolesRoutes = new ResourceRolesRoutes();
+  public refreshTokensRoutes: RefreshTokensRoutes = new RefreshTokensRoutes();
+  public sessionRoutes: SessionRoutes = new SessionRoutes();
+} 

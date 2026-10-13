@@ -20,6 +20,7 @@ import { resourceRolesSwagger } from "../features/auth/resource-roles/resource-r
 import { refreshTokensSwagger } from "../features/auth/refresh-tokens/refresh-tokens.swagger";
 import { sessionSwagger } from "../features/auth/session/session.swagger";
 
+
 export type FeatureSwaggerModule = {
   tags: unknown[];
   paths: Record<string, unknown>;
@@ -49,6 +50,7 @@ const featureSwaggerModules: FeatureSwaggerModule[] = [
   resourceRolesSwagger,
   refreshTokensSwagger,
   sessionSwagger,
+  
   // contributorSwagger,
   // projectSwagger,
 ];

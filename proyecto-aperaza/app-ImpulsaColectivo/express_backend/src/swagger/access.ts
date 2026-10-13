@@ -26,7 +26,7 @@ const isJwtOnly = (path: string): boolean =>
   path === "/api/sesion/perfil" ||
   path === "/api/permisos" ||
   path === "/api/sesiones" ||
-  path.startsWith("/api/sesiones/");
+ path.startsWith("/api/sesiones/");
 
 const ACCESS_DESCRIPTION = [
   "API de **ImpulsaColectivo** (plataforma de crowdfunding) — Express + Sequelize con **Auth y RBAC**.",
@@ -64,7 +64,7 @@ export function applyAccessModel<T extends object>(document: T): T {
       const operation = item[method];
       if (!operation) continue;
 
-      if (OPEN_PATHS.has(path)) {
+        if (OPEN_PATHS.has(path)) {
         operation.security = openSecurity;
         continue;
       }
