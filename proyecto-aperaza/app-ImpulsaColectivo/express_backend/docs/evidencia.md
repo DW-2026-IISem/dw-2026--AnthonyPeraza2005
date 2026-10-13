@@ -2126,7 +2126,7 @@ Y agrégalo al arreglo `featureSwaggerModules` (última entrada):
 
 ![](images/clipboard-1337107963.png)
 
-#### Projets desde el swagger sin auth 
+#### Projets desde el swagger sin auth
 
 ![](images/clipboard-1148654016.png)
 
@@ -2173,3 +2173,25 @@ Y agrégalo al arreglo `featureSwaggerModules` (última entrada):
 ### con token invalido
 
 ![](images/clipboard-395318329.png)
+
+## **Autenticacion y JWT Token + Refresh**
+
+cambiamos el tiempo de la vida util del token por 30
+
+![](images/clipboard-623754069.png)
+
+#### Generamos un token nuevo
+
+![](images/clipboard-4034640150.png)
+
+#### Luego de 30 segundos el token expira
+
+![](images/clipboard-3130101458.png)
+
+#### Usamos el refresh_token para extender la sesion
+
+![](images/clipboard-2704357784.png)
+
+#### Volvemos a tener acceso a las rutas protegidas
+
+![](images/clipboard-3505680947.png)

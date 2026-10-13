@@ -20,7 +20,7 @@ POST {{baseUrl}}/api/sesion/refresh
 Content-Type: application/json
 
 {
-  "refresh_token": "{{loginPromoter.response.body.$.refresh_token}}"
+  "refresh_token": "fTBXLnRZjAv3IJFAaSWghwmtkBV5OTUKn3la_uGUWI0m2iuTZgoO9bf2-H44RUQQWZ2Os8ecyzm46jqMJKeQUw"
 }
 
 ### 3) El access token nuevo sirve en una ruta JWT
