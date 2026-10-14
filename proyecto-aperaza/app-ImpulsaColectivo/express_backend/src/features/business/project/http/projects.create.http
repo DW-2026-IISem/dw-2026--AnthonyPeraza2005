@@ -6,12 +6,12 @@ POST {{baseUrl}}/api/sesion/login
 Content-Type: application/json
 
 {
-  "identifier": "admin",
-  "password": "Admin123!"
+  "identifier": "anthony",
+  "password": "12345678"
 }
 
 ###
-@token = {{login.response.body.$.access_token}}
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFudGhvbnkiLCJpYXQiOjE3OTE5Mzg2NTMsImV4cCI6MTc5MTkzOTU1MywiYXVkIjoiYXBwLWltcHVsc2Fjb2xlY3Rpdm8tYXBpIiwiaXNzIjoiYXBwLWltcHVsc2Fjb2xlY3Rpdm8tZXhwcmVzcyIsInN1YiI6IjYiLCJqdGkiOiIwYzZlY2YwMi0yNDc2LTQ2MWQtYWNkMi1jZDVjOWMxYWI3NWEifQ.eWfnGlxJlFZnoOMCEs2RgbiQYEX0e7Bg7ge3tktBPZA
 
 ### Feature Project — CREATE
 ### Leyenda: SIN AUTH (sin middleware JWT / sin autenticación)
@@ -23,8 +23,8 @@ Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-  "title": "Reforestación del río Rancheria",
-  "description": "Proyecto comunitario de siembra de árboles nativos",
+  "title": "Reforestación de Riohacha",
+  "description": "Proyecto para siembra de arbol",
   "start_date": "2026-10-01",
   "end_date": "2026-12-31",
   "promoter_id": 1,

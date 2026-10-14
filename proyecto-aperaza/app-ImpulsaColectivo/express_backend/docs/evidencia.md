@@ -2174,24 +2174,114 @@ Y agrégalo al arreglo `featureSwaggerModules` (última entrada):
 
 ![](images/clipboard-395318329.png)
 
-## **Autenticacion y JWT Token + Refresh**
+## **Autenticacion y JWT Token + Refresh + RBAC**
 
-cambiamos el tiempo de la vida util del token por 30
+## ![](images/clipboard-227397930.png)
+
+![](images/clipboard-251880850.png)
+
+### cambiamos el tiempo de la vida util del token por 30
 
 ![](images/clipboard-623754069.png)
 
-#### Generamos un token nuevo
+### Generamos un token nuevo
 
 ![](images/clipboard-4034640150.png)
 
-#### Luego de 30 segundos el token expira
+### Luego de 30 segundos el token expira
 
 ![](images/clipboard-3130101458.png)
 
-#### Usamos el refresh_token para extender la sesion
+### Usamos el refresh_token para extender la sesion
 
 ![](images/clipboard-2704357784.png)
 
-#### Volvemos a tener acceso a las rutas protegidas
+### Volvemos a tener acceso a las rutas protegidas
 
 ![](images/clipboard-3505680947.png)
+
+### Crear ususario
+
+![](images/clipboard-1387659993.png)
+
+## Crear rol
+
+![](images/clipboard-3020057544.png)
+
+![](images/clipboard-2598193140.png)
+
+### Nueva asignacion de rol
+
+![](images/clipboard-4051873125.png)
+
+### Asignacion de permisos
+
+#### GET/api/proyectos
+
+![](images/clipboard-808973417.png)
+
+#### GET /api/proyectos/id
+
+![](images/clipboard-1782814456.png)
+
+#### POST /api/proyectos
+
+![](images/clipboard-4222946227.png)
+
+#### GET /api/recompensas
+
+![](images/clipboard-851192747.png)
+
+#### GET /api/recompensas/:id
+
+![](images/clipboard-1435534658.png)
+
+#### POST /api/recompensas
+
+![](images/clipboard-1053543140.png)
+
+### INICIAR SESION CON USUARIO NUEVO
+
+![](images/clipboard-1482502621.png)
+
+### Rutas autorizadas
+
+## HTTP
+
+### GET ALL
+
+![](images/clipboard-1309041589.png)
+
+### GET ONE 
+
+![](images/clipboard-1814006051.png)
+
+### POST
+
+![](images/clipboard-3801300635.png)
+
+## swagger
+
+![](images/clipboard-3705819932.png)
+
+#### GET POR ID
+
+![](images/clipboard-1579041263.png)
+
+#### NUEVO POST
+
+![](images/clipboard-4122618096.png)
+
+### RUTAS NO AUTORIZADAS
+
+### GET
+
+![](images/clipboard-2566832463.png)
+
+### POST
+
+![](images/clipboard-1156089242.png)
+
+#### GET POR ID
+
+![](images/clipboard-951414069.png)
