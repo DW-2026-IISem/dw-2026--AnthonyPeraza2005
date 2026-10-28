@@ -11,6 +11,14 @@ export const routes: Routes = [
     path: 'construir',
     loadComponent: () => import('./features/construir/construir').then((m) => m.Construir),
   },
-  { path: '', pathMatch: 'full', redirectTo: 'construir' },
+  {
+    path: '',
+    loadComponent: () => import('./layout/shell/shell').then((m) => m.Shell),
+    children: [
+      // Aún no hay pantallas de negocio: la raíz sigue llevando al prototipo.
+      // ISS-03 cambia esta redirección por la primera pantalla de negocio.
+      { path: '', pathMatch: 'full', redirectTo: '/construir' },
+    ],
+  },
   { path: '**', redirectTo: 'construir' },
 ];

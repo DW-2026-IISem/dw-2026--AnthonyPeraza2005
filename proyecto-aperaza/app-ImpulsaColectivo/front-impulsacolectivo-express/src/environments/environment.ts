@@ -10,5 +10,7 @@
 export const environment = {
   production: true,
   appName: 'ImpulsaColectivo',
+  apiUrl: 'http://localhost:4000/api',
+  requireAuth: true,
   primeUiLicense: '',
 };

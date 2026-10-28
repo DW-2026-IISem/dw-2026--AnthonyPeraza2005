@@ -167,3 +167,87 @@
 ### RESULTADO VISUAL HASTA EL MOMENTO 
 
 ![](images/clipboard-3571583269.png)
+
+# Fase I: Frontend — ISS-02 — Núcleo: environment, modelos, servicios y layout
+
+### 2.1 `environment`: una sola URL para todo el frente
+
+![](images/clipboard-2257896960.png)
+
+### 2.2 Comprobar el reemplazo de entornos
+
+![](images/clipboard-3723109586.png)
+
+### 2.3 Sacar los campos reales
+
+![](images/clipboard-858675070.png)
+
+### 2.4 Sacar las rutas y envolturas reales
+
+![](images/clipboard-3586703238.png)
+
+### 2.5 Modelos: reflejar el backend
+
+### 2.5.1 Tipos compartidos
+
+![](images/clipboard-1088580043.png)
+
+### 2.5.2 Entidades de negocio
+
+![](images/clipboard-1378361399.png)
+
+### 2.5.3 Entidades de negocio, segunda mitad
+
+![](images/clipboard-3128775313.png)
+
+### 2.5.4 Seguridad y sesión
+
+![](images/clipboard-3913993653.png)
+
+### 2.5.5 PRUEBA
+
+![](images/clipboard-3407628299.png)
+
+### 2.6 Servicios HTTP
+
+### 2.6.1 Comprobar el contrato
+
+![](images/clipboard-2540998210.png)
+
+### 2.7 Utilidades transversales
+
+#### **2.7.1 `toApiMessage`:** un solo lugar traduce el error HTTP a texto legible.
+
+![](images/clipboard-1927211994.png)
+
+### 2.7.2 `NotificationService`
+
+![](images/clipboard-1798750303.png)
+
+### 2.8 Componentes compartidos
+
+![](images/clipboard-313102267.png)
+
+### 2.9 `Shell`: conservar el esqueleto al navegar
+
+![](images/clipboard-3489486914.png)
+
+### 2.9.2 Rutas PARCHE sobre `app.routes.ts`
+
+![](images/clipboard-934937166.png)
+
+### 2.10 Registrar `HttpClient` sin interceptores de sesión
+
+![](images/clipboard-164854857.png)
+
+### 2.11 Verificación del ISS
+
+![](images/clipboard-2968349217.png)
+
+![](images/clipboard-3791888865.png)
+
+### PRUEBA VISUAL
+
+![](images/clipboard-1928406883.png)
+
+![](images/clipboard-874492642.png)
