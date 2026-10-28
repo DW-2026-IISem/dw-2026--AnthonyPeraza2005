@@ -11,7 +11,7 @@ Content-Type: application/json
 }
 
 ###
-@token = {{login.response.body.$.access_token}}
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzkxOTU2NjI3LCJleHAiOjE3OTE5NTc1MjcsImF1ZCI6ImFwcC1pbXB1bHNhY29sZWN0aXZvLWFwaSIsImlzcyI6ImFwcC1pbXB1bHNhY29sZWN0aXZvLWV4cHJlc3MiLCJzdWIiOiIxIiwianRpIjoiNTMzNDdlYzEtZDkwZS00MDQyLTk2NjktZjQ2ZGZmNzgyMjc3In0.cTEAgHtD8FZQ4ElfpVB3-TOQFDugZn-sXFI1qkfyepw
 
 ### Feature Promoter — GET ALL / GET ONE
 ### Leyenda: SIN AUTH (sin middleware JWT / sin autenticación)

@@ -1,0 +1,71 @@
+<div class="flex flex-col gap-6">
+  <!-- Tarjeta 1: el objeto guardado en un signal -->
+  <p-card header="Objeto proyecto (signal)">
+    <div class="flex flex-col gap-4">
+      <div class="flex flex-col gap-2">
+        <label for="nombre" class="text-sm font-medium text-slate-700">Nombre</label>
+        <input
+          id="nombre"
+          pInputText
+          [value]="proyecto().nombre"
+          (input)="cambiarNombre($event)"
+        />
+        <p class="text-sm text-slate-500">Vista previa: {{ proyecto().nombre }}</p>
+      </div>
+
+      <div>
+        <p class="text-2xl font-bold text-slate-900">{{ proyecto().meta }}</p>
+        <p class="text-sm text-slate-500">
+          Meta con comisión de plataforma (5 %): <strong>{{ metaConComision() }}</strong>
+        </p>
+      </div>
+
+      <p-tag
+        [value]="estadoTexto()"
+        [severity]="proyecto().activo ? 'success' : 'danger'"
+      />
+
+      @if (proyecto().activo) {
+        <p-message severity="success" variant="simple">
+          Proyecto activo: la API lo devolvería en <code>GET /api/proyectos</code>.
+        </p-message>
+      } @else {
+        <p-message severity="warn" variant="simple">
+          Proyecto inactivo: el borrado lógico lo oculta de las listas.
+        </p-message>
+      }
+
+      <div class="flex flex-wrap gap-2">
+        <button pButton type="button" (click)="variarMeta(100000)">
+          <span pButtonLabel>+100000</span>
+        </button>
+        <button pButton type="button" severity="secondary" (click)="variarMeta(-100000)">
+          <span pButtonLabel>-100000</span>
+        </button>
+        <button pButton type="button" severity="contrast" (click)="alternarEstado()">
+          <span pButtonLabel>Cambiar estado</span>
+        </button>
+        <button pButton type="button" variant="outlined" (click)="reiniciar()">
+          <span pButtonLabel>Reiniciar</span>
+        </button>
+      </div>
+    </div>
+  </p-card>
+
+  <!-- Tarjeta 2: qué se está viendo -->
+  <p-card header="Qué hace este componente">
+    <ul class="list-disc space-y-1 pl-5 text-sm text-slate-700">
+      <li><strong>signal</strong>: guarda el proyecto completo y avisa a la vista cuando cambia.</li>
+      <li><strong>computed</strong>: deriva la meta con comisión y el texto del estado.</li>
+      <li><strong>effect</strong>: escribe en la consola cada vez que cambia el objeto.</li>
+    </ul>
+  </p-card>
+
+  <!-- Tarjeta 3: aislamiento de estilos -->
+  <p-card header="Estilos">
+    <div class="ejemplo-alcance text-sm text-slate-700">
+      Esta caja usa la clase <code>.ejemplo-alcance</code> de <code>ejemplo.css</code>.
+      Angular la encapsula: no afecta a ningún otro componente.
+    </div>
+  </p-card>
+</div>

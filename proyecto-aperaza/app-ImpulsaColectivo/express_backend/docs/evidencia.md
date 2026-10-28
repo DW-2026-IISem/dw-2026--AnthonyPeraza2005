@@ -1969,7 +1969,7 @@ Y agrégalo al arreglo `featureSwaggerModules` (última entrada):
 ### 21.9 Las tres modalidades
 
 | Modalidad | Middleware en la ruta | Qué exige | Si no se cumple |
-|:-----------------|:-----------------|:-----------------|:-----------------|
+|:---|:---|:---|:---|
 | OPEN | ninguno | nada | — |
 | JWT | `authenticate` | access token válido y usuario activo | 401 |
 | JWT + RBAC | `authenticate, authorize` | token válido y concesión activa de `(método, ruta)` | 401 sin token, 403 sin permiso |
@@ -2252,7 +2252,7 @@ Y agrégalo al arreglo `featureSwaggerModules` (última entrada):
 
 ![](images/clipboard-1309041589.png)
 
-### GET ONE 
+### GET ONE
 
 ![](images/clipboard-1814006051.png)
 
