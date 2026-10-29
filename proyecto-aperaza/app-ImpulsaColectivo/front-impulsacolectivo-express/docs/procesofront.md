@@ -303,3 +303,49 @@
 ![](images/clipboard-573934110.png)
 
 ![](images/clipboard-2258505833.png)
+
+## ISS-04 · CRUD de contribuyentes 
+
+### 4.2 Generar con el CLI
+
+![](images/clipboard-91226967.png)
+
+### 4.3 Servicio
+
+![](images/clipboard-1385814972.png)
+
+### 4.4 Formulario
+
+![](images/clipboard-4153530836.png)
+
+### 4.5 Lista
+
+![](images/clipboard-2328596542.png)
+
+### 4.6 Prueba de la lista
+
+![](images/clipboard-1913976751.png)
+
+### 4.7 Ruta y menú
+
+### 4.7.1 `app.routes.ts`
+
+![](images/clipboard-207356320.png)
+
+### 4.7.2 `shell.ts`
+
+![](images/clipboard-392461532.png)
+
+### 4.8 Comprobación
+
+![](images/clipboard-745993827.png)
+
+### 4.9 Verificación del ISS
+
+![](images/clipboard-918185846.png)
+
+![](images/clipboard-1546668540.png)
+
+### PRUEBA VISUAL
+
+![](images/clipboard-767716248.png)

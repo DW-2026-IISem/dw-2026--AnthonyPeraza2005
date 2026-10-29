@@ -24,6 +24,14 @@ export const routes: Routes = [
         loadComponent: () =>
           import('./features/promoters/promoter-list/promoter-list').then((m) => m.PromoterList),
       },
+      {
+        path: 'contribuyentes',
+        title: 'Contribuyentes · ImpulsaColectivo',
+        loadComponent: () =>
+          import('./features/contributors/contributor-list/contributor-list').then(
+            (m) => m.ContributorList,
+          ),
+      },
     ],
   },
   { path: '**', redirectTo: 'construir' },
