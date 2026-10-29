@@ -1,0 +1,122 @@
+<form [formGroup]="form" (ngSubmit)="submit()" class="space-y-4">
+  <div>
+    <label for="contribution-project" class="mb-1 block text-sm font-medium text-slate-700">
+      Proyecto <span class="text-red-500">*</span>
+    </label>
+    <p-select
+      inputId="contribution-project"
+      formControlName="project_id"
+      [options]="projects()"
+      optionLabel="title"
+      optionValue="id"
+      placeholder="Selecciona un proyecto activo"
+      [filter]="true"
+      filterBy="title"
+      [fluid]="true"
+    />
+    @if (form.controls.project_id.touched && form.controls.project_id.invalid) {
+      <p-message severity="error" size="small" variant="simple" styleClass="mt-1">
+        Elige el proyecto que recibe el aporte.
+      </p-message>
+    }
+  </div>
+
+  <div>
+    <label for="contribution-contributor" class="mb-1 block text-sm font-medium text-slate-700">
+      Contribuyente <span class="text-red-500">*</span>
+    </label>
+    <p-select
+      inputId="contribution-contributor"
+      formControlName="contributor_id"
+      [options]="contributors()"
+      optionLabel="name"
+      optionValue="id"
+      placeholder="Selecciona un contribuyente activo"
+      [filter]="true"
+      filterBy="name,email"
+      [fluid]="true"
+    />
+    @if (form.controls.contributor_id.touched && form.controls.contributor_id.invalid) {
+      <p-message severity="error" size="small" variant="simple" styleClass="mt-1">
+        Elige quién hace el aporte.
+      </p-message>
+    }
+  </div>
+
+  <div class="grid gap-4 sm:grid-cols-2">
+    <div>
+      <label for="contribution-amount" class="mb-1 block text-sm font-medium text-slate-700">
+        Monto <span class="text-red-500">*</span>
+      </label>
+      <p-inputnumber
+        inputId="contribution-amount"
+        formControlName="amount"
+        mode="currency"
+        currency="COP"
+        locale="es-CO"
+        [minFractionDigits]="0"
+        [maxFractionDigits]="2"
+        [min]="1"
+        placeholder="$ 50.000"
+        [fluid]="true"
+      />
+      @if (form.controls.amount.touched && form.controls.amount.invalid) {
+        <p-message severity="error" size="small" variant="simple" styleClass="mt-1">
+          Indica un monto mayor que cero.
+        </p-message>
+      }
+    </div>
+
+    <div>
+      <label for="contribution-date" class="mb-1 block text-sm font-medium text-slate-700">
+        Fecha del aporte <span class="text-red-500">*</span>
+      </label>
+      <p-datepicker
+        inputId="contribution-date"
+        formControlName="contribution_date"
+        dateFormat="dd/mm/yy"
+        [showIcon]="true"
+        appendTo="body"
+        [fluid]="true"
+      />
+      @if (form.controls.contribution_date.touched && form.controls.contribution_date.invalid) {
+        <p-message severity="error" size="small" variant="simple" styleClass="mt-1">
+          Indica la fecha del aporte.
+        </p-message>
+      }
+    </div>
+  </div>
+
+  <div>
+    <label for="contribution-status" class="mb-1 block text-sm font-medium text-slate-700">
+      Estado
+    </label>
+    <p-select
+      inputId="contribution-status"
+      formControlName="status"
+      [options]="statusOptions"
+      optionLabel="label"
+      optionValue="value"
+      [fluid]="true"
+    />
+    @if (contribution()) {
+      <p class="mt-1 text-xs text-slate-500">
+        El estado de una contribución existente solo cambia con la baja lógica.
+      </p>
+    } @else {
+      <p class="mt-1 text-xs text-slate-500">
+        Solo una contribución activa puede recibir pagos y reembolsos.
+      </p>
+    }
+  </div>
+
+  <div class="flex justify-end gap-2 border-t border-slate-100 pt-4">
+    <button pButton type="button" severity="secondary" outlined (click)="cancelled.emit()">
+      <span pButtonLabel>Cancelar</span>
+    </button>
+    <button pButton type="submit" [loading]="saving()">
+      <i pButtonIcon class="pi pi-check"></i>
+      <span pButtonLabel>Guardar</span>
+    </button>
+  </div>
+</form>

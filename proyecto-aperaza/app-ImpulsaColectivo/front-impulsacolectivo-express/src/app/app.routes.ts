@@ -38,6 +38,14 @@ export const routes: Routes = [
         loadComponent: () =>
           import('./features/projects/project-list/project-list').then((m) => m.ProjectList),
       },
+      {
+        path: 'contribuciones',
+        title: 'Contribuciones · ImpulsaColectivo',
+        loadComponent: () =>
+          import('./features/contributions/contribution-list/contribution-list').then(
+            (m) => m.ContributionList,
+          ),
+      },
     ],
   },
   { path: '**', redirectTo: 'construir' },

@@ -409,3 +409,49 @@
 ### PRUEBA VISUAL
 
 ![](images/clipboard-1919802534.png)
+
+## ISS-06 · Contribuciones y su flujo de pago
+
+### 6.2 Generar con el CLI
+
+![](images/clipboard-3468333246.png)
+
+### 6.3 Servicios y modelo
+
+![](images/clipboard-2841473116.png)
+
+### 6.4 Formulario con dos relaciones y un monto
+
+![](images/clipboard-4161925538.png)
+
+### 6.5 Lista: tres cargas en paralelo, nombres y total
+
+![](images/clipboard-138526870.png)
+
+### 6.6 Prueba de la lista
+
+![](images/clipboard-1303346258.png)
+
+### 6.7 Ruta y menú 
+
+**6.7.1 `app.routes.ts`**
+
+![](images/clipboard-2931151165.png)
+
+### 6.7.2 `shell.ts`
+
+![](images/clipboard-1751216803.png)
+
+### 6.8 Comprobación
+
+![](images/clipboard-2184662901.png)
+
+### PRUEBA VISUAL
+
+![](images/clipboard-1370367352.png)
+
+### 6.9 Verificación del ISS
+
+![](images/clipboard-4033856485.png)
+
+![](images/clipboard-1373720816.png)

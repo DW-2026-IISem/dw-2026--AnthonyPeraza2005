@@ -1,0 +1,173 @@
+<app-page-header
+  title="Contribuciones"
+  subtitle="Aportes de los contribuyentes a los proyectos. Solo los activos pueden recibir pagos."
+>
+  <p-tag [value]="rows().length + ' contribuciones'" severity="info" [rounded]="true" />
+  <p-tag
+    [value]="(activeTotal() | currency: 'COP' : 'symbol-narrow' : '1.0-0') + ' en activas'"
+    severity="success"
+    [rounded]="true"
+  />
+  <button pButton type="button" (click)="openCreate()">
+    <i pButtonIcon class="pi pi-plus"></i>
+    <span pButtonLabel>Nueva contribución</span>
+  </button>
+</app-page-header>
+
+@if (error()) {
+  <p-message severity="error" styleClass="mb-4 w-full">
+    {{ error() }}
+  </p-message>
+}
+
+<div class="rounded-xl border border-slate-200 bg-white">
+  <p-table
+    [value]="visibleRows()"
+    [loading]="loading()"
+    [paginator]="visibleRows().length > 10"
+    [rows]="10"
+    sortField="contribution_date"
+    [sortOrder]="-1"
+    dataKey="id"
+    tableStyleClass="min-w-4xl"
+  >
+    <ng-template #caption>
+      <div class="flex items-center gap-2">
+        <i class="pi pi-search text-slate-400"></i>
+        <input
+          pInputText
+          type="search"
+          aria-label="Buscar contribuciones"
+          placeholder="Buscar por proyecto, contribuyente, monto o fecha…"
+          [value]="filter()"
+          (input)="filter.set($any($event.target).value)"
+          class="w-full"
+        />
+      </div>
+      @if (filter()) {
+        <p class="mt-2 text-xs text-slate-500">
+          {{ visibleRows().length }} de {{ rows().length }} coinciden con «{{ filter() }}».
+        </p>
+      }
+    </ng-template>
+
+    <ng-template #header>
+      <tr>
+        <th pSortableColumn="contribution_date">
+          <div class="flex items-center gap-1">Aporte <p-sort-icon field="contribution_date" /></div>
+        </th>
+        <th>Proyecto</th>
+        <th>Contribuyente</th>
+        <th pSortableColumn="value" class="text-right">
+          <div class="flex items-center justify-end gap-1">Monto <p-sort-icon field="value" /></div>
+        </th>
+        <th>Estado</th>
+        <th class="w-40 text-right">Acciones</th>
+      </tr>
+    </ng-template>
+
+    <ng-template #body let-contribution>
+      <tr>
+        <td>
+          <p class="font-medium text-slate-800">#{{ contribution.id }}</p>
+          <p class="text-xs text-slate-400">
+            {{ contribution.contribution_date | date: 'dd/MM/yyyy' }}
+          </p>
+        </td>
+        <td>
+          <p-tag
+            [value]="projectTitle()(contribution.project_id)"
+            severity="secondary"
+            [rounded]="true"
+          />
+        </td>
+        <td class="text-sm text-slate-700">{{ contributorName()(contribution.contributor_id) }}</td>
+        <td class="text-right font-medium text-slate-800">
+          {{ contribution.value | currency: 'COP' : 'symbol-narrow' : '1.2-2' }}
+        </td>
+        <td><app-status-tag [status]="contribution.status" /></td>
+        <td>
+          <div class="flex justify-end gap-1">
+            <button
+              pButton
+              type="button"
+              text
+              rounded
+              severity="secondary"
+              aria-label="Editar contribución"
+              pTooltip="Editar"
+              (click)="openEdit(contribution)"
+            >
+              <i pButtonIcon class="pi pi-pencil"></i>
+            </button>
+            <button
+              pButton
+              type="button"
+              text
+              rounded
+              severity="warn"
+              aria-label="Dar de baja a la contribución"
+              pTooltip="Baja lógica"
+              (click)="deactivate(contribution)"
+            >
+              <i pButtonIcon class="pi pi-ban"></i>
+            </button>
+            <button
+              pButton
+              type="button"
+              text
+              rounded
+              severity="danger"
+              aria-label="Eliminar contribución"
+              pTooltip="Eliminar"
+              (click)="remove(contribution)"
+            >
+              <i pButtonIcon class="pi pi-trash"></i>
+            </button>
+          </div>
+        </td>
+      </tr>
+    </ng-template>
+
+    <ng-template #emptymessage>
+      <tr>
+        <td colspan="6">
+          @if (filter()) {
+            <app-empty-state
+              icon="pi pi-search"
+              title="Sin coincidencias"
+              message="Ninguna contribución coincide con la búsqueda. Borra el filtro para ver todas."
+            />
+          } @else {
+            <app-empty-state
+              icon="pi pi-heart"
+              title="Sin contribuciones"
+              message="Registra la primera con el botón «Nueva contribución»."
+            />
+          }
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+
+<p-dialog
+  [visible]="dialogVisible()"
+  (visibleChange)="dialogVisible.set($event)"
+  [header]="title()"
+  [modal]="true"
+  [draggable]="false"
+  [resizable]="false"
+  [dismissableMask]="true"
+  styleClass="w-full max-w-xl mx-4"
+>
+  <app-contribution-form
+    [contribution]="editing()"
+    [projects]="projectOptions()"
+    [contributors]="contributorOptions()"
+    [saving]="saving()"
+    [resetKey]="resetKey()"
+    (saved)="save($event)"
+    (cancelled)="dialogVisible.set(false)"
+  />
+</p-dialog>
