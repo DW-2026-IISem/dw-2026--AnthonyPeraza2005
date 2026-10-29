@@ -43,6 +43,7 @@ export class Shell {
   readonly items: MenuItem[] = [
     { label: 'Promotores', icon: 'pi pi-users', routerLink: '/promotores' },
     { label: 'Contribuyentes', icon: 'pi pi-id-card', routerLink: '/contribuyentes' },
+    { label: 'Proyectos', icon: 'pi pi-briefcase', routerLink: '/proyectos' },
     { label: 'Prototipo', icon: 'pi pi-desktop', routerLink: '/construir' },
   ];
 

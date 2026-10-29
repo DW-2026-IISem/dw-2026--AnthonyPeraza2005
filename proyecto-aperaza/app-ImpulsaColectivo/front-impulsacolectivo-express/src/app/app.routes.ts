@@ -32,6 +32,12 @@ export const routes: Routes = [
             (m) => m.ContributorList,
           ),
       },
+      {
+        path: 'proyectos',
+        title: 'Proyectos · ImpulsaColectivo',
+        loadComponent: () =>
+          import('./features/projects/project-list/project-list').then((m) => m.ProjectList),
+      },
     ],
   },
   { path: '**', redirectTo: 'construir' },

@@ -349,3 +349,63 @@
 ### PRUEBA VISUAL
 
 ![](images/clipboard-767716248.png)
+
+## ISS-05 · CRUD de proyectos y relación con promotores
+
+### 5.1 Modelo y reglas
+
+![](images/clipboard-4222486828.png)
+
+### 5.2 Generar con el CLI
+
+![](images/clipboard-3638550819.png)
+
+### 5.3 Servicios
+
+![](images/clipboard-3435093858.png)
+
+### 5.4 Utilidades nuevas: fechas y fase del proyecto
+
+**5.4.1 Fechas**
+
+![](images/clipboard-241578382.png)
+
+### 5.4.2 La fase del proyecto
+
+![](images/clipboard-2141065006.png)
+
+### 5.5 Formulario con relación y fechas
+
+![](images/clipboard-2251305323.png)
+
+### 5.6 Lista
+
+![](images/clipboard-4159460598.png)
+
+### 5.7 Prueba de la lista
+
+![](images/clipboard-4261967766.png)
+
+### 5.8 Ruta y menú 
+
+**5.8.1 `app.routes.ts`**
+
+![](images/clipboard-3295945311.png)
+
+### 5.8.2 `shell.ts`
+
+![](images/clipboard-2421961620.png)
+
+### 5.9 Comprobación
+
+![](images/clipboard-1235783656.png)
+
+### 5.10 Verificación del ISS
+
+![](images/clipboard-2971694583.png)
+
+![](images/clipboard-3564006.png)
+
+### PRUEBA VISUAL
+
+![](images/clipboard-1919802534.png)

@@ -1,0 +1,135 @@
+<form [formGroup]="form" (ngSubmit)="submit()" class="space-y-4">
+  <div>
+    <label for="project-title" class="mb-1 block text-sm font-medium text-slate-700">
+      Título <span class="text-red-500">*</span>
+    </label>
+    <input
+      id="project-title"
+      pInputText
+      formControlName="title"
+      placeholder="Biblioteca comunitaria Riohacha"
+      class="w-full"
+    />
+    @if (form.controls.title.touched && form.controls.title.invalid) {
+      <p-message severity="error" size="small" variant="simple" styleClass="mt-1">
+        El título es obligatorio (máximo 255 caracteres).
+      </p-message>
+    }
+  </div>
+
+  <div>
+    <label for="project-description" class="mb-1 block text-sm font-medium text-slate-700">
+      Descripción <span class="text-red-500">*</span>
+    </label>
+    <textarea
+      id="project-description"
+      pTextarea
+      formControlName="description"
+      rows="3"
+      placeholder="Dotar de libros y mobiliario a una biblioteca barrial"
+      class="w-full"
+    ></textarea>
+    @if (form.controls.description.touched && form.controls.description.invalid) {
+      <p-message severity="error" size="small" variant="simple" styleClass="mt-1">
+        La descripción es obligatoria.
+      </p-message>
+    }
+  </div>
+
+  <div>
+    <label for="project-promoter" class="mb-1 block text-sm font-medium text-slate-700">
+      Promotor <span class="text-red-500">*</span>
+    </label>
+    <p-select
+      inputId="project-promoter"
+      formControlName="promoter_id"
+      [options]="promoters()"
+      optionLabel="name"
+      optionValue="id"
+      placeholder="Selecciona un promotor activo"
+      [filter]="true"
+      filterBy="name"
+      [fluid]="true"
+    />
+    @if (form.controls.promoter_id.touched && form.controls.promoter_id.invalid) {
+      <p-message severity="error" size="small" variant="simple" styleClass="mt-1">
+        Elige el promotor responsable del proyecto.
+      </p-message>
+    }
+  </div>
+
+  <div class="grid gap-4 sm:grid-cols-2">
+    <div>
+      <label for="project-start" class="mb-1 block text-sm font-medium text-slate-700">
+        Fecha de inicio <span class="text-red-500">*</span>
+      </label>
+      <p-datepicker
+        inputId="project-start"
+        formControlName="start_date"
+        dateFormat="dd/mm/yy"
+        [showIcon]="true"
+        appendTo="body"
+        [fluid]="true"
+      />
+      @if (form.controls.start_date.touched && form.controls.start_date.invalid) {
+        <p-message severity="error" size="small" variant="simple" styleClass="mt-1">
+          Indica la fecha de inicio.
+        </p-message>
+      }
+    </div>
+
+    <div>
+      <label for="project-end" class="mb-1 block text-sm font-medium text-slate-700">
+        Fecha de fin <span class="text-red-500">*</span>
+      </label>
+      <p-datepicker
+        inputId="project-end"
+        formControlName="end_date"
+        dateFormat="dd/mm/yy"
+        [showIcon]="true"
+        appendTo="body"
+        [fluid]="true"
+      />
+      @if (form.controls.end_date.touched && form.controls.end_date.invalid) {
+        <p-message severity="error" size="small" variant="simple" styleClass="mt-1">
+          Indica la fecha de fin.
+        </p-message>
+      }
+    </div>
+  </div>
+
+  @if (form.hasError('dateRange') && form.controls.end_date.touched) {
+    <p-message severity="error" size="small" variant="simple">
+      La fecha de fin no puede ser anterior a la de inicio.
+    </p-message>
+  }
+
+  <div>
+    <label for="project-status" class="mb-1 block text-sm font-medium text-slate-700">
+      Estado
+    </label>
+    <p-select
+      inputId="project-status"
+      formControlName="status"
+      [options]="statusOptions"
+      optionLabel="label"
+      optionValue="value"
+      [fluid]="true"
+    />
+    @if (project()) {
+      <p class="mt-1 text-xs text-slate-500">
+        El estado de un proyecto existente solo cambia con la baja lógica.
+      </p>
+    }
+  </div>
+
+  <div class="flex justify-end gap-2 border-t border-slate-100 pt-4">
+    <button pButton type="button" severity="secondary" outlined (click)="cancelled.emit()">
+      <span pButtonLabel>Cancelar</span>
+    </button>
+    <button pButton type="submit" [loading]="saving()">
+      <i pButtonIcon class="pi pi-check"></i>
+      <span pButtonLabel>Guardar</span>
+    </button>
+  </div>
+</form>

@@ -1,0 +1,172 @@
+<app-page-header
+  title="Proyectos"
+  subtitle="Iniciativas de financiamiento colectivo, cada una a cargo de un promotor."
+>
+  <p-tag [value]="rows().length + ' proyectos'" severity="info" [rounded]="true" />
+  <p-tag [value]="runningCount() + ' en curso'" severity="success" [rounded]="true" />
+  <button pButton type="button" (click)="openCreate()">
+    <i pButtonIcon class="pi pi-plus"></i>
+    <span pButtonLabel>Nuevo proyecto</span>
+  </button>
+</app-page-header>
+
+@if (error()) {
+  <p-message severity="error" styleClass="mb-4 w-full">
+    {{ error() }}
+  </p-message>
+}
+
+<div class="rounded-xl border border-slate-200 bg-white">
+  <p-table
+    [value]="visibleRows()"
+    [loading]="loading()"
+    [paginator]="visibleRows().length > 10"
+    [rows]="10"
+    dataKey="id"
+    tableStyleClass="min-w-4xl"
+  >
+    <ng-template #caption>
+      <div class="flex items-center gap-2">
+        <i class="pi pi-search text-slate-400"></i>
+        <input
+          pInputText
+          type="search"
+          aria-label="Buscar proyectos"
+          placeholder="Buscar por título, descripción o promotor…"
+          [value]="filter()"
+          (input)="filter.set($any($event.target).value)"
+          class="w-full"
+        />
+      </div>
+      @if (filter()) {
+        <p class="mt-2 text-xs text-slate-500">
+          {{ visibleRows().length }} de {{ rows().length }} coinciden con «{{ filter() }}».
+        </p>
+      }
+    </ng-template>
+
+    <ng-template #header>
+      <tr>
+        <th pSortableColumn="title">
+          <div class="flex items-center gap-1">Proyecto <p-sort-icon field="title" /></div>
+        </th>
+        <th>Promotor</th>
+        <th pSortableColumn="start_date">
+          <div class="flex items-center gap-1">Periodo <p-sort-icon field="start_date" /></div>
+        </th>
+        <th>Fase</th>
+        <th>Estado</th>
+        <th class="w-40 text-right">Acciones</th>
+      </tr>
+    </ng-template>
+
+    <ng-template #body let-project>
+      <tr>
+        <td>
+          <p class="font-medium text-slate-800">{{ project.title }}</p>
+          <p class="line-clamp-1 max-w-xs text-xs text-slate-400">
+            #{{ project.id }} · {{ project.description }}
+          </p>
+        </td>
+        <td>
+          <p-tag
+            [value]="promoterName()(project.promoter_id)"
+            severity="secondary"
+            [rounded]="true"
+          />
+        </td>
+        <td class="text-sm text-slate-600">
+          {{ project.start_date | date: 'dd/MM/yyyy' }} → {{ project.end_date | date: 'dd/MM/yyyy' }}
+        </td>
+        <td>
+          <p-tag
+            [value]="phaseLabel[phase(project)]"
+            [severity]="phaseSeverity[phase(project)]"
+            [rounded]="true"
+          />
+        </td>
+        <td><app-status-tag [status]="project.status" /></td>
+        <td>
+          <div class="flex justify-end gap-1">
+            <button
+              pButton
+              type="button"
+              text
+              rounded
+              severity="secondary"
+              aria-label="Editar proyecto"
+              pTooltip="Editar"
+              (click)="openEdit(project)"
+            >
+              <i pButtonIcon class="pi pi-pencil"></i>
+            </button>
+            <button
+              pButton
+              type="button"
+              text
+              rounded
+              severity="warn"
+              aria-label="Dar de baja al proyecto"
+              pTooltip="Baja lógica"
+              (click)="deactivate(project)"
+            >
+              <i pButtonIcon class="pi pi-ban"></i>
+            </button>
+            <button
+              pButton
+              type="button"
+              text
+              rounded
+              severity="danger"
+              aria-label="Eliminar proyecto"
+              pTooltip="Eliminar"
+              (click)="remove(project)"
+            >
+              <i pButtonIcon class="pi pi-trash"></i>
+            </button>
+          </div>
+        </td>
+      </tr>
+    </ng-template>
+
+    <ng-template #emptymessage>
+      <tr>
+        <td colspan="6">
+          @if (filter()) {
+            <app-empty-state
+              icon="pi pi-search"
+              title="Sin coincidencias"
+              message="Ningún proyecto coincide con la búsqueda. Borra el filtro para ver todos."
+            />
+          } @else {
+            <app-empty-state
+              icon="pi pi-briefcase"
+              title="Sin proyectos"
+              message="Crea el primero con el botón «Nuevo proyecto»."
+            />
+          }
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+
+<p-dialog
+  [visible]="dialogVisible()"
+  (visibleChange)="dialogVisible.set($event)"
+  [header]="title()"
+  [modal]="true"
+  [draggable]="false"
+  [resizable]="false"
+  [dismissableMask]="true"
+  styleClass="w-full max-w-2xl mx-4"
+>
+  <app-project-form
+    [project]="editing()"
+    [promoters]="promoterOptions()"
+    [saving]="saving()"
+    [resetKey]="resetKey()"
+    (saved)="save($event)"
+    (cancelled)="dialogVisible.set(false)"
+  />
+</p-dialog>
