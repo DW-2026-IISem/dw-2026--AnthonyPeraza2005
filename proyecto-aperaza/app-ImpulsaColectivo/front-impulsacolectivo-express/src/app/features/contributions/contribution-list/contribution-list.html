@@ -62,7 +62,7 @@
           <div class="flex items-center justify-end gap-1">Monto <p-sort-icon field="value" /></div>
         </th>
         <th>Estado</th>
-        <th class="w-40 text-right">Acciones</th>
+        <th class="w-48 text-right">Acciones</th>
       </tr>
     </ng-template>
 
@@ -88,6 +88,18 @@
         <td><app-status-tag [status]="contribution.status" /></td>
         <td>
           <div class="flex justify-end gap-1">
+            <button
+              pButton
+              type="button"
+              text
+              rounded
+              severity="info"
+              aria-label="Ver detalle del aporte"
+              pTooltip="Detalle"
+              (click)="openDetail(contribution)"
+            >
+              <i pButtonIcon class="pi pi-eye"></i>
+            </button>
             <button
               pButton
               type="button"
@@ -170,4 +182,30 @@
     (saved)="save($event)"
     (cancelled)="dialogVisible.set(false)"
   />
+</p-dialog>
+
+<p-dialog
+  [visible]="detailVisible()"
+  (visibleChange)="detailVisible.set($event)"
+  [header]="'Detalle del aporte #' + (detailContribution()?.id ?? '')"
+  [modal]="true"
+  [draggable]="false"
+  [resizable]="false"
+  [dismissableMask]="true"
+  styleClass="w-full max-w-3xl mx-4"
+>
+  @if (detailContribution(); as contribution) {
+    @if (detailLoading()) {
+      <p class="text-sm text-slate-500">Cargando detalle…</p>
+    } @else {
+      <app-contribution-detail
+        [contribution]="contribution"
+        [projectTitle]="projectTitle()(contribution.project_id)"
+        [contributorName]="contributorName()(contribution.contributor_id)"
+        [payments]="detailPayments()"
+        [commissions]="detailCommissions()"
+        [refunds]="detailRefunds()"
+      />
+    }
+  }
 </p-dialog>

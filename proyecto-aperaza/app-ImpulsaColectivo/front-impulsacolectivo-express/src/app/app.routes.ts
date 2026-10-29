@@ -17,7 +17,12 @@ export const routes: Routes = [
     children: [
       // La primera pantalla de negocio es la redirección por defecto.
       // ISS-07 la cambiará por el dashboard.
-      { path: '', pathMatch: 'full', redirectTo: 'promotores' },
+      { path: '', pathMatch: 'full', redirectTo: 'dashboard' },
+      {
+        path: 'dashboard',
+        title: 'Panel · ImpulsaColectivo',
+        loadComponent: () => import('./features/dashboard/dashboard').then((m) => m.Dashboard),
+      },
       {
         path: 'promotores',
         title: 'Promotores · ImpulsaColectivo',
@@ -44,6 +49,14 @@ export const routes: Routes = [
         loadComponent: () =>
           import('./features/contributions/contribution-list/contribution-list').then(
             (m) => m.ContributionList,
+          ),
+      },
+      {
+        path: 'pagos',
+        title: 'Pagos · ImpulsaColectivo',
+        loadComponent: () =>
+          import('./features/payment-transactions/payment-transaction-list/payment-transaction-list').then(
+            (m) => m.PaymentTransactionList,
           ),
       },
     ],

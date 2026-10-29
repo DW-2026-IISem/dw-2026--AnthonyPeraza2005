@@ -1,0 +1,139 @@
+<form [formGroup]="form" (ngSubmit)="submit()" class="space-y-4">
+  <div>
+    <label for="payment-contribution" class="mb-1 block text-sm font-medium text-slate-700">
+      Contribución <span class="text-red-500">*</span>
+    </label>
+    <p-select
+      inputId="payment-contribution"
+      formControlName="contribution_id"
+      [options]="contributions()"
+      optionLabel="label"
+      optionValue="id"
+      placeholder="Selecciona una contribución activa"
+      [filter]="true"
+      filterBy="label"
+      [fluid]="true"
+    />
+    @if (form.controls.contribution_id.touched && form.controls.contribution_id.invalid) {
+      <p-message severity="error" size="small" variant="simple" styleClass="mt-1">
+        Elige la contribución que se está pagando.
+      </p-message>
+    }
+  </div>
+
+  <div class="grid gap-4 sm:grid-cols-2">
+    <div>
+      <label for="payment-reference" class="mb-1 block text-sm font-medium text-slate-700">
+        Referencia <span class="text-red-500">*</span>
+      </label>
+      <input
+        id="payment-reference"
+        pInputText
+        formControlName="reference"
+        placeholder="NQ-2026-0001"
+        class="w-full"
+      />
+      @if (form.controls.reference.touched && form.controls.reference.invalid) {
+        <p-message severity="error" size="small" variant="simple" styleClass="mt-1">
+          La referencia es obligatoria y no puede repetirse.
+        </p-message>
+      }
+    </div>
+
+    <div>
+      <label for="payment-method" class="mb-1 block text-sm font-medium text-slate-700">
+        Método de pago <span class="text-red-500">*</span>
+      </label>
+      <p-select
+        inputId="payment-method"
+        formControlName="payment_method"
+        [options]="methodOptions"
+        [editable]="true"
+        placeholder="nequi, transferencia…"
+        [fluid]="true"
+      />
+      @if (form.controls.payment_method.touched && form.controls.payment_method.invalid) {
+        <p-message severity="error" size="small" variant="simple" styleClass="mt-1">
+          Indica el método de pago.
+        </p-message>
+      }
+    </div>
+  </div>
+
+  <div class="grid gap-4 sm:grid-cols-2">
+    <div>
+      <label for="payment-amount" class="mb-1 block text-sm font-medium text-slate-700">
+        Monto <span class="text-red-500">*</span>
+      </label>
+      <p-inputnumber
+        inputId="payment-amount"
+        formControlName="amount"
+        mode="currency"
+        currency="COP"
+        locale="es-CO"
+        [minFractionDigits]="0"
+        [maxFractionDigits]="2"
+        [min]="1"
+        placeholder="$ 50.000"
+        [fluid]="true"
+      />
+      @if (form.controls.amount.touched && form.controls.amount.invalid) {
+        <p-message severity="error" size="small" variant="simple" styleClass="mt-1">
+          Indica un monto mayor que cero.
+        </p-message>
+      }
+    </div>
+
+    <div>
+      <label for="payment-date" class="mb-1 block text-sm font-medium text-slate-700">
+        Fecha del pago <span class="text-red-500">*</span>
+      </label>
+      <p-datepicker
+        inputId="payment-date"
+        formControlName="transaction_date"
+        dateFormat="dd/mm/yy"
+        [showIcon]="true"
+        appendTo="body"
+        [fluid]="true"
+      />
+      @if (form.controls.transaction_date.touched && form.controls.transaction_date.invalid) {
+        <p-message severity="error" size="small" variant="simple" styleClass="mt-1">
+          Indica la fecha del pago.
+        </p-message>
+      }
+    </div>
+  </div>
+
+  <div>
+    <label for="payment-status" class="mb-1 block text-sm font-medium text-slate-700">
+      Estado
+    </label>
+    <p-select
+      inputId="payment-status"
+      formControlName="status"
+      [options]="statusOptions"
+      optionLabel="label"
+      optionValue="value"
+      [fluid]="true"
+    />
+    @if (payment()) {
+      <p class="mt-1 text-xs text-slate-500">
+        El estado de un pago existente solo cambia con la baja lógica.
+      </p>
+    } @else {
+      <p class="mt-1 text-xs text-slate-500">
+        Solo un pago activo puede recibir comisiones.
+      </p>
+    }
+  </div>
+
+  <div class="flex justify-end gap-2 border-t border-slate-100 pt-4">
+    <button pButton type="button" severity="secondary" outlined (click)="cancelled.emit()">
+      <span pButtonLabel>Cancelar</span>
+    </button>
+    <button pButton type="submit" [loading]="saving()">
+      <i pButtonIcon class="pi pi-check"></i>
+      <span pButtonLabel>Guardar</span>
+    </button>
+  </div>
+</form>

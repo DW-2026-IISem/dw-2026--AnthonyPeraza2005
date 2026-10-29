@@ -1,0 +1,159 @@
+<div class="space-y-5">
+  <div class="grid gap-3 sm:grid-cols-2">
+    <div>
+      <p class="text-xs uppercase tracking-wide text-slate-400">Proyecto</p>
+      <p class="font-medium text-slate-800">{{ projectTitle() }}</p>
+    </div>
+    <div>
+      <p class="text-xs uppercase tracking-wide text-slate-400">Contribuyente</p>
+      <p class="font-medium text-slate-800">{{ contributorName() }}</p>
+    </div>
+    <div>
+      <p class="text-xs uppercase tracking-wide text-slate-400">Fecha del aporte</p>
+      <p class="text-slate-700">{{ contribution().contribution_date | date: 'dd/MM/yyyy' }}</p>
+    </div>
+    <div>
+      <p class="text-xs uppercase tracking-wide text-slate-400">Estado</p>
+      <app-status-tag [status]="contribution().status" />
+    </div>
+  </div>
+
+  <div class="grid grid-cols-2 gap-3 lg:grid-cols-5">
+    <div class="rounded-lg border border-slate-200 p-3">
+      <p class="text-xs text-slate-500">Aporte</p>
+      <p class="font-semibold text-slate-800">
+        {{ amount() | currency: 'COP' : 'symbol-narrow' : '1.0-0' }}
+      </p>
+    </div>
+    <div class="rounded-lg border border-slate-200 p-3">
+      <p class="text-xs text-slate-500">Pagado</p>
+      <p class="font-semibold text-emerald-700">
+        {{ paid() | currency: 'COP' : 'symbol-narrow' : '1.0-0' }}
+      </p>
+    </div>
+    <div class="rounded-lg border border-slate-200 p-3">
+      <p class="text-xs text-slate-500">Pendiente</p>
+      <p class="font-semibold text-amber-700">
+        {{ pending() | currency: 'COP' : 'symbol-narrow' : '1.0-0' }}
+      </p>
+    </div>
+    <div class="rounded-lg border border-slate-200 p-3">
+      <p class="text-xs text-slate-500">Comisiones</p>
+      <p class="font-semibold text-slate-800">
+        {{ commissionTotal() | currency: 'COP' : 'symbol-narrow' : '1.0-0' }}
+      </p>
+    </div>
+    <div class="rounded-lg border border-slate-200 p-3">
+      <p class="text-xs text-slate-500">Reembolsado</p>
+      <p class="font-semibold text-slate-800">
+        {{ refunded() | currency: 'COP' : 'symbol-narrow' : '1.0-0' }}
+      </p>
+    </div>
+  </div>
+
+  <section>
+    <h3 class="mb-2 text-sm font-semibold text-slate-700">Pagos ({{ payments().length }})</h3>
+    @if (payments().length) {
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-sm">
+          <thead class="text-xs text-slate-500">
+            <tr>
+              <th class="py-1 pr-3">Referencia</th>
+              <th class="py-1 pr-3">Método</th>
+              <th class="py-1 pr-3">Fecha</th>
+              <th class="py-1 pr-3 text-right">Monto</th>
+              <th class="py-1">Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (payment of payments(); track payment.id) {
+              <tr class="border-t border-slate-100">
+                <td class="py-1.5 pr-3 font-medium text-slate-800">{{ payment.reference }}</td>
+                <td class="py-1.5 pr-3 capitalize">{{ payment.payment_method }}</td>
+                <td class="py-1.5 pr-3">{{ payment.transaction_date | date: 'dd/MM/yyyy' }}</td>
+                <td class="py-1.5 pr-3 text-right">
+                  {{ payment.amount | currency: 'COP' : 'symbol-narrow' : '1.2-2' }}
+                </td>
+                <td class="py-1.5"><app-status-tag [status]="payment.status" /></td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    } @else {
+      <p class="text-sm text-slate-500">Este aporte aún no tiene pagos.</p>
+    }
+  </section>
+
+  <section>
+    <h3 class="mb-2 text-sm font-semibold text-slate-700">
+      Comisiones ({{ commissions().length }})
+    </h3>
+    @if (commissions().length) {
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-sm">
+          <thead class="text-xs text-slate-500">
+            <tr>
+              <th class="py-1 pr-3">Pago</th>
+              <th class="py-1 pr-3 text-right">%</th>
+              <th class="py-1 pr-3">Fecha</th>
+              <th class="py-1 pr-3 text-right">Monto</th>
+              <th class="py-1">Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (commission of commissions(); track commission.id) {
+              <tr class="border-t border-slate-100">
+                <td class="py-1.5 pr-3 font-medium text-slate-800">
+                  {{ paymentReference()(commission.payment_transaction_id) }}
+                </td>
+                <td class="py-1.5 pr-3 text-right">
+                  {{ percentage(commission) | number: '1.0-2' }}%
+                </td>
+                <td class="py-1.5 pr-3">{{ commission.calculation_date | date: 'dd/MM/yyyy' }}</td>
+                <td class="py-1.5 pr-3 text-right">
+                  {{ commission.amount | currency: 'COP' : 'symbol-narrow' : '1.2-2' }}
+                </td>
+                <td class="py-1.5"><app-status-tag [status]="commission.status" /></td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    } @else {
+      <p class="text-sm text-slate-500">Sin comisiones registradas.</p>
+    }
+  </section>
+
+  <section>
+    <h3 class="mb-2 text-sm font-semibold text-slate-700">Reembolsos ({{ refunds().length }})</h3>
+    @if (refunds().length) {
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-sm">
+          <thead class="text-xs text-slate-500">
+            <tr>
+              <th class="py-1 pr-3">Motivo</th>
+              <th class="py-1 pr-3">Fecha</th>
+              <th class="py-1 pr-3 text-right">Monto</th>
+              <th class="py-1">Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (refund of refunds(); track refund.id) {
+              <tr class="border-t border-slate-100">
+                <td class="py-1.5 pr-3 text-slate-800">{{ refund.reason }}</td>
+                <td class="py-1.5 pr-3">{{ refund.refund_date | date: 'dd/MM/yyyy' }}</td>
+                <td class="py-1.5 pr-3 text-right">
+                  {{ refund.amount | currency: 'COP' : 'symbol-narrow' : '1.2-2' }}
+                </td>
+                <td class="py-1.5"><app-status-tag [status]="refund.status" /></td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    } @else {
+      <p class="text-sm text-slate-500">Sin reembolsos.</p>
+    }
+  </section>
+</div>

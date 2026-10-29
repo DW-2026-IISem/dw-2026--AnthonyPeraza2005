@@ -1,0 +1,176 @@
+<app-page-header
+  title="Pagos"
+  subtitle="Transacciones de pago de cada contribución. Solo los pagos activos pueden recibir comisiones."
+>
+  <p-tag [value]="rows().length + ' pagos'" severity="info" [rounded]="true" />
+  <p-tag
+    [value]="(activeTotal() | currency: 'COP' : 'symbol-narrow' : '1.0-0') + ' en activos'"
+    severity="success"
+    [rounded]="true"
+  />
+  <button pButton type="button" (click)="openCreate()">
+    <i pButtonIcon class="pi pi-plus"></i>
+    <span pButtonLabel>Nuevo pago</span>
+  </button>
+</app-page-header>
+
+@if (error()) {
+  <p-message severity="error" styleClass="mb-4 w-full">
+    {{ error() }}
+  </p-message>
+}
+
+<div class="rounded-xl border border-slate-200 bg-white">
+  <p-table
+    [value]="visibleRows()"
+    [loading]="loading()"
+    [paginator]="visibleRows().length > 10"
+    [rows]="10"
+    sortField="transaction_date"
+    [sortOrder]="-1"
+    dataKey="id"
+    tableStyleClass="min-w-5xl"
+  >
+    <ng-template #caption>
+      <div class="flex items-center gap-2">
+        <i class="pi pi-search text-slate-400"></i>
+        <input
+          pInputText
+          type="search"
+          aria-label="Buscar pagos"
+          placeholder="Buscar por referencia, método, aporte, monto o fecha…"
+          [value]="filter()"
+          (input)="filter.set($any($event.target).value)"
+          class="w-full"
+        />
+      </div>
+      @if (filter()) {
+        <p class="mt-2 text-xs text-slate-500">
+          {{ visibleRows().length }} de {{ rows().length }} coinciden con «{{ filter() }}».
+        </p>
+      }
+    </ng-template>
+
+    <ng-template #header>
+      <tr>
+        <th pSortableColumn="reference">
+          <div class="flex items-center gap-1">Pago <p-sort-icon field="reference" /></div>
+        </th>
+        <th>Aporte</th>
+        <th pSortableColumn="payment_method">
+          <div class="flex items-center gap-1">Método <p-sort-icon field="payment_method" /></div>
+        </th>
+        <th pSortableColumn="transaction_date">
+          <div class="flex items-center gap-1">Fecha <p-sort-icon field="transaction_date" /></div>
+        </th>
+        <th pSortableColumn="value" class="text-right">
+          <div class="flex items-center justify-end gap-1">Monto <p-sort-icon field="value" /></div>
+        </th>
+        <th>Estado</th>
+        <th class="w-40 text-right">Acciones</th>
+      </tr>
+    </ng-template>
+
+    <ng-template #body let-payment>
+      <tr>
+        <td>
+          <p class="font-medium text-slate-800">{{ payment.reference }}</p>
+          <p class="text-xs text-slate-400">#{{ payment.id }}</p>
+        </td>
+        <td>
+          <p-tag
+            [value]="contributionLabel()(payment.contribution_id)"
+            severity="secondary"
+            [rounded]="true"
+          />
+        </td>
+        <td class="text-sm capitalize text-slate-700">{{ payment.payment_method }}</td>
+        <td class="text-sm text-slate-600">{{ payment.transaction_date | date: 'dd/MM/yyyy' }}</td>
+        <td class="text-right font-medium text-slate-800">
+          {{ payment.value | currency: 'COP' : 'symbol-narrow' : '1.2-2' }}
+        </td>
+        <td><app-status-tag [status]="payment.status" /></td>
+        <td>
+          <div class="flex justify-end gap-1">
+            <button
+              pButton
+              type="button"
+              text
+              rounded
+              severity="secondary"
+              aria-label="Editar pago"
+              pTooltip="Editar"
+              (click)="openEdit(payment)"
+            >
+              <i pButtonIcon class="pi pi-pencil"></i>
+            </button>
+            <button
+              pButton
+              type="button"
+              text
+              rounded
+              severity="warn"
+              aria-label="Dar de baja al pago"
+              pTooltip="Baja lógica"
+              (click)="deactivate(payment)"
+            >
+              <i pButtonIcon class="pi pi-ban"></i>
+            </button>
+            <button
+              pButton
+              type="button"
+              text
+              rounded
+              severity="danger"
+              aria-label="Eliminar pago"
+              pTooltip="Eliminar"
+              (click)="remove(payment)"
+            >
+              <i pButtonIcon class="pi pi-trash"></i>
+            </button>
+          </div>
+        </td>
+      </tr>
+    </ng-template>
+
+    <ng-template #emptymessage>
+      <tr>
+        <td colspan="7">
+          @if (filter()) {
+            <app-empty-state
+              icon="pi pi-search"
+              title="Sin coincidencias"
+              message="Ningún pago coincide con la búsqueda. Borra el filtro para ver todos."
+            />
+          } @else {
+            <app-empty-state
+              icon="pi pi-credit-card"
+              title="Sin pagos"
+              message="Registra el primero con el botón «Nuevo pago»."
+            />
+          }
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+
+<p-dialog
+  [visible]="dialogVisible()"
+  (visibleChange)="dialogVisible.set($event)"
+  [header]="title()"
+  [modal]="true"
+  [draggable]="false"
+  [resizable]="false"
+  [dismissableMask]="true"
+  styleClass="w-full max-w-2xl mx-4"
+>
+  <app-payment-transaction-form
+    [payment]="editing()"
+    [contributions]="contributionOptions()"
+    [saving]="saving()"
+    [resetKey]="resetKey()"
+    (saved)="save($event)"
+    (cancelled)="dialogVisible.set(false)"
+  />
+</p-dialog>

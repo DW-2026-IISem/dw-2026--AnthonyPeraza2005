@@ -455,3 +455,97 @@
 ![](images/clipboard-4033856485.png)
 
 ![](images/clipboard-1373720816.png)
+
+### ISS-07 · Pagos, detalle del aporte, dashboard y cierre de Fase I
+
+### 7.2 Generar con el CLI
+
+![](images/clipboard-1723574983.png)
+
+### 7.3 Servicio y modelo
+
+![](images/clipboard-3463354109.png)
+
+### 7.4 Formulario de pago
+
+![](images/clipboard-20571445.png)
+
+### Prueba del formulario
+
+![](images/clipboard-1755100759.png)
+
+### 7.5 Lista de pagos: cuatro cargas en paralelo
+
+![](images/clipboard-2272453642.png)
+
+### 7.6 Prueba de la lista de pagos
+
+![](images/clipboard-4049257566.png)
+
+### 7.7 Ruta y menú de pagos 
+
+**7.7.1 `app.routes.ts`**
+
+![](images/clipboard-2420780220.png)
+
+### 7.7.2 `shell.ts`
+
+![](images/clipboard-1191186435.png)
+
+### 7.8 Comprobación de la Parte 1
+
+![](images/clipboard-45528653.png)
+
+### 7.9 Modelos y servicios de comisiones y reembolsos
+
+![](images/clipboard-1078886910.png)
+
+### 7.10 Generar con el CLI
+
+![](images/clipboard-792823561.png)
+
+### 7.11 `ContributionDetail`
+
+![](images/clipboard-4239488039.png)
+
+### 7.12 PARCHE de `ContributionList`
+
+**7.12.1 `contribution-list.ts`**
+
+![](images/clipboard-3286007779.png)
+
+### 7.12.2 `contribution-list.html`
+
+![](images/clipboard-1873740485.png)
+
+### 7.12.3 Prueba nueva del detalle en la lista 
+
+![](images/clipboard-3677513001.png)
+
+### 7.13 Dashboard
+
+![](images/clipboard-935490376.png)
+
+### 7.14 Ruta del panel y menú 
+
+**7.14.1 `app.routes.ts`**
+
+![](images/clipboard-3066192833.png)
+
+### 7.14.2 `shell.ts`
+
+![](images/clipboard-1210123772.png)
+
+### 7.15 Comprobación
+
+![](images/clipboard-960075944.png)
+
+## PRUEBA VISUAL
+
+![](images/clipboard-931693235.png)
+
+### 7.16 Verificación del ISS
+
+![](images/clipboard-402199301.png)
+
+![](images/clipboard-1399319361.png)

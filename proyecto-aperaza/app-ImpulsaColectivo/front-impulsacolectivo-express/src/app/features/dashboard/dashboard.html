@@ -1,0 +1,109 @@
+<app-page-header
+  title="Panel"
+  subtitle="Resumen de proyectos, contribuyentes, aportes y pagos."
+>
+  <button pButton type="button" severity="secondary" outlined (click)="load()">
+    <i pButtonIcon class="pi pi-refresh"></i>
+    <span pButtonLabel>Actualizar</span>
+  </button>
+</app-page-header>
+
+@if (error()) {
+  <p-message severity="error" styleClass="mb-4 w-full">
+    {{ error() }}
+  </p-message>
+}
+
+@if (loading()) {
+  <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+    @for (item of [1, 2, 3, 4]; track item) {
+      <p-skeleton height="6rem" borderRadius="1rem" />
+    }
+  </div>
+} @else {
+  <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+    <div class="rounded-xl border border-slate-200 bg-white p-4">
+      <p class="text-sm text-slate-500">Proyectos en curso</p>
+      <p class="mt-1 text-2xl font-semibold text-slate-800">{{ runningCount() }}</p>
+      <p class="mt-1 text-xs text-slate-400">de {{ projects().length }} proyectos</p>
+    </div>
+
+    <div class="rounded-xl border border-slate-200 bg-white p-4">
+      <p class="text-sm text-slate-500">Contribuyentes activos</p>
+      <p class="mt-1 text-2xl font-semibold text-slate-800">{{ activeContributorCount() }}</p>
+      <p class="mt-1 text-xs text-slate-400">de {{ contributors().length }} contribuyentes</p>
+    </div>
+
+    <div class="rounded-xl border border-slate-200 bg-white p-4">
+      <p class="text-sm text-slate-500">Aportes activos</p>
+      <p class="mt-1 text-2xl font-semibold text-slate-800">{{ activeContributions().length }}</p>
+      <p class="mt-1 text-xs text-slate-400">de {{ contributions().length }} aportes</p>
+    </div>
+
+    <div class="rounded-xl border border-slate-200 bg-white p-4">
+      <p class="text-sm text-slate-500">Total recaudado</p>
+      <p class="mt-1 text-2xl font-semibold text-emerald-700">
+        {{ totalRaised() | currency: 'COP' : 'symbol-narrow' : '1.0-0' }}
+      </p>
+      <p class="mt-1 text-xs text-slate-400">
+        Pagado: {{ totalPaid() | currency: 'COP' : 'symbol-narrow' : '1.0-0' }}
+      </p>
+    </div>
+  </div>
+
+  <div class="mt-6 grid gap-6 lg:grid-cols-2">
+    <section class="rounded-xl border border-slate-200 bg-white p-4">
+      <div class="mb-3 flex items-center justify-between">
+        <h2 class="font-semibold text-slate-800">Proyectos por terminar</h2>
+        <a routerLink="/proyectos" class="text-sm text-sky-700 hover:underline">Ver proyectos →</a>
+      </div>
+      @for (project of endingSoon(); track project.id) {
+        <div class="flex items-center justify-between gap-3 border-t border-slate-100 py-2">
+          <div class="min-w-0">
+            <p class="truncate font-medium text-slate-800">{{ project.title }}</p>
+            <p class="text-xs text-slate-400">Cierra el {{ project.end_date | date: 'dd/MM/yyyy' }}</p>
+          </div>
+          <p-tag
+            [value]="daysLeft(project) + ' días'"
+            [severity]="daysLeft(project) <= 7 ? 'danger' : 'warn'"
+            [rounded]="true"
+          />
+        </div>
+      } @empty {
+        <p class="text-sm text-slate-500">
+          Ningún proyecto en curso cierra en los próximos 30 días.
+        </p>
+      }
+    </section>
+
+    <section class="rounded-xl border border-slate-200 bg-white p-4">
+      <div class="mb-3 flex items-center justify-between">
+        <h2 class="font-semibold text-slate-800">Últimos aportes</h2>
+        <a routerLink="/contribuciones" class="text-sm text-sky-700 hover:underline">
+          Ver contribuciones →
+        </a>
+      </div>
+      @for (contribution of latestContributions(); track contribution.id) {
+        <div class="flex items-center justify-between gap-3 border-t border-slate-100 py-2">
+          <div class="min-w-0">
+            <p class="truncate font-medium text-slate-800">
+              {{ contributorName()(contribution.contributor_id) }}
+            </p>
+            <p class="truncate text-xs text-slate-400">
+              {{ projectTitle()(contribution.project_id) }} ·
+              {{ contribution.contribution_date | date: 'dd/MM/yyyy' }}
+            </p>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-sm font-medium text-slate-800">
+              {{ contribution.amount | currency: 'COP' : 'symbol-narrow' : '1.0-0' }}
+            </span>
+            <app-status-tag [status]="contribution.status" />
+          </div>
+        </div>
+      } @empty {
+        <p class="text-sm text-slate-500">Todavía no hay aportes registrados.</p>
+      }
+    </section>
+  </div>
+}

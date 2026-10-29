@@ -22,6 +22,13 @@ import { ContributorApi } from '../../contributors/contributor-api';
 import { ProjectApi } from '../../projects/project-api';
 import { ContributionApi } from '../contribution-api';
 import { ContributionForm } from '../contribution-form/contribution-form';
+import { ContributionDetail } from '../contribution-detail/contribution-detail';
+import { CommissionApi } from '../../commissions/commission-api';
+import { PaymentTransactionApi } from '../../payment-transactions/payment-transaction-api';
+import { RefundApi } from '../../refunds/refund-api';
+import { Commission } from '../../../core/models/commission.model';
+import { PaymentTransaction } from '../../../core/models/payment-transaction.model';
+import { Refund } from '../../../core/models/refund.model';
 
 /** Fila de la tabla: la contribución más su monto ya convertido a número. */
 interface ContributionRow extends Contribution {
@@ -39,6 +46,7 @@ interface ContributionRow extends Contribution {
   selector: 'app-contribution-list',
   imports: [
     ButtonModule,
+    ContributionDetail,
     ContributionForm,
     CurrencyPipe,
     DatePipe,
@@ -59,6 +67,9 @@ export class ContributionList {
   private readonly api = inject(ContributionApi);
   private readonly projectsApi = inject(ProjectApi);
   private readonly contributorsApi = inject(ContributorApi);
+  private readonly paymentsApi = inject(PaymentTransactionApi);
+  private readonly commissionsApi = inject(CommissionApi);
+  private readonly refundsApi = inject(RefundApi);
   private readonly notify = inject(NotificationService);
   private readonly confirmation = inject(ConfirmationService);
 
@@ -137,8 +148,49 @@ export class ContributionList {
     );
   });
 
+  /** Estado del diálogo de detalle: sus datos se piden solo al abrirlo. */
+  readonly detailVisible = signal(false);
+  readonly detailLoading = signal(false);
+  readonly detailContribution = signal<Contribution | null>(null);
+  readonly detailPayments = signal<PaymentTransaction[]>([]);
+  readonly detailCommissions = signal<Commission[]>([]);
+  readonly detailRefunds = signal<Refund[]>([]);
+
   constructor() {
     this.load();
+  }
+
+  /** Pagos, comisiones y reembolsos del aporte; el backend no los anida. */
+  openDetail(contribution: Contribution): void {
+    this.detailContribution.set(contribution);
+    this.detailPayments.set([]);
+    this.detailCommissions.set([]);
+    this.detailRefunds.set([]);
+    this.detailLoading.set(true);
+    this.detailVisible.set(true);
+
+    forkJoin({
+      payments: this.paymentsApi.list(),
+      commissions: this.commissionsApi.list(),
+      refunds: this.refundsApi.list(),
+    }).subscribe({
+      next: ({ payments, commissions, refunds }) => {
+        const mine = payments.filter((payment) => payment.contribution_id === contribution.id);
+        const mineIds = new Set(mine.map((payment) => payment.id));
+
+        this.detailPayments.set(mine);
+        this.detailCommissions.set(
+          commissions.filter((commission) => mineIds.has(commission.payment_transaction_id)),
+        );
+        this.detailRefunds.set(refunds.filter((refund) => refund.contribution_id === contribution.id));
+        this.detailLoading.set(false);
+      },
+      error: (error: unknown) => {
+        this.detailLoading.set(false);
+        this.detailVisible.set(false);
+        this.notify.error('No se pudo cargar el detalle', toApiMessage(error));
+      },
+    });
   }
 
   /** Contribuciones, proyectos y contribuyentes en paralelo. */
