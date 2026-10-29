@@ -6,12 +6,12 @@ POST {{baseUrl}}/api/sesion/login
 Content-Type: application/json
 
 {
-  "identifier": "admin",
-  "password": "Admin123!"
+  "identifier": "anthony",
+  "password": "12345678"
 }
 
 ###
-@token = {{login.response.body.$.access_token}}
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzkxOTk2NjQ5LCJleHAiOjE3OTIwMDAyNDksImF1ZCI6ImFwcC1pbXB1bHNhY29sZWN0aXZvLWFwaSIsImlzcyI6ImFwcC1pbXB1bHNhY29sZWN0aXZvLWV4cHJlc3MiLCJzdWIiOiIxIiwianRpIjoiMDZlZGUzYzAtNzkxMS00ZGI2LWFlNzItZWVjOTVhNzAyYzJmIn0.rv2HLwmsBjB9BWbjg0y8nuvUMlDuPKY7fNrfLYLH888
 
 ### Feature RoleUsers — asignar y retirar roles a usuarios
 ### Leyenda: SIN AUTH (temporal hasta ISS-21).

@@ -1,0 +1,99 @@
+<form [formGroup]="form" (ngSubmit)="submit()" class="space-y-4">
+  <div>
+    <label for="promoter-name" class="mb-1 block text-sm font-medium text-slate-700">
+      Nombre <span class="text-red-500">*</span>
+    </label>
+    <input
+      id="promoter-name"
+      pInputText
+      formControlName="name"
+      placeholder="Fundación Semillas del Caribe"
+      autocomplete="organization"
+      class="w-full"
+    />
+    @if (form.controls.name.touched && form.controls.name.invalid) {
+      <p-message severity="error" size="small" variant="simple" styleClass="mt-1">
+        El nombre es obligatorio (máximo 255 caracteres).
+      </p-message>
+    }
+  </div>
+
+  <div class="grid gap-4 sm:grid-cols-2">
+    <div>
+      <label for="promoter-email" class="mb-1 block text-sm font-medium text-slate-700">
+        Correo de contacto <span class="text-red-500">*</span>
+      </label>
+      <input
+        id="promoter-email"
+        type="email"
+        pInputText
+        formControlName="contact_email"
+        placeholder="contacto@semillas.org"
+        autocomplete="email"
+        class="w-full"
+      />
+      @if (form.controls.contact_email.touched && form.controls.contact_email.invalid) {
+        <p-message severity="error" size="small" variant="simple" styleClass="mt-1">
+          Ingresa un correo válido; es obligatorio.
+        </p-message>
+      }
+    </div>
+
+    <div>
+      <label for="promoter-phone" class="mb-1 block text-sm font-medium text-slate-700">
+        Teléfono de contacto
+      </label>
+      <input
+        id="promoter-phone"
+        pInputText
+        formControlName="contact_phone"
+        placeholder="300 000 0000"
+        autocomplete="tel"
+        class="w-full"
+      />
+    </div>
+  </div>
+
+  <div>
+    <label for="promoter-description" class="mb-1 block text-sm font-medium text-slate-700">
+      Descripción
+    </label>
+    <textarea
+      id="promoter-description"
+      pTextarea
+      formControlName="description"
+      rows="3"
+      placeholder="Organización que impulsa proyectos educativos en La Guajira"
+      class="w-full"
+    ></textarea>
+  </div>
+
+  <div>
+    <label for="promoter-status" class="mb-1 block text-sm font-medium text-slate-700">
+      Estado
+    </label>
+    <p-select
+      inputId="promoter-status"
+      formControlName="status"
+      [options]="statusOptions"
+      optionLabel="label"
+      optionValue="value"
+      [fluid]="true"
+    />
+    @if (promoter()) {
+      <p class="mt-1 text-xs text-slate-500">
+        El estado de un promotor existente solo cambia con la baja lógica.
+      </p>
+    }
+  </div>
+
+  <div class="flex justify-end gap-2 border-t border-slate-100 pt-4">
+    <button pButton type="button" severity="secondary" outlined (click)="cancelled.emit()">
+      <span pButtonLabel>Cancelar</span>
+    </button>
+    <button pButton type="submit" [loading]="saving()">
+      <i pButtonIcon class="pi pi-check"></i>
+      <span pButtonLabel>Guardar</span>
+    </button>
+  </div>
+</form>

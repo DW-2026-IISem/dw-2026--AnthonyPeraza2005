@@ -251,3 +251,55 @@
 ![](images/clipboard-1928406883.png)
 
 ![](images/clipboard-874492642.png)
+
+## ISS-03 · CRUD de promotores con Signals
+
+### 3.1 Generar los componentes
+
+![](images/clipboard-2911345582.png)
+
+### 3.2 Utilidad de filtro local
+
+![](images/clipboard-2740795674.png)
+
+### 3.3 Formulario reactivo reutilizable
+
+![](images/clipboard-3264254993.png)
+
+### 3.4 Lista con estado en Signals
+
+![](images/clipboard-3934080950.png)
+
+### 3.5 Plantilla de la lista
+
+![](images/clipboard-791609743.png)
+
+### 3.7 Ruta y menú 
+
+### 3.7.1 `app.routes.ts`
+
+![](images/clipboard-2726901614.png)
+
+### 3.7.2 `shell.ts`
+
+![](images/clipboard-3319502526.png)
+
+### 3.8 Prueba de la lista
+
+![](images/clipboard-3694759724.png)
+
+### 3.9 Comprobación funcional
+
+**3.9.1 Backend sin autenticación**
+
+![](images/clipboard-1364545739.png)
+
+### 3.9.2 Frontend
+
+![](images/clipboard-161488727.png)
+
+### 3.10 Verificación del ISS
+
+![](images/clipboard-573934110.png)
+
+![](images/clipboard-2258505833.png)

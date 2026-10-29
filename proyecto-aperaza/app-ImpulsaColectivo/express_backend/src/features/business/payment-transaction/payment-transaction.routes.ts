@@ -8,31 +8,31 @@ export class PaymentTransactionRoutes {
   public routes(app: Application): void {
     app.get(
       "/api/transacciones-pago",
-      authenticate, authorize, this.paymentTransactionController.getAll.bind(this.paymentTransactionController)
+       this.paymentTransactionController.getAll.bind(this.paymentTransactionController)
     );
     app.get(
       "/api/transacciones-pago/:id",
-      authenticate, authorize, this.paymentTransactionController.getOne.bind(this.paymentTransactionController)
+       this.paymentTransactionController.getOne.bind(this.paymentTransactionController)
     );
     app.post(
       "/api/transacciones-pago",
-      authenticate, authorize, this.paymentTransactionController.create.bind(this.paymentTransactionController)
+       this.paymentTransactionController.create.bind(this.paymentTransactionController)
     );
     app.put(
       "/api/transacciones-pago/:id",
-      authenticate, authorize, this.paymentTransactionController.updatePut.bind(this.paymentTransactionController)
+       this.paymentTransactionController.updatePut.bind(this.paymentTransactionController)
     );
     app.patch(
       "/api/transacciones-pago/:id",
-      authenticate, authorize, this.paymentTransactionController.updatePatch.bind(this.paymentTransactionController)
+       this.paymentTransactionController.updatePatch.bind(this.paymentTransactionController)
     );
     app.delete(
       "/api/transacciones-pago/:id",
-      authenticate, authorize, this.paymentTransactionController.deletePhysical.bind(this.paymentTransactionController)
+       this.paymentTransactionController.deletePhysical.bind(this.paymentTransactionController)
     );
     app.patch(
       "/api/transacciones-pago/:id/deactivate",
-      authenticate, authorize, this.paymentTransactionController.deleteLogical.bind(this.paymentTransactionController)
+       this.paymentTransactionController.deleteLogical.bind(this.paymentTransactionController)
     );
   }
 }
