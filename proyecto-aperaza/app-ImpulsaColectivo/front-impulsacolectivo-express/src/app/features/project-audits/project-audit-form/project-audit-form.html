@@ -1,0 +1,111 @@
+<form [formGroup]="form" (ngSubmit)="submit()" class="space-y-4">
+  <div>
+    <label for="audit-project" class="mb-1 block text-sm font-medium text-slate-700">
+      Proyecto <span class="text-red-500">*</span>
+    </label>
+    <p-select
+      inputId="audit-project"
+      formControlName="project_id"
+      [options]="projects()"
+      optionLabel="title"
+      optionValue="id"
+      placeholder="Selecciona un proyecto activo"
+      [filter]="true"
+      filterBy="title"
+      [fluid]="true"
+    />
+    @if (form.controls.project_id.touched && form.controls.project_id.invalid) {
+      <p-message severity="error" size="small" variant="simple" styleClass="mt-1">
+        Elige el proyecto que se audita.
+      </p-message>
+    }
+  </div>
+
+  <div class="grid gap-4 sm:grid-cols-2">
+    <div>
+      <label for="audit-action" class="mb-1 block text-sm font-medium text-slate-700">
+        Acción <span class="text-red-500">*</span>
+      </label>
+      <p-select
+        inputId="audit-action"
+        formControlName="action"
+        [options]="actionOptions"
+        [editable]="true"
+        placeholder="Elige una o escribe otra"
+        [fluid]="true"
+      />
+      @if (form.controls.action.touched && form.controls.action.invalid) {
+        <p-message severity="error" size="small" variant="simple" styleClass="mt-1">
+          Indica qué acción se realizó.
+        </p-message>
+      }
+    </div>
+
+    <div>
+      <label for="audit-date" class="mb-1 block text-sm font-medium text-slate-700">
+        Fecha <span class="text-red-500">*</span>
+      </label>
+      <p-datepicker
+        inputId="audit-date"
+        formControlName="audit_date"
+        dateFormat="dd/mm/yy"
+        [showIcon]="true"
+        iconDisplay="input"
+        [fluid]="true"
+      />
+      @if (form.controls.audit_date.touched && form.controls.audit_date.invalid) {
+        <p-message severity="error" size="small" variant="simple" styleClass="mt-1">
+          Elige la fecha de la auditoría.
+        </p-message>
+      }
+    </div>
+  </div>
+
+  <div>
+    <label for="audit-detail" class="mb-1 block text-sm font-medium text-slate-700">
+      Detalle <span class="text-red-500">*</span>
+    </label>
+    <textarea
+      id="audit-detail"
+      pTextarea
+      formControlName="detail"
+      rows="4"
+      placeholder="Se verificaron las facturas de compra de libros contra el presupuesto aprobado"
+      class="w-full"
+    ></textarea>
+    @if (form.controls.detail.touched && form.controls.detail.invalid) {
+      <p-message severity="error" size="small" variant="simple" styleClass="mt-1">
+        Describe lo que se encontró o se hizo.
+      </p-message>
+    }
+  </div>
+
+  <div>
+    <label for="audit-status" class="mb-1 block text-sm font-medium text-slate-700">
+      Estado
+    </label>
+    <p-select
+      inputId="audit-status"
+      formControlName="status"
+      [options]="statusOptions"
+      optionLabel="label"
+      optionValue="value"
+      [fluid]="true"
+    />
+    @if (audit()) {
+      <p class="mt-1 text-xs text-slate-500">
+        El estado de una auditoría existente solo cambia con la baja lógica.
+      </p>
+    }
+  </div>
+
+  <div class="flex justify-end gap-2 border-t border-slate-100 pt-4">
+    <button pButton type="button" severity="secondary" outlined (click)="cancelled.emit()">
+      <span pButtonLabel>Cancelar</span>
+    </button>
+    <button pButton type="submit" [loading]="saving()">
+      <i pButtonIcon class="pi pi-check"></i>
+      <span pButtonLabel>Guardar</span>
+    </button>
+  </div>
+</form>

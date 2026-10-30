@@ -59,6 +59,34 @@ export const routes: Routes = [
             (m) => m.PaymentTransactionList,
           ),
       },
+      {
+        path: 'recompensas',
+        title: 'Recompensas · ImpulsaColectivo',
+        loadComponent: () =>
+          import('./features/rewards/reward-list/reward-list').then((m) => m.RewardList),
+      },
+      {
+        path: 'metas',
+        title: 'Metas · ImpulsaColectivo',
+        loadComponent: () =>
+          import('./features/goals/goal-list/goal-list').then((m) => m.GoalList),
+      },
+      {
+        path: 'desembolsos',
+        title: 'Desembolsos · ImpulsaColectivo',
+        loadComponent: () =>
+          import('./features/disbursements/disbursement-list/disbursement-list').then(
+            (m) => m.DisbursementList,
+          ),
+      },
+      {
+        path: 'auditorias',
+        title: 'Auditorías · ImpulsaColectivo',
+        loadComponent: () =>
+          import('./features/project-audits/project-audit-list/project-audit-list').then(
+            (m) => m.ProjectAuditList,
+          ),
+      },
     ],
   },
   { path: '**', redirectTo: 'construir' },

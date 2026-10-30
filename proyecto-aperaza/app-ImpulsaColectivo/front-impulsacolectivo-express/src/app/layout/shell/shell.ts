@@ -47,6 +47,10 @@ export class Shell {
     { label: 'Proyectos', icon: 'pi pi-briefcase', routerLink: '/proyectos' },
     { label: 'Contribuciones', icon: 'pi pi-heart', routerLink: '/contribuciones' },
     { label: 'Pagos', icon: 'pi pi-credit-card', routerLink: '/pagos' },
+    { label: 'Recompensas', icon: 'pi pi-gift', routerLink: '/recompensas' },
+    { label: 'Metas', icon: 'pi pi-flag', routerLink: '/metas' },
+    { label: 'Desembolsos', icon: 'pi pi-wallet', routerLink: '/desembolsos' },
+    { label: 'Auditorías', icon: 'pi pi-history', routerLink: '/auditorias' },
     { label: 'Prototipo', icon: 'pi pi-desktop', routerLink: '/construir' },
   ];
 

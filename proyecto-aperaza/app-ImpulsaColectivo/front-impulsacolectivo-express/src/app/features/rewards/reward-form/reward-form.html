@@ -1,0 +1,112 @@
+<form [formGroup]="form" (ngSubmit)="submit()" class="space-y-4">
+  <div>
+    <label for="reward-project" class="mb-1 block text-sm font-medium text-slate-700">
+      Proyecto <span class="text-red-500">*</span>
+    </label>
+    <p-select
+      inputId="reward-project"
+      formControlName="project_id"
+      [options]="projects()"
+      optionLabel="title"
+      optionValue="id"
+      placeholder="Selecciona un proyecto activo"
+      [filter]="true"
+      filterBy="title"
+      [fluid]="true"
+    />
+    @if (form.controls.project_id.touched && form.controls.project_id.invalid) {
+      <p-message severity="error" size="small" variant="simple" styleClass="mt-1">
+        Elige el proyecto que ofrece la recompensa.
+      </p-message>
+    }
+  </div>
+
+  <div>
+    <label for="reward-title" class="mb-1 block text-sm font-medium text-slate-700">
+      Título <span class="text-red-500">*</span>
+    </label>
+    <input
+      id="reward-title"
+      pInputText
+      formControlName="title"
+      placeholder="Kit de semillas nativas"
+      class="w-full"
+    />
+    @if (form.controls.title.touched && form.controls.title.invalid) {
+      <p-message severity="error" size="small" variant="simple" styleClass="mt-1">
+        El título es obligatorio (máximo 255 caracteres).
+      </p-message>
+    }
+  </div>
+
+  <div>
+    <label for="reward-description" class="mb-1 block text-sm font-medium text-slate-700">
+      Descripción <span class="text-red-500">*</span>
+    </label>
+    <textarea
+      id="reward-description"
+      pTextarea
+      formControlName="description"
+      rows="3"
+      placeholder="Semillas para tu propia huerta"
+      class="w-full"
+    ></textarea>
+    @if (form.controls.description.touched && form.controls.description.invalid) {
+      <p-message severity="error" size="small" variant="simple" styleClass="mt-1">
+        La descripción es obligatoria.
+      </p-message>
+    }
+  </div>
+
+  <div>
+    <label for="reward-min-amount" class="mb-1 block text-sm font-medium text-slate-700">
+      Aporte mínimo <span class="text-red-500">*</span>
+    </label>
+    <p-inputnumber
+      inputId="reward-min-amount"
+      formControlName="min_amount"
+      mode="currency"
+      currency="COP"
+      locale="es-CO"
+      [minFractionDigits]="0"
+      [maxFractionDigits]="2"
+      [min]="1"
+      placeholder="$ 50.000"
+      [fluid]="true"
+    />
+    @if (form.controls.min_amount.touched && form.controls.min_amount.invalid) {
+      <p-message severity="error" size="small" variant="simple" styleClass="mt-1">
+        Indica un monto mínimo mayor que cero.
+      </p-message>
+    }
+  </div>
+
+  <div>
+    <label for="reward-status" class="mb-1 block text-sm font-medium text-slate-700">
+      Estado
+    </label>
+    <p-select
+      inputId="reward-status"
+      formControlName="status"
+      [options]="statusOptions"
+      optionLabel="label"
+      optionValue="value"
+      [fluid]="true"
+    />
+    @if (reward()) {
+      <p class="mt-1 text-xs text-slate-500">
+        El estado de una recompensa existente solo cambia con la baja lógica.
+      </p>
+    }
+  </div>
+
+  <div class="flex justify-end gap-2 border-t border-slate-100 pt-4">
+    <button pButton type="button" severity="secondary" outlined (click)="cancelled.emit()">
+      <span pButtonLabel>Cancelar</span>
+    </button>
+    <button pButton type="submit" [loading]="saving()">
+      <i pButtonIcon class="pi pi-check"></i>
+      <span pButtonLabel>Guardar</span>
+    </button>
+  </div>
+</form>

@@ -1,0 +1,115 @@
+<form [formGroup]="form" (ngSubmit)="submit()" class="space-y-4">
+  <div>
+    <label for="disbursement-project" class="mb-1 block text-sm font-medium text-slate-700">
+      Proyecto <span class="text-red-500">*</span>
+    </label>
+    <p-select
+      inputId="disbursement-project"
+      formControlName="project_id"
+      [options]="projects()"
+      optionLabel="title"
+      optionValue="id"
+      placeholder="Selecciona un proyecto activo"
+      [filter]="true"
+      filterBy="title"
+      [fluid]="true"
+    />
+    @if (form.controls.project_id.touched && form.controls.project_id.invalid) {
+      <p-message severity="error" size="small" variant="simple" styleClass="mt-1">
+        Elige el proyecto que recibe el desembolso.
+      </p-message>
+    }
+  </div>
+
+  <div class="grid gap-4 sm:grid-cols-2">
+    <div>
+      <label for="disbursement-amount" class="mb-1 block text-sm font-medium text-slate-700">
+        Monto <span class="text-red-500">*</span>
+      </label>
+      <p-inputnumber
+        inputId="disbursement-amount"
+        formControlName="amount"
+        mode="currency"
+        currency="COP"
+        locale="es-CO"
+        [minFractionDigits]="0"
+        [maxFractionDigits]="2"
+        [min]="1"
+        placeholder="$ 3.000.000"
+        [fluid]="true"
+      />
+      @if (form.controls.amount.touched && form.controls.amount.invalid) {
+        <p-message severity="error" size="small" variant="simple" styleClass="mt-1">
+          Indica un monto mayor que cero.
+        </p-message>
+      }
+    </div>
+
+    <div>
+      <label for="disbursement-date" class="mb-1 block text-sm font-medium text-slate-700">
+        Fecha <span class="text-red-500">*</span>
+      </label>
+      <p-datepicker
+        inputId="disbursement-date"
+        formControlName="disbursement_date"
+        dateFormat="dd/mm/yy"
+        [showIcon]="true"
+        iconDisplay="input"
+        [fluid]="true"
+      />
+      @if (form.controls.disbursement_date.touched && form.controls.disbursement_date.invalid) {
+        <p-message severity="error" size="small" variant="simple" styleClass="mt-1">
+          Elige la fecha del desembolso.
+        </p-message>
+      }
+    </div>
+  </div>
+
+  <div>
+    <label for="disbursement-method" class="mb-1 block text-sm font-medium text-slate-700">
+      Método <span class="text-red-500">*</span>
+    </label>
+    <p-select
+      inputId="disbursement-method"
+      formControlName="method"
+      [options]="methodOptions"
+      [editable]="true"
+      placeholder="Elige uno o escribe otro"
+      [fluid]="true"
+    />
+    @if (form.controls.method.touched && form.controls.method.invalid) {
+      <p-message severity="error" size="small" variant="simple" styleClass="mt-1">
+        Indica cómo se entregó el dinero.
+      </p-message>
+    }
+  </div>
+
+  <div>
+    <label for="disbursement-status" class="mb-1 block text-sm font-medium text-slate-700">
+      Estado
+    </label>
+    <p-select
+      inputId="disbursement-status"
+      formControlName="status"
+      [options]="statusOptions"
+      optionLabel="label"
+      optionValue="value"
+      [fluid]="true"
+    />
+    @if (disbursement()) {
+      <p class="mt-1 text-xs text-slate-500">
+        El estado de un desembolso existente solo cambia con la baja lógica.
+      </p>
+    }
+  </div>
+
+  <div class="flex justify-end gap-2 border-t border-slate-100 pt-4">
+    <button pButton type="button" severity="secondary" outlined (click)="cancelled.emit()">
+      <span pButtonLabel>Cancelar</span>
+    </button>
+    <button pButton type="submit" [loading]="saving()">
+      <i pButtonIcon class="pi pi-check"></i>
+      <span pButtonLabel>Guardar</span>
+    </button>
+  </div>
+</form>

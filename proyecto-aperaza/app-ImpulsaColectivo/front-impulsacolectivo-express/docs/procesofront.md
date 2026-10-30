@@ -164,7 +164,7 @@
 
 ![](images/clipboard-670787013.png)
 
-### RESULTADO VISUAL HASTA EL MOMENTO 
+### RESULTADO VISUAL HASTA EL MOMENTO
 
 ![](images/clipboard-3571583269.png)
 
@@ -274,7 +274,7 @@
 
 ![](images/clipboard-791609743.png)
 
-### 3.7 Ruta y menú 
+### 3.7 Ruta y menú
 
 ### 3.7.1 `app.routes.ts`
 
@@ -304,7 +304,7 @@
 
 ![](images/clipboard-2258505833.png)
 
-## ISS-04 · CRUD de contribuyentes 
+## ISS-04 · CRUD de contribuyentes
 
 ### 4.2 Generar con el CLI
 
@@ -386,7 +386,7 @@
 
 ![](images/clipboard-4261967766.png)
 
-### 5.8 Ruta y menú 
+### 5.8 Ruta y menú
 
 **5.8.1 `app.routes.ts`**
 
@@ -432,7 +432,7 @@
 
 ![](images/clipboard-1303346258.png)
 
-### 6.7 Ruta y menú 
+### 6.7 Ruta y menú
 
 **6.7.1 `app.routes.ts`**
 
@@ -482,7 +482,7 @@
 
 ![](images/clipboard-4049257566.png)
 
-### 7.7 Ruta y menú de pagos 
+### 7.7 Ruta y menú de pagos
 
 **7.7.1 `app.routes.ts`**
 
@@ -518,7 +518,7 @@
 
 ![](images/clipboard-1873740485.png)
 
-### 7.12.3 Prueba nueva del detalle en la lista 
+### 7.12.3 Prueba nueva del detalle en la lista
 
 ![](images/clipboard-3677513001.png)
 
@@ -526,7 +526,7 @@
 
 ![](images/clipboard-935490376.png)
 
-### 7.14 Ruta del panel y menú 
+### 7.14 Ruta del panel y menú
 
 **7.14.1 `app.routes.ts`**
 
@@ -549,3 +549,147 @@
 ![](images/clipboard-402199301.png)
 
 ![](images/clipboard-1399319361.png)
+
+## ISS-07 · Parte 3 · Recompensas
+
+### 7.19 Generar con el CLI
+
+![](images/clipboard-175318639.png)
+
+### 7.20 Formulario de recompensa
+
+![](images/clipboard-1796330389.png)
+
+### 7.21 Lista de recompensas
+
+![](images/clipboard-2713983612.png)
+
+### 7.22 Prueba de la lista
+
+![](images/clipboard-1422101788.png)
+
+### 7.23 Ruta y menú 
+
+**7.23.1 `app.routes.ts`**
+
+![](images/clipboard-2514224570.png)
+
+### 7.23.2 `shell.ts`
+
+![](images/clipboard-3949760049.png)
+
+### 7.24 Comprobación
+
+![](images/clipboard-3136633623.png)
+
+### PRUEBA VISUAL
+
+![](images/clipboard-1492033586.png)
+
+## ISS-07 · Parte 3 · Metas
+
+### 7.25 Generar con el CLI
+
+![](images/clipboard-4137341903.png)
+
+### 7.26 Formulario de meta
+
+![](images/clipboard-1665562943.png)
+
+### 7.27 Lista de metas
+
+![](images/clipboard-2166659727.png)
+
+### 7.28 Prueba de la lista 
+
+![](images/clipboard-1763005683.png)
+
+### 7.29 Ruta y menú 
+
+**7.29.1 `app.routes.ts`**
+
+![](images/clipboard-4248179070.png)
+
+### 7.29.2 `shell.ts`
+
+![](images/clipboard-1572629399.png)
+
+### 7.30 Comprobación de metas
+
+![](images/clipboard-661813070.png)
+
+### PRUEBA VISUAL
+
+![](images/clipboard-3202543508.png)
+
+## ISS-07 · Parte 3 · Desembolsos
+
+### 7.31 Generar con el CLI
+
+![](images/clipboard-2976315026.png)
+
+### 7.32 Formulario de desembolso
+
+![](images/clipboard-1893021602.png)
+
+### 7.33 Lista de desembolsos
+
+![](images/clipboard-2505016409.png)
+
+### 7.34 Prueba de la lista
+
+![](images/clipboard-1572084550.png)
+
+### 7.35 Ruta y menú 
+
+**7.35.1 `app.routes.ts`**
+
+![](images/clipboard-4052579352.png)
+
+### 7.35.2 `shell.ts`
+
+![](images/clipboard-2508277749.png)
+
+### 7.36 Comprobación de desembolso
+
+![](images/clipboard-3303714097.png)
+
+### PRUEBA VISUAL
+
+![](images/clipboard-453062354.png)
+
+## ISS-07 · Parte 3 · Auditorías
+
+### 7.37 Generar con el CLI
+
+![](images/clipboard-3882507930.png)
+
+### 7.38 Formulario de auditoría
+
+![](images/clipboard-4254244483.png)
+
+### 7.39 Lista de auditorías
+
+![](images/clipboard-2313858427.png)
+
+### 7.40 Prueba de la lista
+
+![](images/clipboard-2273507081.png)
+
+### 7.41 Ruta y menú 
+
+**7.41.1 `app.routes.ts`**
+
+![](images/clipboard-61015878.png)
+
+### 7.41.2 `shell.ts`
+
+![](images/clipboard-3179872810.png)
+
+### 7.42 Comprobación de auditorías
+
+![](images/clipboard-1140769840.png)
+
+### PRUEBA VISUAL
+
+![](images/clipboard-3886466254.png)
