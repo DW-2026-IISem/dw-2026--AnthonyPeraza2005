@@ -4,7 +4,7 @@
 >
   <p-tag [value]="rows().length + ' recompensas'" severity="info" [rounded]="true" />
   <p-tag [value]="activeCount() + ' activas'" severity="success" [rounded]="true" />
-  <button pButton type="button" (click)="openCreate()">
+  <button *appHasPermission="'POST /api/recompensas'" pButton type="button" (click)="openCreate()">
     <i pButtonIcon class="pi pi-plus"></i>
     <span pButtonLabel>Nueva recompensa</span>
   </button>
@@ -82,7 +82,7 @@
         <td><app-status-tag [status]="reward.status" /></td>
         <td>
           <div class="flex justify-end gap-1">
-            <button
+            <button *appHasPermission="'PATCH /api/recompensas/:id'"
               pButton
               type="button"
               text
@@ -94,7 +94,7 @@
             >
               <i pButtonIcon class="pi pi-pencil"></i>
             </button>
-            <button
+            <button *appHasPermission="'PATCH /api/recompensas/:id/deactivate'"
               pButton
               type="button"
               text
@@ -106,7 +106,7 @@
             >
               <i pButtonIcon class="pi pi-ban"></i>
             </button>
-            <button
+            <button *appHasPermission="'DELETE /api/recompensas/:id'"
               pButton
               type="button"
               text

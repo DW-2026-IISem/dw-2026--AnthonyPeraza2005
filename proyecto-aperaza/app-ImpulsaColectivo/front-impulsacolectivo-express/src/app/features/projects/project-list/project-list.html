@@ -4,7 +4,7 @@
 >
   <p-tag [value]="rows().length + ' proyectos'" severity="info" [rounded]="true" />
   <p-tag [value]="runningCount() + ' en curso'" severity="success" [rounded]="true" />
-  <button pButton type="button" (click)="openCreate()">
+  <button *appHasPermission="'POST /api/proyectos'" pButton type="button" (click)="openCreate()">
     <i pButtonIcon class="pi pi-plus"></i>
     <span pButtonLabel>Nuevo proyecto</span>
   </button>
@@ -88,7 +88,7 @@
         <td><app-status-tag [status]="project.status" /></td>
         <td>
           <div class="flex justify-end gap-1">
-            <button
+            <button *appHasPermission="'PATCH /api/proyectos/:id'"
               pButton
               type="button"
               text
@@ -100,7 +100,7 @@
             >
               <i pButtonIcon class="pi pi-pencil"></i>
             </button>
-            <button
+            <button *appHasPermission="'PATCH /api/proyectos/:id/deactivate'"
               pButton
               type="button"
               text
@@ -112,7 +112,7 @@
             >
               <i pButtonIcon class="pi pi-ban"></i>
             </button>
-            <button
+            <button *appHasPermission="'DELETE /api/proyectos/:id'"
               pButton
               type="button"
               text

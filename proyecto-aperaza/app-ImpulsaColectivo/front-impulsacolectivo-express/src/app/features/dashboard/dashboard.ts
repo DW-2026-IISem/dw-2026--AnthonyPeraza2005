@@ -10,8 +10,10 @@ import { Contribution } from '../../core/models/contribution.model';
 import { Contributor } from '../../core/models/contributor.model';
 import { PaymentTransaction } from '../../core/models/payment-transaction.model';
 import { Project } from '../../core/models/project.model';
+import { SessionStore } from '../../core/services/session-store';
 import { toApiMessage } from '../../core/utils/api-error';
 import { fromIsoDate, todayIso } from '../../core/utils/iso-date';
+import { whenAllowed } from '../../core/utils/when-allowed';
 import { PageHeader } from '../../shared/ui/page-header/page-header';
 import { StatusTag } from '../../shared/ui/status-tag/status-tag';
 import { ContributionApi } from '../contributions/contribution-api';
@@ -50,6 +52,12 @@ export class Dashboard {
   private readonly contributorsApi = inject(ContributorApi);
   private readonly contributionsApi = inject(ContributionApi);
   private readonly paymentsApi = inject(PaymentTransactionApi);
+  private readonly session = inject(SessionStore);
+
+  /** Qué fuentes puede leer el rol: sin permiso, esa lista no se pide ni se pinta. */
+  readonly canContributors = computed(() => this.session.can('GET', '/api/contribuyentes'));
+  readonly canContributions = computed(() => this.session.can('GET', '/api/contribuciones'));
+  readonly canPayments = computed(() => this.session.can('GET', '/api/transacciones-pago'));
 
   readonly loading = signal(true);
   readonly error = signal<string | null>(null);
@@ -136,9 +144,9 @@ export class Dashboard {
 
     forkJoin({
       projects: this.projectsApi.list(),
-      contributors: this.contributorsApi.list(),
-      contributions: this.contributionsApi.list(),
-      payments: this.paymentsApi.list(),
+      contributors: whenAllowed(this.canContributors(), this.contributorsApi.list()),
+      contributions: whenAllowed(this.canContributions(), this.contributionsApi.list()),
+      payments: whenAllowed(this.canPayments(), this.paymentsApi.list()),
     }).subscribe({
       next: ({ projects, contributors, contributions, payments }) => {
         this.projects.set(projects);

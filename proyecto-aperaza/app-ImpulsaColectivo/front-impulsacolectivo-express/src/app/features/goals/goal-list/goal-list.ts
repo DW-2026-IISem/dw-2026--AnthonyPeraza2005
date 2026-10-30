@@ -14,6 +14,7 @@ import { Project } from '../../../core/models/project.model';
 import { NotificationService } from '../../../core/services/notification';
 import { toApiMessage } from '../../../core/utils/api-error';
 import { filterRows } from '../../../core/utils/filter-rows';
+import { HasPermission } from '../../../shared/directives/has-permission';
 import { EmptyState } from '../../../shared/ui/empty-state/empty-state';
 import { PageHeader } from '../../../shared/ui/page-header/page-header';
 import { StatusTag } from '../../../shared/ui/status-tag/status-tag';
@@ -37,6 +38,7 @@ interface GoalRow extends Goal {
   selector: 'app-goal-list',
   imports: [
     ButtonModule,
+    HasPermission,
     CurrencyPipe,
     DialogModule,
     EmptyState,

@@ -8,7 +8,7 @@
     severity="success"
     [rounded]="true"
   />
-  <button pButton type="button" (click)="openCreate()">
+  <button *appHasPermission="'POST /api/metas'" pButton type="button" (click)="openCreate()">
     <i pButtonIcon class="pi pi-plus"></i>
     <span pButtonLabel>Nueva meta</span>
   </button>
@@ -84,7 +84,7 @@
         <td><app-status-tag [status]="goal.status" /></td>
         <td>
           <div class="flex justify-end gap-1">
-            <button
+            <button *appHasPermission="'PATCH /api/metas/:id'"
               pButton
               type="button"
               text
@@ -96,7 +96,7 @@
             >
               <i pButtonIcon class="pi pi-pencil"></i>
             </button>
-            <button
+            <button *appHasPermission="'PATCH /api/metas/:id/deactivate'"
               pButton
               type="button"
               text
@@ -108,7 +108,7 @@
             >
               <i pButtonIcon class="pi pi-ban"></i>
             </button>
-            <button
+            <button *appHasPermission="'DELETE /api/metas/:id'"
               pButton
               type="button"
               text

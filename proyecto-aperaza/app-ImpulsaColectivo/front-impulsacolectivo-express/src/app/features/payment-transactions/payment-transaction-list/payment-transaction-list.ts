@@ -17,8 +17,11 @@ import {
 } from '../../../core/models/payment-transaction.model';
 import { Project } from '../../../core/models/project.model';
 import { NotificationService } from '../../../core/services/notification';
+import { SessionStore } from '../../../core/services/session-store';
 import { toApiMessage } from '../../../core/utils/api-error';
 import { filterRows } from '../../../core/utils/filter-rows';
+import { whenAllowed } from '../../../core/utils/when-allowed';
+import { HasPermission } from '../../../shared/directives/has-permission';
 import { EmptyState } from '../../../shared/ui/empty-state/empty-state';
 import { PageHeader } from '../../../shared/ui/page-header/page-header';
 import { StatusTag } from '../../../shared/ui/status-tag/status-tag';
@@ -47,6 +50,7 @@ interface PaymentRow extends PaymentTransaction {
   selector: 'app-payment-transaction-list',
   imports: [
     ButtonModule,
+    HasPermission,
     CurrencyPipe,
     DatePipe,
     DialogModule,
@@ -68,6 +72,7 @@ export class PaymentTransactionList {
   private readonly contributionsApi = inject(ContributionApi);
   private readonly projectsApi = inject(ProjectApi);
   private readonly contributorsApi = inject(ContributorApi);
+  private readonly session = inject(SessionStore);
   private readonly notify = inject(NotificationService);
   private readonly confirmation = inject(ConfirmationService);
 
@@ -153,7 +158,11 @@ export class PaymentTransactionList {
       payments: this.api.list(),
       contributions: this.contributionsApi.list(),
       projects: this.projectsApi.list(),
-      contributors: this.contributorsApi.list(),
+      // Sin permiso para leer contribuyentes, la etiqueta usa «Contribuyente #id».
+      contributors: whenAllowed(
+        this.session.can('GET', '/api/contribuyentes'),
+        this.contributorsApi.list(),
+      ),
     }).subscribe({
       next: ({ payments, contributions, projects, contributors }) => {
         this.rows.set(payments);

@@ -12,9 +12,12 @@ import { forkJoin } from 'rxjs';
 import { Project, ProjectPayload } from '../../../core/models/project.model';
 import { Promoter } from '../../../core/models/promoter.model';
 import { NotificationService } from '../../../core/services/notification';
+import { SessionStore } from '../../../core/services/session-store';
 import { toApiMessage } from '../../../core/utils/api-error';
 import { filterRows } from '../../../core/utils/filter-rows';
 import { todayIso } from '../../../core/utils/iso-date';
+import { whenAllowed } from '../../../core/utils/when-allowed';
+import { HasPermission } from '../../../shared/directives/has-permission';
 import { EmptyState } from '../../../shared/ui/empty-state/empty-state';
 import { PageHeader } from '../../../shared/ui/page-header/page-header';
 import { StatusTag } from '../../../shared/ui/status-tag/status-tag';
@@ -34,6 +37,7 @@ import { PHASE_LABEL, PHASE_SEVERITY, ProjectPhase, projectPhase } from '../proj
   selector: 'app-project-list',
   imports: [
     ButtonModule,
+    HasPermission,
     DatePipe,
     DialogModule,
     EmptyState,
@@ -52,6 +56,7 @@ import { PHASE_LABEL, PHASE_SEVERITY, ProjectPhase, projectPhase } from '../proj
 export class ProjectList {
   private readonly api = inject(ProjectApi);
   private readonly promotersApi = inject(PromoterApi);
+  private readonly session = inject(SessionStore);
   private readonly notify = inject(NotificationService);
   private readonly confirmation = inject(ConfirmationService);
 
@@ -121,7 +126,8 @@ export class ProjectList {
 
     forkJoin({
       projects: this.api.list(),
-      promoters: this.promotersApi.list(),
+      // Sin permiso para leer promotores, el nombre se muestra como «Promotor #id».
+      promoters: whenAllowed(this.session.can('GET', '/api/promotores'), this.promotersApi.list()),
     }).subscribe({
       next: ({ projects, promoters }) => {
         this.rows.set(projects);

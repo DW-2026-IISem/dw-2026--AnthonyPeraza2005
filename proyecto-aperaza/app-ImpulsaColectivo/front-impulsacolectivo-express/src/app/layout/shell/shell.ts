@@ -10,6 +10,7 @@ import { watchMediaQuery } from '../../core/utils/media-query';
 import { Aside } from '../aside/aside';
 import { Footer } from '../footer/footer';
 import { Header } from '../header/header';
+import { NAV } from './nav.config';
 
 /**
  * Layout persistente de la aplicación.
@@ -56,23 +57,15 @@ export class Shell {
   ];
 
   /**
-   * Menú mínimo de ISS-02. Cada ISS de negocio agrega su opción
-   * (Promotores en ISS-03, Contribuyentes en ISS-04...); ISS-08/09 lo
-   * sustituyen por uno filtrado por permisos.
+   * Menú lateral: cada opción del catálogo `NAV` aparece solo si el rol tiene
+   * su permiso. Es un `computed`, así que se recalcula solo al cargar o
+   * actualizar los permisos. Es una ayuda visual; Express vuelve a validar.
    */
-  readonly items: MenuItem[] = [
-    { label: 'Panel', icon: 'pi pi-home', routerLink: '/dashboard' },
-    { label: 'Promotores', icon: 'pi pi-users', routerLink: '/promotores' },
-    { label: 'Contribuyentes', icon: 'pi pi-id-card', routerLink: '/contribuyentes' },
-    { label: 'Proyectos', icon: 'pi pi-briefcase', routerLink: '/proyectos' },
-    { label: 'Contribuciones', icon: 'pi pi-heart', routerLink: '/contribuciones' },
-    { label: 'Pagos', icon: 'pi pi-credit-card', routerLink: '/pagos' },
-    { label: 'Recompensas', icon: 'pi pi-gift', routerLink: '/recompensas' },
-    { label: 'Metas', icon: 'pi pi-flag', routerLink: '/metas' },
-    { label: 'Desembolsos', icon: 'pi pi-wallet', routerLink: '/desembolsos' },
-    { label: 'Auditorías', icon: 'pi pi-history', routerLink: '/auditorias' },
-    { label: 'Prototipo', icon: 'pi pi-desktop', routerLink: '/construir' },
-  ];
+  readonly items = computed<MenuItem[]>(() =>
+    NAV.filter((item) => !item.permission || this.session.canPermission(item.permission)).map(
+      (item) => ({ label: item.label, icon: item.icon, routerLink: item.routerLink }),
+    ),
+  );
 
   /**
    * Un solo botón, dos disposiciones: en escritorio alterna el Aside fijo; por

@@ -3,7 +3,7 @@
   subtitle="Organizaciones y personas que publican proyectos de financiamiento colectivo."
 >
   <p-tag [value]="rows().length + ' promotores'" severity="info" [rounded]="true" />
-  <button pButton type="button" (click)="openCreate()">
+  <button *appHasPermission="'POST /api/promotores'" pButton type="button" (click)="openCreate()">
     <i pButtonIcon class="pi pi-plus"></i>
     <span pButtonLabel>Nuevo promotor</span>
   </button>
@@ -72,7 +72,7 @@
         <td><app-status-tag [status]="promoter.status" /></td>
         <td>
           <div class="flex justify-end gap-1">
-            <button
+            <button *appHasPermission="'PATCH /api/promotores/:id'"
               pButton
               type="button"
               text
@@ -84,7 +84,7 @@
             >
               <i pButtonIcon class="pi pi-pencil"></i>
             </button>
-            <button
+            <button *appHasPermission="'PATCH /api/promotores/:id/deactivate'"
               pButton
               type="button"
               text
@@ -96,7 +96,7 @@
             >
               <i pButtonIcon class="pi pi-ban"></i>
             </button>
-            <button
+            <button *appHasPermission="'DELETE /api/promotores/:id'"
               pButton
               type="button"
               text

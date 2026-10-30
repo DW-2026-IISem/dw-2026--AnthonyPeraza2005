@@ -811,3 +811,125 @@
 ### 8.25 Comprobación del ISS-08
 
 ![](images/clipboard-3019772463.png)
+
+## ISS-09 · Guards y RBAC en las pantallas
+
+### 9.1 La matriz de permisos de cada rol
+
+![](images/clipboard-3659517282.png)
+
+### 9.2 `permissionGuard`
+
+![](images/clipboard-3444052695.png)
+
+### 9.3 Directiva 
+
+![](images/clipboard-3143891466.png)
+
+### 9.4 «Sin permiso» muestra el permiso que falta
+
+![](images/clipboard-2710272701.png)
+
+### 9.5 Comprobación de la Parte 1
+
+![](images/clipboard-2718082684.png)
+
+## ISS-09 · Parte 2 · Menú y rutas por permiso
+
+### 9.6 Catálogo del menú
+
+![](images/clipboard-2540181733.png)
+
+### 9.7 `shell.ts`
+
+![](images/clipboard-3385349648.png)
+
+### 9.8 `shell.html`
+
+![](images/clipboard-3307089181.png)
+
+### 9.9 Permiso en cada ruta
+
+![](images/clipboard-270451355.png)
+
+### 9.10 Pruebas del menú y del catálogo
+
+![](images/clipboard-1306719877.png)
+
+### 9.11 Comprobación de la Parte 2
+
+![](images/clipboard-3551404607.png)
+
+## ISS-09 · Parte 3 · Listas según el permiso
+
+### 9.12 Dos ayudantes nuevos
+
+![](images/clipboard-2359566089.png)
+
+### 9.13 Proyectos
+
+![](images/clipboard-1381402689.png)
+
+### 9.14 Contribuciones y su detalle
+
+![](images/clipboard-2165829480.png)
+
+### 9.15 Pagos
+
+![](images/clipboard-697568421.png)
+
+### 9.16 Panel 
+
+### 9.16.1 `dashboard.ts`
+
+![](images/clipboard-1025442280.png)
+
+### 9.16.2 `dashboard.html`
+
+![](images/clipboard-1531543692.png)
+
+### 9.17 Pruebas existentes: sesión con acceso completo
+
+![](images/clipboard-3182237492.png)
+
+### 9.18 Pruebas nuevas: roles con acceso limitado
+
+![](images/clipboard-249478150.png)
+
+### 9.19 Comprobación de la Parte 3
+
+![](images/clipboard-2637142313.png)
+
+## ISS-09 · Parte 4 · Botones según el permiso
+
+### 9.20 Botones de las 9 listas
+
+![](images/clipboard-719244727.png)
+
+### 9.21 Pruebas de las listas restantes
+
+![](images/clipboard-985075627.png)
+
+### 9.22 Pruebas nuevas: botones por permiso
+
+![](images/clipboard-394664729.png)
+
+### 9.23 Comprobación de la Parte 4
+
+![](images/clipboard-1776561479.png)
+
+### 9.24 Verificación con los 3 usuarios PRUEBA VISUAL
+
+![](images/clipboard-1963125099.png)
+
+El promoter no tiene las mismas acciones que en la otra vista
+
+![](images/clipboard-3040681883.png)
+
+Como contributor
+
+![](images/clipboard-2836871337.png)
+
+El admin tiene acceso a todo
+
+![](images/clipboard-2388253916.png)

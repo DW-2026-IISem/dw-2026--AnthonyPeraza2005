@@ -8,7 +8,7 @@
     severity="success"
     [rounded]="true"
   />
-  <button pButton type="button" (click)="openCreate()">
+  <button *appHasPermission="'POST /api/desembolsos'" pButton type="button" (click)="openCreate()">
     <i pButtonIcon class="pi pi-plus"></i>
     <span pButtonLabel>Nuevo desembolso</span>
   </button>
@@ -90,7 +90,7 @@
         <td><app-status-tag [status]="item.status" /></td>
         <td>
           <div class="flex justify-end gap-1">
-            <button
+            <button *appHasPermission="'PATCH /api/desembolsos/:id'"
               pButton
               type="button"
               text
@@ -102,7 +102,7 @@
             >
               <i pButtonIcon class="pi pi-pencil"></i>
             </button>
-            <button
+            <button *appHasPermission="'PATCH /api/desembolsos/:id/deactivate'"
               pButton
               type="button"
               text
@@ -114,7 +114,7 @@
             >
               <i pButtonIcon class="pi pi-ban"></i>
             </button>
-            <button
+            <button *appHasPermission="'DELETE /api/desembolsos/:id'"
               pButton
               type="button"
               text

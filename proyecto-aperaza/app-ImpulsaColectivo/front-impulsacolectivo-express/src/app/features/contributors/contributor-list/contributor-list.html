@@ -3,7 +3,7 @@
   subtitle="Personas que aportan dinero a los proyectos de la plataforma."
 >
   <p-tag [value]="rows().length + ' contribuyentes'" severity="info" [rounded]="true" />
-  <button pButton type="button" (click)="openCreate()">
+  <button *appHasPermission="'POST /api/contribuyentes'" pButton type="button" (click)="openCreate()">
     <i pButtonIcon class="pi pi-plus"></i>
     <span pButtonLabel>Nuevo contribuyente</span>
   </button>
@@ -70,7 +70,7 @@
         <td><app-status-tag [status]="contributor.status" /></td>
         <td>
           <div class="flex justify-end gap-1">
-            <button
+            <button *appHasPermission="'PATCH /api/contribuyentes/:id'"
               pButton
               type="button"
               text
@@ -82,7 +82,7 @@
             >
               <i pButtonIcon class="pi pi-pencil"></i>
             </button>
-            <button
+            <button *appHasPermission="'PATCH /api/contribuyentes/:id/deactivate'"
               pButton
               type="button"
               text
@@ -94,7 +94,7 @@
             >
               <i pButtonIcon class="pi pi-ban"></i>
             </button>
-            <button
+            <button *appHasPermission="'DELETE /api/contribuyentes/:id'"
               pButton
               type="button"
               text

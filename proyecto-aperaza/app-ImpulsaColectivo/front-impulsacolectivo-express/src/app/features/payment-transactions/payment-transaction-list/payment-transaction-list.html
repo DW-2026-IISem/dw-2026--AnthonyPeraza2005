@@ -8,7 +8,7 @@
     severity="success"
     [rounded]="true"
   />
-  <button pButton type="button" (click)="openCreate()">
+  <button *appHasPermission="'POST /api/transacciones-pago'" pButton type="button" (click)="openCreate()">
     <i pButtonIcon class="pi pi-plus"></i>
     <span pButtonLabel>Nuevo pago</span>
   </button>
@@ -92,7 +92,7 @@
         <td><app-status-tag [status]="payment.status" /></td>
         <td>
           <div class="flex justify-end gap-1">
-            <button
+            <button *appHasPermission="'PATCH /api/transacciones-pago/:id'"
               pButton
               type="button"
               text
@@ -104,7 +104,7 @@
             >
               <i pButtonIcon class="pi pi-pencil"></i>
             </button>
-            <button
+            <button *appHasPermission="'PATCH /api/transacciones-pago/:id/deactivate'"
               pButton
               type="button"
               text
@@ -116,7 +116,7 @@
             >
               <i pButtonIcon class="pi pi-ban"></i>
             </button>
-            <button
+            <button *appHasPermission="'DELETE /api/transacciones-pago/:id'"
               pButton
               type="button"
               text

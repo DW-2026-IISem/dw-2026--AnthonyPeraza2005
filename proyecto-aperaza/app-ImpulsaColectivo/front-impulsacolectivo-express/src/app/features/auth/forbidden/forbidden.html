@@ -5,6 +5,12 @@
     Tu rol no permite abrir esta pantalla. Si crees que es un error, pide a un administrador que
     revise tus permisos.
   </p>
+  @if (permission) {
+    <div class="mt-4 rounded-xl bg-slate-900 px-4 py-3 text-left">
+      <p class="text-[11px] uppercase text-slate-400">Permiso requerido</p>
+      <code class="text-sm text-emerald-300">{{ permission }}</code>
+    </div>
+  }
   <a pButton routerLink="/dashboard" class="mt-6">
     <i pButtonIcon class="pi pi-home"></i>
     <span pButtonLabel>Volver al panel</span>

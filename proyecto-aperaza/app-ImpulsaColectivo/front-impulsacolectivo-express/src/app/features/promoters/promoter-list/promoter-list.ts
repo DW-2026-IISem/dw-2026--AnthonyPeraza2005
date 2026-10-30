@@ -11,6 +11,7 @@ import { Promoter, PromoterPayload } from '../../../core/models/promoter.model';
 import { NotificationService } from '../../../core/services/notification';
 import { toApiMessage } from '../../../core/utils/api-error';
 import { filterRows } from '../../../core/utils/filter-rows';
+import { HasPermission } from '../../../shared/directives/has-permission';
 import { EmptyState } from '../../../shared/ui/empty-state/empty-state';
 import { PageHeader } from '../../../shared/ui/page-header/page-header';
 import { StatusTag } from '../../../shared/ui/status-tag/status-tag';
@@ -28,6 +29,7 @@ import { PromoterForm } from '../promoter-form/promoter-form';
   selector: 'app-promoter-list',
   imports: [
     ButtonModule,
+    HasPermission,
     DialogModule,
     EmptyState,
     InputTextModule,

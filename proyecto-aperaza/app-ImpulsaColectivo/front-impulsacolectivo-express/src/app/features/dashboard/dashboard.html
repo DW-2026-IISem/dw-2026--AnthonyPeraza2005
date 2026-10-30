@@ -28,27 +28,35 @@
       <p class="mt-1 text-xs text-slate-400">de {{ projects().length }} proyectos</p>
     </div>
 
+    @if (canContributors()) {
     <div class="rounded-xl border border-slate-200 bg-white p-4">
       <p class="text-sm text-slate-500">Contribuyentes activos</p>
       <p class="mt-1 text-2xl font-semibold text-slate-800">{{ activeContributorCount() }}</p>
       <p class="mt-1 text-xs text-slate-400">de {{ contributors().length }} contribuyentes</p>
     </div>
+    }
 
+    @if (canContributions()) {
     <div class="rounded-xl border border-slate-200 bg-white p-4">
       <p class="text-sm text-slate-500">Aportes activos</p>
       <p class="mt-1 text-2xl font-semibold text-slate-800">{{ activeContributions().length }}</p>
       <p class="mt-1 text-xs text-slate-400">de {{ contributions().length }} aportes</p>
     </div>
+    }
 
+    @if (canContributions()) {
     <div class="rounded-xl border border-slate-200 bg-white p-4">
       <p class="text-sm text-slate-500">Total recaudado</p>
       <p class="mt-1 text-2xl font-semibold text-emerald-700">
         {{ totalRaised() | currency: 'COP' : 'symbol-narrow' : '1.0-0' }}
       </p>
-      <p class="mt-1 text-xs text-slate-400">
-        Pagado: {{ totalPaid() | currency: 'COP' : 'symbol-narrow' : '1.0-0' }}
-      </p>
+      @if (canPayments()) {
+        <p class="mt-1 text-xs text-slate-400">
+          Pagado: {{ totalPaid() | currency: 'COP' : 'symbol-narrow' : '1.0-0' }}
+        </p>
+      }
     </div>
+    }
   </div>
 
   <div class="mt-6 grid gap-6 lg:grid-cols-2">
@@ -76,6 +84,7 @@
       }
     </section>
 
+    @if (canContributions()) {
     <section class="rounded-xl border border-slate-200 bg-white p-4">
       <div class="mb-3 flex items-center justify-between">
         <h2 class="font-semibold text-slate-800">Últimos aportes</h2>
@@ -105,5 +114,6 @@
         <p class="text-sm text-slate-500">Todavía no hay aportes registrados.</p>
       }
     </section>
+    }
   </div>
 }

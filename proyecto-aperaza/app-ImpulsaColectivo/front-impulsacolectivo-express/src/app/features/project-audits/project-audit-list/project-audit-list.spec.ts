@@ -1,6 +1,8 @@
 import { provideHttpClient } from '@angular/common/http';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
+import { SessionStore } from '../../../core/services/session-store';
+import { grantFullAccess } from '../../../core/testing/access';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { environment } from '../../../../environments/environment';
 import { Project } from '../../../core/models/project.model';
@@ -91,6 +93,7 @@ describe('ProjectAuditList', () => {
     }).compileComponents();
 
     http = TestBed.inject(HttpTestingController);
+    grantFullAccess(TestBed.inject(SessionStore));
     confirmation = TestBed.inject(ConfirmationService);
   });
 

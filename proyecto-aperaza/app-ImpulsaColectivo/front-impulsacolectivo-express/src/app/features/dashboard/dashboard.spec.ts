@@ -1,6 +1,8 @@
 import { provideHttpClient } from '@angular/common/http';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
+import { SessionStore } from '../../core/services/session-store';
+import { grantFullAccess } from '../../core/testing/access';
 import { provideRouter } from '@angular/router';
 import { environment } from '../../../environments/environment';
 import { Contribution } from '../../core/models/contribution.model';
@@ -94,6 +96,7 @@ describe('Dashboard', () => {
     }).compileComponents();
 
     http = TestBed.inject(HttpTestingController);
+    grantFullAccess(TestBed.inject(SessionStore));
   });
 
   afterEach(() => http.verify());

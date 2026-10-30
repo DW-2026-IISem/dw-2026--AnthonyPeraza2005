@@ -13,8 +13,11 @@ import { Contribution, ContributionPayload } from '../../../core/models/contribu
 import { Contributor } from '../../../core/models/contributor.model';
 import { Project } from '../../../core/models/project.model';
 import { NotificationService } from '../../../core/services/notification';
+import { SessionStore } from '../../../core/services/session-store';
 import { toApiMessage } from '../../../core/utils/api-error';
 import { filterRows } from '../../../core/utils/filter-rows';
+import { whenAllowed } from '../../../core/utils/when-allowed';
+import { HasPermission } from '../../../shared/directives/has-permission';
 import { EmptyState } from '../../../shared/ui/empty-state/empty-state';
 import { PageHeader } from '../../../shared/ui/page-header/page-header';
 import { StatusTag } from '../../../shared/ui/status-tag/status-tag';
@@ -46,6 +49,7 @@ interface ContributionRow extends Contribution {
   selector: 'app-contribution-list',
   imports: [
     ButtonModule,
+    HasPermission,
     ContributionDetail,
     ContributionForm,
     CurrencyPipe,
@@ -70,6 +74,7 @@ export class ContributionList {
   private readonly paymentsApi = inject(PaymentTransactionApi);
   private readonly commissionsApi = inject(CommissionApi);
   private readonly refundsApi = inject(RefundApi);
+  private readonly session = inject(SessionStore);
   private readonly notify = inject(NotificationService);
   private readonly confirmation = inject(ConfirmationService);
 
@@ -132,6 +137,13 @@ export class ContributionList {
 
   readonly title = computed(() => (this.editing() ? 'Editar contribución' : 'Nueva contribución'));
 
+  /** Crear un aporte exige elegir contribuyente: sin poder leerlos, el formulario no sirve. */
+  readonly canCreate = computed(
+    () =>
+      this.session.can('POST', '/api/contribuciones') &&
+      this.session.can('GET', '/api/contribuyentes'),
+  );
+
   /** Solo proyectos activos, más el actual al editar (aunque esté inactivo). */
   readonly projectOptions = computed(() => {
     const currentId = this.editing()?.project_id;
@@ -170,9 +182,15 @@ export class ContributionList {
     this.detailVisible.set(true);
 
     forkJoin({
-      payments: this.paymentsApi.list(),
-      commissions: this.commissionsApi.list(),
-      refunds: this.refundsApi.list(),
+      payments: whenAllowed(
+        this.session.can('GET', '/api/transacciones-pago'),
+        this.paymentsApi.list(),
+      ),
+      commissions: whenAllowed(
+        this.session.can('GET', '/api/comisiones'),
+        this.commissionsApi.list(),
+      ),
+      refunds: whenAllowed(this.session.can('GET', '/api/reembolsos'), this.refundsApi.list()),
     }).subscribe({
       next: ({ payments, commissions, refunds }) => {
         const mine = payments.filter((payment) => payment.contribution_id === contribution.id);
@@ -201,7 +219,11 @@ export class ContributionList {
     forkJoin({
       contributions: this.api.list(),
       projects: this.projectsApi.list(),
-      contributors: this.contributorsApi.list(),
+      // Sin permiso para leer contribuyentes, el nombre se muestra como «Contribuyente #id».
+      contributors: whenAllowed(
+        this.session.can('GET', '/api/contribuyentes'),
+        this.contributorsApi.list(),
+      ),
     }).subscribe({
       next: ({ contributions, projects, contributors }) => {
         this.rows.set(contributions);
