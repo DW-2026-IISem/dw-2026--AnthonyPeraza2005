@@ -1,9 +1,11 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, computed, inject, signal } from '@angular/core';
+import { Router, RouterOutlet } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { DrawerModule } from 'primeng/drawer';
 import { ToastModule } from 'primeng/toast';
+import { AuthService } from '../../core/services/auth';
+import { SessionStore } from '../../core/services/session-store';
 import { watchMediaQuery } from '../../core/utils/media-query';
 import { Aside } from '../aside/aside';
 import { Footer } from '../footer/footer';
@@ -16,7 +18,7 @@ import { Header } from '../header/header';
  * central cambia con `<router-outlet />`. Reutilizar el layout evita remontar
  * el menú (y perder el scroll o el foco) al navegar.
  *
- * Sin `AuthService` ni `SessionStore`: la sesión llega en ISS-08.
+ * Conecta la sesión con Header y Aside: usuario, rol, permisos y cierre de sesión.
  */
 @Component({
   host: { class: 'block' },
@@ -34,6 +36,24 @@ export class Shell {
 
   /** Móvil: Drawer abierto. */
   readonly mobileOpen = signal(false);
+
+  private readonly session = inject(SessionStore);
+  private readonly auth = inject(AuthService);
+  private readonly router = inject(Router);
+
+  /** Datos de la sesión para Header y Aside. */
+  readonly authEnabled = this.session.authEnabled;
+  readonly username = computed(() => this.session.user()?.username ?? '');
+  readonly initials = this.session.initials;
+  readonly roleLabel = this.session.roleLabel;
+  readonly permissionCount = this.session.permissionCount;
+
+  /** Menú del avatar en el encabezado. */
+  readonly userItems: MenuItem[] = [
+    { label: 'Mi perfil', icon: 'pi pi-user', routerLink: '/perfil' },
+    { separator: true },
+    { label: 'Cerrar sesión', icon: 'pi pi-sign-out', command: () => this.logout() },
+  ];
 
   /**
    * Menú mínimo de ISS-02. Cada ISS de negocio agrega su opción
@@ -64,5 +84,12 @@ export class Shell {
       return;
     }
     this.mobileOpen.set(true);
+  }
+
+  /** Cierra la sesión en el backend, la limpia y vuelve al login. */
+  protected logout(): void {
+    this.auth.logout().subscribe(() => {
+      void this.router.navigate(['/login']);
+    });
   }
 }

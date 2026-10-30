@@ -1,4 +1,6 @@
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import { authInterceptor } from './core/interceptors/auth-interceptor';
+import { errorInterceptor } from './core/interceptors/error-interceptor';
 import {
   ApplicationConfig,
   provideBrowserGlobalErrorListeners,
@@ -41,7 +43,8 @@ export const appConfig: ApplicationConfig = {
 
     // Habilita HttpClient. Sin interceptores de sesión: llegan en ISS-08.
 
-    provideHttpClient(),
+    // El orden importa: auth añade el Bearer y reintenta; error avisa de lo que falla.
+    provideHttpClient(withInterceptors([authInterceptor, errorInterceptor])),
 
     MessageService,
     ConfirmationService,

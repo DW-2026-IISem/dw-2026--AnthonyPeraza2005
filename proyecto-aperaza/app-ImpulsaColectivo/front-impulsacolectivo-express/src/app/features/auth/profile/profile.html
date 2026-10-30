@@ -1,0 +1,95 @@
+<app-page-header title="Mi perfil" subtitle="Tu cuenta, tus roles y lo que puedes hacer en la plataforma.">
+  <button pButton type="button" severity="secondary" outlined [loading]="refreshing()" (click)="refresh()">
+    <i pButtonIcon class="pi pi-refresh"></i>
+    <span pButtonLabel>Actualizar permisos</span>
+  </button>
+  <button pButton type="button" severity="danger" (click)="logout()">
+    <i pButtonIcon class="pi pi-sign-out"></i>
+    <span pButtonLabel>Cerrar sesión</span>
+  </button>
+</app-page-header>
+
+@if (user(); as account) {
+  <div class="mb-6 grid gap-4 rounded-xl border border-slate-200 bg-white p-5 sm:grid-cols-2 lg:grid-cols-4">
+    <div>
+      <p class="text-xs uppercase tracking-wide text-slate-400">Usuario</p>
+      <p class="font-medium text-slate-800">{{ account.username }}</p>
+    </div>
+    <div>
+      <p class="text-xs uppercase tracking-wide text-slate-400">Correo</p>
+      <p class="font-medium text-slate-800">{{ account.email }}</p>
+    </div>
+    <div>
+      <p class="text-xs uppercase tracking-wide text-slate-400">Estado</p>
+      <app-status-tag [status]="account.status" />
+    </div>
+    <div>
+      <p class="text-xs uppercase tracking-wide text-slate-400">Roles</p>
+      <div class="flex flex-wrap gap-1">
+        @for (role of roleNames(); track role) {
+          <p-tag [value]="role" severity="success" [rounded]="true" />
+        } @empty {
+          <span class="text-sm text-slate-500">Sin rol</span>
+        }
+      </div>
+    </div>
+  </div>
+}
+
+<div class="rounded-xl border border-slate-200 bg-white">
+  <p-table
+    [value]="visibleRows()"
+    [paginator]="visibleRows().length > 10"
+    [rows]="10"
+    tableStyleClass="min-w-3xl"
+  >
+    <ng-template #caption>
+      <div class="mb-3 flex items-center justify-between">
+        <h2 class="font-medium text-slate-800">Permisos efectivos</h2>
+        <p-tag [value]="permissionCount() + ' permisos'" severity="info" [rounded]="true" />
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="pi pi-search text-slate-400"></i>
+        <input
+          pInputText
+          type="search"
+          aria-label="Buscar permisos"
+          placeholder="Buscar por método, ruta o descripción…"
+          [value]="filter()"
+          (input)="filter.set($any($event.target).value)"
+          class="w-full"
+        />
+      </div>
+    </ng-template>
+
+    <ng-template #header>
+      <tr>
+        <th class="w-28">Método</th>
+        <th>Ruta</th>
+        <th>Descripción</th>
+        <th>Rol</th>
+      </tr>
+    </ng-template>
+
+    <ng-template #body let-permission>
+      <tr>
+        <td><p-tag [value]="permission.method" [severity]="methodSeverity(permission.method)" /></td>
+        <td class="font-mono text-sm text-slate-700">{{ permission.path }}</td>
+        <td class="text-slate-600">{{ permission.description }}</td>
+        <td class="text-slate-600">{{ permission.role_name }}</td>
+      </tr>
+    </ng-template>
+
+    <ng-template #emptymessage>
+      <tr>
+        <td colspan="4">
+          <app-empty-state
+            icon="pi pi-lock"
+            title="Sin permisos"
+            message="Ningún permiso coincide, o tu cuenta aún no tiene un rol asignado."
+          />
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

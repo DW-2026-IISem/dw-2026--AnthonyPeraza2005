@@ -693,3 +693,121 @@
 ### PRUEBA VISUAL
 
 ![](images/clipboard-3886466254.png)
+
+## ISS-08 · Autenticación JWT, perfil y permisos
+
+### 8.1 Comprobar el contrato del backend
+
+![](images/clipboard-2351890034.png)
+
+## Parte 1 · Sesión 
+
+### 8.2 Modelos de sesión
+
+![](images/clipboard-3305677073.png)
+
+### 8.3 `SessionStore`
+
+![](images/clipboard-1464733360.png)
+
+### 8.4 `AuthService`
+
+![](images/clipboard-2809830670.png)
+
+### 8.5 Comprobación
+
+![](images/clipboard-3246127547.png)
+
+## ISS-08 · Parte 2 · Interceptores
+
+### 8.6 Generar los interceptores
+
+![](images/clipboard-1537476961.png)
+
+### 8.7 `authInterceptor`
+
+![](images/clipboard-1336800243.png)
+
+### 8.8 `errorInterceptor`
+
+![](images/clipboard-69883719.png)
+
+### 8.9 Registrar los interceptores
+
+![](images/clipboard-3022148243.png)
+
+### 8.10 Comprobación
+
+![](images/clipboard-3505148020.png)
+
+## ISS-08 · Parte 3 · Login, perfil y guards
+
+### 8.11 Corregir el cierre de sesión
+
+![](images/clipboard-4052521426.png)
+
+### 8.12 Guards básicos
+
+![](images/clipboard-3386903174.png)
+
+### 8.13 Generar los componentes
+
+![](images/clipboard-1388098065.png)
+
+### 8.14 Login
+
+![](images/clipboard-2385931562.png)
+
+### 8.15 Página «Sin permiso»
+
+![](images/clipboard-1116987287.png)
+
+### 8.16 Perfil
+
+![](images/clipboard-3793041815.png)
+
+### 8.17 Comprobación
+
+![](images/clipboard-3946426428.png)
+
+### 8.18 Preparar el cableado
+
+![](images/clipboard-281911296.png)
+
+## ISS-08 · Parte 4 · Rutas protegidas
+
+### 8.19 Rutas de la sesión
+
+![](images/clipboard-2005211345.png)
+
+### 8.20 Probar el login en el navegador
+
+![](images/clipboard-2284831673.png)
+
+### 8.21 Preparar el cableado de la sesión
+
+![](images/clipboard-1663466182.png)
+
+## ISS-08 · Parte 5 · Sesión en el encabezado y el menú
+
+### 8.22 `shell.ts`
+
+![](images/clipboard-922602129.png)
+
+### 8.23 `shell.html`
+
+![](images/clipboard-3847237099.png)
+
+### 8.24 Pruebas del Shell
+
+**8.24.1 `shell.spec.ts`**
+
+![](images/clipboard-3639335785.png)
+
+### 8.24.2 Pruebas de la sesión en el Shell
+
+![](images/clipboard-4167739266.png)
+
+### 8.25 Comprobación del ISS-08
+
+![](images/clipboard-3019772463.png)

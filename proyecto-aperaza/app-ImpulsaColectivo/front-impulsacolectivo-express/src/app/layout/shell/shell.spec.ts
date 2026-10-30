@@ -1,3 +1,5 @@
+import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { provideRouter } from '@angular/router';
 import { ConfirmationService, MessageService } from 'primeng/api';
@@ -8,7 +10,13 @@ describe('Shell', () => {
     await TestBed.configureTestingModule({
       imports: [Shell],
       // <router-outlet /> pide el router; toast y confirmdialog piden estos servicios.
-      providers: [provideRouter([]), MessageService, ConfirmationService],
+      providers: [
+        provideRouter([]),
+        provideHttpClient(),
+        provideHttpClientTesting(),
+        MessageService,
+        ConfirmationService,
+      ],
     }).compileComponents();
   });
 

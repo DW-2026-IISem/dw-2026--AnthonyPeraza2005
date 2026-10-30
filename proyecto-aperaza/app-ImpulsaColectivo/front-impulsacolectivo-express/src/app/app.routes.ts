@@ -1,4 +1,6 @@
 import { Routes } from '@angular/router';
+import { authGuard } from './core/guards/auth-guard';
+import { guestGuard } from './core/guards/guest-guard';
 
 /**
  * Rutas de la aplicación.
@@ -12,7 +14,14 @@ export const routes: Routes = [
     loadComponent: () => import('./features/construir/construir').then((m) => m.Construir),
   },
   {
+    path: 'login',
+    title: 'Iniciar sesión · ImpulsaColectivo',
+    canActivate: [guestGuard],
+    loadComponent: () => import('./features/auth/login/login').then((m) => m.Login),
+  },
+  {
     path: '',
+    canActivate: [authGuard],
     loadComponent: () => import('./layout/shell/shell').then((m) => m.Shell),
     children: [
       // La primera pantalla de negocio es la redirección por defecto.
@@ -86,6 +95,17 @@ export const routes: Routes = [
           import('./features/project-audits/project-audit-list/project-audit-list').then(
             (m) => m.ProjectAuditList,
           ),
+      },
+      {
+        path: 'perfil',
+        title: 'Mi perfil · ImpulsaColectivo',
+        loadComponent: () => import('./features/auth/profile/profile').then((m) => m.Profile),
+      },
+      {
+        path: 'sin-permiso',
+        title: 'Sin permiso · ImpulsaColectivo',
+        loadComponent: () =>
+          import('./features/auth/forbidden/forbidden').then((m) => m.Forbidden),
       },
     ],
   },
