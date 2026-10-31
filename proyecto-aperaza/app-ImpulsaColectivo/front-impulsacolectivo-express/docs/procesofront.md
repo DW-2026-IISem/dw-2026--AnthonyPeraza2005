@@ -568,7 +568,7 @@
 
 ![](images/clipboard-1422101788.png)
 
-### 7.23 Ruta y menú 
+### 7.23 Ruta y menú
 
 **7.23.1 `app.routes.ts`**
 
@@ -600,11 +600,11 @@
 
 ![](images/clipboard-2166659727.png)
 
-### 7.28 Prueba de la lista 
+### 7.28 Prueba de la lista
 
 ![](images/clipboard-1763005683.png)
 
-### 7.29 Ruta y menú 
+### 7.29 Ruta y menú
 
 **7.29.1 `app.routes.ts`**
 
@@ -640,7 +640,7 @@
 
 ![](images/clipboard-1572084550.png)
 
-### 7.35 Ruta y menú 
+### 7.35 Ruta y menú
 
 **7.35.1 `app.routes.ts`**
 
@@ -676,7 +676,7 @@
 
 ![](images/clipboard-2273507081.png)
 
-### 7.41 Ruta y menú 
+### 7.41 Ruta y menú
 
 **7.41.1 `app.routes.ts`**
 
@@ -700,7 +700,7 @@
 
 ![](images/clipboard-2351890034.png)
 
-## Parte 1 · Sesión 
+## Parte 1 · Sesión
 
 ### 8.2 Modelos de sesión
 
@@ -822,7 +822,7 @@
 
 ![](images/clipboard-3444052695.png)
 
-### 9.3 Directiva 
+### 9.3 Directiva
 
 ![](images/clipboard-3143891466.png)
 
@@ -878,7 +878,7 @@
 
 ![](images/clipboard-697568421.png)
 
-### 9.16 Panel 
+### 9.16 Panel
 
 ### 9.16.1 `dashboard.ts`
 
@@ -933,3 +933,85 @@ Como contributor
 El admin tiene acceso a todo
 
 ![](images/clipboard-2388253916.png)
+
+## ISS-10 · Parte 1 · Usuarios
+
+### 10.2 Utilidad `methodSeverity`
+
+![](images/clipboard-2845875613.png)
+
+### 10.3 `UserApi.permissions`
+
+![](images/clipboard-3134648047.png)
+
+### 10.4 Formulario de usuario
+
+![](images/clipboard-588440013.png)
+
+### 10.5 Lista de usuarios
+
+![](images/clipboard-448985790.png)
+
+### 10.6 Comprobación de la Parte 1
+
+![](images/clipboard-2626441098.png)
+
+### 10.7 Revisión para cablear ruta y menú
+
+![](images/clipboard-3960602804.png)
+
+### 10.8 Ruta y menú de Usuarios
+
+![](images/clipboard-1376080222.png)
+
+## ISS-10 · Parte 2 · Roles y Recursos
+
+### 10.11 Formulario de rol
+
+![](images/clipboard-3668829447.png)
+
+### 10.12 Lista de roles
+
+![](images/clipboard-1629394064.png)
+
+### 10.13 Formulario de recurso
+
+![](images/clipboard-1868278604.png)
+
+### 10.14 Lista de recursos
+
+![](images/clipboard-414745776.png)
+
+### 10.15 Rutas y menú de Roles y Recursos
+
+![](images/clipboard-1306297425.png)
+
+### 10.16 Comprobación de la Parte 2
+
+![](images/clipboard-3638664351.png)
+
+## ISS-10 · Parte 3 · Asignaciones y Permisos
+
+### 10.18 Asignaciones usuario ↔ rol
+
+![](images/clipboard-3229722754.png)
+
+### 10.19 Permisos rol ↔ recurso
+
+![](images/clipboard-3048599910.png)
+
+### 10.20 Rutas y menú de Asignaciones y Permisos
+
+![](images/clipboard-3466491010.png)
+
+### 10.21 Comprobación de la Parte 3
+
+![](images/clipboard-3980448260.png)
+
+### PRUEBA VISUAL
+
+![](images/clipboard-521416878.png)
+
+![![](images/clipboard-2502058052.png)](images/clipboard-4252112197.png)
+
+![](images/clipboard-661934222.png)

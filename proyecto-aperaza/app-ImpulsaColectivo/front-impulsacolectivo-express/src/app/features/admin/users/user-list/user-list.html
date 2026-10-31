@@ -1,0 +1,246 @@
+<app-page-header
+  title="Usuarios"
+  subtitle="Cuentas que pueden entrar a ImpulsaColectivo. El rol de cada una se asigna en Asignaciones."
+>
+  <p-tag [value]="rows().length + ' usuarios'" severity="info" [rounded]="true" />
+  <p-tag [value]="activeCount() + ' activos'" severity="success" [rounded]="true" />
+  <button *appHasPermission="'POST /api/usuarios'" pButton type="button" (click)="openCreate()">
+    <i pButtonIcon class="pi pi-plus"></i>
+    <span pButtonLabel>Nuevo usuario</span>
+  </button>
+</app-page-header>
+
+@if (error()) {
+  <p-message severity="error" styleClass="mb-4 w-full">
+    {{ error() }}
+  </p-message>
+}
+
+<div class="rounded-xl border border-slate-200 bg-white">
+  <p-table
+    [value]="visibleRows()"
+    [loading]="loading()"
+    [paginator]="visibleRows().length > 10"
+    [rows]="10"
+    sortField="username"
+    [sortOrder]="1"
+    dataKey="id"
+    tableStyleClass="min-w-3xl"
+  >
+    <ng-template #caption>
+      <div class="flex items-center gap-2">
+        <i class="pi pi-search text-slate-400"></i>
+        <input
+          pInputText
+          type="search"
+          aria-label="Buscar usuarios"
+          placeholder="Buscar por usuario o correo…"
+          [value]="filter()"
+          (input)="filter.set($any($event.target).value)"
+          class="w-full"
+        />
+      </div>
+      @if (filter()) {
+        <p class="mt-2 text-xs text-slate-500">
+          {{ visibleRows().length }} de {{ rows().length }} coinciden con «{{ filter() }}».
+        </p>
+      }
+    </ng-template>
+
+    <ng-template #header>
+      <tr>
+        <th pSortableColumn="username">
+          <div class="flex items-center gap-1">Usuario <p-sort-icon field="username" /></div>
+        </th>
+        <th>Estado</th>
+        <th class="w-48 text-right">Acciones</th>
+      </tr>
+    </ng-template>
+
+    <ng-template #body let-user>
+      <tr>
+        <td>
+          <div class="flex items-center gap-3">
+            @if (user.avatar) {
+              <p-avatar [image]="user.avatar" shape="circle" />
+            } @else {
+              <p-avatar [label]="user.username.charAt(0).toUpperCase()" shape="circle" />
+            }
+            <div>
+              <p class="font-medium text-slate-800">
+                {{ user.username }}
+                @if (isSelf(user)) {
+                  <span class="ml-1 text-xs font-normal text-slate-400">(tú)</span>
+                }
+              </p>
+              <p class="text-xs text-slate-400">{{ user.email }}</p>
+            </div>
+          </div>
+        </td>
+        <td><app-status-tag [status]="user.status" /></td>
+        <td>
+          <div class="flex justify-end gap-1">
+            <button
+              *appHasPermission="'GET /api/usuarios/:id/permisos'"
+              pButton
+              type="button"
+              text
+              rounded
+              severity="info"
+              aria-label="Ver permisos del usuario"
+              pTooltip="Ver permisos"
+              (click)="openAccess(user)"
+            >
+              <i pButtonIcon class="pi pi-key"></i>
+            </button>
+            <button
+              *appHasPermission="'PATCH /api/usuarios/:id'"
+              pButton
+              type="button"
+              text
+              rounded
+              severity="secondary"
+              aria-label="Editar usuario"
+              pTooltip="Editar"
+              (click)="openEdit(user)"
+            >
+              <i pButtonIcon class="pi pi-pencil"></i>
+            </button>
+            <button
+              *appHasPermission="'PATCH /api/usuarios/:id/deactivate'"
+              pButton
+              type="button"
+              text
+              rounded
+              severity="warn"
+              aria-label="Dar de baja al usuario"
+              pTooltip="Baja lógica"
+              [disabled]="isSelf(user)"
+              (click)="deactivate(user)"
+            >
+              <i pButtonIcon class="pi pi-ban"></i>
+            </button>
+            <button
+              *appHasPermission="'DELETE /api/usuarios/:id'"
+              pButton
+              type="button"
+              text
+              rounded
+              severity="danger"
+              aria-label="Eliminar usuario"
+              pTooltip="Eliminar"
+              [disabled]="isSelf(user)"
+              (click)="remove(user)"
+            >
+              <i pButtonIcon class="pi pi-trash"></i>
+            </button>
+          </div>
+        </td>
+      </tr>
+    </ng-template>
+
+    <ng-template #emptymessage>
+      <tr>
+        <td colspan="3">
+          @if (filter()) {
+            <app-empty-state
+              icon="pi pi-search"
+              title="Sin coincidencias"
+              message="Ningún usuario coincide con la búsqueda. Borra el filtro para ver todos."
+            />
+          } @else {
+            <app-empty-state
+              icon="pi pi-users"
+              title="Sin usuarios"
+              message="Crea el primero con el botón «Nuevo usuario»."
+            />
+          }
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+
+<p-dialog
+  [visible]="dialogVisible()"
+  (visibleChange)="dialogVisible.set($event)"
+  [header]="title()"
+  [modal]="true"
+  [draggable]="false"
+  [resizable]="false"
+  [dismissableMask]="true"
+  styleClass="w-full max-w-xl mx-4"
+>
+  <app-user-form
+    [user]="editing()"
+    [saving]="saving()"
+    [resetKey]="resetKey()"
+    (saved)="save($event)"
+    (cancelled)="dialogVisible.set(false)"
+  />
+</p-dialog>
+
+<p-dialog
+  [visible]="accessVisible()"
+  (visibleChange)="accessVisible.set($event)"
+  [header]="'Permisos de ' + (accessUser()?.username ?? '')"
+  [modal]="true"
+  [draggable]="false"
+  [resizable]="false"
+  [dismissableMask]="true"
+  styleClass="w-full max-w-4xl mx-4"
+>
+  <div class="mb-3 flex flex-wrap items-center gap-2 text-sm text-slate-600">
+    <span>Roles activos:</span>
+    @for (role of accessRoles(); track role.id) {
+      <p-tag [value]="role.name" severity="secondary" [rounded]="true" />
+    } @empty {
+      <span class="text-slate-400">ninguno</span>
+    }
+    <span class="ml-auto text-xs text-slate-500">{{ access().length }} permisos efectivos</span>
+  </div>
+
+  <p-table
+    [value]="access()"
+    [loading]="accessLoading()"
+    [paginator]="access().length > 10"
+    [rows]="10"
+    tableStyleClass="min-w-2xl"
+  >
+    <ng-template #header>
+      <tr>
+        <th class="w-28">Método</th>
+        <th>Ruta</th>
+        <th>Rol</th>
+        <th>Descripción</th>
+      </tr>
+    </ng-template>
+
+    <ng-template #body let-permission>
+      <tr>
+        <td>
+          <p-tag
+            [value]="permission.method"
+            [severity]="methodSeverity(permission.method)"
+            [rounded]="true"
+          />
+        </td>
+        <td><code class="text-xs">{{ permission.path }}</code></td>
+        <td class="text-sm text-slate-700">{{ permission.role_name }}</td>
+        <td class="text-sm text-slate-500">{{ permission.description }}</td>
+      </tr>
+    </ng-template>
+
+    <ng-template #emptymessage>
+      <tr>
+        <td colspan="4">
+          <app-empty-state
+            icon="pi pi-lock"
+            title="Sin permisos efectivos"
+            message="Este usuario no tiene ningún rol activo con concesiones activas: el backend responderá 403 a todo."
+          />
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</p-dialog>

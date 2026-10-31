@@ -118,6 +118,52 @@ export const routes: Routes = [
           ),
       },
       {
+        path: 'admin/usuarios',
+        title: 'Usuarios · ImpulsaColectivo',
+        canActivate: [permissionGuard],
+        data: { permission: 'GET /api/usuarios' },
+        loadComponent: () =>
+          import('./features/admin/users/user-list/user-list').then((m) => m.UserList),
+      },
+      {
+        path: 'admin/roles',
+        title: 'Roles · ImpulsaColectivo',
+        canActivate: [permissionGuard],
+        data: { permission: 'GET /api/roles' },
+        loadComponent: () =>
+          import('./features/admin/roles/role-list/role-list').then((m) => m.RoleList),
+      },
+      {
+        path: 'admin/recursos',
+        title: 'Recursos · ImpulsaColectivo',
+        canActivate: [permissionGuard],
+        data: { permission: 'GET /api/recursos' },
+        loadComponent: () =>
+          import('./features/admin/resources/resource-list/resource-list').then(
+            (m) => m.ResourceList,
+          ),
+      },
+      {
+        path: 'admin/asignaciones',
+        title: 'Asignaciones · ImpulsaColectivo',
+        canActivate: [permissionGuard],
+        data: { permission: 'GET /api/asignaciones-rol' },
+        loadComponent: () =>
+          import('./features/admin/role-users/role-user-list/role-user-list').then(
+            (m) => m.RoleUserList,
+          ),
+      },
+      {
+        path: 'admin/permisos',
+        title: 'Permisos · ImpulsaColectivo',
+        canActivate: [permissionGuard],
+        data: { permission: 'GET /api/concesiones-rol' },
+        loadComponent: () =>
+          import('./features/admin/resource-roles/resource-role-list/resource-role-list').then(
+            (m) => m.ResourceRoleList,
+          ),
+      },
+      {
         path: 'perfil',
         title: 'Mi perfil · ImpulsaColectivo',
         loadComponent: () => import('./features/auth/profile/profile').then((m) => m.Profile),

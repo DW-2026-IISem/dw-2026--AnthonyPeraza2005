@@ -1,0 +1,95 @@
+<form [formGroup]="form" (ngSubmit)="submit()" class="flex flex-col gap-4" novalidate>
+  <div class="flex flex-col gap-1">
+    <label for="user-username" class="text-sm font-medium text-slate-700">Usuario</label>
+    <input
+      pInputText
+      id="user-username"
+      formControlName="username"
+      autocomplete="off"
+      placeholder="maria.ortiz"
+      class="w-full"
+    />
+    @if (form.controls.username.touched && form.controls.username.invalid) {
+      <p-message severity="error" size="small" variant="simple">
+        Escribe un usuario de al menos 3 caracteres.
+      </p-message>
+    }
+  </div>
+
+  <div class="flex flex-col gap-1">
+    <label for="user-email" class="text-sm font-medium text-slate-700">Correo</label>
+    <input
+      pInputText
+      id="user-email"
+      type="email"
+      formControlName="email"
+      autocomplete="off"
+      placeholder="maria.ortiz@impulsacolectivo.org"
+      class="w-full"
+    />
+    @if (form.controls.email.touched && form.controls.email.invalid) {
+      <p-message severity="error" size="small" variant="simple">
+        Escribe un correo válido.
+      </p-message>
+    }
+  </div>
+
+  <div class="flex flex-col gap-1">
+    <label for="user-avatar" class="text-sm font-medium text-slate-700">
+      Avatar <span class="font-normal text-slate-400">(URL, opcional)</span>
+    </label>
+    <input
+      pInputText
+      id="user-avatar"
+      formControlName="avatar"
+      autocomplete="off"
+      placeholder="https://…"
+      class="w-full"
+    />
+  </div>
+
+  @if (!user()) {
+    <div class="flex flex-col gap-1">
+      <label for="user-password" class="text-sm font-medium text-slate-700">Contraseña</label>
+      <p-password
+        inputId="user-password"
+        formControlName="password"
+        [feedback]="false"
+        [toggleMask]="true"
+        [fluid]="true"
+        autocomplete="new-password"
+      />
+      @if (form.controls.password.touched && form.controls.password.invalid) {
+        <p-message severity="error" size="small" variant="simple">
+          La contraseña debe tener al menos 8 caracteres.
+        </p-message>
+      }
+    </div>
+
+    <div class="flex flex-col gap-1">
+      <label for="user-status" class="text-sm font-medium text-slate-700">Estado inicial</label>
+      <p-select
+        inputId="user-status"
+        formControlName="status"
+        [options]="statusOptions"
+        optionLabel="label"
+        optionValue="value"
+        [fluid]="true"
+      />
+    </div>
+  } @else {
+    <p-message severity="info" size="small" variant="simple">
+      Aquí solo se editan usuario, correo y avatar. El estado cambia con la baja lógica.
+    </p-message>
+  }
+
+  <div class="mt-2 flex justify-end gap-2">
+    <button pButton type="button" severity="secondary" text (click)="cancelled.emit()">
+      <span pButtonLabel>Cancelar</span>
+    </button>
+    <button pButton type="submit" [loading]="saving()">
+      <i pButtonIcon class="pi pi-save"></i>
+      <span pButtonLabel>{{ user() ? 'Guardar cambios' : 'Crear usuario' }}</span>
+    </button>
+  </div>
+</form>
