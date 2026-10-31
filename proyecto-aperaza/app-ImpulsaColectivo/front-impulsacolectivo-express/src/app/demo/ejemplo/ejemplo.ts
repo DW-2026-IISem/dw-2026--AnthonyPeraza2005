@@ -30,12 +30,8 @@ export class Ejemplo {
   protected readonly proyecto = signal<ProyectoDemo>(proyectoInicial());
 
   // DERIVADOS: se calculan desde `proyecto()`, nunca se asignan.
-  protected readonly metaConComision = computed(() =>
-    Math.round(this.proyecto().meta * 1.05),
-  );
-  protected readonly estadoTexto = computed(() =>
-    this.proyecto().activo ? 'Activo' : 'Inactivo',
-  );
+  protected readonly metaConComision = computed(() => Math.round(this.proyecto().meta * 1.05));
+  protected readonly estadoTexto = computed(() => (this.proyecto().activo ? 'Activo' : 'Inactivo'));
 
   // EFECTO: se ejecuta al crear y en cada cambio del objeto.
   private readonly registro = effect(() => {

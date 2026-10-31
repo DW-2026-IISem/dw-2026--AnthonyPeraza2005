@@ -15,7 +15,12 @@ export interface NavItem {
  * básico de sus fuentes de datos.
  */
 export const NAV: NavItem[] = [
-  { label: 'Panel', icon: 'pi pi-home', routerLink: '/dashboard', permission: 'GET /api/proyectos' },
+  {
+    label: 'Panel',
+    icon: 'pi pi-home',
+    routerLink: '/dashboard',
+    permission: 'GET /api/proyectos',
+  },
   {
     label: 'Promotores',
     icon: 'pi pi-users',

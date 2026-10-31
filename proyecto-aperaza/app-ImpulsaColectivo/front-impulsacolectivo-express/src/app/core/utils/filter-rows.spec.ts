@@ -28,7 +28,9 @@ describe('filterRows', () => {
   });
 
   it('should tolerate null fields', () => {
-    expect(filterRows(FILAS, 'mar', campos).map((f) => f.nombre)).toEqual(['Cooperativa Mar y Sol']);
+    expect(filterRows(FILAS, 'mar', campos).map((f) => f.nombre)).toEqual([
+      'Cooperativa Mar y Sol',
+    ]);
   });
 
   it('should return an empty array when nothing matches', () => {

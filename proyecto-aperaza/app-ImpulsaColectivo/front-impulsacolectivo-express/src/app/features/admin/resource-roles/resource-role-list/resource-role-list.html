@@ -85,7 +85,11 @@
     <ng-template #body let-grant>
       <tr>
         <td>
-          <p-tag [value]="grant.role?.name ?? 'Rol #' + grant.role_id" severity="secondary" [rounded]="true" />
+          <p-tag
+            [value]="grant.role?.name ?? 'Rol #' + grant.role_id"
+            severity="secondary"
+            [rounded]="true"
+          />
           @if (isOwnRole(grant)) {
             <span class="ml-1 text-xs text-slate-400">(tuyo)</span>
           }
@@ -97,7 +101,9 @@
             [rounded]="true"
           />
         </td>
-        <td><code class="text-xs">{{ grant.resource?.path ?? 'Recurso #' + grant.resource_id }}</code></td>
+        <td>
+          <code class="text-xs">{{ grant.resource?.path ?? 'Recurso #' + grant.resource_id }}</code>
+        </td>
         <td class="text-sm text-slate-600">{{ grant.resource?.description }}</td>
         <td><app-status-tag [status]="grant.status" /></td>
         <td>

@@ -4,12 +4,7 @@
     <div class="flex flex-col gap-4">
       <div class="flex flex-col gap-2">
         <label for="nombre" class="text-sm font-medium text-slate-700">Nombre</label>
-        <input
-          id="nombre"
-          pInputText
-          [value]="proyecto().nombre"
-          (input)="cambiarNombre($event)"
-        />
+        <input id="nombre" pInputText [value]="proyecto().nombre" (input)="cambiarNombre($event)" />
         <p class="text-sm text-slate-500">Vista previa: {{ proyecto().nombre }}</p>
       </div>
 
@@ -20,10 +15,7 @@
         </p>
       </div>
 
-      <p-tag
-        [value]="estadoTexto()"
-        [severity]="proyecto().activo ? 'success' : 'danger'"
-      />
+      <p-tag [value]="estadoTexto()" [severity]="proyecto().activo ? 'success' : 'danger'" />
 
       @if (proyecto().activo) {
         <p-message severity="success" variant="simple">
@@ -55,7 +47,9 @@
   <!-- Tarjeta 2: qué se está viendo -->
   <p-card header="Qué hace este componente">
     <ul class="list-disc space-y-1 pl-5 text-sm text-slate-700">
-      <li><strong>signal</strong>: guarda el proyecto completo y avisa a la vista cuando cambia.</li>
+      <li>
+        <strong>signal</strong>: guarda el proyecto completo y avisa a la vista cuando cambia.
+      </li>
       <li><strong>computed</strong>: deriva la meta con comisión y el texto del estado.</li>
       <li><strong>effect</strong>: escribe en la consola cada vez que cambia el objeto.</li>
     </ul>
@@ -64,8 +58,8 @@
   <!-- Tarjeta 3: aislamiento de estilos -->
   <p-card header="Estilos">
     <div class="ejemplo-alcance text-sm text-slate-700">
-      Esta caja usa la clase <code>.ejemplo-alcance</code> de <code>ejemplo.css</code>.
-      Angular la encapsula: no afecta a ningún otro componente.
+      Esta caja usa la clase <code>.ejemplo-alcance</code> de <code>ejemplo.css</code>. Angular la
+      encapsula: no afecta a ningún otro componente.
     </div>
   </p-card>
 </div>

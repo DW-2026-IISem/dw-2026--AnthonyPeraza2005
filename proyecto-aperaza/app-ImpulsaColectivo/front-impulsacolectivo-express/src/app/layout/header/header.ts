@@ -4,6 +4,7 @@ import { AvatarModule } from 'primeng/avatar';
 import { ButtonModule } from 'primeng/button';
 import { MenuModule } from 'primeng/menu';
 import { TagModule } from 'primeng/tag';
+import { TooltipModule } from 'primeng/tooltip';
 
 /**
  * Barra superior de la aplicación.
@@ -14,7 +15,7 @@ import { TagModule } from 'primeng/tag';
 @Component({
   host: { class: 'block' },
   selector: 'app-header',
-  imports: [AvatarModule, ButtonModule, MenuModule, TagModule],
+  imports: [AvatarModule, ButtonModule, MenuModule, TagModule, TooltipModule],
   templateUrl: './header.html',
   styleUrl: './header.css',
 })

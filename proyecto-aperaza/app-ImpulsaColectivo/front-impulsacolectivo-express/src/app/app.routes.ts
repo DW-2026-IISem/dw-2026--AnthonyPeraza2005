@@ -94,8 +94,7 @@ export const routes: Routes = [
         title: 'Metas · ImpulsaColectivo',
         canActivate: [permissionGuard],
         data: { permission: 'GET /api/metas' },
-        loadComponent: () =>
-          import('./features/goals/goal-list/goal-list').then((m) => m.GoalList),
+        loadComponent: () => import('./features/goals/goal-list/goal-list').then((m) => m.GoalList),
       },
       {
         path: 'desembolsos',
@@ -171,8 +170,7 @@ export const routes: Routes = [
       {
         path: 'sin-permiso',
         title: 'Sin permiso · ImpulsaColectivo',
-        loadComponent: () =>
-          import('./features/auth/forbidden/forbidden').then((m) => m.Forbidden),
+        loadComponent: () => import('./features/auth/forbidden/forbidden').then((m) => m.Forbidden),
       },
     ],
   },

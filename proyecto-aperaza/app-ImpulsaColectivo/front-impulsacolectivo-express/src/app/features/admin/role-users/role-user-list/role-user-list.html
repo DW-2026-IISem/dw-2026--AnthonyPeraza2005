@@ -99,7 +99,11 @@
           </div>
         </td>
         <td>
-          <p-tag [value]="row.role?.name ?? 'Rol #' + row.role_id" severity="secondary" [rounded]="true" />
+          <p-tag
+            [value]="row.role?.name ?? 'Rol #' + row.role_id"
+            severity="secondary"
+            [rounded]="true"
+          />
         </td>
         <td><app-status-tag [status]="row.status" /></td>
         <td>

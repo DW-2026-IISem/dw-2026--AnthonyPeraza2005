@@ -1015,3 +1015,27 @@ El admin tiene acceso a todo
 ![![](images/clipboard-2502058052.png)](images/clipboard-4252112197.png)
 
 ![](images/clipboard-661934222.png)
+
+## ISS-11 · Build, calidad y cierre del proyecto
+
+### 11.1 Revisión de la configuración
+
+![](images/clipboard-2013469397.png)
+
+### 11.2 Formato del código
+
+![](images/clipboard-3832483744.png)
+
+![](images/clipboard-2099021017.png)
+
+### 11.3 Accesibilidad mínima
+
+![](images/clipboard-2860414309.png)
+
+### 11.4 Publicación con fallback a `index.html`
+
+![](images/clipboard-594358579.png)
+
+### PRUEBA VISUAL FRONT FINALIZADO
+
+![](images/clipboard-268534895.png)

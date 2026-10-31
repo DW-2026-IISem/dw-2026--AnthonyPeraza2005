@@ -72,7 +72,8 @@
         <td><app-status-tag [status]="promoter.status" /></td>
         <td>
           <div class="flex justify-end gap-1">
-            <button *appHasPermission="'PATCH /api/promotores/:id'"
+            <button
+              *appHasPermission="'PATCH /api/promotores/:id'"
               pButton
               type="button"
               text
@@ -84,7 +85,8 @@
             >
               <i pButtonIcon class="pi pi-pencil"></i>
             </button>
-            <button *appHasPermission="'PATCH /api/promotores/:id/deactivate'"
+            <button
+              *appHasPermission="'PATCH /api/promotores/:id/deactivate'"
               pButton
               type="button"
               text
@@ -96,7 +98,8 @@
             >
               <i pButtonIcon class="pi pi-ban"></i>
             </button>
-            <button *appHasPermission="'DELETE /api/promotores/:id'"
+            <button
+              *appHasPermission="'DELETE /api/promotores/:id'"
               pButton
               type="button"
               text

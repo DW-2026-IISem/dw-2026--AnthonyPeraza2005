@@ -72,7 +72,11 @@ describe('PromoterList', () => {
     fixture.detectChanges();
     await fixture.whenStable();
 
-    return { fixture, lista: fixture.componentInstance, compilado: fixture.nativeElement as HTMLElement };
+    return {
+      fixture,
+      lista: fixture.componentInstance,
+      compilado: fixture.nativeElement as HTMLElement,
+    };
   }
 
   /** Espía que acepta la confirmación de inmediato. */

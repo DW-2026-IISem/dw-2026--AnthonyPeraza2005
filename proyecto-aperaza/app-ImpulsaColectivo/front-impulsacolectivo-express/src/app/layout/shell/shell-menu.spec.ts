@@ -75,7 +75,9 @@ describe('Shell · menú por permisos', () => {
   }
 
   function etiquetas() {
-    return TestBed.createComponent(Shell).componentInstance.items().map((item) => item.label);
+    return TestBed.createComponent(Shell)
+      .componentInstance.items()
+      .map((item) => item.label);
   }
 
   it('should show the whole menu when the role holds every permission', () => {

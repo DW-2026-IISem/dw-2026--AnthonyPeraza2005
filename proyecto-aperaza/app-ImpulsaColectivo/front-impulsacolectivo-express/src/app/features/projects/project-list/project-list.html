@@ -76,7 +76,8 @@
           />
         </td>
         <td class="text-sm text-slate-600">
-          {{ project.start_date | date: 'dd/MM/yyyy' }} → {{ project.end_date | date: 'dd/MM/yyyy' }}
+          {{ project.start_date | date: 'dd/MM/yyyy' }} →
+          {{ project.end_date | date: 'dd/MM/yyyy' }}
         </td>
         <td>
           <p-tag
@@ -88,7 +89,8 @@
         <td><app-status-tag [status]="project.status" /></td>
         <td>
           <div class="flex justify-end gap-1">
-            <button *appHasPermission="'PATCH /api/proyectos/:id'"
+            <button
+              *appHasPermission="'PATCH /api/proyectos/:id'"
               pButton
               type="button"
               text
@@ -100,7 +102,8 @@
             >
               <i pButtonIcon class="pi pi-pencil"></i>
             </button>
-            <button *appHasPermission="'PATCH /api/proyectos/:id/deactivate'"
+            <button
+              *appHasPermission="'PATCH /api/proyectos/:id/deactivate'"
               pButton
               type="button"
               text
@@ -112,7 +115,8 @@
             >
               <i pButtonIcon class="pi pi-ban"></i>
             </button>
-            <button *appHasPermission="'DELETE /api/proyectos/:id'"
+            <button
+              *appHasPermission="'DELETE /api/proyectos/:id'"
               pButton
               type="button"
               text

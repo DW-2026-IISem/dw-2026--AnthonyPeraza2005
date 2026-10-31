@@ -165,8 +165,6 @@ export class SessionStore {
 
 /** `/api/usuarios/:id` debe reconocer `/api/usuarios/7`. */
 function pathMatches(pattern: string, path: string): boolean {
-  const escaped = pattern
-    .replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
-    .replace(/\/:[^/]+/g, '/[^/]+');
+  const escaped = pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/\/:[^/]+/g, '/[^/]+');
   return new RegExp(`^${escaped}$`).test(path);
 }

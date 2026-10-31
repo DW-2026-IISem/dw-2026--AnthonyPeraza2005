@@ -95,7 +95,9 @@ export class ContributionList {
 
   /** `id → nombre` construido una sola vez; devuelve una función de consulta. */
   readonly contributorName = computed(() => {
-    const names = new Map(this.contributors().map((contributor) => [contributor.id, contributor.name]));
+    const names = new Map(
+      this.contributors().map((contributor) => [contributor.id, contributor.name]),
+    );
     return (id: number) => names.get(id) ?? `Contribuyente #${id}`;
   });
 
@@ -200,7 +202,9 @@ export class ContributionList {
         this.detailCommissions.set(
           commissions.filter((commission) => mineIds.has(commission.payment_transaction_id)),
         );
-        this.detailRefunds.set(refunds.filter((refund) => refund.contribution_id === contribution.id));
+        this.detailRefunds.set(
+          refunds.filter((refund) => refund.contribution_id === contribution.id),
+        );
         this.detailLoading.set(false);
       },
       error: (error: unknown) => {

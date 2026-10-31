@@ -4,7 +4,12 @@
 >
   <p-tag [value]="rows().length + ' auditorías'" severity="info" [rounded]="true" />
   <p-tag [value]="activeCount() + ' activas'" severity="success" [rounded]="true" />
-  <button *appHasPermission="'POST /api/auditorias-proyecto'" pButton type="button" (click)="openCreate()">
+  <button
+    *appHasPermission="'POST /api/auditorias-proyecto'"
+    pButton
+    type="button"
+    (click)="openCreate()"
+  >
     <i pButtonIcon class="pi pi-plus"></i>
     <span pButtonLabel>Nueva auditoría</span>
   </button>
@@ -70,16 +75,13 @@
           <p class="line-clamp-2 max-w-md text-xs text-slate-500">{{ audit.detail }}</p>
         </td>
         <td>
-          <p-tag
-            [value]="projectTitle()(audit.project_id)"
-            severity="secondary"
-            [rounded]="true"
-          />
+          <p-tag [value]="projectTitle()(audit.project_id)" severity="secondary" [rounded]="true" />
         </td>
         <td><app-status-tag [status]="audit.status" /></td>
         <td>
           <div class="flex justify-end gap-1">
-            <button *appHasPermission="'PATCH /api/auditorias-proyecto/:id'"
+            <button
+              *appHasPermission="'PATCH /api/auditorias-proyecto/:id'"
               pButton
               type="button"
               text
@@ -91,7 +93,8 @@
             >
               <i pButtonIcon class="pi pi-pencil"></i>
             </button>
-            <button *appHasPermission="'PATCH /api/auditorias-proyecto/:id/deactivate'"
+            <button
+              *appHasPermission="'PATCH /api/auditorias-proyecto/:id/deactivate'"
               pButton
               type="button"
               text
@@ -103,7 +106,8 @@
             >
               <i pButtonIcon class="pi pi-ban"></i>
             </button>
-            <button *appHasPermission="'DELETE /api/auditorias-proyecto/:id'"
+            <button
+              *appHasPermission="'DELETE /api/auditorias-proyecto/:id'"
               pButton
               type="button"
               text

@@ -11,8 +11,20 @@ import { ResourceList } from './resource-list';
 const BASE = `${environment.apiUrl}/recursos`;
 
 const RECURSOS = [
-  { id: 1, path: '/api/proyectos', method: 'GET', description: 'Listar proyectos', status: 'active' },
-  { id: 2, path: '/api/proyectos', method: 'POST', description: 'Crear proyectos', status: 'active' },
+  {
+    id: 1,
+    path: '/api/proyectos',
+    method: 'GET',
+    description: 'Listar proyectos',
+    status: 'active',
+  },
+  {
+    id: 2,
+    path: '/api/proyectos',
+    method: 'POST',
+    description: 'Crear proyectos',
+    status: 'active',
+  },
   {
     id: 3,
     path: '/api/proyectos/:id',

@@ -56,7 +56,9 @@
     <ng-template #header>
       <tr>
         <th pSortableColumn="contribution_date">
-          <div class="flex items-center gap-1">Aporte <p-sort-icon field="contribution_date" /></div>
+          <div class="flex items-center gap-1">
+            Aporte <p-sort-icon field="contribution_date" />
+          </div>
         </th>
         <th>Proyecto</th>
         <th>Contribuyente</th>
@@ -90,7 +92,8 @@
         <td><app-status-tag [status]="contribution.status" /></td>
         <td>
           <div class="flex justify-end gap-1">
-            <button *appHasPermission="'GET /api/transacciones-pago'"
+            <button
+              *appHasPermission="'GET /api/transacciones-pago'"
               pButton
               type="button"
               text
@@ -102,7 +105,8 @@
             >
               <i pButtonIcon class="pi pi-eye"></i>
             </button>
-            <button *appHasPermission="'PATCH /api/contribuciones/:id'"
+            <button
+              *appHasPermission="'PATCH /api/contribuciones/:id'"
               pButton
               type="button"
               text
@@ -114,7 +118,8 @@
             >
               <i pButtonIcon class="pi pi-pencil"></i>
             </button>
-            <button *appHasPermission="'PATCH /api/contribuciones/:id/deactivate'"
+            <button
+              *appHasPermission="'PATCH /api/contribuciones/:id/deactivate'"
               pButton
               type="button"
               text
@@ -126,7 +131,8 @@
             >
               <i pButtonIcon class="pi pi-ban"></i>
             </button>
-            <button *appHasPermission="'DELETE /api/contribuciones/:id'"
+            <button
+              *appHasPermission="'DELETE /api/contribuciones/:id'"
               pButton
               type="button"
               text

@@ -1,5 +1,15 @@
-<app-page-header title="Mi perfil" subtitle="Tu cuenta, tus roles y lo que puedes hacer en la plataforma.">
-  <button pButton type="button" severity="secondary" outlined [loading]="refreshing()" (click)="refresh()">
+<app-page-header
+  title="Mi perfil"
+  subtitle="Tu cuenta, tus roles y lo que puedes hacer en la plataforma."
+>
+  <button
+    pButton
+    type="button"
+    severity="secondary"
+    outlined
+    [loading]="refreshing()"
+    (click)="refresh()"
+  >
     <i pButtonIcon class="pi pi-refresh"></i>
     <span pButtonLabel>Actualizar permisos</span>
   </button>
@@ -10,7 +20,9 @@
 </app-page-header>
 
 @if (user(); as account) {
-  <div class="mb-6 grid gap-4 rounded-xl border border-slate-200 bg-white p-5 sm:grid-cols-2 lg:grid-cols-4">
+  <div
+    class="mb-6 grid gap-4 rounded-xl border border-slate-200 bg-white p-5 sm:grid-cols-2 lg:grid-cols-4"
+  >
     <div>
       <p class="text-xs uppercase tracking-wide text-slate-400">Usuario</p>
       <p class="font-medium text-slate-800">{{ account.username }}</p>
@@ -73,7 +85,9 @@
 
     <ng-template #body let-permission>
       <tr>
-        <td><p-tag [value]="permission.method" [severity]="methodSeverity(permission.method)" /></td>
+        <td>
+          <p-tag [value]="permission.method" [severity]="methodSeverity(permission.method)" />
+        </td>
         <td class="font-mono text-sm text-slate-700">{{ permission.path }}</td>
         <td class="text-slate-600">{{ permission.description }}</td>
         <td class="text-slate-600">{{ permission.role_name }}</td>

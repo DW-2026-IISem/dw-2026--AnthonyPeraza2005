@@ -72,11 +72,7 @@
           <p class="text-xs text-slate-400">#{{ goal.id }}</p>
         </td>
         <td>
-          <p-tag
-            [value]="projectTitle()(goal.project_id)"
-            severity="secondary"
-            [rounded]="true"
-          />
+          <p-tag [value]="projectTitle()(goal.project_id)" severity="secondary" [rounded]="true" />
         </td>
         <td class="text-right font-medium text-slate-800">
           {{ goal.value | currency: 'COP' : 'symbol-narrow' : '1.2-2' }}
@@ -84,7 +80,8 @@
         <td><app-status-tag [status]="goal.status" /></td>
         <td>
           <div class="flex justify-end gap-1">
-            <button *appHasPermission="'PATCH /api/metas/:id'"
+            <button
+              *appHasPermission="'PATCH /api/metas/:id'"
               pButton
               type="button"
               text
@@ -96,7 +93,8 @@
             >
               <i pButtonIcon class="pi pi-pencil"></i>
             </button>
-            <button *appHasPermission="'PATCH /api/metas/:id/deactivate'"
+            <button
+              *appHasPermission="'PATCH /api/metas/:id/deactivate'"
               pButton
               type="button"
               text
@@ -108,7 +106,8 @@
             >
               <i pButtonIcon class="pi pi-ban"></i>
             </button>
-            <button *appHasPermission="'DELETE /api/metas/:id'"
+            <button
+              *appHasPermission="'DELETE /api/metas/:id'"
               pButton
               type="button"
               text

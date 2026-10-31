@@ -20,7 +20,13 @@ const ROLES = [
 ] as Role[];
 
 const RECURSOS = [
-  { id: 1, path: '/api/proyectos', method: 'GET', description: 'Listar proyectos', status: 'active' },
+  {
+    id: 1,
+    path: '/api/proyectos',
+    method: 'GET',
+    description: 'Listar proyectos',
+    status: 'active',
+  },
   { id: 2, path: '/api/proyectos', method: 'POST', description: null, status: 'active' },
   {
     id: 3,

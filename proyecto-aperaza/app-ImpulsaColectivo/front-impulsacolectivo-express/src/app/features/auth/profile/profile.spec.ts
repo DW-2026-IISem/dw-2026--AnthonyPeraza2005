@@ -78,7 +78,11 @@ describe('Profile', () => {
   function crear() {
     const fixture = TestBed.createComponent(Profile);
     fixture.detectChanges();
-    return { fixture, perfil: fixture.componentInstance, compilado: fixture.nativeElement as HTMLElement };
+    return {
+      fixture,
+      perfil: fixture.componentInstance,
+      compilado: fixture.nativeElement as HTMLElement,
+    };
   }
 
   it('should show the account, the roles and the permission count', () => {

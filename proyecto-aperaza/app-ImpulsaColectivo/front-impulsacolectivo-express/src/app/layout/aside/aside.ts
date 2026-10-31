@@ -2,6 +2,7 @@ import { Component, input, output } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { PanelMenuModule } from 'primeng/panelmenu';
+import { TooltipModule } from 'primeng/tooltip';
 
 /**
  * Menú lateral de la aplicación.
@@ -12,7 +13,7 @@ import { PanelMenuModule } from 'primeng/panelmenu';
 @Component({
   host: { class: 'block h-full' },
   selector: 'app-aside',
-  imports: [ButtonModule, PanelMenuModule],
+  imports: [ButtonModule, PanelMenuModule, TooltipModule],
   templateUrl: './aside.html',
   styleUrl: './aside.css',
 })

@@ -76,12 +76,15 @@ export class Dashboard {
   });
 
   readonly contributorName = computed(() => {
-    const names = new Map(this.contributors().map((contributor) => [contributor.id, contributor.name]));
+    const names = new Map(
+      this.contributors().map((contributor) => [contributor.id, contributor.name]),
+    );
     return (id: number) => names.get(id) ?? `Contribuyente #${id}`;
   });
 
   readonly runningCount = computed(
-    () => this.projects().filter((project) => projectPhase(project, this.today) === 'running').length,
+    () =>
+      this.projects().filter((project) => projectPhase(project, this.today) === 'running').length,
   );
 
   readonly activeContributorCount = computed(
@@ -119,10 +122,7 @@ export class Dashboard {
   /** Últimos cinco aportes, los más recientes primero. */
   readonly latestContributions = computed(() =>
     [...this.contributions()]
-      .sort(
-        (a, b) =>
-          b.contribution_date.localeCompare(a.contribution_date) || b.id - a.id,
-      )
+      .sort((a, b) => b.contribution_date.localeCompare(a.contribution_date) || b.id - a.id)
       .slice(0, 5),
   );
 

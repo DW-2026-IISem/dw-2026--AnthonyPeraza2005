@@ -52,18 +52,14 @@
     <ng-template #header>
       <tr>
         <th pSortableColumn="disbursement_date">
-          <div class="flex items-center gap-1">
-            Fecha <p-sort-icon field="disbursement_date" />
-          </div>
+          <div class="flex items-center gap-1">Fecha <p-sort-icon field="disbursement_date" /></div>
         </th>
         <th>Proyecto</th>
         <th pSortableColumn="method">
           <div class="flex items-center gap-1">Método <p-sort-icon field="method" /></div>
         </th>
         <th pSortableColumn="value" class="text-right">
-          <div class="flex items-center justify-end gap-1">
-            Monto <p-sort-icon field="value" />
-          </div>
+          <div class="flex items-center justify-end gap-1">Monto <p-sort-icon field="value" /></div>
         </th>
         <th>Estado</th>
         <th class="w-40 text-right">Acciones</th>
@@ -77,11 +73,7 @@
           <p class="text-xs text-slate-400">#{{ item.id }}</p>
         </td>
         <td>
-          <p-tag
-            [value]="projectTitle()(item.project_id)"
-            severity="secondary"
-            [rounded]="true"
-          />
+          <p-tag [value]="projectTitle()(item.project_id)" severity="secondary" [rounded]="true" />
         </td>
         <td class="text-slate-700">{{ item.method }}</td>
         <td class="text-right font-medium text-slate-800">
@@ -90,7 +82,8 @@
         <td><app-status-tag [status]="item.status" /></td>
         <td>
           <div class="flex justify-end gap-1">
-            <button *appHasPermission="'PATCH /api/desembolsos/:id'"
+            <button
+              *appHasPermission="'PATCH /api/desembolsos/:id'"
               pButton
               type="button"
               text
@@ -102,7 +95,8 @@
             >
               <i pButtonIcon class="pi pi-pencil"></i>
             </button>
-            <button *appHasPermission="'PATCH /api/desembolsos/:id/deactivate'"
+            <button
+              *appHasPermission="'PATCH /api/desembolsos/:id/deactivate'"
               pButton
               type="button"
               text
@@ -114,7 +108,8 @@
             >
               <i pButtonIcon class="pi pi-ban"></i>
             </button>
-            <button *appHasPermission="'DELETE /api/desembolsos/:id'"
+            <button
+              *appHasPermission="'DELETE /api/desembolsos/:id'"
               pButton
               type="button"
               text

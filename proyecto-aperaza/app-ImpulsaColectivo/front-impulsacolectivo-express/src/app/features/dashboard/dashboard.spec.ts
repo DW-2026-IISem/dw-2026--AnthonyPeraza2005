@@ -64,26 +64,110 @@ const PROYECTOS_DATA: Project[] = [
 ];
 
 const CONTRIBUYENTES_DATA: Contributor[] = [
-  { id: 1, name: 'María Fernanda Ortiz', email: 'maria.ortiz@example.com', phone: null, status: 'active' },
-  { id: 2, name: 'Red Wayuu Emprende', email: 'contacto@wayuuemprende.co', phone: null, status: 'active' },
-  { id: 3, name: 'Carlos Andrés Pérez', email: 'carlos.perez@example.com', phone: null, status: 'inactive' },
+  {
+    id: 1,
+    name: 'María Fernanda Ortiz',
+    email: 'maria.ortiz@example.com',
+    phone: null,
+    status: 'active',
+  },
+  {
+    id: 2,
+    name: 'Red Wayuu Emprende',
+    email: 'contacto@wayuuemprende.co',
+    phone: null,
+    status: 'active',
+  },
+  {
+    id: 3,
+    name: 'Carlos Andrés Pérez',
+    email: 'carlos.perez@example.com',
+    phone: null,
+    status: 'inactive',
+  },
 ];
 
 // Montos como texto. El aporte 4 está inactivo y no suma al total.
 const CONTRIBUCIONES_DATA: Contribution[] = [
-  { id: 1, amount: '100000.00', contribution_date: '2026-10-01', project_id: 1, contributor_id: 1, status: 'active' },
-  { id: 2, amount: '200000.00', contribution_date: '2026-10-05', project_id: 1, contributor_id: 2, status: 'active' },
-  { id: 3, amount: '50000.50', contribution_date: '2026-10-10', project_id: 2, contributor_id: 1, status: 'active' },
-  { id: 4, amount: '500000.00', contribution_date: '2026-10-12', project_id: 2, contributor_id: 2, status: 'inactive' },
-  { id: 5, amount: '75000.00', contribution_date: '2026-10-20', project_id: 1, contributor_id: 1, status: 'active' },
-  { id: 6, amount: '25000.00', contribution_date: '2026-10-25', project_id: 2, contributor_id: 2, status: 'active' },
+  {
+    id: 1,
+    amount: '100000.00',
+    contribution_date: '2026-10-01',
+    project_id: 1,
+    contributor_id: 1,
+    status: 'active',
+  },
+  {
+    id: 2,
+    amount: '200000.00',
+    contribution_date: '2026-10-05',
+    project_id: 1,
+    contributor_id: 2,
+    status: 'active',
+  },
+  {
+    id: 3,
+    amount: '50000.50',
+    contribution_date: '2026-10-10',
+    project_id: 2,
+    contributor_id: 1,
+    status: 'active',
+  },
+  {
+    id: 4,
+    amount: '500000.00',
+    contribution_date: '2026-10-12',
+    project_id: 2,
+    contributor_id: 2,
+    status: 'inactive',
+  },
+  {
+    id: 5,
+    amount: '75000.00',
+    contribution_date: '2026-10-20',
+    project_id: 1,
+    contributor_id: 1,
+    status: 'active',
+  },
+  {
+    id: 6,
+    amount: '25000.00',
+    contribution_date: '2026-10-25',
+    project_id: 2,
+    contributor_id: 2,
+    status: 'active',
+  },
 ];
 
 // El pago 3 está inactivo y no suma al total pagado.
 const PAGOS_DATA: PaymentTransaction[] = [
-  { id: 1, reference: 'NQ-2026-0001', payment_method: 'nequi', amount: '150000.00', transaction_date: '2026-10-06', contribution_id: 1, status: 'active' },
-  { id: 2, reference: 'TR-2026-0002', payment_method: 'transferencia', amount: '25000.50', transaction_date: '2026-10-13', contribution_id: 2, status: 'active' },
-  { id: 3, reference: 'NQ-2026-0003', payment_method: 'nequi', amount: '900000.00', transaction_date: '2026-10-21', contribution_id: 3, status: 'inactive' },
+  {
+    id: 1,
+    reference: 'NQ-2026-0001',
+    payment_method: 'nequi',
+    amount: '150000.00',
+    transaction_date: '2026-10-06',
+    contribution_id: 1,
+    status: 'active',
+  },
+  {
+    id: 2,
+    reference: 'TR-2026-0002',
+    payment_method: 'transferencia',
+    amount: '25000.50',
+    transaction_date: '2026-10-13',
+    contribution_id: 2,
+    status: 'active',
+  },
+  {
+    id: 3,
+    reference: 'NQ-2026-0003',
+    payment_method: 'nequi',
+    amount: '900000.00',
+    transaction_date: '2026-10-21',
+    contribution_id: 3,
+    status: 'inactive',
+  },
 ];
 
 describe('Dashboard', () => {
