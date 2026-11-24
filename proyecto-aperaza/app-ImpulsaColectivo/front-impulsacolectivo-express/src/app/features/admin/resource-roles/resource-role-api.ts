@@ -1,7 +1,11 @@
 import { HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
-import { ResourceRole, ResourceRolePayload } from '../../../core/models/resource-role.model';
+import {
+  ResourceRole,
+  ResourceRoleMatrixResult,
+  ResourceRolePayload,
+} from '../../../core/models/resource-role.model';
 import { ReadCreateApi } from '../../../core/services/crud-api';
 
 /**
@@ -29,8 +33,32 @@ export class ResourceRoleApi extends ReadCreateApi<ResourceRole, ResourceRolePay
       .pipe(map((r) => r[this.plural]));
   }
 
+  /**
+   * Guarda la matriz completa de un rol: `POST /api/concesiones-rol` con
+   * `{ role_id, resource_ids }`. El backend deja al rol con exactamente ese conjunto
+   * (altas, reactivaciones y retiros en una transacción) y responde `{ message, result }`.
+   */
+  reconcile(roleId: number, resourceIds: number[]): Observable<ResourceRoleMatrixResult> {
+    return this.http
+      .post<{ result?: ResourceRoleMatrixResult }>(this.base, {
+        role_id: roleId,
+        resource_ids: resourceIds,
+      })
+      .pipe(map((response) => requiredResult(response)));
+  }
+
   /** Reactiva una concesión dada de baja. */
   reactivate(id: number): Observable<unknown> {
     return this.http.patch(`${this.base}/${id}/reactivate`, {});
   }
+}
+
+/** La respuesta del guardado debe traer `result`; si no, el éxito no se puede anunciar. */
+function requiredResult(
+  response: { result?: ResourceRoleMatrixResult } | null,
+): ResourceRoleMatrixResult {
+  if (!response?.result) {
+    throw new Error('La respuesta del servidor no incluye el resultado del guardado');
+  }
+  return response.result;
 }

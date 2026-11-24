@@ -11,7 +11,7 @@ Content-Type: application/json
 }
 
 ###
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzkxOTk3MzI2LCJleHAiOjE3OTIwMDA5MjYsImF1ZCI6ImFwcC1pbXB1bHNhY29sZWN0aXZvLWFwaSIsImlzcyI6ImFwcC1pbXB1bHNhY29sZWN0aXZvLWV4cHJlc3MiLCJzdWIiOiIxIiwianRpIjoiNmI4MGI1NjEtMjVmMC00NjIwLTk1YmUtNzM5ZTRiZDU4ZTQ0In0.OVhMP7gW5AzZYYPiWHkyuEW_Xgea89B9rTJWWfXz0yw
+@token = <TOKEN>
 
 ### Feature ResourceRoles — conceder y retirar permisos a roles
 ### Leyenda: SIN AUTH (temporal hasta ISS-21).

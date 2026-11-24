@@ -11,7 +11,7 @@ Content-Type: application/json
 }
 
 ###
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzkxOTk2NjQ5LCJleHAiOjE3OTIwMDAyNDksImF1ZCI6ImFwcC1pbXB1bHNhY29sZWN0aXZvLWFwaSIsImlzcyI6ImFwcC1pbXB1bHNhY29sZWN0aXZvLWV4cHJlc3MiLCJzdWIiOiIxIiwianRpIjoiMDZlZGUzYzAtNzkxMS00ZGI2LWFlNzItZWVjOTVhNzAyYzJmIn0.rv2HLwmsBjB9BWbjg0y8nuvUMlDuPKY7fNrfLYLH888
+@token = <TOKEN>
 
 ### Feature RoleUsers — asignar y retirar roles a usuarios
 ### Leyenda: SIN AUTH (temporal hasta ISS-21).

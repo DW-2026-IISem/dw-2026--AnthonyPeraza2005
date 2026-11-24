@@ -21,3 +21,11 @@ export interface ResourceRolePayload {
   role_id: number;
   status?: Status;
 }
+
+/** Resultado de guardar la matriz de un rol (`POST /api/concesiones-rol` con `resource_ids`). */
+export interface ResourceRoleMatrixResult {
+  role_id: number;
+  activated: number;
+  deactivated: number;
+  total_active: number;
+}

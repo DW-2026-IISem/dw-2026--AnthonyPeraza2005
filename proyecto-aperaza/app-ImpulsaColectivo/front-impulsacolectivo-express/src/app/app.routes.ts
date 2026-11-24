@@ -163,6 +163,16 @@ export const routes: Routes = [
           ),
       },
       {
+        path: 'admin/matriz',
+        title: 'Matriz de permisos · ImpulsaColectivo',
+        canActivate: [permissionGuard],
+        data: { permission: 'GET /api/concesiones-rol' },
+        loadComponent: () =>
+          import('./features/admin/permission-matrix/permission-matrix-page/permission-matrix-page').then(
+            (m) => m.PermissionMatrixPage,
+          ),
+      },
+      {
         path: 'perfil',
         title: 'Mi perfil · ImpulsaColectivo',
         loadComponent: () => import('./features/auth/profile/profile').then((m) => m.Profile),

@@ -9,7 +9,8 @@
   "scripts": {
     "build": "tsc",
     "dev": "nodemon --watch src --ext ts --exec ts-node -- src/server.ts",
-    "db:seed": "ts-node -- src/database/seeders/index.ts"
+    "db:seed": "ts-node -- src/database/seeders/index.ts",
+    "db:sync-catalog": "ts-node -- src/database/seeders/sync-catalog.ts"
   },
   "keywords": [],
   "author": "",

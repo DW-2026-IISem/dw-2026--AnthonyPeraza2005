@@ -1,0 +1,142 @@
+<app-page-header
+  title="Matriz de permisos"
+  subtitle="Elige un rol y marca qué puede hacer sobre cada entidad. Los cambios se guardan juntos y solo se aplican al pulsar «Guardar permisos»."
+>
+  <p-tag
+    [value]="selected().size + ' de ' + totalCount() + ' marcados'"
+    severity="info"
+    [rounded]="true"
+  />
+</app-page-header>
+
+@if (error()) {
+  <p-message severity="error" styleClass="mb-4 w-full">
+    {{ error() }}
+  </p-message>
+}
+
+<div
+  class="mb-4 flex flex-col gap-3 rounded-xl border border-slate-200 bg-white p-4 sm:flex-row sm:items-end sm:justify-between"
+>
+  <div class="flex flex-col gap-1">
+    <label for="matrix-role" class="text-sm font-medium text-slate-700">Rol</label>
+    <p-select
+      inputId="matrix-role"
+      styleClass="w-full sm:w-64"
+      placeholder="Elige un rol"
+      [options]="activeRoles()"
+      optionLabel="name"
+      optionValue="id"
+      [disabled]="busy()"
+      [ngModel]="selectedRoleId()"
+      (ngModelChange)="chooseRole($event ?? null)"
+    />
+  </div>
+
+  <div class="flex items-center gap-2">
+    @if (dirty()) {
+      <span class="text-xs text-amber-600" role="status">Tienes cambios sin guardar</span>
+    }
+    <button
+      pButton
+      type="button"
+      severity="secondary"
+      text
+      [disabled]="!dirty() || busy()"
+      (click)="discard()"
+    >
+      <span pButtonLabel>Descartar</span>
+    </button>
+    <button
+      *appHasPermission="'POST /api/concesiones-rol'"
+      pButton
+      type="button"
+      [loading]="saving()"
+      [disabled]="!dirty() || busy()"
+      (click)="save()"
+    >
+      <i pButtonIcon class="pi pi-check"></i>
+      <span pButtonLabel>Guardar permisos</span>
+    </button>
+  </div>
+</div>
+
+@if (isOwnRole()) {
+  <p-message severity="warn" styleClass="mb-4 w-full">
+    Es un rol que tú tienes: si le quitas permisos podrías perder acceso a esta pantalla.
+  </p-message>
+}
+
+<div aria-live="polite">
+  @if (saveMessage()) {
+    <p-message severity="success" styleClass="mb-4 w-full">
+      {{ saveMessage() }}
+    </p-message>
+  }
+</div>
+
+@if (loading() || loadingGrants()) {
+  <p class="mb-3 text-sm text-slate-500" role="status">Cargando permisos…</p>
+}
+
+@if (!loading() && rows().length === 0) {
+  <app-empty-state
+    icon="pi pi-lock"
+    title="Sin recursos para mostrar"
+    message="Tu rol no puede leer el catálogo de recursos o no hay recursos activos."
+  />
+} @else if (!loading() && selectedRole() === null) {
+  <app-empty-state
+    icon="pi pi-shield"
+    title="Elige un rol"
+    message="Selecciona un rol para ver y editar sus permisos."
+  />
+} @else if (selectedRole() !== null) {
+  <div
+    class="overflow-x-auto rounded-xl border border-slate-200 bg-white"
+    [class.opacity-60]="loadingGrants() || saving()"
+  >
+    <table class="min-w-full text-sm">
+      <caption class="sr-only">
+        Permisos del rol seleccionado, por entidad y operación
+      </caption>
+      <thead>
+        <tr class="border-b border-slate-200 text-left text-slate-600">
+          <th scope="col" class="px-4 py-3 font-semibold">Entidad</th>
+          @for (column of columns; track column.key) {
+            <th scope="col" class="px-3 py-3 text-center font-semibold" [attr.title]="column.hint">
+              {{ column.label }}
+            </th>
+          }
+        </tr>
+      </thead>
+      <tbody>
+        @for (row of rows(); track row.entity) {
+          <tr class="border-b border-slate-100 last:border-0">
+            <th scope="row" class="px-4 py-2 text-left font-medium text-slate-800">
+              {{ row.label }}
+            </th>
+            @for (column of columns; track column.key) {
+              <td class="px-3 py-2 text-center">
+                @if (row.operations[column.key].length) {
+                  <input
+                    type="checkbox"
+                    class="size-4 accent-emerald-600"
+                    [attr.aria-label]="column.label + ' ' + row.label"
+                    [checked]="state(row.operations[column.key]) === 'all'"
+                    [indeterminate]="state(row.operations[column.key]) === 'some'"
+                    [disabled]="!editable()"
+                    [pTooltip]="cellTooltip(row.operations[column.key])"
+                    (change)="setCell(row.operations[column.key], $event)"
+                  />
+                } @else {
+                  <span class="text-xs text-slate-400">No disponible</span>
+                }
+              </td>
+            }
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+}

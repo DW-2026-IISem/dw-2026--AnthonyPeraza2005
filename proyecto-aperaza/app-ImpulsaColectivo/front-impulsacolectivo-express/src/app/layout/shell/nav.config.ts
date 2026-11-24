@@ -100,5 +100,11 @@ export const NAV: NavItem[] = [
     routerLink: '/admin/permisos',
     permission: 'GET /api/concesiones-rol',
   },
+  {
+    label: 'Matriz',
+    icon: 'pi pi-table',
+    routerLink: '/admin/matriz',
+    permission: 'GET /api/concesiones-rol',
+  },
   { label: 'Prototipo', icon: 'pi pi-desktop', routerLink: '/construir' },
 ];
