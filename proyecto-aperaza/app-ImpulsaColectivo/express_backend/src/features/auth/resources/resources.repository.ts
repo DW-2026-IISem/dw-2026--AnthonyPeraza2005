@@ -1,4 +1,4 @@
-import { CreationAttributes, Transaction } from "sequelize";
+import { CreationAttributes, Op, Transaction } from "sequelize";
 import { Resource } from "./resource.model";
 import { normalizePath } from "../../../shared/auth/resource-match";
 
@@ -15,6 +15,12 @@ export class ResourcesRepository {
   /** Un recurso por PK (o `null`). */
   public async findById(id: number, transaction?: Transaction): Promise<Resource | null> {
     return Resource.findByPk(id, { transaction });
+  }
+
+  /** Varios recursos por PK (los que no existen simplemente no aparecen). */
+  public async findByIds(ids: number[], transaction?: Transaction): Promise<Resource[]> {
+    if (ids.length === 0) return [];
+    return Resource.findAll({ where: { id: { [Op.in]: ids } }, transaction });
   }
 
   /** Un recurso por su par `(method, path)` (o `null`). */

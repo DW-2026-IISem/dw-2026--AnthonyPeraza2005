@@ -34,17 +34,30 @@ export const resourceRolesSwagger = {
         tags: ["Concesiones rol-recurso"],
         summary: "Conceder recurso a rol (crear permiso)",
         description:
-          "JWT + RBAC — cuerpo `{ role_id, resource_id }`. Idempotente: si la concesión " +
-          "existía retirada, se reactiva. Efecto inmediato y sin despliegue.",
+          "JWT + RBAC — dos formas de cuerpo. (1) `{ role_id, resource_id }`: concede un " +
+          "recurso; si la concesión existía retirada, se reactiva. (2) `{ role_id, resource_ids }`: " +
+          "guarda la matriz completa del rol y lo deja con exactamente ese conjunto (altas, " +
+          "reactivaciones y retiros en una transacción); una lista vacía retira todos sus " +
+          "permisos. Efecto inmediato y sin despliegue.",
         requestBody: {
           required: true,
-          content: { "application/json": { schema: { $ref: "#/components/schemas/ResourceRoleCreate" } } },
+          content: {
+            "application/json": {
+              schema: {
+                oneOf: [
+                  { $ref: "#/components/schemas/ResourceRoleCreate" },
+                  { $ref: "#/components/schemas/ResourceRoleReconcile" },
+                ],
+              },
+            },
+          },
         },
         responses: {
+          "200": { description: "Matriz guardada (`{ message, result }`), solo con `resource_ids`" },
           "201": { description: "Permiso concedido (`{ message, grant }`)" },
-          "400": { description: "Faltan `role_id` o `resource_id`" },
+          "400": { description: "Cuerpo inválido, ids repetidos o recursos inexistentes o inactivos" },
           "404": { description: "Rol o recurso inexistente o inactivo" },
-          "409": { description: "El rol ya tiene concedido ese recurso" },
+          "409": { description: "El rol ya tiene ese recurso, o la matriz de ADMIN perdería el acceso al panel" },
         },
       },
     },
@@ -111,6 +124,14 @@ export const resourceRolesSwagger = {
           },
           createdAt: { type: "string", format: "date-time" },
           updatedAt: { type: "string", format: "date-time" },
+        },
+      },
+      ResourceRoleReconcile: {
+        type: "object",
+        required: ["role_id", "resource_ids"],
+        properties: {
+          role_id: { type: "integer", example: 4 },
+          resource_ids: { type: "array", items: { type: "integer" }, example: [2, 15, 16] },
         },
       },
       ResourceRoleCreate: {

@@ -11,6 +11,18 @@ import { ResourcesRepository } from "../resources/resources.repository";
 import { AppError } from "../../../shared/errors/app-error";
 import { withTransaction } from "../../../shared/database/with-transaction";
 
+/**
+ * Operaciones que ADMIN debe conservar para poder seguir administrando permisos:
+ * las que usa el panel de la matriz. Sin ellas, un guardado equivocado dejaría a
+ * todos los administradores fuera de la pantalla que sirve para repararlo.
+ */
+const ADMIN_PANEL_OPERATIONS = [
+  { method: "GET", path: "/api/roles" },
+  { method: "GET", path: "/api/recursos" },
+  { method: "GET", path: "/api/concesiones-rol" },
+  { method: "POST", path: "/api/concesiones-rol" },
+] as const;
+
 /** Resumen de una reconciliación de concesiones de un rol. */
 export interface ReconcileResult {
   role_id: number;
@@ -163,6 +175,60 @@ export class ResourceRolesService {
         total_active: wanted.size,
       };
     });
+  }
+
+  // ================== MATRIZ (guardado desde la interfaz) ==================
+  /**
+   * Guarda la matriz de un rol: valida y luego reconcilia (ver `reconcileRole`).
+   *
+   * - 404: el rol no existe o está inactivo.
+   * - 400: algún recurso no existe o está inactivo.
+   * - 409: la matriz de ADMIN no incluye las operaciones que sostienen este panel.
+   *
+   * Lista vacía = el rol queda sin permisos (deliberado, no "no modificar").
+   * `reconcileRole` se deja intacto: el seeder sigue usándolo igual que antes.
+   */
+  public async saveRoleMatrix(roleId: number, resourceIds: number[]): Promise<ReconcileResult> {
+    const role = await this.rolesRepository.findById(roleId);
+    if (!role || role.status !== "active") {
+      throw new AppError(404, "Role not found or inactive");
+    }
+
+    const found = await this.resourcesRepository.findByIds(resourceIds);
+    const activeIds = new Set(found.filter((r) => r.status === "active").map((r) => r.id));
+    const invalid = resourceIds.filter((id) => !activeIds.has(id));
+    if (invalid.length > 0) {
+      throw new AppError(400, `Resources not found or inactive: ${invalid.join(", ")}`);
+    }
+
+    if (role.name === "ADMIN") {
+      await this.assertAdminKeepsPanelAccess(resourceIds);
+    }
+
+    return this.reconcileRole(roleId, resourceIds);
+  }
+
+  /** Falla con 409 si el conjunto pedido para ADMIN no cubre `ADMIN_PANEL_OPERATIONS`. */
+  private async assertAdminKeepsPanelAccess(resourceIds: number[]): Promise<void> {
+    const wanted = new Set(resourceIds);
+    const missing: string[] = [];
+
+    for (const operation of ADMIN_PANEL_OPERATIONS) {
+      const resource = await this.resourcesRepository.findByOperation(
+        operation.method,
+        operation.path
+      );
+      if (!resource || !wanted.has(resource.id)) {
+        missing.push(`${operation.method} ${operation.path}`);
+      }
+    }
+
+    if (missing.length > 0) {
+      throw new AppError(
+        409,
+        `ADMIN must keep access to the permissions panel: ${missing.join(", ")}`
+      );
+    }
   }
 
   // ================== HELPERS ==================

@@ -12,3 +12,16 @@ export interface CreateResourceRoleDto {
   role_id: number;
   resource_id: number;
 }
+
+/**
+ * Datos de entrada de `POST /api/concesiones-rol` cuando trae `resource_ids`:
+ * guarda la matriz completa de un rol.
+ *
+ * Es el estado FINAL deseado, no una operación por casilla: el service calcula las
+ * diferencias y las aplica en una transacción. Una lista vacía deja al rol sin
+ * permisos. La respuesta (`ReconcileResult`) la define el service.
+ */
+export interface ReconcileResourceRolesDto {
+  role_id: number;
+  resource_ids: number[];
+}
