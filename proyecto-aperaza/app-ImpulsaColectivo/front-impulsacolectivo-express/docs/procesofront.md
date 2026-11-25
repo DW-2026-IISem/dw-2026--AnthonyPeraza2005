@@ -1147,3 +1147,5 @@ El admin tiene acceso a todo
 ![](images/clipboard-1133759997.png)
 
 ![](images/clipboard-2046137837.png)
+
+![](images/clipboard-1023750857.png)
