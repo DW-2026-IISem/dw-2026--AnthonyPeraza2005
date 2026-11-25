@@ -410,6 +410,18 @@
 
 ![](images/clipboard-1919802534.png)
 
+![](images/clipboard-1524253682.png)
+
+### editar
+
+![](images/clipboard-1049687306.png)
+
+### eliminar
+
+![](images/clipboard-2818852383.png)
+
+![](images/clipboard-525711332.png)
+
 ## ISS-06 · Contribuciones y su flujo de pago
 
 ### 6.2 Generar con el CLI
