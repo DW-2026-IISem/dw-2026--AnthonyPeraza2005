@@ -1039,3 +1039,105 @@ El admin tiene acceso a todo
 ### PRUEBA VISUAL FRONT FINALIZADO
 
 ![](images/clipboard-268534895.png)
+
+### CR-00.5 · Crear el archivo de decisiones
+
+![](images/clipboard-1583196473.png)
+
+#### CR-00.6 · Verificación final
+
+![](images/clipboard-607753117.png)
+
+#### ISS-CR-01 · Catálogo y operaciones del backend
+
+### CR-01.1 · Inspección (BACKEND)
+
+![](images/clipboard-910696364.png)
+
+### CR-01.2 · Comparar rutas reales contra el catálogo 
+
+![](images/clipboard-3023257251.png)
+
+#### CR-01.5 · Archivo de resultados
+
+![](images/clipboard-3273986724.png)
+
+### CR-01.6 · Verificación final
+
+![](images/clipboard-2978383376.png)
+
+### ISS-CR-02 · Guardado de la matriz en el backend
+
+### CR-02.1 · Leer lo que falta
+
+![](images/clipboard-3067563532.png)
+
+#### CR-02.2 · Parche del backend
+
+![](images/clipboard-976050246.png)
+
+### CR-02.3 · Compilar
+
+![](images/clipboard-135558402.png)
+
+#### CR-02.4 · Verificación con `curl`
+
+![](images/clipboard-582640534.png)
+
+### CR-02.5 · Archivo de resultados
+
+![](images/clipboard-2683858248.png)
+
+### ISS-CR-03 · Cliente HTTP y pantalla de la matriz
+
+### CR-03.2 · Lógica de la matriz
+
+![](images/clipboard-1462392492.png)
+
+### CR-03.3 · Contrato y cliente HTTP
+
+![](images/clipboard-1252868967.png)
+
+### CR-03.4 · La pantalla
+
+![](images/clipboard-1201199717.png)
+
+### CR-03.5 · Ruta y menú
+
+![](images/clipboard-410867062.png)
+
+### CR-03.6 · Formato, pruebas y build
+
+![](images/clipboard-3873823107.png)
+
+### CR-03.7 · Recorrido en el navegador
+
+![](images/clipboard-3289210822.png)
+
+### CR-03.8 · Archivo de resultados
+
+![](images/clipboard-712333378.png)
+
+### CR-04.1 · Prueba de integración contra el backen
+
+![](images/clipboard-423704910.png)
+
+### CR-04.2 · Seeder del catálogo no pisa la matriz
+
+![](images/clipboard-653347899.png)
+
+### CR-04.3 · Un token sin usar en un archivo del repo 
+
+![](images/clipboard-2380817989.png)
+
+### CR-04.4 · Verificación fina
+
+![](images/clipboard-3826162402.png)
+
+#### FRONTEND
+
+![](images/clipboard-1500203997.png)
+
+### CR-04.5 · Archivo de resultados y criterios de cierre
+
+![](images/clipboard-4261664890.png)
