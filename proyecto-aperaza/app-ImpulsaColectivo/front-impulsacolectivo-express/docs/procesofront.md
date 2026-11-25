@@ -1141,5 +1141,3 @@ El admin tiene acceso a todo
 ### CR-04.5 · Archivo de resultados y criterios de cierre
 
 ![](images/clipboard-4261664890.png)
-
-c
