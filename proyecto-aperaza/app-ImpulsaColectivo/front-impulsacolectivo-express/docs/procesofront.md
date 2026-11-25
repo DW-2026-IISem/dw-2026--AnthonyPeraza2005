@@ -1054,7 +1054,7 @@ El admin tiene acceso a todo
 
 ![](images/clipboard-910696364.png)
 
-### CR-01.2 · Comparar rutas reales contra el catálogo 
+### CR-01.2 · Comparar rutas reales contra el catálogo
 
 ![](images/clipboard-3023257251.png)
 
@@ -1126,7 +1126,7 @@ El admin tiene acceso a todo
 
 ![](images/clipboard-653347899.png)
 
-### CR-04.3 · Un token sin usar en un archivo del repo 
+### CR-04.3 · Un token sin usar en un archivo del repo
 
 ![](images/clipboard-2380817989.png)
 
@@ -1141,3 +1141,5 @@ El admin tiene acceso a todo
 ### CR-04.5 · Archivo de resultados y criterios de cierre
 
 ![](images/clipboard-4261664890.png)
+
+c
