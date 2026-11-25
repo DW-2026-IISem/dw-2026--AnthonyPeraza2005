@@ -462,6 +462,16 @@
 
 ![](images/clipboard-1370367352.png)
 
+![](images/clipboard-4265888977.png)
+
+![](images/clipboard-1157868459.png)
+
+![](images/clipboard-1452504326.png)
+
+![](images/clipboard-1877033494.png)
+
+![](images/clipboard-3563446522.png)
+
 ### 6.9 Verificación del ISS
 
 ![](images/clipboard-4033856485.png)
